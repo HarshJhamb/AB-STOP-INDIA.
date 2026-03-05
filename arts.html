@@ -1,0 +1,2595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports & Fitness Exhibition Logistics | STOP India – Exhibition Specialists</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-navy:  #0f1419;
+            --electric-blue: #00d4ff;
+            --vibrant-red:   #ff2e5e;
+            --neon-green:    #00ff88;
+            --purple-accent: #7c3aed;
+            --orange-fire:   #ff6b35;
+            --white:         #ffffff;
+            --off-white:     #f8fafc;
+            --dark-gray:     #1a1f2e;
+            --text-dark:     #111827;
+            --text-muted:    #6B7280;
+            --transition:    all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: var(--white);
+            font-size: 15px;
+        }
+
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; display: block; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* ── HEADER (UNCHANGED) ── */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 20px rgba(15,20,25,0.08);
+            position: sticky; top: 0; z-index: 1000;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .nav-container {
+            display: flex; justify-content: space-between; align-items: center;
+            height: 90px; max-width: 1200px; margin: 0 auto; padding: 0 20px;
+            flex-direction: row-reverse;
+        }
+        .logo-area img { height: 91px; width: auto; object-fit: contain; margin-right: -20px; }
+        .main-nav ul { display: flex; gap: 25px; }
+        .main-nav a {
+            font-weight: 600; font-size: 0.85rem;
+            text-transform: uppercase; color: var(--primary-navy);
+            position: relative; letter-spacing: 0.5px;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .main-nav a::after {
+            content: ''; position: absolute; width: 0; height: 3px;
+            background: var(--electric-blue);
+            bottom: -5px; left: 0; transition: var(--transition);
+        }
+        .main-nav a:hover::after, .main-nav a.active::after { width: 100%; }
+        .hamburger { display: none; cursor: pointer; font-size: 1.4rem; color: var(--primary-navy); }
+
+        /* ── BREADCRUMB ── */
+        .breadcrumb-bar {
+            background: var(--off-white);
+            padding: 12px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .breadcrumb-bar .container {
+            display: flex; align-items: center;
+            gap: 10px; font-size: 0.85rem; color: var(--text-muted);
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .breadcrumb-bar a { color: var(--text-dark); font-weight: 600; }
+        .breadcrumb-bar a:hover { color: var(--electric-blue); }
+        .breadcrumb-bar .sep { color: #d1d5db; }
+        .breadcrumb-bar .current { color: var(--vibrant-red); font-weight: 600; }
+
+        /* ── HERO ── */
+        .hero {
+            position: relative;
+            min-height: 720px;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--primary-navy) 0%, #1a2635 40%, #0f3a4a 100%);
+            color: var(--white);
+            overflow: hidden;
+        }
+
+        /* Energy particles */
+        .hero-energy {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .energy-orb {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.08;
+            animation: energyPulse 4s ease-in-out infinite;
+        }
+
+        @keyframes energyPulse {
+            0%, 100% { transform: scale(1) translateY(0); opacity: 0.08; }
+            50% { transform: scale(1.2) translateY(-30px); opacity: 0.15; }
+        }
+
+        .speed-lines {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0.05;
+            background: repeating-linear-gradient(
+                90deg,
+                transparent,
+                transparent 2px,
+                var(--electric-blue) 2px,
+                var(--electric-blue) 4px
+            );
+            animation: speedScroll 20s linear infinite;
+        }
+
+        @keyframes speedScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(100%); }
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(0, 212, 255, 0.1);
+            border: 1.5px solid var(--electric-blue);
+            color: var(--electric-blue);
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 28px;
+            animation: slideDown 0.8s ease both;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--electric-blue);
+            border-radius: 50%;
+            animation: dotBlink 1.5s ease-in-out infinite;
+        }
+
+        @keyframes dotBlink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 4.5rem;
+            font-weight: 800;
+            line-height: 1.05;
+            margin-bottom: 24px;
+            animation: slideDown 1s ease both 0.1s;
+            letter-spacing: -1.5px;
+            background: linear-gradient(135deg, var(--white) 0%, var(--electric-blue) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero h1 span {
+            display: block;
+            color: var(--vibrant-red);
+            font-size: 3.5rem;
+            margin-top: 8px;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            font-weight: 300;
+            max-width: 700px;
+            margin: 0 auto 48px;
+            opacity: 0.9;
+            animation: slideDown 1s ease both 0.2s;
+            line-height: 1.75;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 18px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: slideDown 1s ease both 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--vibrant-red);
+            color: var(--white);
+            padding: 15px 42px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-family: 'Space Grotesk', sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--orange-fire);
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px rgba(255, 46, 94, 0.3);
+        }
+
+        .btn-primary:hover::before {
+            left: 0;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--electric-blue);
+            border: 2px solid var(--electric-blue);
+            padding: 15px 42px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .btn-outline:hover {
+            background: var(--electric-blue);
+            color: var(--primary-navy);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.3);
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+            margin-top: 80px;
+            padding-top: 50px;
+            border-top: 1px solid rgba(0, 212, 255, 0.2);
+            animation: slideDown 1s ease both 0.4s;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-num {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--electric-blue), var(--neon-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.75;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ── SECTION HEADERS ── */
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(255, 46, 94, 0.1));
+            color: var(--electric-blue);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .section-header h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3.2rem;
+            font-weight: 800;
+            color: var(--primary-navy);
+            line-height: 1.15;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .section-header h2 .accent {
+            background: linear-gradient(135deg, var(--vibrant-red), var(--orange-fire));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-header p {
+            color: var(--text-dark);
+            font-size: 1.05rem;
+            max-width: 680px;
+            margin: 0 auto;
+            opacity: 0.8;
+        }
+
+        /* ── OVERVIEW ── */
+        .overview {
+            padding: 120px 0;
+            background: var(--white);
+        }
+
+        .ov-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .ov-content h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.6rem;
+            color: var(--primary-navy);
+            margin-bottom: 28px;
+            line-height: 1.25;
+            font-weight: 800;
+        }
+
+        .ov-content h2 .highlight {
+            color: var(--vibrant-red);
+        }
+
+        .ov-content p {
+            color: var(--text-dark);
+            line-height: 1.9;
+            font-size: 1rem;
+            margin-bottom: 22px;
+            opacity: 0.85;
+        }
+
+        .trust-list {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            margin-top: 36px;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 14px 0;
+        }
+
+        .trust-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--electric-blue), var(--vibrant-red));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            flex-shrink: 0;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .trust-text h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+            margin-bottom: 4px;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .trust-text p {
+            font-size: 0.9rem;
+            opacity: 0.75;
+            margin: 0;
+        }
+
+        .ov-img-wrap {
+            position: relative;
+            animation: fadeInRight 1s ease both;
+        }
+
+        .ov-img-wrap img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 40px 80px rgba(15, 20, 25, 0.15);
+            border: 2px solid #f0f0f0;
+        }
+
+        .ov-badge {
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            background: var(--white);
+            border-radius: 15px;
+            padding: 28px 36px;
+            box-shadow: 0 20px 60px rgba(15, 20, 25, 0.18);
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            border: 2px solid var(--electric-blue);
+        }
+
+        .ov-badge-ico {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--vibrant-red), var(--orange-fire));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.6rem;
+            flex-shrink: 0;
+        }
+
+        .ov-badge-content {
+            text-align: left;
+        }
+
+        .ov-badge .val {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-navy);
+            line-height: 1;
+        }
+
+        .ov-badge .lbl {
+            font-size: 0.7rem;
+            color: #999;
+            margin-top: 6px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+        }
+
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        /* ── SPORT CATEGORIES ── */
+        .categories-section {
+            padding: 120px 0;
+            background: linear-gradient(135deg, #f0f4f8 0%, var(--off-white) 100%);
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 70px;
+        }
+
+        .sport-card {
+            background: var(--white);
+            padding: 44px 32px;
+            border-radius: 16px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+            box-shadow: 0 10px 30px rgba(15, 20, 25, 0.08);
+        }
+
+        .sport-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--electric-blue), var(--vibrant-red));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+        }
+
+        .sport-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .sport-card:hover {
+            transform: translateY(-12px);
+            border-color: var(--electric-blue);
+            box-shadow: 0 30px 60px rgba(0, 212, 255, 0.15);
+        }
+
+        .sport-icon {
+            font-size: 3.6rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .sport-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            color: var(--primary-navy);
+            font-weight: 800;
+        }
+
+        .sport-label {
+            font-size: 0.75rem;
+            color: var(--electric-blue);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 14px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+        }
+
+        .sport-card p {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            opacity: 0.8;
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+
+        .sport-features {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .sport-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+        }
+
+        .sport-feature i {
+            color: var(--electric-blue);
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        /* ── DISPLAY SPECIALIST HERO ── */
+        .display-hero {
+            padding: 0;
+            background: linear-gradient(135deg, var(--vibrant-red) 0%, var(--orange-fire) 40%, var(--primary-navy) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .display-bg {
+            position: absolute;
+            inset: 0;
+            opacity: 0.1;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .floating-elements {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .float-element {
+            position: absolute;
+            opacity: 0.12;
+            animation: floatUp linear infinite;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) rotate(0deg); }
+            100% { transform: translateY(-100px) rotate(360deg); }
+        }
+
+        .display-inner {
+            position: relative;
+            z-index: 2;
+            padding: 100px 0;
+        }
+
+        .display-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .display-content h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3.4rem;
+            color: var(--white);
+            line-height: 1.15;
+            margin-bottom: 28px;
+            font-weight: 800;
+        }
+
+        .display-content h2 em {
+            color: #00ff88;
+            font-style: italic;
+        }
+
+        .display-content p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
+
+        .display-tag {
+            display: inline-block;
+            background: rgba(0, 212, 255, 0.15);
+            border: 1px solid rgba(0, 212, 255, 0.4);
+            color: var(--electric-blue);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 28px;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .display-specs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin-top: 32px;
+        }
+
+        .spec-item {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 12px;
+            padding: 22px;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+
+        .spec-icon {
+            color: var(--electric-blue);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .spec-item h5 {
+            color: var(--white);
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .spec-item p {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 0.85rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .display-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        .dcard {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 12px;
+            padding: 30px;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+        }
+
+        .dcard:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateX(10px);
+            border-color: var(--electric-blue);
+        }
+
+        .dcard-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 14px;
+        }
+
+        .dcard-ico {
+            width: 52px;
+            height: 52px;
+            background: rgba(0, 212, 255, 0.2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            flex-shrink: 0;
+        }
+
+        .dcard h4 {
+            color: var(--white);
+            font-size: 1.05rem;
+            font-weight: 700;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .dcard p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .dcard-tag {
+            display: inline-block;
+            margin-top: 12px;
+            background: rgba(0, 255, 136, 0.15);
+            color: var(--neon-green);
+            padding: 4px 14px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* ── EXHIBITIONS ── */
+        .exhibitions-section {
+            padding: 120px 0;
+            background: var(--white);
+        }
+
+        .exhibitions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 36px;
+            margin-top: 70px;
+        }
+
+        .event-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 35px rgba(15, 20, 25, 0.08);
+            transition: var(--transition);
+            border: 2px solid transparent;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .event-card:hover {
+            transform: translateY(-16px);
+            border-color: var(--electric-blue);
+            box-shadow: 0 30px 70px rgba(0, 212, 255, 0.18);
+        }
+
+        .event-img {
+            height: 220px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f0f4f8, #e5e7eb);
+        }
+
+        .event-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .event-card:hover .event-img img {
+            transform: scale(1.12);
+        }
+
+        .event-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(15, 20, 25, 0.9) 0%, rgba(15, 20, 25, 0.2) 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+        }
+
+        .event-flag {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .event-header h3 {
+            color: var(--white);
+            font-weight: 800;
+            font-size: 1.15rem;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .event-loc {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 0.8rem;
+            margin-top: 2px;
+        }
+
+        .event-body {
+            padding: 28px;
+            flex: 1;
+        }
+
+        .event-tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+
+        .event-tag {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(255, 46, 94, 0.1));
+            color: var(--electric-blue);
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-family: 'Space Grotesk', sans-serif;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .event-desc {
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+
+        .event-stats {
+            display: flex;
+            gap: 24px;
+            padding-top: 20px;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .e-stat .sv {
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: var(--primary-navy);
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .e-stat .sl {
+            font-size: 0.7rem;
+            color: #999;
+            text-transform: uppercase;
+            font-family: 'Space Grotesk', sans-serif;
+            margin-top: 4px;
+            font-weight: 700;
+        }
+
+        /* ── GALLERY ── */
+        .gallery-section {
+            padding: 120px 0;
+            background: var(--white);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-top: 70px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            aspect-ratio: 1;
+            cursor: pointer;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .gallery-item:hover .gallery-img img {
+            transform: scale(1.15) rotate(2deg);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.8) 0%, rgba(255, 46, 94, 0.8) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-content {
+            text-align: center;
+            color: var(--white);
+            transform: translateY(20px);
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover .gallery-content {
+            transform: translateY(0);
+        }
+
+        .gallery-content h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .gallery-content p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* ── OLYMPIC SECTION ── */
+        .olympic-section {
+            padding: 120px 0;
+            background: linear-gradient(135deg, #0f1419 0%, #1a2635 50%, #0a3847 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .olympic-bg {
+            position: absolute;
+            inset: 0;
+            opacity: 0.08;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='40' fill='none' stroke='%23ffffff' stroke-width='2'/%3E%3Ccircle cx='50' cy='50' r='30' fill='none' stroke='%23ffffff' stroke-width='1.5'/%3E%3Ccircle cx='50' cy='50' r='20' fill='none' stroke='%23ffffff' stroke-width='1'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .olympic-elements {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .olympic-element {
+            position: absolute;
+            opacity: 0.08;
+            animation: olympicFloat linear infinite;
+        }
+
+        @keyframes olympicFloat {
+            0% { transform: translateY(100vh) rotate(0deg); }
+            100% { transform: translateY(-100px) rotate(360deg); }
+        }
+
+        .olympic-inner {
+            position: relative;
+            z-index: 2;
+        }
+
+        .olympic-header {
+            margin-bottom: 80px;
+        }
+
+        .olympic-tag {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(255, 46, 94, 0.2));
+            color: var(--electric-blue);
+            border-color: rgba(0, 212, 255, 0.4);
+        }
+
+        .olympic-header h2 {
+            color: var(--white);
+        }
+
+        .olympic-header p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .olympic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            margin-bottom: 80px;
+        }
+
+        .olympic-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(0, 212, 255, 0.05));
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 12px;
+            padding: 40px 32px;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+        }
+
+        .olympic-card:hover {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(0, 212, 255, 0.1));
+            transform: translateY(-12px);
+            border-color: var(--electric-blue);
+            box-shadow: 0 30px 70px rgba(0, 212, 255, 0.2);
+        }
+
+        .olympic-card-icon {
+            font-size: 3.4rem;
+            margin-bottom: 24px;
+            display: block;
+        }
+
+        .olympic-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.4rem;
+            color: var(--white);
+            margin-bottom: 14px;
+            font-weight: 800;
+        }
+
+        .olympic-card p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        .olympic-features {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            list-style: none;
+        }
+
+        .olympic-features li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 0.9rem;
+        }
+
+        .olympic-features i {
+            color: var(--neon-green);
+            font-weight: 700;
+        }
+
+        .olympic-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+            padding: 60px;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.08), rgba(255, 46, 94, 0.08));
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .o-stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .o-stat-num {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--electric-blue), var(--neon-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 12px;
+        }
+
+        .o-stat-label {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+        }
+
+        /* ── WHY CHOOSE ── */
+        .why-section {
+            padding: 120px 0;
+            background: linear-gradient(135deg, #f8fbff 0%, var(--off-white) 100%);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 70px;
+        }
+
+        .benefit-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(15, 20, 25, 0.06);
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--electric-blue);
+            box-shadow: 0 20px 50px rgba(0, 212, 255, 0.12);
+        }
+
+        .benefit-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(255, 46, 94, 0.15));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .benefit-card h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            color: var(--primary-navy);
+            margin-bottom: 12px;
+            font-weight: 800;
+        }
+
+        .benefit-card p {
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            opacity: 0.8;
+            line-height: 1.75;
+        }
+
+        /* ── PROCESS ── */
+        .process-section {
+            padding: 120px 0;
+            background: var(--white);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 28px;
+            margin-top: 70px;
+            position: relative;
+        }
+
+        .pstep {
+            background: linear-gradient(135deg, #f0f4f8, var(--off-white));
+            padding: 40px 28px;
+            text-align: center;
+            position: relative;
+            transition: var(--transition);
+            border-radius: 12px;
+            border: 2px solid transparent;
+        }
+
+        .pstep:hover {
+            background: linear-gradient(135deg, var(--white), #f8fbff);
+            transform: translateY(-8px);
+            border-color: var(--electric-blue);
+            box-shadow: 0 20px 50px rgba(0, 212, 255, 0.12);
+        }
+
+        .step-num {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--vibrant-red), var(--orange-fire));
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .step-icon {
+            font-size: 2.4rem;
+            margin-bottom: 16px;
+            color: var(--electric-blue);
+        }
+
+        .pstep h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.05rem;
+            color: var(--primary-navy);
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .pstep p {
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            opacity: 0.75;
+            line-height: 1.7;
+        }
+
+        .step-arrow {
+            position: absolute;
+            top: 50%;
+            right: -18px;
+            color: var(--electric-blue);
+            font-size: 1.4rem;
+            transform: translateY(-50%);
+            display: none;
+            font-weight: 800;
+        }
+
+        @media (min-width: 768px) {
+            .step-arrow { display: block; }
+        }
+
+        /* ── FAQ ── */
+        .faq-section {
+            padding: 120px 0;
+            background: linear-gradient(135deg, #f0f4f8 0%, var(--off-white) 100%);
+        }
+
+        .faq-list {
+            max-width: 900px;
+            margin: 60px auto 0;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: 10px;
+            margin-bottom: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(15, 20, 25, 0.05);
+            border: 2px solid transparent;
+            transition: var(--transition);
+        }
+
+        .faq-item:hover {
+            border-color: var(--electric-blue);
+        }
+
+        .faq-q {
+            padding: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 700;
+            color: var(--primary-navy);
+            font-size: 1rem;
+            transition: var(--transition);
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .faq-q:hover {
+            color: var(--electric-blue);
+        }
+
+        .faq-q i {
+            color: var(--electric-blue);
+            transition: var(--transition);
+            font-weight: 800;
+        }
+
+        .faq-item.open .faq-q i {
+            transform: rotate(180deg);
+            color: var(--vibrant-red);
+        }
+
+        .faq-a {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .faq-item.open .faq-a {
+            max-height: 400px;
+        }
+
+        .faq-a p {
+            padding: 0 24px 24px;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            opacity: 0.85;
+        }
+
+        /* ── CTA ── */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary-navy) 0%, #1a2635 50%, var(--vibrant-red) 100%);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(
+                90deg,
+                transparent,
+                transparent 2px,
+                rgba(0, 212, 255, 0.05) 2px,
+                rgba(0, 212, 255, 0.05) 4px
+            );
+            pointer-events: none;
+        }
+
+        .cta-inner {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-section h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 44px;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+
+        .cta-btns {
+            display: flex;
+            gap: 18px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-white {
+            background: var(--white);
+            color: var(--vibrant-red);
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            transition: var(--transition);
+            font-family: 'Space Grotesk', sans-serif;
+            cursor: pointer;
+        }
+
+        .btn-white:hover {
+            background: var(--electric-blue);
+            color: var(--primary-navy);
+            transform: translateY(-4px);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--white);
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            transition: var(--transition);
+            font-family: 'Space Grotesk', sans-serif;
+            cursor: pointer;
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--white);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: linear-gradient(135deg, var(--primary-navy), #0a0d13);
+            color: #b0b8c1;
+            padding-top: 70px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 45px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 1rem;
+            margin-bottom: 24px;
+            border-left: 2px solid var(--electric-blue);
+            padding-left: 12px;
+            font-weight: 800;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .footer-col p {
+            font-size: 0.9rem;
+            line-height: 1.8;
+            opacity: 0.7;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            color: #b0b8c1;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--electric-blue);
+        }
+
+        .footer-col .contact-li {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 14px;
+            font-size: 0.9rem;
+        }
+
+        .footer-col .contact-li i {
+            color: var(--electric-blue);
+            flex-shrink: 0;
+        }
+
+        .bottom-footer {
+            border-top: 1px solid rgba(0, 212, 255, 0.1);
+            padding: 28px 0;
+            text-align: center;
+            font-size: 0.85rem;
+            opacity: 0.5;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 992px) {
+            .hero h1 { font-size: 3rem; }
+            .hero h1 span { font-size: 2.2rem; }
+            .ov-grid, .display-grid { grid-template-columns: 1fr; gap: 50px; }
+            .categories-grid { grid-template-columns: 1fr; }
+            .display-specs { grid-template-columns: 1fr; }
+            .olympic-stats { grid-template-columns: 1fr 1fr; }
+            .ov-badge { position: relative; bottom: auto; right: auto; margin-top: 28px; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+            .nav-container { flex-direction: row; }
+            .main-nav {
+                position: absolute;
+                top: 90px;
+                left: -100%;
+                width: 100%;
+                background: var(--white);
+                padding: 20px;
+                box-shadow: 0 5px 15px rgba(15, 20, 25, 0.1);
+                transition: 0.4s;
+            }
+            .main-nav.active { left: 0; }
+            .main-nav ul { flex-direction: column; text-align: center; gap: 15px; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero h1 span { font-size: 1.8rem; }
+            .section-header h2 { font-size: 2.2rem; }
+            .display-content h2 { font-size: 2.4rem; }
+            .hero-stats { gap: 30px; }
+            .exhibitions-grid { grid-template-columns: 1fr; }
+            .step-arrow { display: none; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .olympic-stats { grid-template-columns: 1fr; padding: 40px 24px; }
+            .gallery-item {
+                aspect-ratio: auto;
+                min-height: 300px;
+            }
+        }
+
+        /* ── SCROLL REVEAL ── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+<!-- ─────────────── HEADER ─────────────── -->
+<header>
+    <div class="nav-container">
+        <div class="logo-area">
+            <a href="index.html">
+                <img src="https://stopindia.com/wp-content/uploads/2020/09/new.png" alt="STOP India Logo">
+            </a>
+        </div>
+        <nav class="main-nav" id="mainNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="sectors.html" class="active">Sectors</a></li>
+                <li><a href="Gallery.html">Gallery</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="carrer.html">Career</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+    </div>
+</header>
+
+<!-- ─────────────── BREADCRUMB ─────────────── -->
+<div class="breadcrumb-bar">
+    <div class="container">
+        <a href="index.html">Home</a>
+        <span class="sep">›</span>
+        <a href="sectors.html">Sectors</a>
+        <span class="sep">›</span>
+        <span class="current">Sports &amp; Fitness</span>
+    </div>
+</div>
+
+<!-- ─────────────── HERO ─────────────── -->
+<section class="hero">
+    <div class="hero-energy" id="energy">
+        <div class="speed-lines"></div>
+    </div>
+    <div class="container hero-inner">
+        <div class="hero-badge">
+            <i class="fas fa-bolt"></i>
+            Ultimate Sports Logistics Performance
+        </div>
+        <h1>Sports &amp; Fitness<br><span>Exhibition Excellence</span></h1>
+        <p>From elite athletic equipment to massive stadium displays—we move the world's sports brands with precision and power. Fast, reliable, unstoppable.</p>
+        <div class="hero-btns">
+            <a href="tel:+919212133251" class="btn-primary">
+                <i class="fas fa-phone" style="margin-right:8px;"></i>Get a Quote
+            </a>
+            <a href="#exhibitions" class="btn-outline">
+                <i class="fas fa-globe" style="margin-right:8px;"></i>Sports Events
+            </a>
+        </div>
+        <div class="hero-stats">
+            <div class="stat">
+                <span class="stat-num">900+</span>
+                <span class="stat-label">Sports Events Handled</span>
+            </div>
+            <div class="stat">
+                <span class="stat-num">50+</span>
+                <span class="stat-label">Countries Covered</span>
+            </div>
+            <div class="stat">
+                <span class="stat-num">100+</span>
+                <span class="stat-label">Brands Trusted</span>
+            </div>
+            <div class="stat">
+                <span class="stat-num">99.8%</span>
+                <span class="stat-label">On-Time Delivery</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─────────────── OVERVIEW ─────────────── -->
+<section class="overview" id="overview">
+    <div class="container">
+        <div class="ov-grid">
+            <div class="ov-content reveal">
+                <h2>India's Premier <span class="highlight">Sports Logistics Champion</span></h2>
+                <p>Sports equipment is different. Athletes need their gear on exact specifications. Sports brands demand speed and reliability. Large displays must be assembled perfectly. Equipment must survive aggressive handling and installation.</p>
+                <p>STOP India has built unmatched expertise in sports exhibition logistics—handling everything from elite athletic equipment to massive stadium displays for events like SportUcci, Fitness INDIA, and beyond.</p>
+                <p>Whether you're shipping premium shoes, heavy gym equipment, or Olympic-scale displays, we deliver with the same intensity and precision your athletes demand.</p>
+                <div class="trust-list">
+                    <div class="trust-item">
+                        <div class="trust-icon"><i class="fas fa-zap"></i></div>
+                        <div class="trust-text">
+                            <h4>Lightning-Fast Handling</h4>
+                            <p>Speed and precision are our DNA—rapid customs clearance and express delivery when timing matters.</p>
+                        </div>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon"><i class="fas fa-shield"></i></div>
+                        <div class="trust-text">
+                            <h4>Damage-Proof Protection</h4>
+                            <p>Heavy-duty packaging and secure handling for sports equipment, from delicate gear to massive machinery.</p>
+                        </div>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon"><i class="fas fa-cogs"></i></div>
+                        <div class="trust-text">
+                            <h4>Equipment Installation</h4>
+                            <p>Professional setup and assembly at venues with technical expertise and on-site supervision.</p>
+                        </div>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon"><i class="fas fa-rocket"></i></div>
+                        <div class="trust-text">
+                            <h4>Performance Guarantee</h4>
+                            <p>99.8% on-time delivery rate with real-time tracking and instant issue resolution.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ov-img-wrap reveal">
+                <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=1974&auto=format&fit=crop" alt="Sports equipment exhibition">
+                <div class="ov-badge">
+                    <div class="ov-badge-ico"><i class="fas fa-trophy"></i></div>
+                    <div class="ov-badge-content">
+                        <div class="val">900+</div>
+                        <div class="lbl">Events Served</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─────────────── SPORT CATEGORIES ─────────────── -->
+<section class="categories-section" id="categories">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-tag">Sport Categories</div>
+            <h2>We Handle <span class="accent">All Sports Equipment Types</span></h2>
+            <p>Footwear, fitness machines, team gear, equipment, sportswear, and massive displays—each demands specialized handling. We master them all.</p>
+        </div>
+
+        <div class="categories-grid">
+            <!-- ATHLETIC EQUIPMENT -->
+            <div class="sport-card reveal">
+                <span class="sport-icon">⚽</span>
+                <div class="sport-label">Athletic Gear</div>
+                <h3>Sports Equipment</h3>
+                <p>Balls, protective gear, rackets, bats, and specialized athletic equipment transported with care to preserve performance standards.</p>
+                <div class="sport-features">
+                    <div class="sport-feature"><i class="fas fa-check"></i> Impact-resistant packaging</div>
+                    <div class="sport-feature"><i class="fas fa-check"></i> Climate control available</div>
+                    <div class="sport-feature"><i class="fas fa-check"></i> Fast-track customs</div>
+                    <div class="sport-feature"><i class="fas fa-check"></i> Damage certification</div>
+                </div>
+            </div>
+
+            <!-- FOOTWEAR & APPAREL -->
+            <div class="sport-card reveal" style="animation-delay: 0.1s;">
+                <span class="sport-icon">👟</span>
+                <div class="sport-label">Apparel & Footwear</div>
+                <h3>Sportswear</h3>
+                <p>Premium footwear, athletic apparel, and branded merchandise handled with care to maintain retail presentation standards.</p>
+                <div class="sport-features">
+                    <div class="sport-feature"><i class="fas fa-check"></i> Protective wrapping</div>
+                    <div class="sport-feature"><i class="fas fa-check"></i> Humidity control</div>
+                    <div class="sport-feature"><i class="fas fa-check"></i> Display-ready delivery</div>
+                    <div class="sport-feature"><i class="fas fa-check"></i> Inventory tracking</div>
+                </div>
+            </div>
+
+            <!-- FITNESS EQUIPMENT -->
+            <div class="sport-card reveal" style="animation-delay: 0.2s;">
+                <span class="sport-icon">💪</span>
+                <div class="sport-label">Heavy Machinery</div>
+                <h3>Fitness Equipment</h3>
+                <p>Treadmills, weight machines, cardio equipment, and advanced fitness technology shipped with structural supports and assembly coordination.</p>
+                <div class="sport-features">
+                    <div class="sport-feature"><i class="fas fa-check"></i> Heavy equipment expertise</div>
+                    <div class="sport-feature"><i class="fas fa-check"></i> Installation support</div>
+                    <div class="sport-feature"><i class="fas fa-check"></i> Technical coordination</div>
+                    <div class="sport-feature"><i class="fas fa-check"></i> Safety certification</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─────────────── DISPLAY SPECIALIST HERO ─────────────── -->
+<section class="display-hero" id="display">
+    <div class="display-bg"></div>
+    <div class="floating-elements" id="floaters"></div>
+    <div class="container display-inner">
+        <div class="display-grid">
+            <div class="display-content">
+                <div class="display-tag">
+                    <i class="fas fa-star"></i> Large-Scale Display Mastery
+                </div>
+                <h2>Build <em>Stadium-Scale Displays</em><br>That Win the Game</h2>
+                <p>Sports sponsorship means massive. Displays can be 30 metres wide, 10 metres tall, multi-component, with LED, projection, and complex rigging. One assembly mistake can mean brand disaster.</p>
+                <p>STOP India has built India's most experienced sports display operation—moving branded pavilions, sponsor displays, timing systems, and technology infrastructure for major sporting events worldwide.</p>
+
+                <div class="display-specs">
+                    <div class="spec-item">
+                        <i class="spec-icon fas fa-ruler-combined"></i>
+                        <div>
+                            <h5>Scale Capability</h5>
+                            <p>Displays up to 30m × 10m with custom rigging and assembly coordination.</p>
+                        </div>
+                    </div>
+                    <div class="spec-item">
+                        <i class="spec-icon fas fa-bolt"></i>
+                        <div>
+                            <h5>Speed Assembly</h5>
+                            <p>Rapid setup—hours not days—for time-critical sports events and tournaments.</p>
+                        </div>
+                    </div>
+                    <div class="spec-item">
+                        <i class="spec-icon fas fa-tv"></i>
+                        <div>
+                            <h5>Tech Integration</h5>
+                            <p>LED panels, projection systems, live feeds, and digital signage coordination.</p>
+                        </div>
+                    </div>
+                    <div class="spec-item">
+                        <i class="spec-icon fas fa-headset"></i>
+                        <div>
+                            <h5>24/7 Support</h5>
+                            <p>On-site crew with backup teams for round-the-clock event coverage.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="display-cards">
+                <div class="dcard reveal">
+                    <div class="dcard-header">
+                        <div class="dcard-ico">🏟️</div>
+                        <h4>Sponsor Pavilions</h4>
+                    </div>
+                    <p>Multi-brand pavilions and sponsor villages assembled with precision for major tournaments and championships.</p>
+                    <span class="dcard-tag">Rapid Deployment</span>
+                </div>
+
+                <div class="dcard reveal" style="animation-delay: 0.1s;">
+                    <div class="dcard-header">
+                        <div class="dcard-ico">📊</div>
+                        <h4>Branding Systems</h4>
+                    </div>
+                    <p>Large-scale brand displays, stadium signage, and promotional structures installed with broadcast visibility in mind.</p>
+                    <span class="dcard-tag">High-Impact</span>
+                </div>
+
+                <div class="dcard reveal" style="animation-delay: 0.2s;">
+                    <div class="dcard-header">
+                        <div class="dcard-ico">⚡</div>
+                        <h4>Live Event Tech</h4>
+                    </div>
+                    <p>LED walls, timing systems, digital scoreboards, and technology infrastructure for professional sports competition.</p>
+                    <span class="dcard-tag">Elite Venues</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─────────────── EXHIBITIONS ─────────────── -->
+<section class="exhibitions-section" id="exhibitions">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-tag">Major Sports Events</div>
+            <h2>World-Leading Sports <span class="accent">Exhibitions We Serve</span></h2>
+            <p>STOP India has logistics presence at the world's most important sports fairs and athlete-focused exhibitions.</p>
+        </div>
+
+        <div class="exhibitions-grid">
+            <!-- SportUcci -->
+            <div class="event-card reveal">
+                <div class="event-img">
+                    <img src="https://images.unsplash.com/photo-1495521821757-a1efb6729352?q=80&w=1974&auto=format&fit=crop" alt="SportUcci">
+                    <div class="event-overlay">
+                        <div class="event-flag">🇮🇳</div>
+                        <div>
+                            <h3 class="event-header">SportUcci</h3>
+                            <p class="event-loc">New Delhi, India</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-body">
+                    <div class="event-tags">
+                        <span class="event-tag">Equipment</span>
+                        <span class="event-tag">Apparel</span>
+                        <span class="event-tag">Home Turf</span>
+                    </div>
+                    <p class="event-desc">India's premier international sports exhibition. As Delhi-based specialists, we provide unmatched logistics support for international exhibitors and Indian sports brands.</p>
+                    <div class="event-stats">
+                        <div class="e-stat"><div class="sv">400+</div><div class="sl">Exhibitors</div></div>
+                        <div class="e-stat"><div class="sv">Sep</div><div class="sl">Annual</div></div>
+                        <div class="e-stat"><div class="sv">25+</div><div class="sl">Countries</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ISPO Munich -->
+            <div class="event-card reveal" style="animation-delay: 0.1s;">
+                <div class="event-img">
+                    <img src="https://images.unsplash.com/photo-1552062407-291826716aeb?q=80&w=1974&auto=format&fit=crop" alt="ISPO Munich">
+                    <div class="event-overlay">
+                        <div class="event-flag">🇩🇪</div>
+                        <div>
+                            <h3 class="event-header">ISPO Munich</h3>
+                            <p class="event-loc">Munich, Germany</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-body">
+                    <div class="event-tags">
+                        <span class="event-tag">Sports Tech</span>
+                        <span class="event-tag">Premium</span>
+                        <span class="event-tag">Global</span>
+                    </div>
+                    <p class="event-desc">World's leading sports business platform. We manage complex equipment shipments through German customs with expertise in sports industry logistics.</p>
+                    <div class="event-stats">
+                        <div class="e-stat"><div class="sv">2,800+</div><div class="sl">Exhibitors</div></div>
+                        <div class="e-stat"><div class="sv">Feb</div><div class="sl">Annual</div></div>
+                        <div class="e-stat"><div class="sv">140+</div><div class="sl">Countries</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fitness INDIA -->
+            <div class="event-card reveal" style="animation-delay: 0.2s;">
+                <div class="event-img">
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1974&auto=format&fit=crop" alt="Fitness INDIA">
+                    <div class="event-overlay">
+                        <div class="event-flag">🇮🇳</div>
+                        <div>
+                            <h3 class="event-header">Fitness INDIA</h3>
+                            <p class="event-loc">Mumbai, India</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-body">
+                    <div class="event-tags">
+                        <span class="event-tag">Gym Equipment</span>
+                        <span class="event-tag">Wellness</span>
+                        <span class="event-tag">Domestic</span>
+                    </div>
+                    <p class="event-desc">India's major fitness and wellness industry exhibition. We handle heavy equipment movement and installation with technical expertise for gym brands and fitness equipment manufacturers.</p>
+                    <div class="event-stats">
+                        <div class="e-stat"><div class="sv">300+</div><div class="sl">Exhibitors</div></div>
+                        <div class="e-stat"><div class="sv">Jun</div><div class="sl">Annual</div></div>
+                        <div class="e-stat"><div class="sv">15+</div><div class="sl">Countries</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Aquatics International -->
+            <div class="event-card reveal" style="animation-delay: 0.1s;">
+                <div class="event-img">
+                    <img src="https://images.unsplash.com/photo-1576610616656-f72410fc6f3f?q=80&w=1974&auto=format&fit=crop" alt="Aquatics International">
+                    <div class="event-overlay">
+                        <div class="event-flag">🇬🇧</div>
+                        <div>
+                            <h3 class="event-header">Aquatics Int'l</h3>
+                            <p class="event-loc">London, UK</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-body">
+                    <div class="event-tags">
+                        <span class="event-tag">Swimming Tech</span>
+                        <span class="event-tag">Pool Equipment</span>
+                        <span class="event-tag">Specialist</span>
+                    </div>
+                    <p class="event-desc">Premier aquatic sports and swimming equipment fair. Our team manages pool equipment, timing systems, and sports technology through UK customs.</p>
+                    <div class="event-stats">
+                        <div class="e-stat"><div class="sv">200+</div><div class="sl">Exhibitors</div></div>
+                        <div class="e-stat"><div class="sv">Mar</div><div class="sl">Biennial</div></div>
+                        <div class="e-stat"><div class="sv">50+</div><div class="sl">Countries</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sportel Monaco -->
+            <div class="event-card reveal" style="animation-delay: 0.2s;">
+                <div class="event-img">
+                    <img src="https://images.unsplash.com/photo-1520822260605-c593495b63f6?q=80&w=1974&auto=format&fit=crop" alt="Sportel Monaco">
+                    <div class="event-overlay">
+                        <div class="event-flag">🇫🇷</div>
+                        <div>
+                            <h3 class="event-header">Sportel Monaco</h3>
+                            <p class="event-loc">Monaco</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-body">
+                    <div class="event-tags">
+                        <span class="event-tag">Sports Tech</span>
+                        <span class="event-tag">Broadcast</span>
+                        <span class="event-tag">Premium</span>
+                    </div>
+                    <p class="event-desc">Global sports business and technology showcase. We coordinate sports technology, broadcast equipment, and premium displays through French customs.</p>
+                    <div class="event-stats">
+                        <div class="e-stat"><div class="sv">350+</div><div class="sl">Exhibitors</div></div>
+                        <div class="e-stat"><div class="sv">Oct</div><div class="sl">Annual</div></div>
+                        <div class="e-stat"><div class="sv">80+</div><div class="sl">Countries</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SportAccord -->
+            <div class="event-card reveal" style="animation-delay: 0.3s;">
+                <div class="event-img">
+                    <img src="https://images.unsplash.com/photo-1552674852-7f50d8b5768f?q=80&w=1974&auto=format&fit=crop" alt="SportAccord">
+                    <div class="event-overlay">
+                        <div class="event-flag">🌍</div>
+                        <div>
+                            <h3 class="event-header">SportAccord</h3>
+                            <p class="event-loc">Rotating Location</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-body">
+                    <div class="event-tags">
+                        <span class="event-tag">Global Sports</span>
+                        <span class="event-tag">Federation Summit</span>
+                        <span class="event-tag">International</span>
+                    </div>
+                    <p class="event-desc">World's premier international sports convention. We handle complex multi-country logistics for sports federations, technology partners, and global brands.</p>
+                    <div class="event-stats">
+                        <div class="e-stat"><div class="sv">2,000+</div><div class="sl">Attendees</div></div>
+                        <div class="e-stat"><div class="sv">Apr</div><div class="sl">Annual</div></div>
+                        <div class="e-stat"><div class="sv">200+</div><div class="sl">Countries</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─────────────── GALLERY ─────────────── -->
+<section class="gallery-section" id="gallery">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-tag">Visual Portfolio</div>
+            <h2>Sports Events We've <span class="accent">Powered</span></h2>
+            <p>A glimpse into the world-class sports exhibitions and major events we've supported with industry-leading logistics.</p>
+        </div>
+
+        <div class="gallery-grid">
+            <div class="gallery-item reveal">
+                <div class="gallery-img">
+                    <img src="https://images.unsplash.com/photo-1474511320723-9a56873867b5?q=80&w=2070&auto=format&fit=crop" alt="Marathon exhibition setup">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h3>Marathon Events</h3>
+                            <p>Race timing systems & sponsor displays</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item reveal" style="animation-delay: 0.1s;">
+                <div class="gallery-img">
+                    <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=2070&auto=format&fit=crop" alt="Fitness equipment showcase">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h3>Fitness Equipment</h3>
+                            <p>Heavy machinery installation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item reveal" style="animation-delay: 0.2s;">
+                <div class="gallery-img">
+                    <img src="https://images.unsplash.com/photo-1552062407-291826716aeb?q=80&w=2070&auto=format&fit=crop" alt="Sports brand pavilion">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h3>Brand Pavilions</h3>
+                            <p>Large-scale display structures</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item reveal" style="animation-delay: 0.3s;">
+                <div class="gallery-img">
+                    <img src="https://images.unsplash.com/photo-1495521821757-a1efb6729352?q=80&w=2070&auto=format&fit=crop" alt="Football exhibition">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h3>Football Events</h3>
+                            <p>Team equipment & merchandise</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item reveal" style="animation-delay: 0.4s;">
+                <div class="gallery-img">
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop" alt="Yoga equipment display">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h3>Wellness Programs</h3>
+                            <p>Yoga & holistic fitness gear</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item reveal" style="animation-delay: 0.5s;">
+                <div class="gallery-img">
+                    <img src="https://images.unsplash.com/photo-1576610616656-f72410fc6f3f?q=80&w=2070&auto=format&fit=crop" alt="Swimming event logistics">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h3>Aquatic Events</h3>
+                            <p>Pool equipment & timing systems</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item reveal" style="animation-delay: 0.6s;">
+                <div class="gallery-img">
+                    <img src="https://images.unsplash.com/photo-1520822260605-c593495b63f6?q=80&w=2070&auto=format&fit=crop" alt="Sports technology setup">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h3>Sports Technology</h3>
+                            <p>LED displays & broadcast systems</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item reveal" style="animation-delay: 0.7s;">
+                <div class="gallery-img">
+                    <img src="https://images.unsplash.com/photo-1552674852-7f50d8b5768f?q=80&w=2070&auto=format&fit=crop" alt="Tennis tournament setup">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h3>Tournament Logistics</h3>
+                            <p>Court equipment & timing gear</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item reveal" style="animation-delay: 0.8s;">
+                <div class="gallery-img">
+                    <img src="https://images.unsplash.com/photo-1534319278760-0b83d3a4d0f9?q=80&w=2070&auto=format&fit=crop" alt="Cycling event infrastructure">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h3>Cycling Events</h3>
+                            <p>Bikes, timing systems & barriers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─────────────── OLYMPIC SCALE LOGISTICS ─────────────── -->
+<section class="olympic-section" id="olympic">
+    <div class="olympic-bg"></div>
+    <div class="olympic-elements" id="olympicElements"></div>
+    <div class="container olympic-inner">
+        <div class="section-header olympic-header">
+            <div class="section-tag olympic-tag">
+                <i class="fas fa-medal"></i> Olympic-Scale Operations
+            </div>
+            <h2>Logistics for the <span class="accent">World's Biggest Games</span></h2>
+            <p>From Olympic Games to World Championships—we handle the mega-events that demand flawless execution.</p>
+        </div>
+
+        <div class="olympic-grid">
+            <div class="olympic-card reveal">
+                <div class="olympic-card-icon">🏅</div>
+                <h3>Olympic Games</h3>
+                <p>Experience coordinating complex logistics for Olympic-scale sporting events with hundreds of exhibitors and athletes from 100+ countries.</p>
+                <ul class="olympic-features">
+                    <li><i class="fas fa-check"></i> Multi-venue coordination</li>
+                    <li><i class="fas fa-check"></i> 24/7 operations</li>
+                    <li><i class="fas fa-check"></i> Security protocols</li>
+                    <li><i class="fas fa-check"></i> Real-time tracking</li>
+                    <li><i class="fas fa-check"></i> Emergency response</li>
+                </ul>
+            </div>
+
+            <div class="olympic-card reveal" style="animation-delay: 0.1s;">
+                <div class="olympic-card-icon">🌍</div>
+                <h3>World Championships</h3>
+                <p>Dedicated logistics support for world championship events across all sports disciplines—football, cricket, athletics, swimming, and beyond.</p>
+                <ul class="olympic-features">
+                    <li><i class="fas fa-check"></i> International coordination</li>
+                    <li><i class="fas fa-check"></i> Multi-country routing</li>
+                    <li><i class="fas fa-check"></i> Custom equipment handling</li>
+                    <li><i class="fas fa-check"></i> VIP logistics management</li>
+                    <li><i class="fas fa-check"></i> Flexible scheduling</li>
+                </ul>
+            </div>
+
+            <div class="olympic-card reveal" style="animation-delay: 0.2s;">
+                <div class="olympic-card-icon">🎪</div>
+                <h3>Commonwealth Games</h3>
+                <p>Large-scale logistics for Commonwealth Games and regional sporting championships with athlete accommodations and equipment requirements.</p>
+                <ul class="olympic-features">
+                    <li><i class="fas fa-check"></i> Athlete village logistics</li>
+                    <li><i class="fas fa-check"></i> Team equipment coordination</li>
+                    <li><i class="fas fa-check"></i> Hospitality support</li>
+                    <li><i class="fas fa-check"></i> Training facility setup</li>
+                    <li><i class="fas fa-check"></i> Ceremonial preparation</li>
+                </ul>
+            </div>
+
+            <div class="olympic-card reveal" style="animation-delay: 0.3s;">
+                <div class="olympic-card-icon">🏆</div>
+                <h3>Major Tournaments</h3>
+                <p>Master logistics for major international tournaments—cricket world cups, football championships, tennis grand slams—with broadcast and sponsorship demands.</p>
+                <ul class="olympic-features">
+                    <li><i class="fas fa-check"></i> Broadcast infrastructure</li>
+                    <li><i class="fas fa-check"></i> Sponsorship activation</li>
+                    <li><i class="fas fa-check"></i> Stadium logistics</li>
+                    <li><i class="fas fa-check"></i> Media center setup</li>
+                    <li><i class="fas fa-check"></i> VIP access control</li>
+                </ul>
+            </div>
+
+            <div class="olympic-card reveal" style="animation-delay: 0.4s;">
+                <div class="olympic-card-icon">📡</div>
+                <h3>Broadcasting & Tech</h3>
+                <p>Specialized logistics for broadcasting equipment, live stream technology, timing systems, and digital infrastructure supporting global sports transmission.</p>
+                <ul class="olympic-features">
+                    <li><i class="fas fa-check"></i> Camera equipment</li>
+                    <li><i class="fas fa-check"></i> Broadcast servers</li>
+                    <li><i class="fas fa-check"></i> Timing technology</li>
+                    <li><i class="fas fa-check"></i> Satellite systems</li>
+                    <li><i class="fas fa-check"></i> 4K/8K infrastructure</li>
+                </ul>
+            </div>
+
+            <div class="olympic-card reveal" style="animation-delay: 0.5s;">
+                <div class="olympic-card-icon">🚀</div>
+                <h3>Contingency Planning</h3>
+                <p>Backup systems and emergency logistics planning for mega-events—redundancy for critical equipment, rapid response teams, and alternative routing.</p>
+                <ul class="olympic-features">
+                    <li><i class="fas fa-check"></i> Backup equipment</li>
+                    <li><i class="fas fa-check"></i> Rapid deployment teams</li>
+                    <li><i class="fas fa-check"></i> Alternative routes</li>
+                    <li><i class="fas fa-check"></i> Crisis management</li>
+                    <li><i class="fas fa-check"></i> 24/7 command center</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="olympic-stats">
+            <div class="o-stat reveal">
+                <div class="o-stat-num">15+</div>
+                <div class="o-stat-label">Olympic & Major Events</div>
+            </div>
+            <div class="o-stat reveal" style="animation-delay: 0.1s;">
+                <div class="o-stat-num">100K+</div>
+                <div class="o-stat-label">Equipment Pieces Moved</div>
+            </div>
+            <div class="o-stat reveal" style="animation-delay: 0.2s;">
+                <div class="o-stat-num">200+</div>
+                <div class="o-stat-label">Countries Coordinated</div>
+            </div>
+            <div class="o-stat reveal" style="animation-delay: 0.3s;">
+                <div class="o-stat-num">Zero</div>
+                <div class="o-stat-label">Critical Failures</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─────────────── WHY CHOOSE ─────────────── -->
+<section class="why-section" id="why">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-tag">Why STOP India</div>
+            <h2>The Sports Partner Built for <span class="accent">Champions</span></h2>
+            <p>Sports exhibitors choose STOP India because we understand that winning means execution at championship level.</p>
+        </div>
+
+        <div class="benefits-grid">
+            <div class="benefit-card reveal">
+                <div class="benefit-icon"><i class="fas fa-lightning-bolt"></i></div>
+                <h4>Speed is Our DNA</h4>
+                <p>Fast customs clearance, rapid delivery, and express assembly—because in sports, timing is everything.</p>
+            </div>
+
+            <div class="benefit-card reveal" style="animation-delay: 0.1s;">
+                <div class="benefit-icon"><i class="fas fa-shield-halved"></i></div>
+                <h4>Damage Protection</h4>
+                <p>Heavy-duty packaging and tough handling for equipment that needs to survive rough logistics and aggressive assembly.</p>
+            </div>
+
+            <div class="benefit-card reveal" style="animation-delay: 0.2s;">
+                <div class="benefit-icon"><i class="fas fa-cogs"></i></div>
+                <h4>Technical Expertise</h4>
+                <p>Sports equipment specialists who understand assembly, calibration, and performance standards for athletic gear.</p>
+            </div>
+
+            <div class="benefit-card reveal" style="animation-delay: 0.3s;">
+                <div class="benefit-icon"><i class="fas fa-chart-line"></i></div>
+                <h4>99.8% On-Time Rate</h4>
+                <p>Real-time tracking, instant communication, and proactive problem-solving—we deliver as promised, every time.</p>
+            </div>
+
+            <div class="benefit-card reveal" style="animation-delay: 0.1s;">
+                <div class="benefit-icon"><i class="fas fa-globe"></i></div>
+                <h4>Global Network</h4>
+                <p>Presence in 50+ countries with local partners who understand regional sports logistics and customs requirements.</p>
+            </div>
+
+            <div class="benefit-card reveal" style="animation-delay: 0.2s;">
+                <div class="benefit-icon"><i class="fas fa-award"></i></div>
+                <h4>Championship Track Record</h4>
+                <p>900+ sports events handled with zero major incidents—we're trusted by brands that win at the highest level.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─────────────── PROCESS ─────────────── -->
+<section class="process-section" id="process">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-tag">Our Process</div>
+            <h2>How We Move Your Sports Cargo</h2>
+            <p>A championship-level process designed specifically for sports exhibition cargo.</p>
+        </div>
+
+        <div class="process-steps">
+            <div class="pstep reveal">
+                <div class="step-num">01</div>
+                <div class="step-icon"><i class="fas fa-list-check"></i></div>
+                <h4>Equipment Assessment</h4>
+                <p>Detailed evaluation of each item—weight, fragility, dimensions, and handling specifications.</p>
+                <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
+            </div>
+
+            <div class="pstep reveal" style="animation-delay: 0.1s;">
+                <div class="step-num">02</div>
+                <div class="step-icon"><i class="fas fa-box"></i></div>
+                <h4>Custom Packing</h4>
+                <p>Sport-grade packaging—reinforced boxes, shock absorption, and secure fastening for heavy equipment.</p>
+                <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
+            </div>
+
+            <div class="pstep reveal" style="animation-delay: 0.2s;">
+                <div class="step-num">03</div>
+                <div class="step-icon"><i class="fas fa-stamp"></i></div>
+                <h4>Fast Customs</h4>
+                <p>Express clearance with priority processing—minimize delays and get your gear to the venue on schedule.</p>
+                <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
+            </div>
+
+            <div class="pstep reveal" style="animation-delay: 0.3s;">
+                <div class="step-num">04</div>
+                <div class="step-icon"><i class="fas fa-plane"></i></div>
+                <h4>Rapid Transit</h4>
+                <p>Fast-track shipping with real-time tracking and direct routing to your destination venue.</p>
+                <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
+            </div>
+
+            <div class="pstep reveal" style="animation-delay: 0.4s;">
+                <div class="step-num">05</div>
+                <div class="step-icon"><i class="fas fa-tools"></i></div>
+                <h4>Assembly Support</h4>
+                <p>Professional crew on-site for safe unloading, setup, and installation of equipment and displays.</p>
+                <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
+            </div>
+
+            <div class="pstep reveal" style="animation-delay: 0.5s;">
+                <div class="step-num">06</div>
+                <div class="step-icon"><i class="fas fa-check-circle"></i></div>
+                <h4>Ready to Compete</h4>
+                <p>Your equipment delivered, assembled, and ready for the event—tested and verified for performance.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─────────────── FAQ ─────────────── -->
+<section class="faq-section" id="faq">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-tag">Questions</div>
+            <h2>Frequently Asked Questions</h2>
+            <p>Everything sports exhibitors need to know about moving gear to events worldwide.</p>
+        </div>
+
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="faq-q">
+                    How quickly can you transport sports equipment to urgent events?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-a">
+                    <p>We specialize in rapid transport. For urgent shipments, we offer express air freight with same-day departure from major Indian cities. We coordinate with airline cargo partners for fastest routing and can arrange express customs clearance at destination airports. For time-critical sports events, we've delivered equipment within 48-72 hours globally, including customs clearance.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">
+                    Can you handle heavy fitness equipment and large machinery?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-a">
+                    <p>Yes, absolutely. We have extensive experience with heavy fitness equipment—treadmills, weight machines, cardio equipment, and specialized sports machinery. We use reinforced crating, heavy-duty pallets, and equipment-specific packaging. For items weighing several tonnes, we arrange flatbed transport with load-restraint certification. On-site installation crews handle unloading, assembly, and technical setup with proper safety protocols.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">
+                    Do you provide assembly and installation support at venues?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-a">
+                    <p>Yes. We provide full assembly and installation support at your venue. Our trained crew handles unloading, unpacking, assembly of display structures, and technical setup of equipment. For complex installations or large displays, we coordinate with venue technical teams and can provide 24/7 support throughout event setup. This is especially valuable for time-critical sports events where rapid setup is essential.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">
+                    How do you protect premium sports brands and expensive equipment during transport?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-a">
+                    <p>We use sport-grade protective packaging: reinforced boxes, shock-absorbing foam, moisture barriers, and secure fastening. For high-value items, we offer temperature and humidity monitoring. All shipments are insured, and we provide damage documentation and photo records. For premium brand merchandise, we ensure display-ready delivery maintaining retail presentation standards throughout transport and handling.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">
+                    Can you handle multi-country sports logistics for international events?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-a">
+                    <p>Yes. We coordinate complex multi-country logistics for international sports events. We manage export documentation, cross-border customs clearance through multiple countries, and coordinate with local partners at each destination. Our global network in 50+ countries ensures seamless hand-offs and unified tracking throughout the entire journey, from India to your final venue.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">
+                    How far in advance should we book for major sports events?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-a">
+                    <p>For major international sports events, we recommend booking 10–14 weeks in advance to secure capacity, arrange optimal shipping, and complete all customs documentation. For urgent events or rush shipments, we can accommodate at short notice with express rates. Our real-time tracking system allows live visibility of your shipment status from dispatch to venue arrival.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─────────────── CTA ─────────────── -->
+<section class="cta-section">
+    <div class="cta-inner">
+        <h2>Ready to Win at Your Sports Event?</h2>
+        <p>Talk to STOP India's sports logistics champions today. We'll design a high-performance logistics solution for your equipment, displays, or merchandise—to any sporting event, anywhere.</p>
+        <div class="cta-btns">
+            <a href="tel:+919212133251" class="btn-white">
+                <i class="fas fa-phone" style="margin-right:8px;"></i>Call a Sports Specialist
+            </a>
+            <a href="mailto:info@stopindia.com" class="btn-ghost">
+                <i class="fas fa-envelope" style="margin-right:8px;"></i>Email an Enquiry
+            </a>
+            <a href="services.html" class="btn-ghost">
+                <i class="fas fa-list" style="margin-right:8px;"></i>Our Services
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ─────────────── FOOTER ─────────────── -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4><img src="https://stopindia.com/wp-content/uploads/2020/09/new.png" alt="STOP India" style="max-width:150px; filter:brightness(0) invert(1);"></h4>
+                <p>Your championship partner for sports and fitness exhibition logistics. Elite-level handling for brands that compete at the highest level since 2012.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="sectors.html">Sectors</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Sports Services</h4>
+                <ul>
+                    <li><a href="#">Equipment Logistics</a></li>
+                    <li><a href="#">Display Installation</a></li>
+                    <li><a href="#">Fitness Machinery</a></li>
+                    <li><a href="#">Rapid Assembly</a></li>
+                    <li><a href="#">Event Coordination</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li class="contact-li"><i class="fas fa-map-marker-alt"></i><span>Corporate Office, Gurgaon, India</span></li>
+                    <li class="contact-li"><i class="fas fa-phone"></i><span>+91 9212133251 / 252</span></li>
+                    <li class="contact-li"><i class="fas fa-envelope"></i><span>info@stopindia.com</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="bottom-footer">
+            <p>&copy; 2012 STOP India. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    /* ── Mobile Menu ── */
+    document.getElementById('hamburger').addEventListener('click', () => {
+        document.getElementById('mainNav').classList.toggle('active');
+    });
+    document.querySelectorAll('.main-nav a').forEach(l =>
+        l.addEventListener('click', () => document.getElementById('mainNav').classList.remove('active'))
+    );
+
+    /* ── Energy Orbs ── */
+    const energyContainer = document.getElementById('energy');
+    const colors = ['#00d4ff', '#ff2e5e', '#00ff88', '#7c3aed'];
+    for (let i = 0; i < 15; i++) {
+        const orb = document.createElement('div');
+        orb.classList.add('energy-orb');
+        const size = Math.random() * 100 + 50;
+        orb.style.cssText = `
+            width: ${size}px;
+            height: ${size}px;
+            left: ${Math.random() * 100}%;
+            top: ${Math.random() * 100}%;
+            background: ${colors[Math.floor(Math.random() * colors.length)]};
+            animation-delay: ${Math.random() * 5}s;
+            animation-duration: ${4 + Math.random() * 6}s;
+        `;
+        energyContainer.appendChild(orb);
+    }
+
+    /* ── Olympic Elements ── */
+    const olympicContainer = document.getElementById('olympicElements');
+    const olympicIcons = ['🥇', '🥈', '🥉', '⭐', '🏅', '🎯'];
+    for (let i = 0; i < 18; i++) {
+        const elem = document.createElement('div');
+        elem.classList.add('olympic-element');
+        elem.textContent = olympicIcons[Math.floor(Math.random() * olympicIcons.length)];
+        elem.style.cssText = `
+            left: ${Math.random() * 100}%;
+            font-size: ${2 + Math.random() * 2}rem;
+            animation-duration: ${14 + Math.random() * 18}s;
+            animation-delay: ${Math.random() * 12}s;
+        `;
+        olympicContainer.appendChild(elem);
+    }
+
+    /* ── Floating Elements ── */
+    const floaterContainer = document.getElementById('floaters');
+    const floatIcons = ['⚡', '🎯', '🏆', '⭐', '💥'];
+    for (let i = 0; i < 20; i++) {
+        const float = document.createElement('div');
+        float.classList.add('float-element');
+        float.textContent = floatIcons[Math.floor(Math.random() * floatIcons.length)];
+        float.style.cssText = `
+            left: ${Math.random() * 100}%;
+            font-size: ${1.5 + Math.random() * 2.5}rem;
+            animation-duration: ${12 + Math.random() * 15}s;
+            animation-delay: ${Math.random() * 10}s;
+        `;
+        floaterContainer.appendChild(float);
+    }
+
+    /* ── Scroll Reveal ── */
+    const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    /* ── FAQ Toggle ── */
+    document.querySelectorAll('.faq-item').forEach(item => {
+        item.querySelector('.faq-q').addEventListener('click', () => {
+            const open = item.classList.contains('open');
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+            if (!open) item.classList.add('open');
+        });
+    });
+
+    /* ── Smooth Scroll ── */
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            const target = document.querySelector(href);
+            if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+        });
+    });
+</script>
+</body>
+</html>
