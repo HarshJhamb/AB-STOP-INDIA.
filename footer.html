@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Airplane Placeholder Footer</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: #f4f4f4;
+}
+
+/* FOOTER */
+.air-footer {
+  position: relative;
+  height: 300px;
+  background: linear-gradient(to top, #0b1c2d, #123a56, #1f5f8b);
+  overflow: hidden;
+  color: #fff;
+}
+
+/* AIRPLANE LAYER */
+.airplanes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* AIRPLANE PLACEHOLDER IMAGE */
+.airplane {
+  position: absolute;
+  width: 260px;
+  height: 150px;
+  opacity: 0.25;
+  animation: fly 45s linear infinite;
+}
+
+.airplane img {
+  width: 100%;
+  height: auto;
+}
+
+/* DIFFERENT FLIGHTS */
+.plane1 {
+  top: 50px;
+  left: -300px;
+  animation-duration: 40s;
+}
+
+.plane2 {
+  top: 120px;
+  left: -350px;
+  transform: scale(1.1);
+  animation-duration: 60s;
+}
+
+.plane3 {
+  top: 25px;
+  left: -250px;
+  transform: scale(0.9);
+  animation-duration: 30s;
+}
+
+/* ANIMATION */
+@keyframes fly {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(160vw);
+  }
+}
+
+/* FOOTER CONTENT */
+.footer-content {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  padding-top: 90px;
+}
+
+.footer-content h2 {
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+
+.footer-content p {
+  font-size: 14px;
+  opacity: 0.85;
+  margin-bottom: 18px;
+}
+
+.footer-links {
+  margin-bottom: 15px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 14px;
+  font-size: 14px;
+  transition: opacity 0.3s;
+}
+
+.footer-links a:hover {
+  opacity: 0.6;
+}
+
+.footer-content span {
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .air-footer {
+    height: 340px;
+  }
+
+  .airplane {
+    width: 180px;
+  }
+
+  .footer-content h2 {
+    font-size: 22px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div style="height:80vh;"></div>
+
+<footer class="air-footer">
+
+  <!-- AIRPLANES -->
+  <div class="airplanes">
+
+    <!-- SVG PLACEHOLDER AIRPLANE -->
+    <div class="airplane plane1">
+            <img src="https://media.istockphoto.com/id/172625801/photo/climbing-airplane-isolated.jpg?s=612x612&w=0&k=20&c=iTxzXZ0JJJKHk1UKgywQ1Bflk6ZEvz_sHdJMf-MfK5s=" alt="Airplane">
+
+    </div>
+
+    
+  </div>
+
+  <!-- FOOTER TEXT -->
+  <div class="footer-content">
+    <h2>STOP India</h2>
+    <p>Exhibition logistics • Worldwide Air Cargo</p>
+
+    <div class="footer-links">
+      <a href="#">Home</a>
+      <a href="#">Services</a>
+      <a href="#">Projects</a>
+      <a href="#">Contact</a>
+    </div>
+
+    <span>© 2026 STOP India. All Rights Reserved.</span>
+  </div>
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customs & Documentation | STOP India - Exhibition Logistics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-navy: #183650;
+            --primary-red: #DC2626;
+            --dark-red: #991B1B;
+            --light-red: #FEE2E2;
+            --primary-cyan: #06B6D4;
+            --light-cyan: #CFFAFE;
+            --dark-cyan: #0E7490;
+            --accent-color: #F59E0B;
+            --light-grey: #f8f9fa;
+            --text-grey: #000000;
+            --white: #ffffff;
+            --transition: all 0.3s ease-in-out;
+            --section-padding: 70px 0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            color: var(--primary-navy);
+            line-height: 1.7;
+            overflow-x: hidden;
+            background-color: var(--white);
+            font-size: 15px;
+        }
+
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; display: block; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-header h2 {
+            font-size: 2.2rem; font-weight: 700;
+            color: var(--primary-navy); margin-bottom: 15px;
+            position: relative; display: inline-block;
+        }
+        .section-header h2::after {
+            content: ''; width: 80px; height: 4px;
+            background: linear-gradient(90deg, var(--primary-red), var(--dark-red));
+            position: absolute; bottom: -10px; left: 50%;
+            transform: translateX(-50%);
+        }
+        .section-header p {
+            color: var(--text-grey); font-size: 0.95rem;
+            max-width: 700px; margin: 20px auto 0; font-weight: 300;
+        }
+
+        /* =========================================
+           HEADER
+           ========================================= */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 20px rgba(24,54,80,0.1);
+            position: sticky; top: 0; z-index: 1000;
+        }
+        .nav-container {
+            display: flex; justify-content: space-between; align-items: center;
+            height: 90px; max-width: 1200px; margin: 0 auto;
+            padding: 0 20px; flex-direction: row-reverse;
+        }
+        .logo-area img { height: 91px; width: auto; object-fit: contain; margin-right: -20px; }
+        .main-nav ul { display: flex; gap: 25px; }
+        .main-nav a {
+            font-weight: 500; font-size: 0.85rem; text-transform: uppercase;
+            color: var(--primary-navy); position: relative; letter-spacing: 0.5px;
+        }
+        .main-nav a::after {
+            content: ''; position: absolute; width: 0; height: 3px;
+            background: linear-gradient(90deg, var(--primary-cyan), var(--dark-cyan));
+            bottom: -5px; left: 0; transition: var(--transition);
+        }
+        .main-nav a:hover::after, .main-nav a.active::after { width: 100%; }
+        .hamburger { display: none; cursor: pointer; font-size: 1.4rem; color: var(--primary-navy); }
+
+        /* =========================================
+           BREADCRUMB
+           ========================================= */
+        .breadcrumb-bar {
+            background: var(--light-grey); padding: 14px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .breadcrumb-bar .container {
+            display: flex; align-items: center;
+            gap: 10px; font-size: 0.82rem; color: #6b7280;
+        }
+        .breadcrumb-bar a { color: var(--primary-navy); font-weight: 500; }
+        .breadcrumb-bar a:hover { color: var(--primary-red); }
+        .breadcrumb-bar .sep { color: #d1d5db; }
+        .breadcrumb-bar .current { color: var(--primary-red); font-weight: 500; }
+
+        /* =========================================
+           HERO
+           ========================================= */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(24,54,80,0.90), rgba(153,27,27,0.78)),
+                        url('https://images.unsplash.com/photo-1568952433726-3896e3881c65?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover; background-position: center;
+            padding: 100px 0; text-align: center; color: var(--white);
+        }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(6,182,212,0.25);
+            border: 1px solid var(--primary-cyan); color: var(--light-cyan);
+            padding: 6px 20px; border-radius: 50px;
+            font-size: 0.78rem; font-weight: 500;
+            letter-spacing: 2px; text-transform: uppercase;
+            margin-bottom: 22px; animation: slideUp 0.5s ease-out;
+        }
+        .hero-section h1 {
+            font-size: 3rem; font-weight: 700;
+            margin-bottom: 20px; animation: slideUp 0.8s ease-out;
+        }
+        .hero-section > .container > p {
+            font-size: 1.05rem; font-weight: 300;
+            max-width: 700px; margin: 0 auto 35px;
+            animation: slideUp 1s ease-out;
+        }
+        .hero-stats {
+            display: flex; justify-content: center;
+            gap: 50px; flex-wrap: wrap;
+            margin-top: 40px; animation: slideUp 1.2s ease-out;
+        }
+        .hero-stat .number {
+            font-size: 2.2rem; font-weight: 700;
+            color: var(--primary-cyan); display: block;
+        }
+        .hero-stat .label {
+            font-size: 0.8rem; font-weight: 400;
+            opacity: 0.85; text-transform: uppercase; letter-spacing: 1px;
+        }
+        @keyframes slideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* =========================================
+           OVERVIEW
+           ========================================= */
+        .overview-section { padding: var(--section-padding); background: var(--white); }
+        .overview-grid {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 60px; align-items: center;
+        }
+        .overview-content h2 {
+            font-size: 2rem; font-weight: 700;
+            color: var(--primary-navy); margin-bottom: 20px; line-height: 1.35;
+        }
+        .overview-content h2 span { color: var(--primary-red); }
+        .overview-content p {
+            color: var(--text-grey); line-height: 1.9;
+            font-size: 0.97rem; margin-bottom: 18px;
+        }
+        .overview-image { position: relative; }
+        .overview-image img {
+            width: 100%; border-radius: 16px;
+            box-shadow: 0 25px 60px rgba(220,38,38,0.18);
+        }
+        .floating-card {
+            position: absolute; bottom: -25px; left: -25px;
+            background: var(--white); border-radius: 12px;
+            padding: 18px 22px;
+            box-shadow: 0 15px 40px rgba(24,54,80,0.15);
+            display: flex; align-items: center; gap: 14px; min-width: 240px;
+        }
+        .fc-icon {
+            width: 48px; height: 48px;
+            background: linear-gradient(135deg, var(--primary-cyan), var(--dark-cyan));
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            color: var(--white); font-size: 1.3rem; flex-shrink: 0;
+        }
+        .fc-val { font-size: 1.4rem; font-weight: 700; color: var(--primary-navy); line-height: 1; }
+        .fc-label { font-size: 0.75rem; color: #6b7280; margin-top: 3px; }
+
+        /* =========================================
+           SERVICES CARDS
+           ========================================= */
+        .services-section {
+            padding: var(--section-padding);
+            background: linear-gradient(135deg, var(--light-cyan) 0%, var(--white) 100%);
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 28px; margin-top: 50px;
+        }
+        .service-card {
+            background: var(--white); padding: 38px 30px; border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(24,54,80,0.08);
+            transition: var(--transition);
+            border-top: 5px solid var(--primary-red);
+            position: relative; overflow: hidden;
+        }
+        .service-card::before {
+            content: ''; position: absolute; top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(6,182,212,0.08), transparent);
+            transition: left 0.6s ease;
+        }
+        .service-card:hover::before { left: 100%; }
+        .service-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 50px rgba(220,38,38,0.18);
+        }
+        .service-icon {
+            width: 75px; height: 75px;
+            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+            color: var(--white); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 22px; font-size: 1.9rem;
+            transition: var(--transition); position: relative; z-index: 1;
+        }
+        .service-card:hover .service-icon {
+            transform: scale(1.15) rotate(-5deg);
+            box-shadow: 0 10px 25px rgba(220,38,38,0.3);
+        }
+        .service-card h3 {
+            font-size: 1.25rem; margin-bottom: 14px;
+            color: var(--primary-navy); font-weight: 600;
+            position: relative; z-index: 1;
+        }
+        .service-card p {
+            color: var(--text-grey); line-height: 1.8;
+            font-size: 0.93rem; margin-bottom: 18px;
+            position: relative; z-index: 1;
+        }
+        .service-features {
+            margin-top: 18px; padding-top: 18px;
+            border-top: 2px solid var(--light-cyan);
+            position: relative; z-index: 1;
+        }
+        .service-features li {
+            display: flex; align-items: center;
+            margin-bottom: 9px; font-size: 0.88rem; color: var(--text-grey);
+        }
+        .service-features i { color: var(--primary-cyan); margin-right: 10px; font-size: 1rem; }
+
+        /* =========================================
+           ATA CARNET EXPLAINER (Accordion Steps)
+           ========================================= */
+        .carnet-section { padding: var(--section-padding); background: var(--white); }
+
+        .carnet-grid {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 60px; align-items: start;
+        }
+
+        .carnet-intro h3 {
+            font-size: 1.9rem; font-weight: 700;
+            color: var(--primary-navy); margin-bottom: 20px; line-height: 1.35;
+        }
+        .carnet-intro p {
+            color: var(--text-grey); line-height: 1.9;
+            font-size: 0.96rem; margin-bottom: 16px;
+        }
+
+        .carnet-highlight {
+            background: linear-gradient(135deg, var(--primary-navy), #0f2941);
+            color: var(--white); border-radius: 14px;
+            padding: 30px; margin-top: 25px;
+        }
+        .carnet-highlight h5 {
+            font-size: 1rem; font-weight: 600;
+            margin-bottom: 18px; color: var(--primary-cyan);
+            text-transform: uppercase; letter-spacing: 1px;
+        }
+        .carnet-highlight li {
+            display: flex; align-items: flex-start;
+            margin-bottom: 12px; font-size: 0.9rem; font-weight: 300;
+        }
+        .carnet-highlight i { color: var(--primary-cyan); margin-right: 12px; margin-top: 4px; flex-shrink: 0; }
+
+       
+        .step-item {
+            background: var(--white); border-radius: 10px;
+            margin-bottom: 12px;
+            box-shadow: 0 5px 15px rgba(24,54,80,0.07);
+            overflow: hidden;
+            border-left: 4px solid var(--primary-red);
+        }
+        .step-header {
+            padding: 18px 22px;
+            display: flex; align-items: center; gap: 16px;
+            cursor: pointer; transition: var(--transition);
+        }
+        .step-header:hover { background: var(--light-grey); }
+        .step-num {
+            width: 36px; height: 36px; flex-shrink: 0;
+            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+            color: var(--white); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 0.9rem;
+        }
+        .step-title {
+            flex: 1; font-weight: 600;
+            color: var(--primary-navy); font-size: 0.95rem;
+        }
+        .step-toggle { color: var(--primary-cyan); transition: var(--transition); font-size: 1rem; }
+        .step-item.open .step-toggle { transform: rotate(180deg); color: var(--primary-red); }
+        .step-body {
+            max-height: 0; overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+        .step-item.open .step-body { max-height: 200px; }
+        .step-body p {
+            padding: 0 22px 20px 74px;
+            color: var(--text-grey); font-size: 0.91rem; line-height: 1.8;
+        }
+
+        /* =========================================
+           COUNTRY COVERAGE BAND
+           ========================================= */
+        .coverage-band {
+            padding: 55px 0;
+            background: linear-gradient(135deg, var(--light-red) 0%, var(--white) 100%);
+        }
+        .coverage-inner {
+            display: flex; align-items: center;
+            gap: 60px; flex-wrap: wrap;
+        }
+        .coverage-text { flex: 1; min-width: 280px; }
+        .coverage-text h3 {
+            font-size: 1.8rem; font-weight: 700;
+            color: var(--primary-navy); margin-bottom: 16px;
+        }
+        .coverage-text p {
+            color: var(--text-grey); font-size: 0.96rem;
+            line-height: 1.9; margin-bottom: 14px;
+        }
+        .coverage-regions {
+            display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px;
+        }
+        .region-tag {
+            background: var(--primary-navy); color: var(--white);
+            padding: 7px 16px; border-radius: 50px;
+            font-size: 0.8rem; font-weight: 500;
+        }
+        .coverage-stats {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 18px; min-width: 260px;
+        }
+        .cov-stat {
+            background: var(--white); border-radius: 12px;
+            padding: 22px; text-align: center;
+            box-shadow: 0 8px 20px rgba(24,54,80,0.08);
+            border-top: 3px solid var(--primary-cyan);
+        }
+        .cov-stat .cov-num {
+            font-size: 2rem; font-weight: 700;
+            color: var(--primary-navy); display: block;
+        }
+        .cov-stat .cov-label {
+            font-size: 0.78rem; color: #6b7280;
+            margin-top: 4px; font-weight: 400;
+        }
+
+        /* =========================================
+           DETAIL SECTIONS
+           ========================================= */
+        .detail-section {
+            padding: var(--section-padding);
+            background: linear-gradient(135deg, var(--light-cyan) 0%, var(--white) 100%);
+        }
+        .detail-grid {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 55px; align-items: center; margin-bottom: 70px;
+        }
+        .detail-grid.reverse { direction: rtl; }
+        .detail-grid.reverse > * { direction: ltr; }
+        .detail-grid:last-child { margin-bottom: 0; }
+        .detail-content h3 {
+            font-size: 1.9rem; margin-bottom: 20px;
+            color: var(--primary-navy); font-weight: 700; line-height: 1.35;
+        }
+        .detail-content p {
+            margin-bottom: 16px; color: var(--text-grey);
+            line-height: 1.9; font-size: 0.96rem;
+        }
+        .detail-points {
+            background: var(--white); padding: 28px; border-radius: 12px;
+            margin-top: 22px; box-shadow: 0 10px 25px rgba(24,54,80,0.08);
+        }
+        .detail-points h5 {
+            color: var(--primary-navy); margin-bottom: 16px;
+            font-size: 1.05rem; font-weight: 600;
+        }
+        .detail-points li {
+            display: flex; align-items: flex-start;
+            margin-bottom: 11px; font-size: 0.93rem; color: var(--text-grey);
+        }
+        .detail-points i { color: var(--primary-red); margin-right: 12px; margin-top: 4px; flex-shrink: 0; }
+        .detail-image img {
+            width: 100%; border-radius: 14px;
+            box-shadow: 0 20px 50px rgba(24,54,80,0.14);
+        }
+
+        /* =========================================
+           STATS BAND
+           ========================================= */
+        .stats-band {
+            padding: 60px 0;
+            background: linear-gradient(135deg, var(--primary-navy), #0f2941);
+            color: var(--white);
+        }
+        .stats-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px; text-align: center;
+        }
+        .stat-item .stat-num {
+            font-size: 2.8rem; font-weight: 700;
+            color: var(--primary-cyan); display: block;
+        }
+        .stat-item .stat-desc { font-size: 0.88rem; font-weight: 300; opacity: 0.85; margin-top: 6px; }
+
+        /* =========================================
+           WHY CHOOSE
+           ========================================= */
+        .why-section { padding: var(--section-padding); background: var(--white); }
+        .why-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 25px; margin-top: 50px;
+        }
+        .why-card {
+            background: var(--white); padding: 30px; border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(24,54,80,0.08);
+            transition: var(--transition); border-left: 5px solid var(--primary-cyan);
+        }
+        .why-card:hover { transform: translateY(-8px); box-shadow: 0 15px 40px rgba(6,182,212,0.2); }
+        .why-icon {
+            width: 60px; height: 60px;
+            background: linear-gradient(135deg, var(--primary-cyan), var(--dark-cyan));
+            color: var(--white); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 15px; font-size: 1.6rem;
+        }
+        .why-card h4 { font-size: 1.05rem; margin-bottom: 12px; color: var(--primary-navy); font-weight: 600; }
+        .why-card p { color: var(--text-grey); line-height: 1.7; font-size: 0.9rem; }
+
+        /* =========================================
+           COMPARISON TABLE
+           ========================================= */
+        .comparison-section {
+            padding: var(--section-padding);
+            background: linear-gradient(135deg, var(--light-red) 0%, var(--white) 100%);
+        }
+        .comparison-table {
+            width: 100%; border-collapse: collapse; background: var(--white);
+            box-shadow: 0 10px 30px rgba(24,54,80,0.1);
+            border-radius: 12px; overflow: hidden; margin-top: 40px;
+        }
+        .comparison-table th {
+            background: linear-gradient(135deg, var(--primary-navy), #0f2941);
+            color: var(--white); padding: 18px 20px;
+            text-align: left; font-weight: 600; font-size: 0.95rem;
+        }
+        .comparison-table td {
+            padding: 16px 20px; border-bottom: 1px solid var(--light-cyan);
+            color: var(--text-grey); font-size: 0.93rem;
+        }
+        .comparison-table tr:hover { background-color: var(--light-cyan); }
+        .comparison-table .feature-name { font-weight: 600; color: var(--primary-navy); width: 30%; }
+        .check-yes { color: var(--primary-cyan); font-size: 1.2rem; font-weight: bold; }
+        .check-no { color: #9ca3af; font-size: 1.2rem; }
+        .check-partial { color: var(--accent-color); font-size: 1.2rem; }
+
+        /* =========================================
+           FAQ
+           ========================================= */
+        .faq-section { padding: var(--section-padding); background: var(--white); }
+        .faq-list { margin-top: 45px; max-width: 850px; margin-left: auto; margin-right: auto; }
+        .faq-item {
+            background: var(--white); border-radius: 10px; margin-bottom: 14px;
+            box-shadow: 0 5px 15px rgba(24,54,80,0.07); overflow: hidden;
+            border-left: 4px solid var(--primary-cyan);
+        }
+        .faq-question {
+            padding: 20px 22px; display: flex; justify-content: space-between;
+            align-items: center; cursor: pointer; font-weight: 600;
+            color: var(--primary-navy); font-size: 0.96rem; transition: var(--transition);
+        }
+        .faq-question:hover { color: var(--primary-red); }
+        .faq-question i { color: var(--primary-cyan); font-size: 1.1rem; transition: var(--transition); }
+        .faq-item.open .faq-question i { transform: rotate(180deg); color: var(--primary-red); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+        .faq-item.open .faq-answer { max-height: 300px; }
+        .faq-answer p {
+            padding: 0 22px 20px; color: var(--text-grey);
+            font-size: 0.92rem; line-height: 1.8;
+        }
+
+        /* =========================================
+           CTA
+           ========================================= */
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--dark-red) 100%);
+            color: var(--white); text-align: center;
+        }
+        .cta-section h2 { font-size: 2.4rem; margin-bottom: 20px; font-weight: 700; }
+        .cta-section p {
+            font-size: 1.02rem; margin-bottom: 35px;
+            max-width: 700px; margin-left: auto; margin-right: auto; font-weight: 300;
+        }
+        .cta-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+        .btn-light {
+            background: var(--white); color: var(--primary-red);
+            padding: 14px 35px; border-radius: 50px; font-weight: 600;
+            text-transform: uppercase; transition: var(--transition);
+            border: 2px solid var(--white); font-size: 0.85rem; letter-spacing: 0.5px;
+        }
+        .btn-light:hover { background: transparent; color: var(--white); }
+
+        /* =========================================
+           FOOTER
+           ========================================= */
+        footer {
+            background: linear-gradient(135deg, var(--primary-navy), #0f2941);
+            color: #E3F2FD; padding-top: 60px;
+        }
+        .footer-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 35px; margin-bottom: 45px;
+        }
+        .footer-col h4 {
+            color: var(--white); font-size: 1.1rem; margin-bottom: 20px;
+            border-left: 3px solid var(--primary-cyan); padding-left: 15px; font-weight: 600;
+        }
+        .footer-about p { font-size: 0.9rem; margin-bottom: 16px; line-height: 1.7; font-weight: 300; }
+        .footer-links ul li { margin-bottom: 10px; }
+        .footer-links ul li a { color: #E3F2FD; font-size: 0.9rem; font-weight: 300; transition: 0.3s; }
+        .footer-links ul li a:hover { color: var(--primary-cyan); padding-left: 8px; }
+        .footer-contact li { display: flex; margin-bottom: 13px; align-items: flex-start; font-size: 0.9rem; font-weight: 300; }
+        .footer-contact i { color: var(--primary-cyan); margin-right: 12px; margin-top: 5px; }
+        .bottom-footer {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding: 22px 0; text-align: center; font-size: 0.85rem; font-weight: 300;
+        }
+
+        /* =========================================
+           RESPONSIVE
+           ========================================= */
+        @media (max-width: 992px) {
+            .hero-section h1 { font-size: 2.2rem; }
+            .overview-grid, .detail-grid, .carnet-grid { grid-template-columns: 1fr; gap: 35px; }
+            .detail-grid.reverse { direction: ltr; }
+            .floating-card { position: relative; bottom: auto; left: auto; margin-top: 20px; }
+            .coverage-inner { flex-direction: column; }
+        }
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+            .nav-container { flex-direction: row; }
+            .main-nav {
+                position: absolute; top: 90px; left: -100%; width: 100%;
+                background: var(--white); padding: 20px;
+                box-shadow: 0 5px 10px rgba(24,54,80,0.1); transition: 0.4s;
+            }
+            .main-nav.active { left: 0; }
+            .main-nav ul { flex-direction: column; text-align: center; gap: 15px; }
+            .hero-section h1 { font-size: 1.8rem; }
+            .section-header h2 { font-size: 1.8rem; }
+            .hero-stats { gap: 30px; }
+            .cta-section h2 { font-size: 1.8rem; }
+            .cta-buttons { flex-direction: column; }
+            .cta-buttons .btn-light { width: 100%; text-align: center; }
+            .coverage-stats { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <div class="logo-area">
+                <a href="index.html">
+                    <img src="https://stopindia.com/wp-content/uploads/2020/09/new.png" alt="STOP India Logo">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="sectors.html">Sectors</a></li>
+                    <li><a href="Gallery.html">Gallery</a></li>
+                    <li><a href="support.html">Support</a></li>
+                    <li><a href="carrer.html">Career</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger"><i class="fas fa-bars"></i></div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-bar">
+        <div class="container">
+            <a href="index.html">Home</a>
+            <span class="sep">›</span>
+            <a href="services.html">Services</a>
+            <span class="sep">›</span>
+            <span class="current">Customs & Documentation</span>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-badge"><i class="fas fa-file-contract" style="margin-right:8px;"></i> Regulatory Expertise</div>
+            <h1>Customs & Documentation</h1>
+            <p>Expert handling of ATA Carnets, temporary import permits, and complex international customs procedures — ensuring your exhibition cargo crosses every border without delays, duties, or disruption.</p>
+            <div class="cta-buttons" style="margin-top:30px;">
+                <a href="tel:+919212133251" class="btn-light">Speak to a Customs Expert</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="number">50+</span>
+                    <span class="label">Countries Handled</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="number">100%</span>
+                    <span class="label">Compliance Record</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="number">25+</span>
+                    <span class="label">Years Experience</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="number">Zero</span>
+                    <span class="label">Missed Deadlines</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview -->
+    <section class="overview-section" id="overview">
+        <div class="container">
+            <div class="overview-grid">
+                <div class="overview-content">
+                    <h2>Customs Is Where <span>Exhibitions Are Won or Lost.</span></h2>
+                    <p>Your exhibit stand, product samples, and display materials can represent years of investment. A single customs error — a missing document, an incorrect HS code, or a delayed ATA Carnet endorsement — can hold your cargo in a bonded warehouse while your competitors are setting up on the show floor.</p>
+                    <p>STOP India's customs specialists have navigated the world's most demanding regulatory environments for over 25 years. We handle the full documentation lifecycle for every shipment — from pre-shipment preparation and ATA Carnet application through to border clearance, temporary import management, and final re-export discharge.</p>
+                    <p>Our team works proactively, anticipating country-specific requirements before they become problems, so your cargo moves when it needs to — every time.</p>
+                    <a href="#services" style="background: linear-gradient(135deg, var(--primary-red), var(--dark-red)); color: white; padding: 12px 30px; border-radius: 50px; font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; display:inline-block; margin-top:10px;">Our Customs Services</a>
+                </div>
+                <div class="overview-image">
+                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1770&auto=format&fit=crop" alt="Customs documentation and paperwork">
+                    <div class="floating-card">
+                        <div class="fc-icon"><i class="fas fa-passport"></i></div>
+                        <div class="fc-text">
+                            <div class="fc-val">ATA Carnet</div>
+                            <div class="fc-label">Certified handlers since 1999</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Cards -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Customs & Documentation Services</h2>
+                <p>End-to-end handling of every regulatory requirement your international exhibition shipment demands.</p>
+            </div>
+            <div class="services-grid">
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-passport"></i></div>
+                    <h3>ATA Carnet Management</h3>
+                    <p>We handle the full ATA Carnet cycle — from application and preparation through outbound endorsement, transit stamps, and re-exportation discharge — protecting you from unexpected duties.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Carnet application & preparation</li>
+                        <li><i class="fas fa-check-circle"></i> Border endorsement coordination</li>
+                        <li><i class="fas fa-check-circle"></i> Re-exportation discharge management</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-clock"></i></div>
+                    <h3>Temporary Import Permits</h3>
+                    <p>Where ATA Carnet is unavailable, we secure Temporary Import Permits (TIPs) and manage duty bonds, guarantees, and re-export compliance for every destination country.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Country-specific TIP applications</li>
+                        <li><i class="fas fa-check-circle"></i> Duty bond & guarantee arrangement</li>
+                        <li><i class="fas fa-check-circle"></i> Re-export compliance monitoring</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-file-alt"></i></div>
+                    <h3>Export Documentation</h3>
+                    <p>Precise preparation of all outbound export documents — commercial invoices, packing lists, certificates of origin, and shipping bills — accurately completed to avoid rejection at origin customs.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Commercial invoice preparation</li>
+                        <li><i class="fas fa-check-circle"></i> Certificate of origin sourcing</li>
+                        <li><i class="fas fa-check-circle"></i> HS code classification support</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-search"></i></div>
+                    <h3>Import Customs Clearance</h3>
+                    <p>At every destination, we arrange customs clearance through established local partners — filing import declarations, paying applicable duties where required, and securing release before your move-in date.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Import declaration filing</li>
+                        <li><i class="fas fa-check-circle"></i> Duty & tax calculation</li>
+                        <li><i class="fas fa-check-circle"></i> Customs release coordination</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-undo-alt"></i></div>
+                    <h3>Re-Export & Return Customs</h3>
+                    <p>Closing the customs loop after the show is as important as opening it. We manage all re-export formalities, carnet discharges, and return import clearances to ensure no duties become permanently payable.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Re-export declaration filing</li>
+                        <li><i class="fas fa-check-circle"></i> Carnet discharge at exit border</li>
+                        <li><i class="fas fa-check-circle"></i> Return import documentation</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-balance-scale"></i></div>
+                    <h3>Regulatory Compliance Advisory</h3>
+                    <p>Different countries apply different rules to exhibition goods. We provide pre-shipment advisory on restricted items, country-specific labelling requirements, phytosanitary certificates, and prohibited goods lists.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Prohibited & restricted goods review</li>
+                        <li><i class="fas fa-check-circle"></i> Labelling & marking compliance</li>
+                        <li><i class="fas fa-check-circle"></i> Phytosanitary & CITES certificates</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ATA Carnet Deep Dive -->
+    <section class="carnet-section" id="carnet">
+        <div class="container">
+            <div class="section-header">
+                <h2>The ATA Carnet Explained</h2>
+                <p>The international passport for your exhibition goods — and why expert handling matters at every stage.</p>
+            </div>
+
+            <div class="carnet-grid">
+                <div class="carnet-intro">
+                    <h3>What Is an ATA Carnet and Why Does It Matter?</h3>
+                    <p>The ATA Carnet (Admission Temporaire / Temporary Admission) is an international customs document that allows goods to be temporarily exported and re-imported across over 80 countries without paying customs duties or taxes at each border.</p>
+                    <p>For exhibitors, it is the single most important customs tool — allowing you to take your stand, products, and promotional materials overseas and bring them back duty-free, provided the carnet is correctly managed at every stage.</p>
+                    <p>However, a single missed endorsement, an incorrect goods description, or a late re-export can result in the full duty and tax value of your cargo becoming payable — sometimes running into lakhs or crores of rupees.</p>
+
+                    <div class="carnet-highlight">
+                        <h5><i class="fas fa-exclamation-triangle" style="margin-right:8px;"></i> Common ATA Carnet Mistakes We Prevent</h5>
+                        <ul>
+                            <li><i class="fas fa-times-circle"></i> Missing or incomplete border endorsements at exit</li>
+                            <li><i class="fas fa-times-circle"></i> Goods descriptions not matching the carnet list</li>
+                            <li><i class="fas fa-times-circle"></i> Re-export after the carnet validity deadline</li>
+                            <li><i class="fas fa-times-circle"></i> Failure to account for goods sold or given away at the show</li>
+                            <li><i class="fas fa-times-circle"></i> Transit stamps missed at intermediate country borders</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <p style="font-weight:600; color:var(--primary-navy); margin-bottom:20px; font-size:1.05rem;">How We Manage Your ATA Carnet — Step by Step</p>
+                    <div class="steps-accordion">
+
+                        <div class="step-item open">
+                            <div class="step-header">
+                                <div class="step-num">1</div>
+                                <div class="step-title">Goods List Preparation</div>
+                                <i class="fas fa-chevron-down step-toggle"></i>
+                            </div>
+                            <div class="step-body">
+                                <p>We work with your team to compile a detailed, accurate goods list — including descriptions, quantities, values, and weights — that matches exactly what will be physically presented at each border crossing.</p>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-header">
+                                <div class="step-num">2</div>
+                                <div class="step-title">Carnet Application & Issuance</div>
+                                <i class="fas fa-chevron-down step-toggle"></i>
+                            </div>
+                            <div class="step-body">
+                                <p>We coordinate with the issuing chamber of commerce (such as FICCI or ICC India) to prepare and issue the ATA Carnet in time for your departure, including arranging any required security deposit or guarantee bond.</p>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-header">
+                                <div class="step-num">3</div>
+                                <div class="step-title">Outbound Export Endorsement</div>
+                                <i class="fas fa-chevron-down step-toggle"></i>
+                            </div>
+                            <div class="step-body">
+                                <p>At the port of exit in India, our customs team presents the carnet to authorities, obtains the required export endorsement, and ensures all counterfoils are correctly stamped and retained for the return journey.</p>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-header">
+                                <div class="step-num">4</div>
+                                <div class="step-title">Destination Import Endorsement</div>
+                                <i class="fas fa-chevron-down step-toggle"></i>
+                            </div>
+                            <div class="step-body">
+                                <p>Our destination partner presents the carnet at the country of entry, secures the temporary import endorsement, and manages any additional country-specific requirements for exhibitors arriving under carnet cover.</p>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-header">
+                                <div class="step-num">5</div>
+                                <div class="step-title">Transit Stamps (if applicable)</div>
+                                <i class="fas fa-chevron-down step-toggle"></i>
+                            </div>
+                            <div class="step-body">
+                                <p>For shipments transiting through intermediate countries, we ensure every transit border correctly stamps the appropriate carnet counterfoil — a step often overlooked that can trigger duty claims later.</p>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-header">
+                                <div class="step-num">6</div>
+                                <div class="step-title">Re-Export Discharge & Closure</div>
+                                <i class="fas fa-chevron-down step-toggle"></i>
+                            </div>
+                            <div class="step-body">
+                                <p>After the show, we manage the re-export endorsement at the destination country's exit port and the corresponding re-import at the Indian border — formally discharging the carnet and protecting you from any residual duty liability.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coverage Band -->
+    <div class="coverage-band">
+        <div class="container">
+            <div class="coverage-inner">
+                <div class="coverage-text">
+                    <h3>Global Customs Coverage, Local Expertise</h3>
+                    <p>Customs regulations vary dramatically between countries — what works at Frankfurt Messe is different from what's required at the Dubai World Trade Centre or the Shanghai National Exhibition & Convention Center. Our network of trusted customs partners at every major exhibition hub means you get locally expert handling, everywhere.</p>
+                    <p>From straightforward ATA Carnet countries in Europe to complex temporary import regimes in the Middle East, South-East Asia, and Africa, we have the procedures, the contacts, and the experience to deliver clearance on time.</p>
+                    <div class="coverage-regions">
+                        <span class="region-tag">Europe</span>
+                        <span class="region-tag">Middle East</span>
+                        <span class="region-tag">South-East Asia</span>
+                        <span class="region-tag">China</span>
+                        <span class="region-tag">North America</span>
+                        <span class="region-tag">Africa</span>
+                        <span class="region-tag">South Asia</span>
+                        <span class="region-tag">CIS Countries</span>
+                    </div>
+                </div>
+                <div class="coverage-stats">
+                    <div class="cov-stat">
+                        <span class="cov-num">80+</span>
+                        <span class="cov-label">ATA Carnet Countries</span>
+                    </div>
+                    <div class="cov-stat">
+                        <span class="cov-num">50+</span>
+                        <span class="cov-label">Countries Served</span>
+                    </div>
+                    <div class="cov-stat">
+                        <span class="cov-num">100+</span>
+                        <span class="cov-label">Major Venues Covered</span>
+                    </div>
+                    <div class="cov-stat">
+                        <span class="cov-num">25+</span>
+                        <span class="cov-label">Years of Expertise</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detail Sections -->
+    <section class="detail-section" id="detail">
+        <div class="container">
+
+            <div class="detail-grid">
+                <div class="detail-content">
+                    <h3>Temporary Imports Without an ATA Carnet</h3>
+                    <p>Not every country accepts the ATA Carnet, and not every exhibitor has time to obtain one before their first international show. In these cases, a Temporary Import Permit (TIP) or a customs bond arrangement provides an alternative route for duty-free temporary admission of exhibition goods.</p>
+                    <p>Navigating TIP procedures requires detailed knowledge of local customs law, the right local customs broker, and flawless documentation. STOP India's established partner network handles this across even the most complex destinations — from certain African markets to some Asian countries where carnet coverage is limited.</p>
+                    <div class="detail-points">
+                        <h5>Our Temporary Import Handling Includes:</h5>
+                        <ul>
+                            <li><i class="fas fa-check-square"></i> Assessment of best customs route per destination</li>
+                            <li><i class="fas fa-check-square"></i> TIP application with local customs authorities</li>
+                            <li><i class="fas fa-check-square"></i> Duty bond or guarantee arrangement where required</li>
+                            <li><i class="fas fa-check-square"></i> Full compliance with re-export timelines and conditions</li>
+                            <li><i class="fas fa-check-square"></i> Coordination with local customs broker at destination</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="detail-image">
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1772&auto=format&fit=crop" alt="Customs clearance documentation">
+                </div>
+            </div>
+
+            <div class="detail-grid reverse">
+                <div class="detail-content">
+                    <h3>Pre-Shipment Advisory That Prevents Problems</h3>
+                    <p>The best customs clearance is the one that never hits a problem. Our team conducts a thorough pre-shipment review of every consignment — identifying potential issues before your goods leave India so they can be resolved without time pressure at the border.</p>
+                    <p>This includes checking restricted and prohibited goods lists for the destination country, verifying labelling and marking requirements, and identifying items that may require additional certificates such as phytosanitary clearances or CITES documentation for biological samples or wooden crates.</p>
+                    <div class="detail-points">
+                        <h5>Pre-Shipment Review Covers:</h5>
+                        <ul>
+                            <li><i class="fas fa-check-square"></i> Restricted & prohibited goods screening</li>
+                            <li><i class="fas fa-check-square"></i> Country-specific labelling & marking requirements</li>
+                            <li><i class="fas fa-check-square"></i> ISPM-15 wooden packing compliance (heat treatment)</li>
+                            <li><i class="fas fa-check-square"></i> Phytosanitary & fumigation certificate requirements</li>
+                            <li><i class="fas fa-check-square"></i> CITES documentation for relevant materials</li>
+                            <li><i class="fas fa-check-square"></i> HS code verification & tariff classification review</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="detail-image">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1770&auto=format&fit=crop" alt="Pre-shipment advisory and review">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Stats Band -->
+    <div class="stats-band">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-num">1,000+</span>
+                    <span class="stat-desc">Customs Clearances Completed</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">50+</span>
+                    <span class="stat-desc">Countries Regularly Handled</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">100%</span>
+                    <span class="stat-desc">ATA Carnet Compliance Rate</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">25+</span>
+                    <span class="stat-desc">Years of Customs Expertise</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Why Choose -->
+    <section class="why-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Trust STOP India with Your Customs?</h2>
+                <p>What separates a specialist exhibition customs team from a general freight forwarder.</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon"><i class="fas fa-user-graduate"></i></div>
+                    <h4>Exhibition-Specialist Expertise</h4>
+                    <p>We focus exclusively on exhibition logistics. Our customs team understands the specific temporary admission rules, ATA Carnet requirements, and country-by-country nuances that a general forwarder often doesn't.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i class="fas fa-network-wired"></i></div>
+                    <h4>Trusted Local Partners Worldwide</h4>
+                    <p>We work with established, vetted customs agents at every major exhibition destination. These are not last-minute bookings — they are long-term relationships built on shared standards of reliability and accuracy.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i class="fas fa-hourglass-half"></i></div>
+                    <h4>Deadline-Driven Operations</h4>
+                    <p>Exhibitions have immovable deadlines. Our team plans customs timelines backwards from your move-in date, building in buffers and escalation paths to ensure clearance is never the reason you miss your slot.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h4>Full Duty Protection</h4>
+                    <p>Every carnet and TIP we manage is tracked through to final discharge. We don't close a file until the carnet is formally discharged — protecting you from retrospective duty claims months after the show.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i class="fas fa-comments"></i></div>
+                    <h4>Proactive Communication</h4>
+                    <p>We keep you informed at every customs milestone — from outbound endorsement through destination clearance to re-export discharge — with documentation copies available on request throughout.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h4>Problem-Solving Culture</h4>
+                    <p>When customs authorities raise unexpected queries — as they sometimes do — our team has the experience and the local contacts to respond swiftly with the right documentation, keeping delays to an absolute minimum.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="comparison-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>How Our Customs Service Compares</h2>
+                <p>Specialist exhibition customs handling versus generic freight forwarding — the difference is significant.</p>
+            </div>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Capability</th>
+                        <th>STOP India</th>
+                        <th>Generic Freight Forwarder</th>
+                        <th>Self-Managed</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="feature-name"><i class="fas fa-check-circle"></i> ATA Carnet Full Lifecycle</td>
+                        <td><span class="check-yes">✓</span></td>
+                        <td><span class="check-partial">~</span></td>
+                        <td><span class="check-no">✗</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name"><i class="fas fa-check-circle"></i> Temporary Import Permits</td>
+                        <td><span class="check-yes">✓</span></td>
+                        <td><span class="check-partial">~</span></td>
+                        <td><span class="check-no">✗</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name"><i class="fas fa-check-circle"></i> Pre-Shipment Compliance Review</td>
+                        <td><span class="check-yes">✓</span></td>
+                        <td><span class="check-no">✗</span></td>
+                        <td><span class="check-no">✗</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name"><i class="fas fa-check-circle"></i> Exhibition-Specific HS Codes</td>
+                        <td><span class="check-yes">✓</span></td>
+                        <td><span class="check-partial">~</span></td>
+                        <td><span class="check-no">✗</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name"><i class="fas fa-check-circle"></i> Re-Export Discharge Tracking</td>
+                        <td><span class="check-yes">✓</span></td>
+                        <td><span class="check-no">✗</span></td>
+                        <td><span class="check-no">✗</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name"><i class="fas fa-check-circle"></i> 50+ Country Coverage</td>
+                        <td><span class="check-yes">✓</span></td>
+                        <td><span class="check-partial">~</span></td>
+                        <td><span class="check-no">✗</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name"><i class="fas fa-check-circle"></i> On-Site Customs Liaison</td>
+                        <td><span class="check-yes">✓</span></td>
+                        <td><span class="check-no">✗</span></td>
+                        <td><span class="check-no">✗</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name"><i class="fas fa-check-circle"></i> Dedicated Exhibition Team</td>
+                        <td><span class="check-yes">✓</span></td>
+                        <td><span class="check-no">✗</span></td>
+                        <td><span class="check-no">✗</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Customs & Documentation — FAQs</h2>
+                <p>Answers to the questions exhibitors ask most frequently about international customs procedures.</p>
+            </div>
+            <div class="faq-list">
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How far in advance should I apply for an ATA Carnet?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We recommend starting the ATA Carnet process at least 3 to 4 weeks before your planned shipment date. This allows time to compile the accurate goods list, make any corrections, obtain the carnet from the issuing chamber, and arrange the security deposit or guarantee. For first-time applicants or complex goods lists, allow additional time. Contact us as soon as your exhibition is confirmed.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What goods cannot travel under an ATA Carnet?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>ATA Carnets are designed for goods intended for re-export — they cannot be used for consumable items (including food, printed brochures intended for distribution, promotional giveaways, or goods intended to be sold at the show). Perishables, postal traffic, and goods to be processed or repaired are also excluded. We review your full goods list at the outset to identify which items can travel under the carnet and which require alternative customs treatment.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What happens if some goods are sold or given away at the show?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Goods listed on an ATA Carnet that are not re-exported become liable for import duty and taxes in the destination country. If you plan to sell or distribute goods at the show, we separate these from the carnet inventory before departure and arrange appropriate commercial import documentation for those items. This requires careful pre-planning — inform us at the briefing stage of anything you intend to leave behind.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can you handle customs for countries that don't accept ATA Carnets?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes. For countries outside the ATA Carnet system, we arrange Temporary Import Permits through our local customs partners. The process and documentation requirements vary significantly by country, which is why early engagement with our team is essential. We have handled temporary imports in markets including Saudi Arabia, certain African nations, and other countries with complex admission requirements for exhibition goods.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What is ISPM-15 and does it affect my exhibition shipment?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>ISPM-15 (International Standards for Phytosanitary Measures) is an international regulation requiring wooden packaging materials — including crates, pallets, and dunnage — used in international trade to be heat-treated or fumigated and marked with the IPPC stamp. Most countries enforce this for exhibition shipments. We check your packing materials for ISPM-15 compliance during our pre-shipment review and arrange treatment if required, preventing costly holds at destination borders.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How do I know my ATA Carnet has been properly discharged after the show?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We track every carnet from issuance through to final discharge. Once the goods have been re-exported and the corresponding re-import in India has been completed, we obtain and retain copies of all endorsed counterfoils. We send you a formal discharge confirmation and retain the file for a minimum period in line with carnet validity. You will never be left uncertain about whether your carnet obligations have been fully met.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Exhibit Internationally With Confidence?</h2>
+            <p>Let STOP India's customs specialists handle every document, permit, and border formality — so your cargo travels freely and you focus on your show.</p>
+            <div class="cta-buttons">
+                <a href="tel:+919212133251" class="btn-light">Call Our Customs Team</a>
+                <a href="mailto:info@stopindia.com" class="btn-light">Email Inquiry</a>
+                <a href="services.html" class="btn-light">All Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <h4><img src="https://stopindia.com/wp-content/uploads/2020/09/new.png" alt="STOP India" style="max-width:150px; filter:brightness(0) invert(1);"></h4>
+                    <p>Your trusted partner for exhibition logistics. Moving people and cargo with zero delays and complete reliability since 2012.</p>
+                </div>
+                <div class="footer-col footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="sectors.html">Sectors</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-links">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="services.html#services">Air Freight</a></li>
+                        <li><a href="services.html#services">Sea Freight</a></li>
+                        <li><a href="services.html#services">Exhibition Handling</a></li>
+                        <li><a href="services.html#services">Customs Clearance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i><span>Corporate Office, Gurgaon, India</span></li>
+                        <li><i class="fas fa-phone"></i><span>+91 9212133251 / 252</span></li>
+                        <li><i class="fas fa-envelope"></i><span>info@stopindia.com</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bottom-footer">
+                <p>&copy; 2012 STOP India. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.main-nav');
+        hamburger.addEventListener('click', () => navMenu.classList.toggle('active'));
+        document.querySelectorAll('.main-nav a').forEach(link => {
+            link.addEventListener('click', () => navMenu.classList.remove('active'));
+        });
+
+        // Accordion Steps (ATA Carnet)
+        document.querySelectorAll('.step-item').forEach(item => {
+            item.querySelector('.step-header').addEventListener('click', () => {
+                const isOpen = item.classList.contains('open');
+                document.querySelectorAll('.step-item').forEach(s => s.classList.remove('open'));
+                if (!isOpen) item.classList.add('open');
+            });
+        });
+
+        // FAQ Toggle
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.querySelector('.faq-question').addEventListener('click', () => {
+                const isOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                if (!isOpen) item.classList.add('open');
+            });
+        });
+
+        // Scroll Animation
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -80px 0px' });
+
+        document.querySelectorAll('.service-card, .why-card, .step-item, .faq-item, .stat-item, .cov-stat').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

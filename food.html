@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food & Beverage Logistics | STOP India – Exhibition Specialists</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-navy:  #183650;
+            --primary-red:   #DC2626;
+            --dark-red:      #991B1B;
+            --light-red:     #FEF2F2;
+            --primary-cyan:  #06B6D4;
+            --light-cyan:    #CFFAFE;
+            --dark-cyan:     #0E7490;
+            --frost:         #E0F7FA;
+            --ice-blue:      #B2EBF2;
+            --deep-freeze:   #0277BD;
+            --freeze-mid:    #0288D1;
+            --freeze-light:  #E1F5FE;
+            --amber:         #F59E0B;
+            --amber-light:   #FEF3C7;
+            --green:         #16A34A;
+            --green-light:   #DCFCE7;
+            --white:         #ffffff;
+            --off-white:     #f8fafc;
+            --text:          #111827;
+            --text-muted:    #6B7280;
+            --transition:    all 0.3s ease-in-out;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            color: var(--primary-navy);
+            line-height: 1.7;
+            overflow-x: hidden;
+            background: var(--white);
+            font-size: 15px;
+        }
+
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; display: block; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* ── HEADER ── */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 20px rgba(24,54,80,0.1);
+            position: sticky; top: 0; z-index: 1000;
+        }
+        .nav-container {
+            display: flex; justify-content: space-between; align-items: center;
+            height: 90px; max-width: 1200px; margin: 0 auto; padding: 0 20px;
+            flex-direction: row-reverse;
+        }
+        .logo-area img { height: 91px; width: auto; object-fit: contain; margin-right: -20px; }
+        .main-nav ul { display: flex; gap: 25px; }
+        .main-nav a {
+            font-weight: 500; font-size: 0.85rem;
+            text-transform: uppercase; color: var(--primary-navy);
+            position: relative; letter-spacing: 0.5px;
+        }
+        .main-nav a::after {
+            content: ''; position: absolute; width: 0; height: 3px;
+            background: linear-gradient(90deg, var(--primary-cyan), var(--dark-cyan));
+            bottom: -5px; left: 0; transition: var(--transition);
+        }
+        .main-nav a:hover::after, .main-nav a.active::after { width: 100%; }
+        .hamburger { display: none; cursor: pointer; font-size: 1.4rem; color: var(--primary-navy); }
+
+        /* ── BREADCRUMB ── */
+        .breadcrumb-bar {
+            background: var(--off-white);
+            padding: 13px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .breadcrumb-bar .container {
+            display: flex; align-items: center;
+            gap: 10px; font-size: 0.82rem; color: var(--text-muted);
+        }
+        .breadcrumb-bar a { color: var(--primary-navy); font-weight: 500; }
+        .breadcrumb-bar a:hover { color: var(--primary-red); }
+        .breadcrumb-bar .sep { color: #d1d5db; }
+        .breadcrumb-bar .current { color: var(--primary-red); font-weight: 500; }
+
+        /* ── HERO ── */
+        .hero {
+            position: relative;
+            min-height: 640px;
+            display: flex; align-items: center;
+            background:
+                linear-gradient(135deg, rgba(24,54,80,0.90) 0%, rgba(220,38,38,0.70) 100%),
+                url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=2074&auto=format&fit=crop') center/cover no-repeat;
+            color: var(--white);
+            overflow: hidden;
+        }
+
+        /* animated food particles */
+        .hero-particles { position: absolute; inset: 0; pointer-events: none; }
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.12;
+            animation: float 8s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%,100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-35px) rotate(180deg); }
+        }
+
+        .hero-inner { position: relative; z-index: 2; width: 100%; padding: 100px 0; text-align: center; }
+
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(6,182,212,0.2);
+            border: 1px solid rgba(6,182,212,0.5);
+            color: #a5f3fc;
+            padding: 7px 22px; border-radius: 50px;
+            font-size: 0.76rem; font-weight: 600;
+            letter-spacing: 2.5px; text-transform: uppercase;
+            margin-bottom: 24px;
+            animation: fadeUp 0.5s ease both;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.6rem; font-weight: 800;
+            line-height: 1.2; margin-bottom: 22px;
+            animation: fadeUp 0.7s ease both;
+        }
+        .hero h1 span { color: var(--primary-cyan); font-style: italic; }
+
+        .hero p {
+            font-size: 1.05rem; font-weight: 300;
+            max-width: 680px; margin: 0 auto 38px;
+            opacity: 0.9; animation: fadeUp 0.9s ease both;
+        }
+
+        .hero-btns {
+            display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+            animation: fadeUp 1.1s ease both;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+            color: var(--white); padding: 14px 36px; border-radius: 50px;
+            font-weight: 600; font-size: 0.85rem; text-transform: uppercase;
+            letter-spacing: 0.5px; transition: var(--transition); border: 2px solid transparent;
+        }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(220,38,38,0.4); }
+        .btn-outline {
+            background: transparent; color: var(--white);
+            border: 2px solid rgba(255,255,255,0.6);
+            padding: 14px 36px; border-radius: 50px;
+            font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px;
+            transition: var(--transition);
+        }
+        .btn-outline:hover { background: rgba(255,255,255,0.15); border-color: var(--white); }
+
+        .hero-stats {
+            display: flex; justify-content: center;
+            gap: 55px; flex-wrap: wrap;
+            margin-top: 55px; padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.15);
+            animation: fadeUp 1.3s ease both;
+        }
+        .hero-stat .num { font-size: 2.4rem; font-weight: 800; color: var(--primary-cyan); display: block; }
+        .hero-stat .lbl { font-size: 0.78rem; opacity: 0.8; text-transform: uppercase; letter-spacing: 1px; }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(28px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ── SECTION HEADERS ── */
+        .sh { text-align: center; margin-bottom: 50px; }
+        .sh .tag {
+            display: inline-block;
+            background: var(--freeze-light); color: var(--deep-freeze);
+            padding: 5px 18px; border-radius: 50px;
+            font-size: 0.73rem; font-weight: 700;
+            letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px;
+        }
+        .sh .tag.red { background: var(--light-red); color: var(--primary-red); }
+        .sh .tag.amber { background: var(--amber-light); color: #92400E; }
+        .sh h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.3rem; font-weight: 700;
+            color: var(--primary-navy); line-height: 1.25; margin-bottom: 16px;
+        }
+        .sh p { color: var(--text); font-size: 0.95rem; max-width: 680px; margin: 0 auto; font-weight: 300; }
+        .sh-line {
+            width: 70px; height: 4px; border-radius: 2px;
+            background: linear-gradient(90deg, var(--primary-red), var(--primary-cyan));
+            margin: 14px auto 0;
+        }
+
+        /* ── INTRO / OVERVIEW ── */
+        .overview { padding: 90px 0; background: var(--white); }
+        .ov-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+
+        .ov-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem; color: var(--primary-navy); margin-bottom: 22px; line-height: 1.3;
+        }
+        .ov-content h2 em { color: var(--primary-red); font-style: italic; }
+        .ov-content p { color: var(--text); line-height: 1.9; font-size: 0.96rem; margin-bottom: 18px; }
+
+        .trust-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+        .pill {
+            display: inline-flex; align-items: center; gap: 7px;
+            background: var(--off-white); border: 1px solid #e5e7eb;
+            padding: 7px 16px; border-radius: 50px;
+            font-size: 0.82rem; font-weight: 500; color: var(--primary-navy);
+        }
+        .pill i { color: var(--primary-cyan); }
+
+        .ov-img-wrap { position: relative; }
+        .ov-img-wrap img { width: 100%; border-radius: 18px; box-shadow: 0 30px 70px rgba(24,54,80,0.18); }
+        .ov-badge {
+            position: absolute; bottom: -20px; left: -20px;
+            background: var(--white); border-radius: 14px; padding: 20px 24px;
+            box-shadow: 0 15px 40px rgba(24,54,80,0.14);
+            display: flex; align-items: center; gap: 14px;
+        }
+        .ov-badge .ico {
+            width: 50px; height: 50px;
+            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            color: var(--white); font-size: 1.4rem; flex-shrink: 0;
+        }
+        .ov-badge .val { font-size: 1.5rem; font-weight: 800; color: var(--primary-navy); line-height: 1; }
+        .ov-badge .lbl { font-size: 0.73rem; color: var(--text-muted); margin-top: 3px; }
+
+        /* ── TEMPERATURE BANDS ── */
+        .temp-section { padding: 90px 0; background: var(--off-white); }
+        .temp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 50px; }
+
+        .temp-card {
+            border-radius: 18px; padding: 40px 32px;
+            transition: var(--transition); cursor: default;
+            position: relative; overflow: hidden;
+        }
+        .temp-card::after {
+            content: ''; position: absolute; inset: 0;
+            background: inherit; filter: brightness(1.04);
+            opacity: 0; transition: var(--transition);
+        }
+        .temp-card:hover::after { opacity: 1; }
+        .temp-card:hover { transform: translateY(-10px); }
+
+        .temp-card.chilled {
+            background: linear-gradient(145deg, #e0f7fa, #b2ebf2);
+            border: 2px solid #80deea;
+        }
+        .temp-card.frozen {
+            background: linear-gradient(145deg, #e3f2fd, #bbdefb);
+            border: 2px solid #90caf9;
+        }
+        .temp-card.ambient {
+            background: linear-gradient(145deg, #fff8e1, #ffecb3);
+            border: 2px solid #ffe082;
+        }
+
+        .temp-icon {
+            font-size: 2.8rem; margin-bottom: 20px; display: block;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
+        }
+        .temp-label {
+            font-size: 0.72rem; font-weight: 700; letter-spacing: 2.5px;
+            text-transform: uppercase; margin-bottom: 10px;
+        }
+        .temp-card.chilled .temp-label { color: #0277BD; }
+        .temp-card.frozen  .temp-label { color: #01579B; }
+        .temp-card.ambient .temp-label { color: #E65100; }
+
+        .temp-card h3 {
+            font-size: 1.4rem; font-weight: 700; margin-bottom: 10px; color: var(--primary-navy);
+        }
+        .temp-range {
+            display: inline-block;
+            padding: 4px 14px; border-radius: 50px;
+            font-size: 0.8rem; font-weight: 700; margin-bottom: 16px;
+        }
+        .chilled .temp-range { background: #0277BD; color: white; }
+        .frozen  .temp-range { background: #01579B; color: white; }
+        .ambient .temp-range { background: #E65100; color: white; }
+
+        .temp-card p { font-size: 0.9rem; color: #374151; line-height: 1.8; margin-bottom: 18px; }
+        .temp-features li {
+            display: flex; align-items: center; gap: 10px;
+            font-size: 0.86rem; color: #374151; margin-bottom: 8px;
+        }
+        .temp-features i { font-size: 0.9rem; }
+        .chilled .temp-features i { color: #0277BD; }
+        .frozen  .temp-features i { color: #01579B; }
+        .ambient .temp-features i { color: #E65100; }
+
+        /* ── FROZEN SPECIALIST ── */
+        .frozen-hero {
+            padding: 0;
+            background: linear-gradient(135deg, #0d47a1 0%, #01579B 40%, #0277BD 70%, #183650 100%);
+            position: relative; overflow: hidden;
+        }
+
+        .frozen-hero::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        /* snowflake layer */
+        .snowflakes {
+            position: absolute; inset: 0; pointer-events: none; overflow: hidden;
+        }
+        .flake {
+            position: absolute; top: -20px; color: white; opacity: 0.15;
+            animation: snowFall linear infinite;
+            font-size: 1.2rem;
+        }
+        @keyframes snowFall {
+            0%   { transform: translateY(-20px) rotate(0deg); }
+            100% { transform: translateY(110vh) rotate(360deg); }
+        }
+
+        .frozen-inner {
+            position: relative; z-index: 2;
+            padding: 90px 0;
+        }
+
+        .frozen-grid {
+            display: grid; grid-template-columns: 1.1fr 0.9fr;
+            gap: 70px; align-items: center;
+        }
+
+        .frozen-content .frozen-tag {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25);
+            color: #b3e5fc; padding: 7px 20px; border-radius: 50px;
+            font-size: 0.74rem; font-weight: 700; letter-spacing: 2px;
+            text-transform: uppercase; margin-bottom: 22px;
+        }
+
+        .frozen-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.6rem; color: white;
+            line-height: 1.2; margin-bottom: 22px;
+        }
+        .frozen-content h2 em { color: #b3e5fc; }
+
+        .frozen-content p { color: rgba(255,255,255,0.85); font-size: 0.96rem; line-height: 1.9; margin-bottom: 16px; }
+
+        .frozen-specs {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 16px; margin-top: 30px;
+        }
+        .fspec {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.18);
+            border-radius: 12px; padding: 18px 20px;
+            display: flex; align-items: flex-start; gap: 13px;
+        }
+        .fspec i { color: #b3e5fc; font-size: 1.3rem; margin-top: 2px; flex-shrink: 0; }
+        .fspec h5 { color: white; font-size: 0.9rem; font-weight: 600; margin-bottom: 4px; }
+        .fspec p { color: rgba(255,255,255,0.7); font-size: 0.82rem; line-height: 1.6; margin: 0; }
+
+        .frozen-cards-col { display: flex; flex-direction: column; gap: 20px; }
+        .fcard {
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 16px; padding: 26px 28px;
+            transition: var(--transition);
+        }
+        .fcard:hover { background: rgba(255,255,255,0.18); transform: translateX(6px); }
+        .fcard-top { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+        .fcard-ico {
+            width: 52px; height: 52px; border-radius: 14px;
+            background: rgba(179,229,252,0.2); border: 1px solid rgba(179,229,252,0.3);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; flex-shrink: 0;
+        }
+        .fcard h4 { color: white; font-size: 1rem; font-weight: 600; }
+        .fcard p { color: rgba(255,255,255,0.75); font-size: 0.87rem; line-height: 1.7; }
+        .fcard-tag {
+            display: inline-block; margin-top: 10px;
+            background: rgba(179,229,252,0.2); color: #b3e5fc;
+            padding: 3px 12px; border-radius: 50px; font-size: 0.74rem; font-weight: 600;
+        }
+
+        /* ── FAMOUS SHOWS ── */
+        .shows-section { padding: 90px 0; background: var(--white); }
+
+        .shows-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 28px; margin-top: 50px;
+        }
+
+        .show-card {
+            border-radius: 18px; overflow: hidden;
+            box-shadow: 0 10px 35px rgba(24,54,80,0.1);
+            transition: var(--transition);
+            border: 1px solid #e5e7eb;
+            display: flex; flex-direction: column;
+        }
+        .show-card:hover { transform: translateY(-10px); box-shadow: 0 25px 60px rgba(24,54,80,0.18); }
+
+        .show-card-img {
+            height: 200px; position: relative; overflow: hidden;
+        }
+        .show-card-img img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .show-card:hover .show-card-img img { transform: scale(1.08); }
+
+        .show-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(24,54,80,0.85) 0%, rgba(24,54,80,0.2) 100%);
+            display: flex; align-items: flex-end; padding: 18px;
+        }
+
+        .show-flag {
+            width: 36px; height: 36px; border-radius: 50%;
+            background: rgba(255,255,255,0.2); border: 2px solid rgba(255,255,255,0.5);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.3rem; margin-right: 10px; flex-shrink: 0;
+        }
+        .show-name { color: white; font-weight: 700; font-size: 1.1rem; }
+        .show-loc { color: rgba(255,255,255,0.75); font-size: 0.78rem; }
+
+        .show-card-body { padding: 24px; flex: 1; }
+        .show-meta {
+            display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 14px;
+        }
+        .show-tag {
+            background: var(--freeze-light); color: var(--deep-freeze);
+            padding: 4px 12px; border-radius: 50px;
+            font-size: 0.73rem; font-weight: 600;
+        }
+        .show-tag.red { background: var(--light-red); color: var(--primary-red); }
+        .show-card-body p { color: var(--text); font-size: 0.88rem; line-height: 1.7; margin-bottom: 16px; }
+
+        .show-stats { display: flex; gap: 20px; padding-top: 16px; border-top: 1px solid #f3f4f6; }
+        .sstat .sv { font-weight: 700; font-size: 1.05rem; color: var(--primary-navy); }
+        .sstat .sl { font-size: 0.73rem; color: var(--text-muted); text-transform: uppercase; }
+
+        /* ── WHY STOP INDIA ── */
+        .why-section {
+            padding: 90px 0;
+            background: linear-gradient(135deg, #f0f9ff 0%, var(--off-white) 100%);
+        }
+        .why-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px; margin-top: 50px;
+        }
+        .why-card {
+            background: var(--white); border-radius: 16px; padding: 32px 26px;
+            box-shadow: 0 8px 24px rgba(24,54,80,0.08);
+            transition: var(--transition); border-top: 4px solid transparent;
+        }
+        .why-card:hover { transform: translateY(-8px); border-top-color: var(--primary-cyan); }
+        .why-ico {
+            width: 60px; height: 60px; border-radius: 16px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.7rem; margin-bottom: 18px;
+        }
+        .why-ico.blue { background: var(--freeze-light); color: var(--deep-freeze); }
+        .why-ico.red  { background: var(--light-red);   color: var(--primary-red); }
+        .why-ico.amber{ background: var(--amber-light);  color: #92400E; }
+        .why-ico.green{ background: var(--green-light);  color: var(--green); }
+        .why-card h4 { font-size: 1rem; font-weight: 700; color: var(--primary-navy); margin-bottom: 10px; }
+        .why-card p { color: var(--text); font-size: 0.88rem; line-height: 1.75; }
+
+        /* ── COMPLIANCE STRIP ── */
+        .compliance-strip {
+            padding: 70px 0;
+            background: linear-gradient(135deg, var(--primary-navy) 0%, #0f2941 100%);
+            color: white;
+        }
+        .cs-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px; text-align: center;
+        }
+        .cs-item .cs-num {
+            font-size: 2.8rem; font-weight: 800; color: var(--primary-cyan); display: block;
+        }
+        .cs-item .cs-lbl { font-size: 0.85rem; opacity: 0.8; }
+
+        /* ── PROCESS ── */
+        .process-section { padding: 90px 0; background: var(--white); }
+        .process-steps {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px; margin-top: 50px; position: relative;
+        }
+        .ps {
+            background: var(--off-white); border-radius: 16px;
+            padding: 32px 24px; text-align: center;
+            position: relative; transition: var(--transition);
+        }
+        .ps:hover { background: var(--white); box-shadow: 0 12px 35px rgba(6,182,212,0.14); transform: translateY(-6px); }
+        .ps-num {
+            width: 46px; height: 46px; border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+            color: white; font-size: 1rem; font-weight: 800;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 16px;
+        }
+        .ps-ico { font-size: 2rem; margin-bottom: 14px; color: var(--primary-cyan); }
+        .ps h4 { font-size: 0.95rem; font-weight: 700; color: var(--primary-navy); margin-bottom: 8px; }
+        .ps p { font-size: 0.83rem; color: var(--text); line-height: 1.7; }
+
+        /* arrow between steps */
+        .ps-arrow {
+            position: absolute; top: 50%; right: -16px;
+            transform: translateY(-50%);
+            color: var(--primary-cyan); font-size: 1.3rem; z-index: 2;
+        }
+
+        /* ── FAQ ── */
+        .faq-section { padding: 90px 0; background: var(--off-white); }
+        .faq-list { max-width: 860px; margin: 45px auto 0; }
+        .faq-item {
+            background: var(--white); border-radius: 12px;
+            margin-bottom: 14px; overflow: hidden;
+            box-shadow: 0 4px 15px rgba(24,54,80,0.06);
+            border-left: 4px solid var(--primary-cyan);
+        }
+        .faq-q {
+            padding: 20px 22px;
+            display: flex; justify-content: space-between; align-items: center;
+            cursor: pointer; font-weight: 600; color: var(--primary-navy); font-size: 0.95rem;
+            transition: var(--transition);
+        }
+        .faq-q:hover { color: var(--primary-red); }
+        .faq-q i { color: var(--primary-cyan); transition: var(--transition); }
+        .faq-item.open .faq-q i { transform: rotate(180deg); color: var(--primary-red); }
+        .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+        .faq-item.open .faq-a { max-height: 350px; }
+        .faq-a p { padding: 0 22px 20px; color: var(--text); font-size: 0.92rem; line-height: 1.8; }
+
+        /* ── CTA ── */
+        .cta-section {
+            padding: 90px 0;
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--dark-red) 100%);
+            color: white; text-align: center;
+        }
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.6rem; margin-bottom: 18px;
+        }
+        .cta-section p { font-size: 1rem; max-width: 640px; margin: 0 auto 38px; opacity: 0.9; font-weight: 300; }
+        .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .btn-white {
+            background: white; color: var(--primary-red);
+            padding: 14px 36px; border-radius: 50px;
+            font-weight: 700; font-size: 0.85rem; text-transform: uppercase;
+            border: 2px solid white; transition: var(--transition);
+        }
+        .btn-white:hover { background: transparent; color: white; }
+        .btn-ghost {
+            background: transparent; color: white;
+            padding: 14px 36px; border-radius: 50px;
+            font-weight: 600; font-size: 0.85rem; text-transform: uppercase;
+            border: 2px solid rgba(255,255,255,0.5); transition: var(--transition);
+        }
+        .btn-ghost:hover { border-color: white; background: rgba(255,255,255,0.1); }
+
+        /* ── FOOTER ── */
+        footer {
+            background: linear-gradient(135deg, var(--primary-navy), #0f2941);
+            color: #E3F2FD; padding-top: 60px;
+        }
+        .footer-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 35px; margin-bottom: 45px;
+        }
+        .footer-col h4 {
+            color: white; font-size: 1.05rem; margin-bottom: 20px;
+            border-left: 3px solid var(--primary-cyan);
+            padding-left: 14px; font-weight: 600;
+        }
+        .footer-col p { font-size: 0.88rem; line-height: 1.75; opacity: 0.85; font-weight: 300; }
+        .footer-col ul li { margin-bottom: 9px; }
+        .footer-col ul li a { color: #E3F2FD; font-size: 0.88rem; font-weight: 300; transition: 0.3s; }
+        .footer-col ul li a:hover { color: var(--primary-cyan); padding-left: 6px; }
+        .footer-col .contact-li { display: flex; gap: 12px; margin-bottom: 12px; font-size: 0.88rem; font-weight: 300; }
+        .footer-col .contact-li i { color: var(--primary-cyan); margin-top: 4px; flex-shrink: 0; }
+        .bottom-footer {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding: 22px 0; text-align: center;
+            font-size: 0.83rem; opacity: 0.7;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 992px) {
+            .hero h1 { font-size: 2.6rem; }
+            .ov-grid, .frozen-grid { grid-template-columns: 1fr; gap: 40px; }
+            .temp-grid { grid-template-columns: 1fr; }
+            .frozen-specs { grid-template-columns: 1fr; }
+            .ov-badge { position: relative; bottom: auto; left: auto; margin-top: 16px; }
+        }
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+            .nav-container { flex-direction: row; }
+            .main-nav {
+                position: absolute; top: 90px; left: -100%;
+                width: 100%; background: white;
+                padding: 20px; box-shadow: 0 5px 10px rgba(24,54,80,0.1);
+                transition: 0.4s;
+            }
+            .main-nav.active { left: 0; }
+            .main-nav ul { flex-direction: column; text-align: center; gap: 15px; }
+            .hero h1 { font-size: 2rem; }
+            .sh h2 { font-size: 1.85rem; }
+            .hero-stats { gap: 30px; }
+            .shows-grid { grid-template-columns: 1fr; }
+            .frozen-content h2 { font-size: 2rem; }
+            .ps-arrow { display: none; }
+        }
+
+        /* ── SCROLL REVEAL ── */
+        .reveal {
+            opacity: 0; transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+<!-- ─────────────── HEADER ─────────────── -->
+<header>
+    <div class="nav-container">
+        <div class="logo-area">
+            <a href="index.html">
+                <img src="https://stopindia.com/wp-content/uploads/2020/09/new.png" alt="STOP India Logo">
+            </a>
+        </div>
+        <nav class="main-nav" id="mainNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="sectors.html" class="active">Sectors</a></li>
+                <li><a href="Gallery.html">Gallery</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="carrer.html">Career</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+    </div>
+</header>
+
+<!-- ─────────────── BREADCRUMB ─────────────── -->
+<div class="breadcrumb-bar">
+    <div class="container">
+        <a href="index.html">Home</a>
+        <span class="sep">›</span>
+        <a href="sectors.html">Sectors</a>
+        <span class="sep">›</span>
+        <span class="current">Food &amp; Beverage</span>
+    </div>
+</div>
+
+<!-- ─────────────── HERO ─────────────── -->
+<section class="hero">
+    <div class="hero-particles" id="particles"></div>
+    <div class="container hero-inner">
+        <div class="hero-badge">
+            <i class="fas fa-snowflake"></i>
+            Chilled · Frozen · Ambient Specialists
+        </div>
+        <h1>Food &amp; Beverage<br><span>Exhibition Logistics</span></h1>
+        <p>From frozen delicacies at Gulfood to ambient gourmet at Anuga — we deliver your products to the world's biggest food fairs at the correct temperature, on time, every time.</p>
+        <div class="hero-btns">
+            <a href="tel:+919212133251" class="btn-primary"><i class="fas fa-phone" style="margin-right:8px;"></i>Get a Quote</a>
+            <a href="#shows" class="btn-outline"><i class="fas fa-globe" style="margin-right:8px;"></i>Key Food Shows</a>
+        </div>
+        <div class="hero-stats">
+            <div class="hero-stat"><span class="num">500+</span><span class="lbl">F&amp;B Shows Handled</span></div>
+            <div class="hero-stat"><span class="num">-25°C</span><span class="lbl">Deep Freeze Capable</span></div>
+            <div class="hero-stat"><span class="num">50+</span><span class="lbl">Countries Covered</span></div>
+            <div class="hero-stat"><span class="num">25+</span><span class="lbl">Years Expertise</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- ─────────────── OVERVIEW ─────────────── -->
+<section class="overview" id="overview">
+    <div class="container">
+        <div class="ov-grid">
+            <div class="ov-content reveal">
+                <div class="sh" style="text-align:left; margin-bottom:28px;">
+                    <div class="tag red">Food &amp; Beverage Sector</div>
+                </div>
+                <h2>India's Most Trusted <em>Food Exhibition Freight Partner</em></h2>
+                <p>Food products are the most demanding cargo in exhibition logistics. Temperature-sensitive items cannot tolerate delays or broken cold chains. Samples carrying health certifications require flawless documentation. Liquids and glass need specialist packaging. Perishables have hard deadlines that cannot move.</p>
+                <p>STOP India has built dedicated processes, equipment, and partnerships specifically for food and beverage exhibitors. We understand HACCP compliance, import health certificates, phytosanitary requirements, and the cold-chain protocols demanded by events like Gulfood, Anuga, SIAL, and FHC China.</p>
+                <p>Whether you're shipping 10 kg of artisan cheese or a full pallet of frozen seafood, we treat your products with the same care as if they were heading to a Michelin-starred kitchen.</p>
+                <div class="trust-pills">
+                    <span class="pill"><i class="fas fa-thermometer-half"></i> Cold Chain Integrity</span>
+                    <span class="pill"><i class="fas fa-file-medical"></i> Health Certificate Support</span>
+                    <span class="pill"><i class="fas fa-shipping-fast"></i> Time-Critical Delivery</span>
+                    <span class="pill"><i class="fas fa-snowflake"></i> Frozen Freight Specialists</span>
+                </div>
+            </div>
+            <div class="ov-img-wrap reveal">
+                <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1974&auto=format&fit=crop" alt="Food exhibition products">
+                <div class="ov-badge">
+                    <div class="ico"><i class="fas fa-award"></i></div>
+                    <div>
+                        <div class="val">500+</div>
+                        <div class="lbl">F&amp;B Exhibitions Served</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─────────────── TEMPERATURE BANDS ─────────────── -->
+<section class="temp-section" id="temperature">
+    <div class="container">
+        <div class="sh">
+            <div class="tag">Temperature-Controlled Logistics</div>
+            <h2>We Handle All Three Temperature Bands</h2>
+            <p>Chilled, frozen, or ambient — each product type demands a completely different logistics approach. STOP India is equipped for all three.</p>
+            <div class="sh-line"></div>
+        </div>
+        <div class="temp-grid">
+
+            <!-- CHILLED -->
+            <div class="temp-card chilled reveal">
+                <span class="temp-icon">🧊</span>
+                <div class="temp-label">Chilled Products</div>
+                <h3>Chilled Freight</h3>
+                <span class="temp-range">0°C to +5°C</span>
+                <p>Dairy, fresh meats, seafood, premium beverages, fresh produce and charcuterie — all transported and stored at precise chilled temperatures throughout the exhibition cycle.</p>
+                <ul class="temp-features">
+                    <li><i class="fas fa-check-circle"></i> Refrigerated vehicles &amp; reefer containers</li>
+                    <li><i class="fas fa-check-circle"></i> Temperature-logged throughout journey</li>
+                    <li><i class="fas fa-check-circle"></i> Chilled storage at destination venues</li>
+                    <li><i class="fas fa-check-circle"></i> Dairy &amp; fresh produce handling specialists</li>
+                    <li><i class="fas fa-check-circle"></i> Health certificate &amp; CITES documentation</li>
+                </ul>
+            </div>
+
+            <!-- FROZEN -->
+            <div class="temp-card frozen reveal" style="transition-delay:0.15s;">
+                <span class="temp-icon">❄️</span>
+                <div class="temp-label">Frozen Products</div>
+                <h3>Frozen Freight</h3>
+                <span class="temp-range">-18°C to -25°C</span>
+                <p>Frozen seafood, ice cream, frozen meals, gelato, and other deep-freeze products handled with specialist cold chain equipment from pickup to stand — without a single break in the chain.</p>
+                <ul class="temp-features">
+                    <li><i class="fas fa-check-circle"></i> Deep-freeze reefer units to -25°C</li>
+                    <li><i class="fas fa-check-circle"></i> Dry-ice packing where air freight requires</li>
+                    <li><i class="fas fa-check-circle"></i> Continuous temperature monitoring &amp; alerts</li>
+                    <li><i class="fas fa-check-circle"></i> On-site frozen storage coordination</li>
+                    <li><i class="fas fa-check-circle"></i> Sanitary import clearance support</li>
+                </ul>
+            </div>
+
+            <!-- AMBIENT -->
+            <div class="temp-card ambient reveal" style="transition-delay:0.3s;">
+                <span class="temp-icon">🌾</span>
+                <div class="temp-label">Ambient Products</div>
+                <h3>Ambient Freight</h3>
+                <span class="temp-range">+15°C to +25°C</span>
+                <p>Packaged foods, spices, condiments, oils, wines, spirits, confectionery, snacks, and specialty dry goods — moved efficiently with the correct import permits and labelling compliance.</p>
+                <ul class="temp-features">
+                    <li><i class="fas fa-check-circle"></i> Standard &amp; climate-controlled options</li>
+                    <li><i class="fas fa-check-circle"></i> Liquids &amp; glass packaging expertise</li>
+                    <li><i class="fas fa-check-circle"></i> FSSAI &amp; import regulation guidance</li>
+                    <li><i class="fas fa-check-circle"></i> Wine &amp; spirits specialist handling</li>
+                    <li><i class="fas fa-check-circle"></i> Phytosanitary certificate support</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─────────────── FROZEN SPECIALIST HERO ─────────────── -->
+<section class="frozen-hero" id="frozen">
+    <div class="snowflakes" id="snowflakes"></div>
+    <div class="container frozen-inner">
+        <div class="frozen-grid">
+            <div class="frozen-content">
+                <div class="frozen-tag">
+                    <i class="fas fa-snowflake"></i> Frozen Food Logistics Specialists
+                </div>
+                <h2>Masters of the <em>Cold Chain</em> —<br>Frozen Food is Our Speciality</h2>
+                <p>Frozen food is the ultimate test of an exhibition freight company. A single temperature excursion can render an entire shipment unsellable. Customs delays at the wrong border can mean product loss. Venue cold rooms must be pre-booked, confirmed, and monitored.</p>
+                <p>STOP India has built India's most experienced frozen exhibition freight operation, with a dedicated team that has handled frozen products at Gulfood Dubai, SIAL Paris, Seafood Expo Brussels, and dozens of other top-tier food fairs worldwide.</p>
+
+                <div class="frozen-specs">
+                    <div class="fspec">
+                        <i class="fas fa-temperature-low"></i>
+                        <div>
+                            <h5>Continuous Monitoring</h5>
+                            <p>IoT temperature loggers with real-time alerts throughout every journey.</p>
+                        </div>
+                    </div>
+                    <div class="fspec">
+                        <i class="fas fa-boxes"></i>
+                        <div>
+                            <h5>Specialist Packaging</h5>
+                            <p>Dry ice, gel packs, insulated liners &amp; EPS boxes for air freight requirements.</p>
+                        </div>
+                    </div>
+                    <div class="fspec">
+                        <i class="fas fa-file-contract"></i>
+                        <div>
+                            <h5>Sanitary Certificates</h5>
+                            <p>Health certificates, sanitary inspection support &amp; HACCP documentation.</p>
+                        </div>
+                    </div>
+                    <div class="fspec">
+                        <i class="fas fa-warehouse"></i>
+                        <div>
+                            <h5>Venue Cold Storage</h5>
+                            <p>Pre-booked frozen storage at exhibition venues worldwide for show duration.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="frozen-cards-col">
+                <div class="fcard reveal">
+                    <div class="fcard-top">
+                        <div class="fcard-ico">🐟</div>
+                        <h4>Frozen Seafood &amp; Fish Products</h4>
+                    </div>
+                    <p>From frozen prawns and tuna loins to whole fish and cephalopods — we handle India's premier seafood exporters at Seafood Expo Global, Gulfood, and SIAL with full cold chain integrity.</p>
+                    <span class="fcard-tag">-18°C to -22°C</span>
+                </div>
+
+                <div class="fcard reveal" style="transition-delay:0.1s;">
+                    <div class="fcard-top">
+                        <div class="fcard-ico">🍦</div>
+                        <h4>Ice Cream &amp; Frozen Desserts</h4>
+                    </div>
+                    <p>Gelato, artisan ice cream, frozen desserts and novelties require ultra-low temperatures. Our deep-freeze chain ensures your products reach the stand in perfect serving condition.</p>
+                    <span class="fcard-tag">-22°C to -25°C</span>
+                </div>
+
+                <div class="fcard reveal" style="transition-delay:0.2s;">
+                    <div class="fcard-top">
+                        <div class="fcard-ico">🥩</div>
+                        <h4>Frozen Meats &amp; Poultry</h4>
+                    </div>
+                    <p>Frozen beef, lamb, chicken and processed meat products moved with all sanitary import certificates, veterinary health documentation, and unbroken cold chain from origin to stand.</p>
+                    <span class="fcard-tag">-18°C Maintained</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─────────────── FAMOUS FOOD SHOWS ─────────────── -->
+<section class="shows-section" id="shows">
+    <div class="container">
+        <div class="sh">
+            <div class="tag amber">World-Leading Food Exhibitions</div>
+            <h2>Key Food &amp; Beverage Shows We Serve</h2>
+            <p>STOP India has an established presence at the world's most important food trade fairs — with local partners, venue knowledge, and official handler relationships at every location.</p>
+            <div class="sh-line"></div>
+        </div>
+
+        <div class="shows-grid">
+
+            <!-- Gulfood -->
+            <div class="show-card reveal">
+                <div class="show-card-img">
+                    <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?q=80&w=2070&auto=format&fit=crop" alt="Gulfood Dubai">
+                    <div class="show-overlay">
+                        <div class="show-flag">🇦🇪</div>
+                        <div>
+                            <div class="show-name">Gulfood</div>
+                            <div class="show-loc">Dubai World Trade Centre, UAE</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="show-card-body">
+                    <div class="show-meta">
+                        <span class="show-tag">Frozen</span>
+                        <span class="show-tag">Chilled</span>
+                        <span class="show-tag red">Key Show</span>
+                    </div>
+                    <p>The world's largest annual food &amp; beverage trade show. STOP India is a specialist Gulfood freight partner, with deep expertise in UAE customs clearance, DWTC cold rooms, and temperature-controlled last-mile delivery.</p>
+                    <div class="show-stats">
+                        <div class="sstat"><div class="sv">5,000+</div><div class="sl">Exhibitors</div></div>
+                        <div class="sstat"><div class="sv">Feb</div><div class="sl">Annual</div></div>
+                        <div class="sstat"><div class="sv">140+</div><div class="sl">Countries</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Anuga -->
+            <div class="show-card reveal" style="transition-delay:0.1s;">
+                <div class="show-card-img">
+                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2070&auto=format&fit=crop" alt="Anuga Cologne">
+                    <div class="show-overlay">
+                        <div class="show-flag">🇩🇪</div>
+                        <div>
+                            <div class="show-name">Anuga</div>
+                            <div class="show-loc">Koelnmesse, Cologne, Germany</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="show-card-body">
+                    <div class="show-meta">
+                        <span class="show-tag">Ambient</span>
+                        <span class="show-tag">Chilled</span>
+                        <span class="show-tag red">Biennial</span>
+                    </div>
+                    <p>One of the world's leading food and beverage trade fairs, Anuga covers 10 trade shows under one roof. We manage Indian exhibitor freight through Germany customs and into the Koelnmesse halls with precision.</p>
+                    <div class="show-stats">
+                        <div class="sstat"><div class="sv">7,400+</div><div class="sl">Exhibitors</div></div>
+                        <div class="sstat"><div class="sv">Oct</div><div class="sl">Biennial</div></div>
+                        <div class="sstat"><div class="sv">200+</div><div class="sl">Countries</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SIAL Paris -->
+            <div class="show-card reveal" style="transition-delay:0.2s;">
+                <div class="show-card-img">
+                    <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?q=80&w=1974&auto=format&fit=crop" alt="SIAL Paris">
+                    <div class="show-overlay">
+                        <div class="show-flag">🇫🇷</div>
+                        <div>
+                            <div class="show-name">SIAL Paris</div>
+                            <div class="show-loc">Paris Le Bourget, France</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="show-card-body">
+                    <div class="show-meta">
+                        <span class="show-tag">All Temperatures</span>
+                        <span class="show-tag red">Top Tier</span>
+                    </div>
+                    <p>SIAL is the global marketplace for food innovation. With strict French customs requirements and complex cold chain needs at Le Bourget, our experienced Paris partners ensure smooth operations.</p>
+                    <div class="show-stats">
+                        <div class="sstat"><div class="sv">7,200+</div><div class="sl">Exhibitors</div></div>
+                        <div class="sstat"><div class="sv">Oct</div><div class="sl">Biennial</div></div>
+                        <div class="sstat"><div class="sv">130+</div><div class="sl">Countries</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seafood Expo Global -->
+            <div class="show-card reveal" style="transition-delay:0.1s;">
+                <div class="show-card-img">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=2070&auto=format&fit=crop" alt="Seafood Expo Global">
+                    <div class="show-overlay">
+                        <div class="show-flag">🇧🇪</div>
+                        <div>
+                            <div class="show-name">Seafood Expo Global</div>
+                            <div class="show-loc">Brussels Expo, Belgium</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="show-card-body">
+                    <div class="show-meta">
+                        <span class="show-tag">Frozen</span>
+                        <span class="show-tag">Chilled</span>
+                        <span class="show-tag red">Frozen Specialist</span>
+                    </div>
+                    <p>The world's largest seafood trade event. STOP India handles frozen and chilled seafood exports from India's top processors — prawn, tuna, pomfret — through EU customs with full health certification support.</p>
+                    <div class="show-stats">
+                        <div class="sstat"><div class="sv">2,000+</div><div class="sl">Exhibitors</div></div>
+                        <div class="sstat"><div class="sv">Apr</div><div class="sl">Annual</div></div>
+                        <div class="sstat"><div class="sv">80+</div><div class="sl">Countries</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FHC China -->
+            <div class="show-card reveal" style="transition-delay:0.2s;">
+                <div class="show-card-img">
+                    <img src="https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?q=80&w=1964&auto=format&fit=crop" alt="FHC Shanghai">
+                    <div class="show-overlay">
+                        <div class="show-flag">🇨🇳</div>
+                        <div>
+                            <div class="show-name">FHC China</div>
+                            <div class="show-loc">NECC Shanghai, China</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="show-card-body">
+                    <div class="show-meta">
+                        <span class="show-tag">Ambient</span>
+                        <span class="show-tag">Chilled</span>
+                    </div>
+                    <p>China's premier food and hospitality show. Our Shanghai partners navigate complex Chinese food import regulations, GACC registration requirements, and cold chain delivery at NECC with expertise.</p>
+                    <div class="show-stats">
+                        <div class="sstat"><div class="sv">3,500+</div><div class="sl">Exhibitors</div></div>
+                        <div class="sstat"><div class="sv">Nov</div><div class="sl">Annual</div></div>
+                        <div class="sstat"><div class="sv">100+</div><div class="sl">Countries</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AAHAR / SIAL India -->
+            <div class="show-card reveal" style="transition-delay:0.3s;">
+                <div class="show-card-img">
+                    <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?q=80&w=1974&auto=format&fit=crop" alt="AAHAR New Delhi">
+                    <div class="show-overlay">
+                        <div class="show-flag">🇮🇳</div>
+                        <div>
+                            <div class="show-name">AAHAR &amp; SIAL India</div>
+                            <div class="show-loc">Pragati Maidan, New Delhi, India</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="show-card-body">
+                    <div class="show-meta">
+                        <span class="show-tag">All Temperatures</span>
+                        <span class="show-tag red">Home Turf</span>
+                    </div>
+                    <p>India's largest food &amp; hospitality trade events. As a Delhi-based company, STOP India provides unmatched local expertise for inbound international exhibitors and domestic food companies participating at Pragati Maidan.</p>
+                    <div class="show-stats">
+                        <div class="sstat"><div class="sv">600+</div><div class="sl">Exhibitors</div></div>
+                        <div class="sstat"><div class="sv">Mar</div><div class="sl">Annual</div></div>
+                        <div class="sstat"><div class="sv">30+</div><div class="sl">Countries</div></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Additional shows strip -->
+        <div style="margin-top: 40px; background: var(--off-white); border-radius: 16px; padding: 30px 36px;">
+            <p style="font-weight: 600; color: var(--primary-navy); margin-bottom: 18px; font-size: 0.95rem;">
+                <i class="fas fa-plus-circle" style="color: var(--primary-cyan); margin-right: 8px;"></i>
+                We Also Cover These Leading Food Shows:
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+                <span class="pill"><i class="fas fa-map-marker-alt"></i> Gulfood Manufacturing, Dubai</span>
+                <span class="pill"><i class="fas fa-map-marker-alt"></i> Fine Food Australia, Sydney</span>
+                <span class="pill"><i class="fas fa-map-marker-alt"></i> HOFEX, Hong Kong</span>
+                <span class="pill"><i class="fas fa-map-marker-alt"></i> Alimentaria, Barcelona</span>
+                <span class="pill"><i class="fas fa-map-marker-alt"></i> Biofach, Nuremberg</span>
+                <span class="pill"><i class="fas fa-map-marker-alt"></i> THAIFEX, Bangkok</span>
+                <span class="pill"><i class="fas fa-map-marker-alt"></i> Foodex Japan, Tokyo</span>
+                <span class="pill"><i class="fas fa-map-marker-alt"></i> ISM Cologne</span>
+                <span class="pill"><i class="fas fa-map-marker-alt"></i> Fancy Food Show, USA</span>
+                <span class="pill"><i class="fas fa-map-marker-alt"></i> Vitafoods, Geneva</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─────────────── COMPLIANCE STRIP ─────────────── -->
+<div class="compliance-strip">
+    <div class="container">
+        <div class="cs-grid">
+            <div class="cs-item reveal">
+                <span class="cs-num">500+</span>
+                <div class="cs-lbl">Food &amp; Beverage Shows Handled</div>
+            </div>
+            <div class="cs-item reveal" style="transition-delay:0.1s;">
+                <span class="cs-num">-25°C</span>
+                <div class="cs-lbl">Lowest Temperature Capability</div>
+            </div>
+            <div class="cs-item reveal" style="transition-delay:0.2s;">
+                <span class="cs-num">50+</span>
+                <div class="cs-lbl">Countries in Our Cold Chain Network</div>
+            </div>
+            <div class="cs-item reveal" style="transition-delay:0.3s;">
+                <span class="cs-num">100%</span>
+                <div class="cs-lbl">Temperature Log Compliance Rate</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ─────────────── WHY CHOOSE US ─────────────── -->
+<section class="why-section" id="why">
+    <div class="container">
+        <div class="sh">
+            <div class="tag red">Why STOP India</div>
+            <h2>The F&amp;B Freight Partner That<br>Understands Your Products</h2>
+            <p>Every food exhibitor deserves a logistics partner who speaks their language — one who knows that ice cream melts and that fresh tuna can't wait at a customs depot.</p>
+            <div class="sh-line"></div>
+        </div>
+        <div class="why-grid">
+            <div class="why-card reveal">
+                <div class="why-ico blue"><i class="fas fa-thermometer-half"></i></div>
+                <h4>Unbroken Cold Chain</h4>
+                <p>Every link in our cold chain — from the factory cold room to your exhibition stand — is planned, verified, and monitored. Temperature logs are available for every shipment on request.</p>
+            </div>
+            <div class="why-card reveal" style="transition-delay:0.1s;">
+                <div class="why-ico red"><i class="fas fa-passport"></i></div>
+                <h4>Food Import Documentation</h4>
+                <p>We understand the difference between a phytosanitary certificate, a health certificate, and a certificate of conformity — and we ensure the right documents accompany every consignment.</p>
+            </div>
+            <div class="why-card reveal" style="transition-delay:0.2s;">
+                <div class="why-ico amber"><i class="fas fa-clock"></i></div>
+                <h4>Time-Critical Expertise</h4>
+                <p>Perishables don't allow for "we'll try again tomorrow." Our team is built around urgency, with 24/7 monitoring and escalation procedures that prevent delays from becoming disasters.</p>
+            </div>
+            <div class="why-card reveal" style="transition-delay:0.3s;">
+                <div class="why-ico green"><i class="fas fa-leaf"></i></div>
+                <h4>Organic &amp; Specialty Food</h4>
+                <p>Organic certification compliance, non-GMO labelling, and specialist handling for artisan, premium, and organic food categories — we protect both your products and your brand credentials.</p>
+            </div>
+            <div class="why-card reveal" style="transition-delay:0.1s;">
+                <div class="why-ico blue"><i class="fas fa-wine-bottle"></i></div>
+                <h4>Beverages &amp; Spirits Handling</h4>
+                <p>Wines, spirits, craft beers, and premium beverages handled with specialist liquid freight expertise — correct CITES/WSET documentation, anti-breakage packaging, and temperature compliance.</p>
+            </div>
+            <div class="why-card reveal" style="transition-delay:0.2s;">
+                <div class="why-ico red"><i class="fas fa-microscope"></i></div>
+                <h4>HACCP-Aware Operations</h4>
+                <p>Our food logistics team operates with awareness of HACCP principles, ensuring that handling, storage, and transport at every stage minimises contamination and quality risks.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─────────────── PROCESS ─────────────── -->
+<section class="process-section" id="process">
+    <div class="container">
+        <div class="sh">
+            <div class="tag">Our Process</div>
+            <h2>How We Ship Your Food Products to Any Show</h2>
+            <p>A seamless, step-by-step process designed specifically for food &amp; beverage exhibition cargo.</p>
+            <div class="sh-line"></div>
+        </div>
+        <div class="process-steps">
+            <div class="ps reveal">
+                <div class="ps-num">01</div>
+                <div class="ps-ico"><i class="fas fa-clipboard-check"></i></div>
+                <h4>Product Assessment</h4>
+                <p>We review your product list, temperature requirements, packaging, and quantities to define the correct logistics plan.</p>
+                <div class="ps-arrow"><i class="fas fa-chevron-right"></i></div>
+            </div>
+            <div class="ps reveal" style="transition-delay:0.1s;">
+                <div class="ps-num">02</div>
+                <div class="ps-ico"><i class="fas fa-file-medical"></i></div>
+                <h4>Documentation Preparation</h4>
+                <p>Health certificates, phytosanitary docs, import permits, and customs paperwork — all prepared and reviewed before dispatch.</p>
+                <div class="ps-arrow"><i class="fas fa-chevron-right"></i></div>
+            </div>
+            <div class="ps reveal" style="transition-delay:0.2s;">
+                <div class="ps-num">03</div>
+                <div class="ps-ico"><i class="fas fa-box"></i></div>
+                <h4>Specialist Packing</h4>
+                <p>Cold-chain compatible packaging — insulated shippers, gel packs, dry ice, or reefer containers — selected for your exact product type.</p>
+                <div class="ps-arrow"><i class="fas fa-chevron-right"></i></div>
+            </div>
+            <div class="ps reveal" style="transition-delay:0.3s;">
+                <div class="ps-num">04</div>
+                <div class="ps-ico"><i class="fas fa-plane"></i></div>
+                <h4>Temperature-Logged Transit</h4>
+                <p>Shipment moves via air or road freight with continuous temperature monitoring, real-time alerts, and proactive management.</p>
+                <div class="ps-arrow"><i class="fas fa-chevron-right"></i></div>
+            </div>
+            <div class="ps reveal" style="transition-delay:0.4s;">
+                <div class="ps-num">05</div>
+                <div class="ps-ico"><i class="fas fa-stamp"></i></div>
+                <h4>Customs Clearance</h4>
+                <p>Express customs clearance at the destination airport with our local partners — minimising cold-chain dwell time at the border.</p>
+                <div class="ps-arrow"><i class="fas fa-chevron-right"></i></div>
+            </div>
+            <div class="ps reveal" style="transition-delay:0.5s;">
+                <div class="ps-num">06</div>
+                <div class="ps-ico"><i class="fas fa-store"></i></div>
+                <h4>Stand Delivery</h4>
+                <p>Products delivered directly to your exhibition stand or venue cold room under on-site supervisor oversight — ready for your team.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─────────────── FAQ ─────────────── -->
+<section class="faq-section" id="faq">
+    <div class="container">
+        <div class="sh">
+            <div class="tag red">FAQ</div>
+            <h2>Frequently Asked Questions</h2>
+            <p>Answers to the most common questions from food &amp; beverage exhibitors.</p>
+            <div class="sh-line"></div>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="faq-q">
+                    Can you ship frozen food samples by air freight for an exhibition?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-a">
+                    <p>Yes. Frozen food samples can be shipped by air using dry ice (CO₂ solid) or gel pack insulated shippers depending on the transit time and required temperature. We prepare the packaging to meet IATA Packing Instructions P203 for dry ice shipments, obtain the required dangerous goods declaration, and select flight routings that minimise time in transit. For shipments requiring consistent -18°C to -25°C, we select airlines with proven cold-chain capabilities and often use dedicated reefer ULD containers for larger quantities.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">
+                    What documentation is required to import food products into the UAE for Gulfood?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-a">
+                    <p>For food imports into the UAE, you typically require a commercial invoice, packing list, certificate of origin, health certificate (issued by the exporting country's competent authority), halal certificate (mandatory for meat and poultry), and an import permit where applicable. For Gulfood, the Dubai Municipality also requires specific labelling compliance in Arabic and English. STOP India prepares a complete documentation checklist based on your specific product category and ensures all certificates are obtained from the correct issuing authorities before shipment.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">
+                    How do you ensure the cold chain isn't broken during customs clearance?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-a">
+                    <p>Cold chain management during customs is one of the most critical — and often mishandled — stages. STOP India pre-lodges all customs documentation before the aircraft lands, so the clearance process can begin the moment the shipment arrives. We use customs brokers with dedicated cold store facilities at major cargo hubs, ensuring your goods go directly from the aircraft into cold storage rather than sitting on a warehouse floor. For especially time-sensitive consignments, we can arrange priority handling with airline ground handlers in advance.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">
+                    Do you provide temperature monitoring certificates for our records?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-a">
+                    <p>Yes. For all temperature-sensitive consignments we use calibrated data loggers that record temperature at regular intervals throughout the journey. On delivery, you receive a full temperature log report showing min, max, and average temperatures across the entire transit. This is valuable for your own quality assurance records and, in the event of any product quality dispute, provides evidence of temperature compliance from our end of the chain.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">
+                    Can unsold exhibition samples be returned to India after the show?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-a">
+                    <p>Return of food samples to India is possible but subject to Indian import regulations, FSSAI requirements, and phytosanitary rules for certain product categories. In many cases, exhibitors choose to either donate unsold samples, dispose of them at the venue, or in some categories export them to a third country. STOP India advises on the most practical and cost-effective post-show disposition of unsold food samples based on the product type, host country, and Indian import rules — and we arrange all necessary logistics for whichever route is chosen.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">
+                    How far in advance should we book for major shows like Gulfood or Anuga?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-a">
+                    <p>For major food shows, we strongly recommend contacting us at least 8–12 weeks before the exhibition, and for frozen or complex product categories, 12–16 weeks is preferable. Early booking allows us to secure cold store facilities at the destination, complete all documentation preparation without last-minute pressure, and provide the most competitive freight rates. For shows like Gulfood, which attracts thousands of food exhibitors from India alone, capacity for cold chain transport can tighten significantly in the weeks before the event.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─────────────── CTA ─────────────── -->
+<section class="cta-section">
+    <div class="container">
+        <h2>Ready to Ship Your Food Products to the World?</h2>
+        <p>Talk to STOP India's food logistics specialists today. We'll design a cold chain solution for your products — chilled, frozen, or ambient — to any food show, anywhere.</p>
+        <div class="cta-btns">
+            <a href="tel:+919212133251" class="btn-white"><i class="fas fa-phone" style="margin-right:8px;"></i>Call a Food Specialist</a>
+            <a href="mailto:info@stopindia.com" class="btn-ghost"><i class="fas fa-envelope" style="margin-right:8px;"></i>Email an Enquiry</a>
+            <a href="services.html" class="btn-ghost"><i class="fas fa-list" style="margin-right:8px;"></i>All Services</a>
+        </div>
+    </div>
+</section>
+
+<!-- ─────────────── FOOTER ─────────────── -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4><img src="https://stopindia.com/wp-content/uploads/2020/09/new.png" alt="STOP India" style="max-width:150px; filter:brightness(0) invert(1);"></h4>
+                <p>Your trusted partner for food &amp; beverage exhibition logistics. Cold chain specialists delivering Indian food exports to the world's biggest trade fairs since 2012.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="sectors.html">Sectors</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Food &amp; Bev Services</h4>
+                <ul>
+                    <li><a href="#">Frozen Freight</a></li>
+                    <li><a href="#">Chilled Transport</a></li>
+                    <li><a href="#">Ambient Logistics</a></li>
+                    <li><a href="#">Food Customs Clearance</a></li>
+                    <li><a href="#">On-Site Supervision</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li class="contact-li"><i class="fas fa-map-marker-alt"></i><span>Corporate Office, Gurgaon, India</span></li>
+                    <li class="contact-li"><i class="fas fa-phone"></i><span>+91 9212133251 / 252</span></li>
+                    <li class="contact-li"><i class="fas fa-envelope"></i><span>info@stopindia.com</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="bottom-footer">
+            <p>&copy; 2012 STOP India. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    /* ── Mobile Menu ── */
+    document.getElementById('hamburger').addEventListener('click', () => {
+        document.getElementById('mainNav').classList.toggle('active');
+    });
+    document.querySelectorAll('.main-nav a').forEach(l =>
+        l.addEventListener('click', () => document.getElementById('mainNav').classList.remove('active'))
+    );
+
+    /* ── Hero Particles ── */
+    const particleContainer = document.getElementById('particles');
+    const colors = ['#06B6D4','#DC2626','#F59E0B','#ffffff'];
+    for (let i = 0; i < 18; i++) {
+        const p = document.createElement('div');
+        p.classList.add('particle');
+        const size = Math.random() * 80 + 30;
+        p.style.cssText = `
+            width:${size}px; height:${size}px;
+            left:${Math.random()*100}%;
+            top:${Math.random()*100}%;
+            background:${colors[Math.floor(Math.random()*colors.length)]};
+            animation-delay:${Math.random()*5}s;
+            animation-duration:${6+Math.random()*6}s;
+        `;
+        particleContainer.appendChild(p);
+    }
+
+    /* ── Snowflakes ── */
+    const snowContainer = document.getElementById('snowflakes');
+    const snowIcons = ['❄','❅','❆','✦'];
+    for (let i = 0; i < 30; i++) {
+        const f = document.createElement('div');
+        f.classList.add('flake');
+        f.textContent = snowIcons[Math.floor(Math.random()*snowIcons.length)];
+        f.style.cssText = `
+            left:${Math.random()*100}%;
+            font-size:${0.7+Math.random()*1.5}rem;
+            animation-duration:${6+Math.random()*10}s;
+            animation-delay:${Math.random()*8}s;
+        `;
+        snowContainer.appendChild(f);
+    }
+
+    /* ── Scroll Reveal ── */
+    const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    /* ── FAQ Toggle ── */
+    document.querySelectorAll('.faq-item').forEach(item => {
+        item.querySelector('.faq-q').addEventListener('click', () => {
+            const open = item.classList.contains('open');
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+            if (!open) item.classList.add('open');
+        });
+    });
+
+    /* ── Smooth Scroll ── */
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            const target = document.querySelector(href);
+            if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+        });
+    });
+</script>
+</body>
+</html>
