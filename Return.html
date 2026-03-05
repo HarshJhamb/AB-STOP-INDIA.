@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return Exhibition Logistics | STOP India</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* =========================================
+           1. ROOT VARIABLES & RESET
+           ========================================= */
+        :root {
+            --primary-navy: #183650;
+            --primary-red: #DC2626;
+            --dark-red: #991B1B;
+            --light-red: #FEE2E2;
+            --accent-red: #EF4444;
+            --primary-cyan: #06B6D4;
+            --light-cyan: #CFFAFE;
+            --dark-cyan: #0E7490;
+            --accent-color: #F59E0B;
+            --light-grey: #f8f9fa;
+            --text-grey: #000000;
+            --white: #ffffff;
+            --transition: all 0.3s ease-in-out;
+            --section-padding: 70px 0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            color: var(--primary-navy);
+            line-height: 1.7;
+            overflow-x: hidden;
+            background-color: var(--white);
+            font-size: 15px;
+        }
+
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; display: block; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-header h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        .section-header h2::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-red), var(--dark-red));
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .section-header p {
+            color: var(--text-grey);
+            font-size: 0.95rem;
+            max-width: 700px;
+            margin: 20px auto 0;
+            font-weight: 300;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+            color: var(--white);
+            font-weight: 500;
+            text-transform: uppercase;
+            border-radius: 50px;
+            border: 2px solid var(--primary-red);
+            cursor: pointer;
+            letter-spacing: 0.5px;
+            font-size: 0.85rem;
+            transition: all 0.4s ease;
+        }
+        .btn:hover {
+            background: transparent;
+            color: var(--primary-red);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(240,27,27,0.3);
+        }
+
+        /* =========================================
+           2. HEADER & NAVIGATION
+           ========================================= */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 20px rgba(24,54,80,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 90px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            flex-direction: row-reverse;
+        }
+
+        .logo-area img {
+            height: 91px;
+            width: auto;
+            object-fit: contain;
+            margin-right: -20px;
+        }
+
+        .main-nav ul { display: flex; gap: 25px; }
+        .main-nav a {
+            font-weight: 500;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: var(--primary-navy);
+            position: relative;
+            letter-spacing: 0.5px;
+        }
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-cyan), var(--dark-cyan));
+            bottom: -5px;
+            left: 0;
+            transition: var(--transition);
+        }
+        .main-nav a:hover::after, .main-nav a.active::after { width: 100%; }
+
+        .hamburger { display: none; cursor: pointer; font-size: 1.4rem; color: var(--primary-navy); }
+
+        /* =========================================
+           3. HERO SECTION
+           ========================================= */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(24,54,80,0.88), rgba(220,38,38,0.72)),
+                        url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(6,182,212,0.25);
+            border: 1px solid var(--primary-cyan);
+            color: var(--light-cyan);
+            padding: 6px 20px;
+            border-radius: 50px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 22px;
+            animation: slideUp 0.5s ease-out;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            animation: slideUp 0.8s ease-out;
+        }
+
+        .hero-section p {
+            font-size: 1.05rem;
+            margin-bottom: 35px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+            animation: slideUp 1s ease-out;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+            animation: slideUp 1.2s ease-out;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat .number {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary-cyan);
+            display: block;
+        }
+
+        .hero-stat .label {
+            font-size: 0.8rem;
+            font-weight: 400;
+            opacity: 0.85;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* =========================================
+           4. BREADCRUMB
+           ========================================= */
+        .breadcrumb-bar {
+            background: var(--light-grey);
+            padding: 14px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .breadcrumb-bar .container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.82rem;
+            color: #6b7280;
+        }
+
+        .breadcrumb-bar a { color: var(--primary-navy); font-weight: 500; }
+        .breadcrumb-bar a:hover { color: var(--primary-red); }
+        .breadcrumb-bar .sep { color: #d1d5db; }
+        .breadcrumb-bar .current { color: var(--primary-red); font-weight: 500; }
+
+        /* =========================================
+           5. INTRO / OVERVIEW SECTION
+           ========================================= */
+        .overview-section {
+            padding: var(--section-padding);
+            background: var(--white);
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .overview-content h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+            margin-bottom: 20px;
+            line-height: 1.35;
+        }
+
+        .overview-content h2 span {
+            color: var(--primary-red);
+        }
+
+        .overview-content p {
+            color: var(--text-grey);
+            line-height: 1.9;
+            font-size: 0.97rem;
+            margin-bottom: 18px;
+        }
+
+        .overview-image {
+            position: relative;
+        }
+
+        .overview-image img {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 25px 60px rgba(220,38,38,0.18);
+        }
+
+        .overview-image .floating-card {
+            position: absolute;
+            bottom: -25px;
+            left: -25px;
+            background: var(--white);
+            border-radius: 12px;
+            padding: 18px 22px;
+            box-shadow: 0 15px 40px rgba(24,54,80,0.15);
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            min-width: 220px;
+        }
+
+        .floating-card .fc-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary-cyan), var(--dark-cyan));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .floating-card .fc-text .fc-val {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+            line-height: 1;
+        }
+
+        .floating-card .fc-text .fc-label {
+            font-size: 0.75rem;
+            color: #6b7280;
+            margin-top: 3px;
+        }
+
+        /* =========================================
+           6. CORE SERVICES CARDS
+           ========================================= */
+        .core-services-section {
+            padding: var(--section-padding);
+            background: linear-gradient(135deg, var(--light-cyan) 0%, var(--white) 100%);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 28px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 38px 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(24,54,80,0.08);
+            transition: var(--transition);
+            border-top: 5px solid var(--primary-red);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(6,182,212,0.08), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .service-card:hover::before { left: 100%; }
+        .service-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 50px rgba(220,38,38,0.18);
+        }
+
+        .service-icon {
+            width: 75px;
+            height: 75px;
+            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 22px;
+            font-size: 1.9rem;
+            transition: var(--transition);
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.15) rotate(-5deg);
+            box-shadow: 0 10px 25px rgba(220,38,38,0.3);
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 14px;
+            color: var(--primary-navy);
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card p {
+            color: var(--text-grey);
+            line-height: 1.8;
+            font-size: 0.93rem;
+            margin-bottom: 18px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-features {
+            margin-top: 18px;
+            padding-top: 18px;
+            border-top: 2px solid var(--light-cyan);
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-features li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 9px;
+            font-size: 0.88rem;
+            color: var(--text-grey);
+        }
+
+        .service-features i { color: var(--primary-cyan); margin-right: 10px; font-size: 1rem; }
+
+        /* =========================================
+           7. HOW IT WORKS / PROCESS
+           ========================================= */
+        .process-section {
+            padding: var(--section-padding);
+            background: var(--white);
+        }
+
+        .process-flow {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin-top: 50px;
+            position: relative;
+        }
+
+        .process-step {
+            background: linear-gradient(135deg, var(--light-cyan), #A5F3FC);
+            padding: 30px 22px;
+            border-radius: 12px;
+            text-align: center;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .process-step:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(6,182,212,0.3);
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 14px;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .process-step h5 {
+            color: var(--primary-navy);
+            margin-bottom: 9px;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .process-step p { color: var(--text-grey); font-size: 0.87rem; line-height: 1.6; }
+
+        @media (min-width: 992px) {
+            .process-step::after {
+                content: '→';
+                position: absolute;
+                right: -22px;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 1.8rem;
+                color: var(--primary-cyan);
+            }
+            .process-step:last-child::after { display: none; }
+        }
+
+        /* =========================================
+           8. DETAIL / FEATURES SECTION
+           ========================================= */
+        .detail-section {
+            padding: var(--section-padding);
+            background: linear-gradient(135deg, var(--light-red) 0%, var(--white) 100%);
+        }
+
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 55px;
+            align-items: center;
+            margin-bottom: 70px;
+        }
+
+        .detail-grid.reverse { direction: rtl; }
+        .detail-grid.reverse > * { direction: ltr; }
+
+        .detail-content h3 {
+            font-size: 1.9rem;
+            margin-bottom: 20px;
+            color: var(--primary-navy);
+            font-weight: 700;
+            line-height: 1.35;
+        }
+
+        .detail-content p {
+            margin-bottom: 16px;
+            color: var(--text-grey);
+            line-height: 1.9;
+            font-size: 0.96rem;
+        }
+
+        .detail-points {
+            background: var(--white);
+            padding: 28px;
+            border-radius: 12px;
+            margin-top: 22px;
+            box-shadow: 0 10px 25px rgba(24,54,80,0.08);
+        }
+
+        .detail-points h5 {
+            color: var(--primary-navy);
+            margin-bottom: 16px;
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+
+        .detail-points li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 11px;
+            font-size: 0.93rem;
+            color: var(--text-grey);
+        }
+
+        .detail-points i { color: var(--primary-red); margin-right: 12px; margin-top: 4px; flex-shrink: 0; }
+
+        .detail-image img {
+            width: 100%;
+            border-radius: 14px;
+            box-shadow: 0 20px 50px rgba(24,54,80,0.14);
+        }
+
+        /* =========================================
+           9. CASE HIGHLIGHT / STATS BAND
+           ========================================= */
+        .stats-band {
+            padding: 60px 0;
+            background: linear-gradient(135deg, var(--primary-navy), #0f2941);
+            color: var(--white);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-item .stat-num {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--primary-cyan);
+            display: block;
+        }
+
+        .stat-item .stat-desc {
+            font-size: 0.88rem;
+            font-weight: 300;
+            opacity: 0.85;
+            margin-top: 6px;
+        }
+
+        /* =========================================
+           10. COMPARISON TABLE
+           ========================================= */
+        .comparison-section {
+            padding: var(--section-padding);
+            background: var(--white);
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            box-shadow: 0 10px 30px rgba(24,54,80,0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 40px;
+        }
+
+        .comparison-table th {
+            background: linear-gradient(135deg, var(--primary-navy), #0f2941);
+            color: var(--white);
+            padding: 18px 20px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .comparison-table td {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--light-cyan);
+            color: var(--text-grey);
+            font-size: 0.93rem;
+        }
+
+        .comparison-table tr:hover { background-color: var(--light-cyan); }
+
+        .comparison-table .feature-name {
+            font-weight: 600;
+            color: var(--primary-navy);
+            width: 30%;
+        }
+
+        .check-yes { color: var(--primary-cyan); font-size: 1.2rem; font-weight: bold; }
+        .check-no { color: #9ca3af; font-size: 1.2rem; }
+        .check-partial { color: var(--accent-color); font-size: 1.2rem; }
+
+        /* =========================================
+           11. FAQ
+           ========================================= */
+        .faq-section {
+            padding: var(--section-padding);
+            background: linear-gradient(135deg, var(--light-cyan) 0%, var(--white) 100%);
+        }
+
+        .faq-list { margin-top: 45px; max-width: 850px; margin-left: auto; margin-right: auto; }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: 10px;
+            margin-bottom: 14px;
+            box-shadow: 0 5px 15px rgba(24,54,80,0.07);
+            overflow: hidden;
+            border-left: 4px solid var(--primary-cyan);
+        }
+
+        .faq-question {
+            padding: 20px 22px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--primary-navy);
+            font-size: 0.96rem;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover { color: var(--primary-red); }
+        .faq-question i { color: var(--primary-cyan); font-size: 1.1rem; transition: var(--transition); }
+        .faq-item.open .faq-question i { transform: rotate(180deg); color: var(--primary-red); }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+        }
+
+        .faq-item.open .faq-answer { max-height: 300px; }
+        .faq-answer p {
+            padding: 0 22px 20px;
+            color: var(--text-grey);
+            font-size: 0.92rem;
+            line-height: 1.8;
+        }
+
+        /* =========================================
+           12. CTA SECTION
+           ========================================= */
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--dark-red) 100%);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .cta-section h2 { font-size: 2.4rem; margin-bottom: 20px; font-weight: 700; }
+        .cta-section p {
+            font-size: 1.02rem;
+            margin-bottom: 35px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+        }
+
+        .cta-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+
+        .btn-light {
+            background: var(--white);
+            color: var(--primary-red);
+            padding: 14px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: var(--transition);
+            border: 2px solid var(--white);
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-light:hover { background: transparent; color: var(--white); }
+
+        /* =========================================
+           13. FOOTER
+           ========================================= */
+        footer {
+            background: linear-gradient(135deg, var(--primary-navy), #0f2941);
+            color: #E3F2FD;
+            padding-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 35px;
+            margin-bottom: 45px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            border-left: 3px solid var(--primary-cyan);
+            padding-left: 15px;
+            font-weight: 600;
+        }
+
+        .footer-about p { font-size: 0.9rem; margin-bottom: 16px; line-height: 1.7; font-weight: 300; }
+
+        .footer-links ul li { margin-bottom: 10px; }
+        .footer-links ul li a { color: #E3F2FD; font-size: 0.9rem; font-weight: 300; transition: 0.3s; }
+        .footer-links ul li a:hover { color: var(--primary-cyan); padding-left: 8px; }
+
+        .footer-contact li { display: flex; margin-bottom: 13px; align-items: flex-start; font-size: 0.9rem; font-weight: 300; }
+        .footer-contact i { color: var(--primary-cyan); margin-right: 12px; margin-top: 5px; }
+
+        .bottom-footer {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding: 22px 0;
+            text-align: center;
+            font-size: 0.85rem;
+            font-weight: 300;
+        }
+
+        /* =========================================
+           14. RESPONSIVE
+           ========================================= */
+        @media (max-width: 992px) {
+            .hero-section h1 { font-size: 2.2rem; }
+            .overview-grid, .detail-grid { grid-template-columns: 1fr; gap: 35px; }
+            .detail-grid.reverse { direction: ltr; }
+            .overview-image .floating-card { position: relative; bottom: auto; left: auto; margin-top: 20px; }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+            .nav-container { flex-direction: row; }
+            .main-nav {
+                position: absolute; top: 90px; left: -100%;
+                width: 100%; background: var(--white);
+                padding: 20px; box-shadow: 0 5px 10px rgba(24,54,80,0.1);
+                transition: 0.4s;
+            }
+            .main-nav.active { left: 0; }
+            .main-nav ul { flex-direction: column; text-align: center; gap: 15px; }
+            .hero-section h1 { font-size: 1.8rem; }
+            .section-header h2 { font-size: 1.8rem; }
+            .hero-stats { gap: 30px; }
+            .cta-section h2 { font-size: 1.8rem; }
+            .cta-buttons { flex-direction: column; }
+            .cta-buttons .btn-light { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <div class="logo-area">
+                <a href="index.html">
+                    <img src="https://stopindia.com/wp-content/uploads/2020/09/new.png" alt="STOP India Logo">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="sectors.html">Sectors</a></li>
+                    <li><a href="Gallery.html">Gallery</a></li>
+                    <li><a href="support.html">Support</a></li>
+                    <li><a href="carrer.html">Career</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger"><i class="fas fa-bars"></i></div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-bar">
+        <div class="container">
+            <a href="index.html">Home</a>
+            <span class="sep">›</span>
+            <a href="services.html">Services</a>
+            <span class="sep">›</span>
+            <span class="current">Return Exhibition Logistics</span>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-badge"><i class="fas fa-undo-alt" style="margin-right:8px;"></i> Post-Show Service</div>
+            <h1>Return Exhibition Logistics</h1>
+            <p>Expert repacking, labelling, and return shipping solutions that bring every crate, exhibit, and display safely back home — on time, undamaged, and stress-free.</p>
+            <div class="cta-buttons" style="margin-top:30px;">
+                <a href="tel:+919212133251" class="btn-light">Get a Quote</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="number">100%</span>
+                    <span class="label">Safe Returns</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="number">50+</span>
+                    <span class="label">Countries Covered</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="number">25+</span>
+                    <span class="label">Years Experience</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="number">24/7</span>
+                    <span class="label">On-Site Support</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section class="overview-section" id="overview">
+        <div class="container">
+            <div class="overview-grid">
+                <div class="overview-content">
+                    <h2>The Show Is Over—<span>Now Comes the Hard Part.</span></h2>
+                    <p>Most exhibitors are exhausted by the time closing day arrives. Dismantling stands, accounting for every piece of collateral, coordinating carriers across time zones—it can be as demanding as the show itself. One missed crate or mislabelled shipment can turn a successful exhibition into a costly headache.</p>
+                    <p>STOP India specialises in exactly this moment. Our dedicated return logistics team takes over as soon as the last visitor leaves, managing every aspect of post-show handling so you can travel home with total peace of mind.</p>
+                    <p>From professional on-site repacking and inventory verification to customs documentation and final warehouse delivery, we close the loop on your exhibition journey with the same precision we applied at the start.</p>
+                    <a href="#services" class="btn" style="margin-top:10px;">Explore Our Return Services</a>
+                </div>
+                <div class="overview-image">
+                    <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=1935&auto=format&fit=crop" alt="Return logistics warehouse packing">
+                    <div class="floating-card">
+                        <div class="fc-icon"><i class="fas fa-shield-alt"></i></div>
+                        <div class="fc-text">
+                            <div class="fc-val">Zero Loss</div>
+                            <div class="fc-label">Damage-free delivery record</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Services -->
+    <section class="core-services-section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Return Logistics Services</h2>
+                <p>Every service designed around the unique demands of post-exhibition cargo movement.</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- 1 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-box-open"></i></div>
+                    <h3>Professional Repacking</h3>
+                    <p>Our trained crew repacks your exhibits, display materials, and fragile items using original crating or equivalent protective packaging, ensuring safe transit back to origin.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Original crate reassembly</li>
+                        <li><i class="fas fa-check-circle"></i> Foam & custom padding</li>
+                        <li><i class="fas fa-check-circle"></i> Inventory count & verification</li>
+                    </ul>
+                </div>
+
+                <!-- 2 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-tags"></i></div>
+                    <h3>Labelling & Documentation</h3>
+                    <p>Accurate labelling is mission-critical for return shipments. We ensure every piece carries the correct return address, package weight, HS codes, and customs declarations.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Return address labelling</li>
+                        <li><i class="fas fa-check-circle"></i> Packing list generation</li>
+                        <li><i class="fas fa-check-circle"></i> ATA Carnet re-export handling</li>
+                    </ul>
+                </div>
+
+                <!-- 3 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-truck-loading"></i></div>
+                    <h3>Venue Collection & Loading</h3>
+                    <p>Our on-site team coordinates directly with venue handlers for official move-out, loading cargo onto transport vehicles in strict compliance with organiser regulations.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Organiser-approved move-out</li>
+                        <li><i class="fas fa-check-circle"></i> Forklift & handling equipment</li>
+                        <li><i class="fas fa-check-circle"></i> Damage-controlled loading</li>
+                    </ul>
+                </div>
+
+                <!-- 4 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-plane-arrival"></i></div>
+                    <h3>Return Air, Sea & Road Freight</h3>
+                    <p>We select the most efficient and cost-effective return routing — air for time-critical items, sea for bulk cargo, and road for regional shows — always matching your priorities.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Express air return options</li>
+                        <li><i class="fas fa-check-circle"></i> Consolidated sea freight</li>
+                        <li><i class="fas fa-check-circle"></i> Cross-border road transport</li>
+                    </ul>
+                </div>
+
+                <!-- 5 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-file-contract"></i></div>
+                    <h3>Return Customs Clearance</h3>
+                    <p>Re-importing exhibition goods is often more complex than the outbound journey. We handle all duty relief, ATA Carnet re-exportation, and re-import declarations seamlessly.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> ATA Carnet re-export stamping</li>
+                        <li><i class="fas fa-check-circle"></i> Duty & tax relief processing</li>
+                        <li><i class="fas fa-check-circle"></i> Re-import documentation</li>
+                    </ul>
+                </div>
+
+                <!-- 6 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-warehouse"></i></div>
+                    <h3>Post-Show Storage</h3>
+                    <p>Need your exhibit materials held before the next show? We offer secure short- and long-term warehousing with full inventory management, ready to re-deploy at your next event.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Climate-controlled facilities</li>
+                        <li><i class="fas fa-check-circle"></i> Barcode inventory tracking</li>
+                        <li><i class="fas fa-check-circle"></i> On-demand re-deployment</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Flow -->
+    <section class="process-section" id="process">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Return Process</h2>
+                <p>A seamless, step-by-step workflow that leaves nothing to chance after the show closes.</p>
+            </div>
+
+            <div class="process-flow">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h5>Pre-Close Briefing</h5>
+                    <p>Our team reviews the return plan with you before the show ends — no last-minute surprises.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h5>Stand Dismantling</h5>
+                    <p>Coordinated dismantling during the official move-out window in compliance with venue rules.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h5>Repacking & Inventory</h5>
+                    <p>Professional packing with a verified inventory sign-off before any crate is sealed.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h5>Documentation</h5>
+                    <p>Return labels, packing lists, and customs paperwork completed and attached to every shipment.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h5>Transport & Customs</h5>
+                    <p>Cargo collected and dispatched via the chosen return route with real-time tracking updates.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">6</div>
+                    <h5>Final Delivery</h5>
+                    <p>Door-to-door return delivery to your warehouse or storage facility, with a completion report.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detail Section: Repacking -->
+    <section class="detail-section" id="detail">
+        <div class="container">
+            <div class="detail-grid">
+                <div class="detail-content">
+                    <h3>Why Professional Repacking Makes All the Difference</h3>
+                    <p>Exhibition materials are often high-value, custom-built, and fragile. A damaged display unit or broken prototype can mean thousands of rupees in repairs and missed opportunities at the next show.</p>
+                    <p>Our packers are trained specifically in exhibition cargo — they know how to handle tension fabric graphics, glass displays, electronic screens, modular stands, and promotional products with the care each item requires.</p>
+                    <div class="detail-points">
+                        <h5>What Our Repacking Covers:</h5>
+                        <ul>
+                            <li><i class="fas fa-check-square"></i> Modular stand components & aluminium profiles</li>
+                            <li><i class="fas fa-check-square"></i> Printed graphics, banners & tension fabric systems</li>
+                            <li><i class="fas fa-check-square"></i> Electronic displays, AV equipment & touchscreens</li>
+                            <li><i class="fas fa-check-square"></i> Product samples, prototypes & working models</li>
+                            <li><i class="fas fa-check-square"></i> Marketing collateral, brochures & giveaways</li>
+                            <li><i class="fas fa-check-square"></i> Branded furniture & custom fabricated elements</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="detail-image">
+                    <img src="https://images.unsplash.com/photo-1601597111158-2fceff292cdc?q=80&w=1770&auto=format&fit=crop" alt="Professional packing of exhibition materials">
+                </div>
+            </div>
+
+            <div class="detail-grid reverse">
+                <div class="detail-content">
+                    <h3>Complex Return Customs — Handled Expertly</h3>
+                    <p>Re-importing exhibition goods under ATA Carnet or temporary admission requires meticulous paperwork. An error in re-export documentation can lead to duties becoming payable on goods that were never meant to remain in the country.</p>
+                    <p>Our customs specialists have decades of experience managing return formalities across all major exhibition destinations — ensuring your goods come back duty-free and delay-free.</p>
+                    <div class="detail-points">
+                        <h5>Our Customs Return Expertise Includes:</h5>
+                        <ul>
+                            <li><i class="fas fa-check-square"></i> ATA Carnet discharge & re-exportation stamping</li>
+                            <li><i class="fas fa-check-square"></i> Temporary import permit cancellation</li>
+                            <li><i class="fas fa-check-square"></i> Re-import duty relief applications</li>
+                            <li><i class="fas fa-check-square"></i> Compliance with country-specific import regulations</li>
+                            <li><i class="fas fa-check-square"></i> Coordination with forwarding agents worldwide</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="detail-image">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1770&auto=format&fit=crop" alt="Customs documentation for return freight">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Band -->
+    <div class="stats-band">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-num">1,000+</span>
+                    <span class="stat-desc">Exhibitions Served Worldwide</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">50+</span>
+                    <span class="stat-desc">Countries — Return Coverage</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">0%</span>
+                    <span class="stat-desc">Cargo Loss Rate</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">25+</span>
+                    <span class="stat-desc">Years of Exhibition Expertise</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Comparison Table -->
+    <section class="comparison-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>How We Compare</h2>
+                <p>See why exhibitors trust STOP India for their return logistics over generic alternatives.</p>
+            </div>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>STOP India</th>
+                        <th>Generic Freight Forwarder</th>
+                        <th>DIY / In-House</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="feature-name"><i class="fas fa-check-circle"></i> On-Site Repacking Team</td>
+                        <td><span class="check-yes">✓</span></td>
+                        <td><span class="check-no">✗</span></td>
+                        <td><span class="check-no">✗</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name"><i class="fas fa-check-circle"></i> ATA Carnet Expertise</td>
+                        <td><span class="check-yes">✓</span></td>
+                        <td><span class="check-partial">~</span></td>
+                        <td><span class="check-no">✗</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name"><i class="fas fa-check-circle"></i> Exhibition-Specific Handling</td>
+                        <td><span class="check-yes">✓</span></td>
+                        <td><span class="check-no">✗</span></td>
+                        <td><span class="check-no">✗</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name"><i class="fas fa-check-circle"></i> Inventory Verification</td>
+                        <td><span class="check-yes">✓</span></td>
+                        <td><span class="check-no">✗</span></td>
+                        <td><span class="check-partial">~</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name"><i class="fas fa-check-circle"></i> Post-Show Storage</td>
+                        <td><span class="check-yes">✓</span></td>
+                        <td><span class="check-partial">~</span></td>
+                        <td><span class="check-no">✗</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name"><i class="fas fa-check-circle"></i> 24/7 Support</td>
+                        <td><span class="check-yes">✓</span></td>
+                        <td><span class="check-partial">~</span></td>
+                        <td><span class="check-no">✗</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name"><i class="fas fa-check-circle"></i> Return Customs Clearance</td>
+                        <td><span class="check-yes">✓</span></td>
+                        <td><span class="check-yes">✓</span></td>
+                        <td><span class="check-no">✗</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name"><i class="fas fa-check-circle"></i> Global Network (50+ Countries)</td>
+                        <td><span class="check-yes">✓</span></td>
+                        <td><span class="check-partial">~</span></td>
+                        <td><span class="check-no">✗</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Common questions about return exhibition logistics — answered.</p>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        When should I book return logistics?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ideally, return logistics should be booked at the same time as your outbound shipment. This ensures we can plan move-out slots, pre-arrange carriers, and prepare all return documentation well in advance. Booking close to the show end-date can result in delays or higher costs due to carrier availability.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What happens to empty crates during the show?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our on-site team manages empty case storage throughout the show. We collect empty crates immediately after setup, store them in the designated venue storage area, and return them to your stand at the start of move-out — so repacking can begin immediately.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can you handle partial shipments if some goods are sold at the show?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes. We routinely handle situations where some goods are sold, donated, or disposed of at the venue. We update the inventory, revise the customs documentation, and arrange return shipping only for the remaining items — ensuring full compliance without over-reporting.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How do you handle ATA Carnet re-exportation?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our customs specialists handle ATA Carnet re-export stamping at the port of exit in the host country, and co-ordinate the matching re-import declarations with your customs broker back home. We track the carnet validity dates to ensure no penalties arise from late re-exportation.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What if some items are damaged during dismantling by venue staff?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our team documents and photographs all items before and after repacking. We recommend cargo insurance for every return shipment and can assist with claim filing in the event of damage. Our presence on-site acts as an important layer of protection and evidence if disputes arise.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Book Your Return Logistics?</h2>
+            <p>Let STOP India handle every detail of your post-show return — so you can focus on following up leads and planning your next exhibition.</p>
+            <div class="cta-buttons">
+                <a href="tel:+919212133251" class="btn-light">Call Us Now</a>
+                <a href="mailto:info@stopindia.com" class="btn-light">Email Inquiry</a>
+                <a href="services.html" class="btn-light">All Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <h4><img src="https://stopindia.com/wp-content/uploads/2020/09/new.png" alt="STOP India" style="max-width:150px; filter:brightness(0) invert(1);"></h4>
+                    <p>Your trusted partner for exhibition logistics. Moving people and cargo with zero delays and complete reliability since 2012.</p>
+                </div>
+
+                <div class="footer-col footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="sectors.html">Sectors</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col footer-links">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="services.html#services">Air Freight</a></li>
+                        <li><a href="services.html#services">Sea Freight</a></li>
+                        <li><a href="services.html#services">Exhibition Handling</a></li>
+                        <li><a href="services.html#services">Customs Clearance</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Corporate Office, Gurgaon, India</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+91 9212133251 / 252</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@stopindia.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bottom-footer">
+                <p>&copy; 2012 STOP India. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.main-nav');
+        hamburger.addEventListener('click', () => navMenu.classList.toggle('active'));
+        document.querySelectorAll('.main-nav a').forEach(link => {
+            link.addEventListener('click', () => navMenu.classList.remove('active'));
+        });
+
+        // FAQ Toggle
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.querySelector('.faq-question').addEventListener('click', () => {
+                const isOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                if (!isOpen) item.classList.add('open');
+            });
+        });
+
+        // Scroll Animation
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -80px 0px' };
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card, .why-card, .process-step, .faq-item, .stat-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

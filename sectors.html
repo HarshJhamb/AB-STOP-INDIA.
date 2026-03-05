@@ -1,0 +1,1861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sectors We Serve | STOP India - Exhibition exhibition logistics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* =========================================
+           ROOT VARIABLES & RESET
+           ========================================= */
+        :root {
+            --primary-navy: #183650;
+            --primary-red: #DC2626;
+            --dark-red: #991B1B;
+            --light-red: #FEE2E2;
+            --primary-cyan: #06B6D4;
+            --light-cyan: #CFFAFE;
+            --dark-cyan: #0E7490;
+            --light-grey: #f8f9fa;
+            --text-grey: #000000;
+            --white: #ffffff;
+            --transition: all 0.3s ease-in-out;
+            --shadow-sm: 0 5px 15px rgba(24, 54, 80, 0.08);
+            --shadow-md: 0 10px 30px rgba(24, 54, 80, 0.12);
+            --shadow-lg: 0 20px 50px rgba(24, 54, 80, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            color: var(--primary-navy);
+            line-height: 1.7;
+            overflow-x: hidden;
+            background-color: var(--white);
+            font-size: 15px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 32px;
+            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+            color: var(--white);
+            font-weight: 600;
+            text-transform: uppercase;
+            border-radius: 50px;
+            border: 2px solid var(--primary-red);
+            cursor: pointer;
+            letter-spacing: 0.7px;
+            font-size: 0.85rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 15px rgba(220, 38, 38, 0.2);
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: var(--primary-red);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.3);
+        }
+
+        /* =========================================
+           HEADER & NAVIGATION
+           ========================================= */
+        .top-bar {
+            background: linear-gradient(90deg, var(--dark-red), var(--primary-red));
+            color: var(--white);
+            padding: 12px 0;
+            font-size: 0.8rem;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-info-top span {
+            margin-right: 25px;
+            font-weight: 400;
+        }
+
+        .contact-info-top i {
+            color: var(--light-cyan);
+            margin-right: 6px;
+        }
+
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 90px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            flex-direction: row-reverse;
+        }
+
+        .logo-area img {
+            height: 91px;
+            width: auto;
+            object-fit: contain;
+            margin-right: -20px;
+        }
+
+        .main-nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        .main-nav a {
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: var(--primary-navy);
+            position: relative;
+            letter-spacing: 0.6px;
+        }
+
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-cyan), var(--dark-cyan));
+            bottom: -8px;
+            left: 0;
+            transition: var(--transition);
+        }
+
+        .main-nav a:hover::after,
+        .main-nav a.active::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.4rem;
+            color: var(--primary-navy);
+        }
+
+        /* =========================================
+           HERO SECTION
+           ========================================= */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(24, 54, 80, 0.88), rgba(220, 38, 38, 0.75)), url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 120px 0;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.05)" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,144C960,149,1056,139,1152,128C1248,117,1344,107,1392,101.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+            opacity: 0.1;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            animation: slideDown 0.8s ease-out;
+            text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+            letter-spacing: -1px;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            margin-bottom: 35px;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: slideUp 1s ease-out;
+            font-weight: 300;
+            text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-40px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(40px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* =========================================
+           SECTION HEADER
+           ========================================= */
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--primary-navy);
+            margin-bottom: 18px;
+            position: relative;
+            display: inline-block;
+            letter-spacing: -0.5px;
+        }
+
+        .section-header h2::after {
+            content: '';
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-red), var(--dark-red));
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 50px;
+        }
+
+        .section-header p {
+            color: var(--text-grey);
+            font-size: 1.05rem;
+            max-width: 750px;
+            margin: 35px auto 0;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        /* =========================================
+           SECTORS MAIN SECTION
+           ========================================= */
+        .sectors-main-section {
+            padding: 90px 0;
+            background: var(--white);
+        }
+
+        .sectors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 35px;
+            margin-top: 60px;
+        }
+
+        .sector-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            border-top: 6px solid var(--primary-red);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .sector-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .sector-image {
+            width: 100%;
+            height: 280px;
+            background: linear-gradient(135deg, var(--light-cyan), #A5F3FC);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .sector-card:nth-child(1) .sector-image {
+            background: linear-gradient(135deg, #FEE2E2, #FECACA);
+            background-image: url('https://images.unsplash.com/photo-1585518419759-7a2f6a0dddf0?q=80&w=1000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .sector-card:nth-child(2) .sector-image {
+            background: linear-gradient(135deg, #F3E8FF, #E9D5FF);
+            background-image: url('https://images.unsplash.com/photo-1550355291-bbee04a92027?q=80&w=1000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .sector-card:nth-child(3) .sector-image {
+            background: linear-gradient(135deg, #FEF3C7, #FED7AA);
+            background-image: url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=1000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .sector-card:nth-child(4) .sector-image {
+            background: linear-gradient(135deg, #DBEAFE, #BFDBFE);
+            background-image: url('https://images.unsplash.com/photo-1576091160550-112173f7f869?q=80&w=1000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .sector-card:nth-child(5) .sector-image {
+            background: linear-gradient(135deg, #D1FAE5, #A7F3D0);
+            background-image: url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .sector-card:nth-child(6) .sector-image {
+            background: linear-gradient(135deg, #FCE7F3, #FBCFE8);
+            background-image: url('https://images.unsplash.com/photo-1605857221262-e42991ced738?q=80&w=1000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .sector-image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(24, 54, 80, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .sector-card:hover .sector-image-overlay {
+            background: rgba(24, 54, 80, 0.5);
+        }
+
+        .sector-image-icon {
+            font-size: 4.5rem;
+            color: var(--white);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+        }
+
+        .sector-card:hover .sector-image-icon {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        .sector-content {
+            padding: 35px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sector-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+        }
+
+        .sector-desc {
+            font-size: 0.98rem;
+            color: var(--text-grey);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .sector-details {
+            background: var(--light-cyan);
+            padding: 18px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: none;
+            animation: slideDown 0.3s ease-out;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .sector-details.active {
+            display: block;
+        }
+
+        .sector-details h5 {
+            color: var(--primary-navy);
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            font-weight: 700;
+        }
+
+        .sector-details ul {
+            list-style: none;
+        }
+
+        .sector-details li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: var(--text-grey);
+        }
+
+        .sector-details i {
+            color: var(--primary-red);
+            margin-right: 10px;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .sector-expand {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-red);
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: auto;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .sector-card:hover .sector-expand {
+            gap: 12px;
+        }
+
+        .sector-expand i {
+            transition: var(--transition);
+        }
+
+        .sector-card.expanded .sector-expand i {
+            transform: rotate(180deg);
+        }
+
+        /* =========================================
+           EXHIBITIONS SHOWCASE SECTION
+           ========================================= */
+        .exhibitions-showcase {
+            padding: 90px 0;
+            background: linear-gradient(135deg, var(--light-cyan) 0%, var(--white) 100%);
+        }
+
+        .exhibitions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .exhibition-card {
+            background: var(--white);
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .exhibition-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .exhibition-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--light-red), #FECACA);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .exhibition-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .exhibition-card:hover .exhibition-image img {
+            transform: scale(1.08);
+        }
+
+        .exhibition-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: var(--primary-red);
+            color: var(--white);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .exhibition-info {
+            padding: 25px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .exhibition-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+            margin-bottom: 10px;
+        }
+
+        .exhibition-details {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            font-size: 0.85rem;
+            color: var(--text-grey);
+        }
+
+        .exhibition-details i {
+            color: var(--primary-red);
+            margin-right: 8px;
+            width: 16px;
+        }
+
+        .exhibition-desc {
+            font-size: 0.9rem;
+            color: var(--text-grey);
+            line-height: 1.6;
+            margin-bottom: 15px;
+            margin-top: 8px;
+            flex: 1;
+        }
+
+        .exhibition-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--primary-red);
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+            align-self: flex-start;
+        }
+
+        .exhibition-link:hover {
+            gap: 10px;
+        }
+
+        /* =========================================
+           SECTOR STATISTICS
+           ========================================= */
+        .statistics-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--dark-red) 100%);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .stat-item {
+            padding: 30px 25px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+
+        .stat-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .stat-icon {
+            font-size: 2.8rem;
+            color: var(--light-cyan);
+            margin-bottom: 15px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 8px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        /* =========================================
+           SECTOR DETAILS SECTION
+           ========================================= */
+        .sector-feature-section {
+            padding: 90px 0;
+            background: var(--white);
+        }
+
+        .sector-features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .feature-card {
+            padding: 35px;
+            background: linear-gradient(135deg, var(--light-red), #FECACA);
+            border-radius: 14px;
+            transition: var(--transition);
+            border: 1px solid rgba(220, 38, 38, 0.1);
+        }
+
+        .feature-card:nth-child(odd) {
+            background: linear-gradient(135deg, var(--light-cyan), #A5F3FC);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--primary-navy);
+        }
+
+        .feature-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            color: var(--primary-navy);
+            font-weight: 700;
+        }
+
+        .feature-card p {
+            color: var(--text-grey);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* =========================================
+           GALLERY SECTION
+           ========================================= */
+        .gallery-section {
+            padding: 90px 0;
+            background: linear-gradient(135deg, var(--light-cyan) 0%, var(--white) 100%);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 60px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            height: 280px;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(24, 54, 80, 0.95), transparent);
+            color: white;
+            padding: 25px;
+            transform: translateY(100%);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            height: 100%;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-overlay h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .gallery-overlay p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* =========================================
+           CTA SECTION
+           ========================================= */
+        .cta-section {
+            padding: 90px 0;
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--dark-red) 100%);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-light {
+            background: var(--white);
+            color: var(--primary-red);
+            padding: 15px 38px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: var(--transition);
+            border: 2px solid var(--white);
+            cursor: pointer;
+            font-size: 0.9rem;
+            letter-spacing: 0.6px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-light:hover {
+            background: transparent;
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* =========================================
+           FOOTER
+           ========================================= */
+        footer {
+            background: linear-gradient(135deg, var(--primary-navy), #0f2941);
+            color: #E3F2FD;
+            padding-top: 70px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 45px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            border-left: 4px solid var(--primary-cyan);
+            padding-left: 18px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-about p {
+            font-size: 0.9rem;
+            margin-bottom: 18px;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links ul li a {
+            transition: 0.3s;
+            color: #E3F2FD;
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--primary-cyan);
+            padding-left: 8px;
+        }
+
+        .footer-contact li {
+            display: flex;
+            margin-bottom: 16px;
+            align-items: flex-start;
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+
+        .footer-contact i {
+            color: var(--primary-cyan);
+            margin-right: 14px;
+            margin-top: 5px;
+            flex-shrink: 0;
+        }
+
+        .bottom-footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 25px 0;
+            text-align: center;
+            font-size: 0.85rem;
+            font-weight: 300;
+        }
+
+        /* =========================================
+           RESPONSIVE DESIGN
+           ========================================= */
+        @media (max-width: 992px) {
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+
+            .sectors-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+
+            .exhibitions-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-container {
+                flex-direction: row;
+            }
+
+            .main-nav {
+                position: absolute;
+                top: 90px;
+                left: -100%;
+                width: 100%;
+                background: var(--white);
+                padding: 20px;
+                box-shadow: var(--shadow-md);
+                transition: 0.4s;
+            }
+
+            .main-nav.active {
+                left: 0;
+            }
+
+            .main-nav ul {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            .hero-section {
+                padding: 80px 0;
+            }
+
+            .hero-section h1 {
+                font-size: 2rem;
+                margin-bottom: 15px;
+            }
+
+            .hero-section p {
+                font-size: 1rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .sectors-grid,
+            .exhibitions-grid,
+            .sector-features-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .cta-buttons .btn-light {
+                width: 100%;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-section h1 {
+                font-size: 1.6rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.5rem;
+            }
+
+            .section-header p {
+                font-size: 0.95rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info-top span {
+                margin-right: 12px;
+                font-size: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    
+
+    <!-- Header & Navigation -->
+
+    <header>
+        <div class="nav-container">
+            <div class="logo-area">
+                <a href="index.html">
+                    <img src="https://stopindia.com/wp-content/uploads/2020/09/new.png" alt="STOP India Logo">
+                </a>
+            </div>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" >Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li>
+                        <a href="sectors.html" class="active">Sectors</a>
+                        
+                    </li>
+                    <li><a href="Gallery.html">Gallery</a></li>
+                    <li><a href="support.html">Support</a></li>
+                     <li><a href="carrer.html">Career</a></li>
+                </ul>
+            </nav>
+
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1>Sectors We Serve</h1>
+            <p>Expert Exhibition logistics across 6 major industries—from food & beverage to automotive. Specialized handling, industry-specific compliance, and proven success with 30+ global exhibitions.</p>
+        </div>
+    </section>
+
+    <!-- Main Sectors Section -->
+    <section class="sectors-main-section" id="sectors">
+        <div class="container">
+            <div class="section-header">
+                <h2>Industry Expertise</h2>
+                <p>With 25+ years of experience, we've developed specialized capabilities to serve diverse industries with precision and professionalism. Explore our sector expertise.</p>
+            </div>
+
+            <div class="sectors-grid">
+                <!-- Food & Beverage -->
+                <div class="sector-card" onclick="toggleSectorDetails(this)">
+                    <div class="sector-image">
+                        <div class="sector-image-overlay">
+                            <i class="sector-image-icon fas fa-utensils"></i>
+                        </div>
+                    </div>
+                    <div class="sector-content">
+                        <h3 class="sector-title">Food & Beverage</h3>
+                        <p class="sector-desc">Chilled, frozen and ambient products for food fairs like Gulfood, Anufood, and international food trade shows.</p>
+                        
+                        <div class="sector-details">
+                            <h5>Exhibitions Served:</h5>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Gulfood Dubai (Feb)</li>
+                                <li><i class="fas fa-check"></i> Anufood Bangkok (May)</li>
+                                <li><i class="fas fa-check"></i> Food & Hotel Thailand (June)</li>
+                                <li><i class="fas fa-check"></i> International Food Expo (Sept)</li>
+                                <li><i class="fas fa-check"></i> Specialty Food Shows (Various)</li>
+                            </ul>
+                            <h5 style="margin-top: 15px;">Key Services:</h5>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Temperature-controlled exhibition logistics</li>
+                                <li><i class="fas fa-check"></i> FDA & food safety compliance</li>
+                                <li><i class="fas fa-check"></i> Real-time monitoring</li>
+                            </ul>
+                        </div>
+
+                        <span class="sector-expand">
+                            <span>View Exhibitions</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Electronics & Technology -->
+                <div class="sector-card" onclick="toggleSectorDetails(this)">
+                    <div class="sector-image">
+                        <div class="sector-image-overlay">
+                            <i class="sector-image-icon fas fa-microchip"></i>
+                        </div>
+                    </div>
+                    <div class="sector-content">
+                        <h3 class="sector-title">Electronics & Technology</h3>
+                        <p class="sector-desc">High-value electronics, IT hardware, and smart solutions with secure handling and anti-static protection.</p>
+                        
+                        <div class="sector-details">
+                            <h5>Exhibitions Served:</h5>
+                            <ul>
+                                <li><i class="fas fa-check"></i> CES Las Vegas (Jan)</li>
+                                <li><i class="fas fa-check"></i> Mobile World Congress (Feb/Mar)</li>
+                                <li><i class="fas fa-check"></i> Electronica Munich (Nov)</li>
+                                <li><i class="fas fa-check"></i> GITEX Dubai (Oct)</li>
+                                <li><i class="fas fa-check"></i> India Electronics Week (Sept)</li>
+                            </ul>
+                            <h5 style="margin-top: 15px;">Key Services:</h5>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Anti-static packaging</li>
+                                <li><i class="fas fa-check"></i> Security-controlled transport</li>
+                                <li><i class="fas fa-check"></i> Full insurance coverage</li>
+                            </ul>
+                        </div>
+
+                        <span class="sector-expand">
+                            <span>View Exhibitions</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Textile & Home Furnishing -->
+                <div class="sector-card" onclick="toggleSectorDetails(this)">
+                    <div class="sector-image">
+                        <div class="sector-image-overlay">
+                            <i class="sector-image-icon fas fa-shirt"></i>
+                        </div>
+                    </div>
+                    <div class="sector-content">
+                        <h3 class="sector-title">Textile & Home Furnishing</h3>
+                        <p class="sector-desc">Fabrics, garments, home textiles and décor for leading textile exhibitions with climate control.</p>
+                        
+                        <div class="sector-details">
+                            <h5>Exhibitions Served:</h5>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Heimtextil Frankfurt (Jan)</li>
+                                <li><i class="fas fa-check"></i> Texfair Mumbai (Nov)</li>
+                                <li><i class="fas fa-check"></i> Indigo Indore (Dec)</li>
+                                <li><i class="fas fa-check"></i> Fabric Expo Germany (May)</li>
+                                <li><i class="fas fa-check"></i> China Fashion Week (Oct)</li>
+                            </ul>
+                            <h5 style="margin-top: 15px;">Key Services:</h5>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Climate-controlled transport</li>
+                                <li><i class="fas fa-check"></i> Wrinkle-prevention handling</li>
+                                <li><i class="fas fa-check"></i> Professional hang-up services</li>
+                            </ul>
+                        </div>
+
+                        <span class="sector-expand">
+                            <span>View Exhibitions</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Medical & Healthcare -->
+                <div class="sector-card" onclick="toggleSectorDetails(this)">
+                    <div class="sector-image">
+                        <div class="sector-image-overlay">
+                            <i class="sector-image-icon fas fa-stethoscope"></i>
+                        </div>
+                    </div>
+                    <div class="sector-content">
+                        <h3 class="sector-title">Medical & Healthcare</h3>
+                        <p class="sector-desc">Medical devices, diagnostic equipment and pharma samples with strict GMP compliance exhibition logistics.</p>
+                        
+                        <div class="sector-details">
+                            <h5>Exhibitions Served:</h5>
+                            <ul>
+                                <li><i class="fas fa-check"></i> MEDICA Düsseldorf (Nov)</li>
+                                <li><i class="fas fa-check"></i> Arab Health Dubai (Jan)</li>
+                                <li><i class="fas fa-check"></i> AAPHARMA New Delhi (Dec)</li>
+                                <li><i class="fas fa-check"></i> Taipei Medical Expo (May)</li>
+                                <li><i class="fas fa-check"></i> International Hospital Expo (Sept)</li>
+                            </ul>
+                            <h5 style="margin-top: 15px;">Key Services:</h5>
+                            <ul>
+                                <li><i class="fas fa-check"></i> GMP-certified transport</li>
+                                <li><i class="fas fa-check"></i> Sterile handling procedures</li>
+                                <li><i class="fas fa-check"></i> Regulatory documentation</li>
+                            </ul>
+                        </div>
+
+                        <span class="sector-expand">
+                            <span>View Exhibitions</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Automotive & Machinery -->
+                <div class="sector-card" onclick="toggleSectorDetails(this)">
+                    <div class="sector-image">
+                        <div class="sector-image-overlay">
+                            <i class="sector-image-icon fas fa-car"></i>
+                        </div>
+                    </div>
+                    <div class="sector-content">
+                        <h3 class="sector-title">Automotive & Machinery</h3>
+                        <p class="sector-desc">Heavy machinery, auto components and large exhibits with precision handling and rigging.</p>
+                        
+                        <div class="sector-details">
+                            <h5>Exhibitions Served:</h5>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Frankfurt Motor Show (Sept)</li>
+                                <li><i class="fas fa-check"></i> Dubai Motor Show (Nov)</li>
+                                <li><i class="fas fa-check"></i> Auto Expo New Delhi (Jan/Feb)</li>
+                                <li><i class="fas fa-check"></i> AutoTech Stuttgart (May)</li>
+                                <li><i class="fas fa-check"></i> SIAM Bangkok (Oct)</li>
+                            </ul>
+                            <h5 style="margin-top: 15px;">Key Services:</h5>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Heavy-duty RoRo transport</li>
+                                <li><i class="fas fa-check"></i> Specialized rigging</li>
+                                <li><i class="fas fa-check"></i> On-site assembly services</li>
+                            </ul>
+                        </div>
+
+                        <span class="sector-expand">
+                            <span>View Exhibitions</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Printing & Packaging -->
+                <div class="sector-card" onclick="toggleSectorDetails(this)">
+                    <div class="sector-image">
+                        <div class="sector-image-overlay">
+                            <i class="sector-image-icon fas fa-print"></i>
+                        </div>
+                    </div>
+                    <div class="sector-content">
+                        <h3 class="sector-title">Printing & Packaging</h3>
+                        <p class="sector-desc">Print, signage, packaging equipment and large-format displays with professional handling.</p>
+                        
+                        <div class="sector-details">
+                            <h5>Exhibitions Served:</h5>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Drupa Düsseldorf (May)</li>
+                                <li><i class="fas fa-check"></i> Pack Expo Las Vegas (Sept)</li>
+                                <li><i class="fas fa-check"></i> IPACK-IMA Milan (May)</li>
+                                <li><i class="fas fa-check"></i> Print India Expo (Feb)</li>
+                                <li><i class="fas fa-check"></i> Pack Tech Asia (July)</li>
+                            </ul>
+                            <h5 style="margin-top: 15px;">Key Services:</h5>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Heavy equipment transport</li>
+                                <li><i class="fas fa-check"></i> On-site installation</li>
+                                <li><i class="fas fa-check"></i> Equipment testing coordination</li>
+                            </ul>
+                        </div>
+
+                        <span class="sector-expand">
+                            <span>View Exhibitions</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="statistics-section">
+        <div class="container">
+            <div class="section-header" style="margin-bottom: 40px;">
+                <h2 style="color: var(--white); margin-bottom: 10px;">Our Track Record</h2>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <span class="stat-number">25+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <span class="stat-number">130+</span>
+                    <span class="stat-label">Countries Covered</span>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <span class="stat-number">1500+</span>
+                    <span class="stat-label">Exhibitions Handled</span>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">On-Time Delivery</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exhibitions Showcase -->
+    <section class="exhibitions-showcase">
+        <div class="container">
+            <div class="section-header">
+                <h2>30+ Global Exhibitions</h2>
+                <p>We serve over 30 major exhibitions across all sectors. Here's a showcase of the world's leading trade shows we specialize in.</p>
+            </div>
+
+            <div class="exhibitions-grid">
+                <!-- Food & Beverage Exhibitions -->
+                <div class="exhibition-card">
+                    <div class="exhibition-image">
+                        <img src="https://images.unsplash.com/photo-1585518419759-7a2f6a0dddf0?q=80&w=500&auto=format&fit=crop" alt="Gulfood">
+                        <span class="exhibition-badge">Food</span>
+                    </div>
+                    <div class="exhibition-info">
+                        <h4 class="exhibition-title">Gulfood Dubai</h4>
+                        <div class="exhibition-details">
+                            <i class="fas fa-calendar"></i>
+                            <span>February</span>
+                        </div>
+                        <div class="exhibition-details">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Dubai, UAE</span>
+                        </div>
+                        <p class="exhibition-desc">World's largest food & beverage trade fair with 5,000+ exhibitors.</p>
+                        <a class="exhibition-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="exhibition-card">
+                    <div class="exhibition-image">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=500&auto=format&fit=crop" alt="Anufood">
+                        <span class="exhibition-badge">Food</span>
+                    </div>
+                    <div class="exhibition-info">
+                        <h4 class="exhibition-title">Anufood Bangkok</h4>
+                        <div class="exhibition-details">
+                            <i class="fas fa-calendar"></i>
+                            <span>May</span>
+                        </div>
+                        <div class="exhibition-details">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Bangkok, Thailand</span>
+                        </div>
+                        <p class="exhibition-desc">Southeast Asia's largest food exhibition with 2,500+ exhibitors.</p>
+                        <a class="exhibition-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Electronics Exhibitions -->
+                <div class="exhibition-card">
+                    <div class="exhibition-image">
+                        <img src="https://images.unsplash.com/photo-1550355291-bbee04a92027?q=80&w=500&auto=format&fit=crop" alt="CES">
+                        <span class="exhibition-badge">Electronics</span>
+                    </div>
+                    <div class="exhibition-info">
+                        <h4 class="exhibition-title">CES Las Vegas</h4>
+                        <div class="exhibition-details">
+                            <i class="fas fa-calendar"></i>
+                            <span>January</span>
+                        </div>
+                        <div class="exhibition-details">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Las Vegas, USA</span>
+                        </div>
+                        <p class="exhibition-desc">World's largest consumer tech expo with 4,000+ exhibitors.</p>
+                        <a class="exhibition-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="exhibition-card">
+                    <div class="exhibition-image">
+                        <img src="https://images.unsplash.com/photo-1591453089816-e discriminating0cb6de?q=80&w=500&auto=format&fit=crop" alt="MWC">
+                        <span class="exhibition-badge">Electronics</span>
+                    </div>
+                    <div class="exhibition-info">
+                        <h4 class="exhibition-title">Mobile World Congress</h4>
+                        <div class="exhibition-details">
+                            <i class="fas fa-calendar"></i>
+                            <span>Feb/March</span>
+                        </div>
+                        <div class="exhibition-details">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Barcelona, Spain</span>
+                        </div>
+                        <p class="exhibition-desc">Leading mobile communications show with 2,200+ exhibitors.</p>
+                        <a class="exhibition-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Textile Exhibitions -->
+                <div class="exhibition-card">
+                    <div class="exhibition-image">
+                        <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=500&auto=format&fit=crop" alt="Heimtextil">
+                        <span class="exhibition-badge">Textile</span>
+                    </div>
+                    <div class="exhibition-info">
+                        <h4 class="exhibition-title">Heimtextil Frankfurt</h4>
+                        <div class="exhibition-details">
+                            <i class="fas fa-calendar"></i>
+                            <span>January</span>
+                        </div>
+                        <div class="exhibition-details">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Frankfurt, Germany</span>
+                        </div>
+                        <p class="exhibition-desc">World's leading home textiles fair with 3,200+ exhibitors.</p>
+                        <a class="exhibition-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="exhibition-card">
+                    <div class="exhibition-image">
+                        <img src="https://images.unsplash.com/photo-1595810450159-e51df1bdc82f?q=80&w=500&auto=format&fit=crop" alt="Texfair">
+                        <span class="exhibition-badge">Textile</span>
+                    </div>
+                    <div class="exhibition-info">
+                        <h4 class="exhibition-title">Texfair Mumbai</h4>
+                        <div class="exhibition-details">
+                            <i class="fas fa-calendar"></i>
+                            <span>November</span>
+                        </div>
+                        <div class="exhibition-details">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Mumbai, India</span>
+                        </div>
+                        <p class="exhibition-desc">India's largest textile exposition with 1,500+ exhibitors.</p>
+                        <a class="exhibition-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Medical Exhibitions -->
+                <div class="exhibition-card">
+                    <div class="exhibition-image">
+                        <img src="https://images.unsplash.com/photo-1576091160550-112173f7f869?q=80&w=500&auto=format&fit=crop" alt="MEDICA">
+                        <span class="exhibition-badge">Medical</span>
+                    </div>
+                    <div class="exhibition-info">
+                        <h4 class="exhibition-title">MEDICA Düsseldorf</h4>
+                        <div class="exhibition-details">
+                            <i class="fas fa-calendar"></i>
+                            <span>November</span>
+                        </div>
+                        <div class="exhibition-details">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Düsseldorf, Germany</span>
+                        </div>
+                        <p class="exhibition-desc">World's leading medical device fair with 5,400+ exhibitors.</p>
+                        <a class="exhibition-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="exhibition-card">
+                    <div class="exhibition-image">
+                        <img src="https://images.unsplash.com/photo-1631217314831-c6227db76b6e?q=80&w=500&auto=format&fit=crop" alt="Arab Health">
+                        <span class="exhibition-badge">Medical</span>
+                    </div>
+                    <div class="exhibition-info">
+                        <h4 class="exhibition-title">Arab Health Dubai</h4>
+                        <div class="exhibition-details">
+                            <i class="fas fa-calendar"></i>
+                            <span>January</span>
+                        </div>
+                        <div class="exhibition-details">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Dubai, UAE</span>
+                        </div>
+                        <p class="exhibition-desc">Middle East's leading healthcare trade show with 2,500+ exhibitors.</p>
+                        <a class="exhibition-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Automotive Exhibitions -->
+                <div class="exhibition-card">
+                    <div class="exhibition-image">
+                        <img src="https://images.unsplash.com/photo-1552820728-8ac41f1ce891?q=80&w=500&auto=format&fit=crop" alt="Frankfurt Motor">
+                        <span class="exhibition-badge">Automotive</span>
+                    </div>
+                    <div class="exhibition-info">
+                        <h4 class="exhibition-title">Frankfurt Motor Show</h4>
+                        <div class="exhibition-details">
+                            <i class="fas fa-calendar"></i>
+                            <span>September</span>
+                        </div>
+                        <div class="exhibition-details">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Frankfurt, Germany</span>
+                        </div>
+                        <p class="exhibition-desc">World's leading motor show with 700,000+ visitors.</p>
+                        <a class="exhibition-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="exhibition-card">
+                    <div class="exhibition-image">
+                        <img src="https://images.unsplash.com/photo-1533473359331-35ad3a3a0e3e?q=80&w=500&auto=format&fit=crop" alt="Auto Expo">
+                        <span class="exhibition-badge">Automotive</span>
+                    </div>
+                    <div class="exhibition-info">
+                        <h4 class="exhibition-title">Auto Expo New Delhi</h4>
+                        <div class="exhibition-details">
+                            <i class="fas fa-calendar"></i>
+                            <span>Jan/Feb</span>
+                        </div>
+                        <div class="exhibition-details">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>New Delhi, India</span>
+                        </div>
+                        <p class="exhibition-desc">India's largest automobile trade show with 500+ exhibitors.</p>
+                        <a class="exhibition-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Printing Exhibitions -->
+                <div class="exhibition-card">
+                    <div class="exhibition-image">
+                        <img src="https://images.unsplash.com/photo-1605857221262-e42991ced738?q=80&w=500&auto=format&fit=crop" alt="Drupa">
+                        <span class="exhibition-badge">Printing</span>
+                    </div>
+                    <div class="exhibition-info">
+                        <h4 class="exhibition-title">Drupa Düsseldorf</h4>
+                        <div class="exhibition-details">
+                            <i class="fas fa-calendar"></i>
+                            <span>May</span>
+                        </div>
+                        <div class="exhibition-details">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Düsseldorf, Germany</span>
+                        </div>
+                        <p class="exhibition-desc">World's leading printing tech fair with 1,800+ exhibitors.</p>
+                        <a class="exhibition-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="exhibition-card">
+                    <div class="exhibition-image">
+                        <img src="https://images.unsplash.com/photo-1552883193-155305277a52?q=80&w=500&auto=format&fit=crop" alt="Pack Expo">
+                        <span class="exhibition-badge">Printing</span>
+                    </div>
+                    <div class="exhibition-info">
+                        <h4 class="exhibition-title">Pack Expo Las Vegas</h4>
+                        <div class="exhibition-details">
+                            <i class="fas fa-calendar"></i>
+                            <span>September</span>
+                        </div>
+                        <div class="exhibition-details">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Las Vegas, USA</span>
+                        </div>
+                        <p class="exhibition-desc">Leading packaging machinery expo with 2,000+ exhibitors.</p>
+                        <a class="exhibition-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="sector-feature-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Industry Expertise Matters</h2>
+                <p>Each sector has unique requirements, challenges, and compliance standards that demand specialized knowledge and handling.</p>
+            </div>
+
+            <div class="sector-features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-snowflake"></i>
+                    </div>
+                    <h4>Temperature Control</h4>
+                    <p>Maintain precise conditions for food, pharma, and sensitive electronics throughout the entire journey.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>Security & Compliance</h4>
+                    <p>Meet industry regulations, certifications, and legal requirements specific to each sector and country.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h4>Specialized Equipment</h4>
+                    <p>Access to right tools, vehicles, and handling methods designed for each industry's unique cargo.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h4>Expert Knowledge</h4>
+                    <p>Teams trained in industry-specific best practices and deep knowledge of venue regulations.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sync"></i>
+                    </div>
+                    <h4>Seamless Coordination</h4>
+                    <p>Direct coordination with organizers, regulatory bodies, and on-site partners for smooth operations.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h4>Quality Assurance</h4>
+                    <p>Sector-specific quality checks and inspections at every stage of the exhibition logistics journey.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Work in Action</h2>
+                <p>A visual glimpse of STOP India's Exhibition logistics services across the globe and industries.</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=500&auto=format&fit=crop" alt="Exhibition Setup">
+                    <div class="gallery-overlay">
+                        <h4>International Trade Show</h4>
+                        <p>Frankfurt, Germany</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?q=80&w=500&auto=format&fit=crop" alt="Warehouse">
+                    <div class="gallery-overlay">
+                        <h4>Warehouse Management</h4>
+                        <p>Delhi, India</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=500&auto=format&fit=crop" alt="Cargo Loading">
+                    <div class="gallery-overlay">
+                        <h4>Air Freight Loading</h4>
+                        <p>IGI Airport</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1566576912906-600aceebca9b?q=80&w=500&auto=format&fit=crop" alt="Exhibition Booth">
+                    <div class="gallery-overlay">
+                        <h4>Exhibition Stand</h4>
+                        <p>Dubai World Trade Centre</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=500&auto=format&fit=crop" alt="Sea Freight">
+                    <div class="gallery-overlay">
+                        <h4>Sea Freight Operations</h4>
+                        <p>Nhava Sheva Port</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1494412651409-ae1e04548b64?q=80&w=500&auto=format&fit=crop" alt="Customs">
+                    <div class="gallery-overlay">
+                        <h4>Customs Clearance</h4>
+                        <p>International Border</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Exhibit at Your Industry's Premier Show?</h2>
+            <p>Let STOP India handle the complexity of Exhibition logistics while you focus on connecting with buyers, showcasing your products, and closing deals.</p>
+            <div class="cta-buttons">
+                <a href="tel:+919212133251" class="btn-light">Call Us Now</a>
+                <a href="mailto:info@stopindia.com" class="btn-light">Get a Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <h4>STOP India</h4>
+                    <p>Your trusted partner for exhibition exhibition logistics. Moving people and cargo with zero delays and complete reliability since 2012.</p>
+                </div>
+
+                <div class="footer-col footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="#sectors">Sectors</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col footer-links">
+                    <h4>By Sector</h4>
+                    <ul>
+                        <li><a href="#sectors">Food & Beverage</a></li>
+                        <li><a href="#sectors">Electronics & Tech</a></li>
+                        <li><a href="#sectors">Textile & Fashion</a></li>
+                        <li><a href="#sectors">Medical & Healthcare</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Corporate Office, Gurgaon, India</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+91 9212133251 / 252</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@stopindia.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bottom-footer">
+                <p>&copy; 2012 STOP India. All Rights Reserved. | Professional Exhibition logistics Partner</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.main-nav');
+
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+
+            document.querySelectorAll('.main-nav a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                });
+            });
+        }
+
+        // Toggle Sector Details
+        function toggleSectorDetails(card) {
+            const details = card.querySelector('.sector-details');
+            const isActive = card.classList.contains('expanded');
+            
+            document.querySelectorAll('.sector-card.expanded').forEach(openCard => {
+                if (openCard !== card) {
+                    openCard.classList.remove('expanded');
+                    openCard.querySelector('.sector-details').classList.remove('active');
+                }
+            });
+            
+            if (!isActive) {
+                card.classList.add('expanded');
+                details.classList.add('active');
+            } else {
+                card.classList.remove('expanded');
+                details.classList.remove('active');
+            }
+        }
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Scroll Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.sector-card, .exhibition-card, .feature-card, .gallery-item, .stat-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+
+</body>
+</html>

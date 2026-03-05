@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>On-Site Supervision | STOP India - Exhibition Logistics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-navy: #183650;
+            --primary-red: #DC2626;
+            --dark-red: #991B1B;
+            --light-red: #FEE2E2;
+            --accent-red: #EF4444;
+            --primary-cyan: #06B6D4;
+            --light-cyan: #CFFAFE;
+            --dark-cyan: #0E7490;
+            --accent-color: #F59E0B;
+            --light-grey: #f8f9fa;
+            --text-grey: #000000;
+            --white: #ffffff;
+            --transition: all 0.3s ease-in-out;
+            --section-padding: 70px 0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            color: var(--primary-navy);
+            line-height: 1.7;
+            overflow-x: hidden;
+            background-color: var(--white);
+            font-size: 15px;
+        }
+
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; display: block; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-header h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        .section-header h2::after {
+            content: '';
+            width: 80px; height: 4px;
+            background: linear-gradient(90deg, var(--primary-red), var(--dark-red));
+            position: absolute;
+            bottom: -10px; left: 50%;
+            transform: translateX(-50%);
+        }
+        .section-header p {
+            color: var(--text-grey);
+            font-size: 0.95rem;
+            max-width: 700px;
+            margin: 20px auto 0;
+            font-weight: 300;
+        }
+
+        /* =========================================
+           HEADER
+           ========================================= */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 20px rgba(24,54,80,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 90px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            flex-direction: row-reverse;
+        }
+
+        .logo-area img { height: 91px; width: auto; object-fit: contain; margin-right: -20px; }
+
+        .main-nav ul { display: flex; gap: 25px; }
+        .main-nav a {
+            font-weight: 500; font-size: 0.85rem;
+            text-transform: uppercase; color: var(--primary-navy);
+            position: relative; letter-spacing: 0.5px;
+        }
+        .main-nav a::after {
+            content: ''; position: absolute;
+            width: 0; height: 3px;
+            background: linear-gradient(90deg, var(--primary-cyan), var(--dark-cyan));
+            bottom: -5px; left: 0;
+            transition: var(--transition);
+        }
+        .main-nav a:hover::after, .main-nav a.active::after { width: 100%; }
+
+        .hamburger { display: none; cursor: pointer; font-size: 1.4rem; color: var(--primary-navy); }
+
+        /* =========================================
+           BREADCRUMB
+           ========================================= */
+        .breadcrumb-bar {
+            background: var(--light-grey);
+            padding: 14px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .breadcrumb-bar .container {
+            display: flex; align-items: center;
+            gap: 10px; font-size: 0.82rem; color: #6b7280;
+        }
+        .breadcrumb-bar a { color: var(--primary-navy); font-weight: 500; }
+        .breadcrumb-bar a:hover { color: var(--primary-red); }
+        .breadcrumb-bar .sep { color: #d1d5db; }
+        .breadcrumb-bar .current { color: var(--primary-red); font-weight: 500; }
+
+        /* =========================================
+           HERO
+           ========================================= */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(24,54,80,0.88), rgba(220,38,38,0.72)),
+                        url('https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=2069&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center top;
+            padding: 100px 0;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(6,182,212,0.25);
+            border: 1px solid var(--primary-cyan);
+            color: var(--light-cyan);
+            padding: 6px 20px;
+            border-radius: 50px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 22px;
+            animation: slideUp 0.5s ease-out;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem; font-weight: 700;
+            margin-bottom: 20px;
+            animation: slideUp 0.8s ease-out;
+        }
+
+        .hero-section p {
+            font-size: 1.05rem; font-weight: 300;
+            max-width: 700px;
+            margin: 0 auto 35px;
+            animation: slideUp 1s ease-out;
+        }
+
+        .hero-stats {
+            display: flex; justify-content: center;
+            gap: 50px; flex-wrap: wrap;
+            margin-top: 40px;
+            animation: slideUp 1.2s ease-out;
+        }
+
+        .hero-stat .number {
+            font-size: 2.2rem; font-weight: 700;
+            color: var(--primary-cyan); display: block;
+        }
+        .hero-stat .label {
+            font-size: 0.8rem; font-weight: 400;
+            opacity: 0.85; text-transform: uppercase; letter-spacing: 1px;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* =========================================
+           OVERVIEW
+           ========================================= */
+        .overview-section { padding: var(--section-padding); background: var(--white); }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px; align-items: center;
+        }
+
+        .overview-content h2 {
+            font-size: 2rem; font-weight: 700;
+            color: var(--primary-navy);
+            margin-bottom: 20px; line-height: 1.35;
+        }
+        .overview-content h2 span { color: var(--primary-red); }
+        .overview-content p {
+            color: var(--text-grey);
+            line-height: 1.9; font-size: 0.97rem;
+            margin-bottom: 18px;
+        }
+
+        .overview-image { position: relative; }
+        .overview-image img {
+            width: 100%; border-radius: 16px;
+            box-shadow: 0 25px 60px rgba(220,38,38,0.18);
+        }
+
+        .floating-card {
+            position: absolute;
+            bottom: -25px; left: -25px;
+            background: var(--white);
+            border-radius: 12px;
+            padding: 18px 22px;
+            box-shadow: 0 15px 40px rgba(24,54,80,0.15);
+            display: flex; align-items: center;
+            gap: 14px; min-width: 230px;
+        }
+        .fc-icon {
+            width: 48px; height: 48px;
+            background: linear-gradient(135deg, var(--primary-cyan), var(--dark-cyan));
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--white); font-size: 1.3rem; flex-shrink: 0;
+        }
+        .fc-val { font-size: 1.4rem; font-weight: 700; color: var(--primary-navy); line-height: 1; }
+        .fc-label { font-size: 0.75rem; color: #6b7280; margin-top: 3px; }
+
+        /* =========================================
+           ROLE HIGHLIGHTS (Icon Grid)
+           ========================================= */
+        .roles-section {
+            padding: var(--section-padding);
+            background: linear-gradient(135deg, var(--light-cyan) 0%, var(--white) 100%);
+        }
+
+        .roles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 28px; margin-top: 50px;
+        }
+
+        .role-card {
+            background: var(--white);
+            padding: 38px 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(24,54,80,0.08);
+            transition: var(--transition);
+            border-top: 5px solid var(--primary-red);
+            position: relative; overflow: hidden;
+        }
+        .role-card::before {
+            content: '';
+            position: absolute; top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(6,182,212,0.08), transparent);
+            transition: left 0.6s ease;
+        }
+        .role-card:hover::before { left: 100%; }
+        .role-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 50px rgba(220,38,38,0.18);
+        }
+
+        .role-icon {
+            width: 75px; height: 75px;
+            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+            color: var(--white); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 22px; font-size: 1.9rem;
+            transition: var(--transition); position: relative; z-index: 1;
+        }
+        .role-card:hover .role-icon {
+            transform: scale(1.15) rotate(-5deg);
+            box-shadow: 0 10px 25px rgba(220,38,38,0.3);
+        }
+
+        .role-card h3 {
+            font-size: 1.25rem; margin-bottom: 14px;
+            color: var(--primary-navy); font-weight: 600;
+            position: relative; z-index: 1;
+        }
+        .role-card p {
+            color: var(--text-grey); line-height: 1.8;
+            font-size: 0.93rem; margin-bottom: 18px;
+            position: relative; z-index: 1;
+        }
+        .role-features {
+            margin-top: 18px; padding-top: 18px;
+            border-top: 2px solid var(--light-cyan);
+            position: relative; z-index: 1;
+        }
+        .role-features li {
+            display: flex; align-items: center;
+            margin-bottom: 9px; font-size: 0.88rem; color: var(--text-grey);
+        }
+        .role-features i { color: var(--primary-cyan); margin-right: 10px; font-size: 1rem; }
+
+        /* =========================================
+           TIMELINE / DAY-IN-THE-LIFE
+           ========================================= */
+        .timeline-section { padding: var(--section-padding); background: var(--white); }
+
+        .timeline-tabs {
+            display: flex; justify-content: center; gap: 10px;
+            flex-wrap: wrap; margin-bottom: 40px; margin-top: 40px;
+        }
+        .tab-btn {
+            padding: 10px 24px;
+            border: 2px solid var(--primary-navy);
+            background: transparent; color: var(--primary-navy);
+            border-radius: 50px; font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem; font-weight: 600;
+            cursor: pointer; transition: var(--transition);
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .tab-btn.active, .tab-btn:hover {
+            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+            border-color: var(--primary-red); color: var(--white);
+        }
+
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+
+        .timeline {
+            max-width: 800px; margin: 0 auto;
+            position: relative;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute; left: 28px; top: 0; bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--primary-cyan), var(--primary-red));
+        }
+
+        .timeline-item {
+            display: flex; gap: 25px;
+            margin-bottom: 32px; position: relative;
+        }
+
+        .tl-dot {
+            width: 58px; height: 58px; flex-shrink: 0;
+            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--white); font-size: 1.3rem;
+            box-shadow: 0 5px 15px rgba(220,38,38,0.3);
+            position: relative; z-index: 1;
+        }
+
+        .tl-body {
+            background: var(--white);
+            border: 1px solid var(--light-cyan);
+            border-radius: 10px; padding: 18px 22px;
+            flex: 1;
+            box-shadow: 0 5px 15px rgba(24,54,80,0.06);
+        }
+
+        .tl-time {
+            font-size: 0.75rem; font-weight: 700;
+            color: var(--primary-cyan); text-transform: uppercase;
+            letter-spacing: 1.5px; margin-bottom: 6px;
+        }
+        .tl-body h5 {
+            font-size: 1rem; font-weight: 600;
+            color: var(--primary-navy); margin-bottom: 8px;
+        }
+        .tl-body p { font-size: 0.9rem; color: var(--text-grey); line-height: 1.7; }
+
+        /* =========================================
+           DETAIL SECTIONS
+           ========================================= */
+        .detail-section {
+            padding: var(--section-padding);
+            background: linear-gradient(135deg, var(--light-red) 0%, var(--white) 100%);
+        }
+
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 55px; align-items: center;
+            margin-bottom: 70px;
+        }
+        .detail-grid.reverse { direction: rtl; }
+        .detail-grid.reverse > * { direction: ltr; }
+        .detail-grid:last-child { margin-bottom: 0; }
+
+        .detail-content h3 {
+            font-size: 1.9rem; margin-bottom: 20px;
+            color: var(--primary-navy); font-weight: 700; line-height: 1.35;
+        }
+        .detail-content p {
+            margin-bottom: 16px; color: var(--text-grey);
+            line-height: 1.9; font-size: 0.96rem;
+        }
+
+        .detail-points {
+            background: var(--white);
+            padding: 28px; border-radius: 12px;
+            margin-top: 22px;
+            box-shadow: 0 10px 25px rgba(24,54,80,0.08);
+        }
+        .detail-points h5 {
+            color: var(--primary-navy); margin-bottom: 16px;
+            font-size: 1.05rem; font-weight: 600;
+        }
+        .detail-points li {
+            display: flex; align-items: flex-start;
+            margin-bottom: 11px; font-size: 0.93rem; color: var(--text-grey);
+        }
+        .detail-points i { color: var(--primary-red); margin-right: 12px; margin-top: 4px; flex-shrink: 0; }
+
+        .detail-image img {
+            width: 100%; border-radius: 14px;
+            box-shadow: 0 20px 50px rgba(24,54,80,0.14);
+        }
+
+        /* =========================================
+           STATS BAND
+           ========================================= */
+        .stats-band {
+            padding: 60px 0;
+            background: linear-gradient(135deg, var(--primary-navy), #0f2941);
+            color: var(--white);
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px; text-align: center;
+        }
+        .stat-item .stat-num {
+            font-size: 2.8rem; font-weight: 700;
+            color: var(--primary-cyan); display: block;
+        }
+        .stat-item .stat-desc {
+            font-size: 0.88rem; font-weight: 300;
+            opacity: 0.85; margin-top: 6px;
+        }
+
+        /* =========================================
+           WHY CHOOSE
+           ========================================= */
+        .why-section {
+            padding: var(--section-padding);
+            background: var(--white);
+        }
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 25px; margin-top: 50px;
+        }
+        .why-card {
+            background: var(--white);
+            padding: 30px; border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(24,54,80,0.08);
+            transition: var(--transition);
+            border-left: 5px solid var(--primary-cyan);
+        }
+        .why-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(6,182,212,0.2);
+        }
+        .why-icon {
+            width: 60px; height: 60px;
+            background: linear-gradient(135deg, var(--primary-cyan), var(--dark-cyan));
+            color: var(--white); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 15px; font-size: 1.6rem;
+        }
+        .why-card h4 {
+            font-size: 1.05rem; margin-bottom: 12px;
+            color: var(--primary-navy); font-weight: 600;
+        }
+        .why-card p { color: var(--text-grey); line-height: 1.7; font-size: 0.9rem; }
+
+        /* =========================================
+           COMPARISON TABLE
+           ========================================= */
+        .comparison-section { padding: var(--section-padding); background: linear-gradient(135deg, var(--light-cyan) 0%, var(--white) 100%); }
+
+        .comparison-table {
+            width: 100%; border-collapse: collapse;
+            background: var(--white);
+            box-shadow: 0 10px 30px rgba(24,54,80,0.1);
+            border-radius: 12px; overflow: hidden;
+            margin-top: 40px;
+        }
+        .comparison-table th {
+            background: linear-gradient(135deg, var(--primary-navy), #0f2941);
+            color: var(--white); padding: 18px 20px;
+            text-align: left; font-weight: 600; font-size: 0.95rem;
+        }
+        .comparison-table td {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--light-cyan);
+            color: var(--text-grey); font-size: 0.93rem;
+        }
+        .comparison-table tr:hover { background-color: var(--light-cyan); }
+        .comparison-table .feature-name { font-weight: 600; color: var(--primary-navy); width: 30%; }
+        .check-yes { color: var(--primary-cyan); font-size: 1.2rem; font-weight: bold; }
+        .check-no { color: #9ca3af; font-size: 1.2rem; }
+        .check-partial { color: var(--accent-color); font-size: 1.2rem; }
+
+        /* =========================================
+           FAQ
+           ========================================= */
+        .faq-section {
+            padding: var(--section-padding);
+            background: var(--white);
+        }
+        .faq-list { margin-top: 45px; max-width: 850px; margin-left: auto; margin-right: auto; }
+        .faq-item {
+            background: var(--white);
+            border-radius: 10px; margin-bottom: 14px;
+            box-shadow: 0 5px 15px rgba(24,54,80,0.07);
+            overflow: hidden;
+            border-left: 4px solid var(--primary-cyan);
+        }
+        .faq-question {
+            padding: 20px 22px;
+            display: flex; justify-content: space-between; align-items: center;
+            cursor: pointer; font-weight: 600;
+            color: var(--primary-navy); font-size: 0.96rem;
+            transition: var(--transition);
+        }
+        .faq-question:hover { color: var(--primary-red); }
+        .faq-question i { color: var(--primary-cyan); font-size: 1.1rem; transition: var(--transition); }
+        .faq-item.open .faq-question i { transform: rotate(180deg); color: var(--primary-red); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+        .faq-item.open .faq-answer { max-height: 300px; }
+        .faq-answer p {
+            padding: 0 22px 20px;
+            color: var(--text-grey); font-size: 0.92rem; line-height: 1.8;
+        }
+
+        /* =========================================
+           CTA
+           ========================================= */
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--dark-red) 100%);
+            color: var(--white); text-align: center;
+        }
+        .cta-section h2 { font-size: 2.4rem; margin-bottom: 20px; font-weight: 700; }
+        .cta-section p {
+            font-size: 1.02rem; margin-bottom: 35px;
+            max-width: 700px; margin-left: auto; margin-right: auto; font-weight: 300;
+        }
+        .cta-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+        .btn-light {
+            background: var(--white); color: var(--primary-red);
+            padding: 14px 35px; border-radius: 50px;
+            font-weight: 600; text-transform: uppercase;
+            transition: var(--transition);
+            border: 2px solid var(--white);
+            font-size: 0.85rem; letter-spacing: 0.5px;
+        }
+        .btn-light:hover { background: transparent; color: var(--white); }
+
+        /* =========================================
+           FOOTER
+           ========================================= */
+        footer {
+            background: linear-gradient(135deg, var(--primary-navy), #0f2941);
+            color: #E3F2FD; padding-top: 60px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 35px; margin-bottom: 45px;
+        }
+        .footer-col h4 {
+            color: var(--white); font-size: 1.1rem;
+            margin-bottom: 20px;
+            border-left: 3px solid var(--primary-cyan);
+            padding-left: 15px; font-weight: 600;
+        }
+        .footer-about p { font-size: 0.9rem; margin-bottom: 16px; line-height: 1.7; font-weight: 300; }
+        .footer-links ul li { margin-bottom: 10px; }
+        .footer-links ul li a { color: #E3F2FD; font-size: 0.9rem; font-weight: 300; transition: 0.3s; }
+        .footer-links ul li a:hover { color: var(--primary-cyan); padding-left: 8px; }
+        .footer-contact li { display: flex; margin-bottom: 13px; align-items: flex-start; font-size: 0.9rem; font-weight: 300; }
+        .footer-contact i { color: var(--primary-cyan); margin-right: 12px; margin-top: 5px; }
+        .bottom-footer {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding: 22px 0; text-align: center;
+            font-size: 0.85rem; font-weight: 300;
+        }
+
+        /* =========================================
+           RESPONSIVE
+           ========================================= */
+        @media (max-width: 992px) {
+            .hero-section h1 { font-size: 2.2rem; }
+            .overview-grid, .detail-grid { grid-template-columns: 1fr; gap: 35px; }
+            .detail-grid.reverse { direction: ltr; }
+            .floating-card { position: relative; bottom: auto; left: auto; margin-top: 20px; }
+        }
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+            .nav-container { flex-direction: row; }
+            .main-nav {
+                position: absolute; top: 90px; left: -100%;
+                width: 100%; background: var(--white);
+                padding: 20px; box-shadow: 0 5px 10px rgba(24,54,80,0.1);
+                transition: 0.4s;
+            }
+            .main-nav.active { left: 0; }
+            .main-nav ul { flex-direction: column; text-align: center; gap: 15px; }
+            .hero-section h1 { font-size: 1.8rem; }
+            .section-header h2 { font-size: 1.8rem; }
+            .hero-stats { gap: 30px; }
+            .cta-section h2 { font-size: 1.8rem; }
+            .cta-buttons { flex-direction: column; }
+            .cta-buttons .btn-light { width: 100%; text-align: center; }
+            .timeline::before { left: 22px; }
+            .tl-dot { width: 46px; height: 46px; font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <div class="logo-area">
+                <a href="index.html">
+                    <img src="https://stopindia.com/wp-content/uploads/2020/09/new.png" alt="STOP India Logo">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="sectors.html">Sectors</a></li>
+                    <li><a href="Gallery.html">Gallery</a></li>
+                    <li><a href="support.html">Support</a></li>
+                    <li><a href="carrer.html">Career</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger"><i class="fas fa-bars"></i></div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-bar">
+        <div class="container">
+            <a href="index.html">Home</a>
+            <span class="sep">›</span>
+            <a href="services.html">Services</a>
+            <span class="sep">›</span>
+            <span class="current">On-Site Supervision</span>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-badge"><i class="fas fa-user-tie" style="margin-right:8px;"></i> Ground Operations</div>
+            <h1>On-Site Supervision</h1>
+            <p>Dedicated, experienced personnel physically present at the venue — managing last-mile delivery, stand coordination, and empty case storage from the moment move-in begins to the final move-out.</p>
+            <div class="cta-buttons" style="margin-top:30px;">
+                <a href="tel:+919212133251" class="btn-light">Request a Supervisor</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="number">24/7</span>
+                    <span class="label">Venue Presence</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="number">50+</span>
+                    <span class="label">Countries Covered</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="number">1000+</span>
+                    <span class="label">Shows Supervised</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="number">25+</span>
+                    <span class="label">Years Experience</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview -->
+    <section class="overview-section" id="overview">
+        <div class="container">
+            <div class="overview-grid">
+                <div class="overview-content">
+                    <h2>Your Eyes and Hands <span>On the Ground.</span></h2>
+                    <p>No matter how well your freight is planned, the final metres — from the venue loading dock to your exhibition stand — are where things can go wrong. Tight move-in windows, venue access restrictions, heavy traffic in aisles, and last-minute organiser changes all demand a calm, experienced professional to manage them in real time.</p>
+                    <p>STOP India deploys dedicated on-site supervisors who act as your trusted representative at the venue. They receive your cargo, liaise with official handlers, direct the placement of every crate, oversee stand-related logistics, and manage empty case storage throughout the show — so nothing is left to chance.</p>
+                    <p>Whether it's a single-stand participation or a multi-hall, multi-country tour, our supervisors bring the local knowledge, authority, and precision that only comes from managing hundreds of shows worldwide.</p>
+                    <a href="#roles" class="btn-light" style="background: linear-gradient(135deg, var(--primary-red), var(--dark-red)); color: white; padding: 12px 30px; border-radius: 50px; font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; display:inline-block; margin-top:10px;">What Our Supervisors Do</a>
+                </div>
+                <div class="overview-image">
+                    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1784&auto=format&fit=crop" alt="On-site supervisor at exhibition venue">
+                    <div class="floating-card">
+                        <div class="fc-icon"><i class="fas fa-headset"></i></div>
+                        <div class="fc-text">
+                            <div class="fc-val">Always Reachable</div>
+                            <div class="fc-label">Direct line to your supervisor</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roles / What We Do -->
+    <section class="roles-section" id="roles">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our On-Site Team Handles</h2>
+                <p>From the moment your cargo arrives at the venue gate to the final move-out, our supervisors manage every ground operation.</p>
+            </div>
+
+            <div class="roles-grid">
+                <div class="role-card">
+                    <div class="role-icon"><i class="fas fa-truck-moving"></i></div>
+                    <h3>Last-Mile Delivery Management</h3>
+                    <p>Our supervisor receives your shipment at the venue loading dock, verifies contents against the packing list, and coordinates delivery directly to your designated stand position within the hall.</p>
+                    <ul class="role-features">
+                        <li><i class="fas fa-check-circle"></i> Cargo receipt & verification</li>
+                        <li><i class="fas fa-check-circle"></i> Dock-to-stand coordination</li>
+                        <li><i class="fas fa-check-circle"></i> Delivery scheduling within move-in windows</li>
+                    </ul>
+                </div>
+
+                <div class="role-card">
+                    <div class="role-icon"><i class="fas fa-boxes"></i></div>
+                    <h3>Empty Case Storage</h3>
+                    <p>Once your stand is set up, empty crates and packaging must be removed promptly. Our team labels, collects, and stores all empty cases in the venue's dedicated storage area — and returns them precisely when move-out begins.</p>
+                    <ul class="role-features">
+                        <li><i class="fas fa-check-circle"></i> Case labelling & cataloguing</li>
+                        <li><i class="fas fa-check-circle"></i> Venue storage coordination</li>
+                        <li><i class="fas fa-check-circle"></i> Timely return for move-out repacking</li>
+                    </ul>
+                </div>
+
+                <div class="role-card">
+                    <div class="role-icon"><i class="fas fa-people-arrows"></i></div>
+                    <h3>Vendor & Handler Liaison</h3>
+                    <p>We communicate directly with official venue logistics contractors, stand builders, and freight handlers on your behalf — resolving conflicts, accessing restricted areas, and navigating organiser regulations efficiently.</p>
+                    <ul class="role-features">
+                        <li><i class="fas fa-check-circle"></i> Official handler coordination</li>
+                        <li><i class="fas fa-check-circle"></i> Stand builder liaison</li>
+                        <li><i class="fas fa-check-circle"></i> Organiser compliance management</li>
+                    </ul>
+                </div>
+
+                <div class="role-card">
+                    <div class="role-icon"><i class="fas fa-tools"></i></div>
+                    <h3>Setup & Dismantling Oversight</h3>
+                    <p>Our supervisors are present throughout build-up and breakdown, ensuring your exhibits are placed correctly, fragile items are handled with care, and any issues are escalated and resolved before they affect the show.</p>
+                    <ul class="role-features">
+                        <li><i class="fas fa-check-circle"></i> Setup supervision & sign-off</li>
+                        <li><i class="fas fa-check-circle"></i> Fragile item handling oversight</li>
+                        <li><i class="fas fa-check-circle"></i> Dismantling coordination</li>
+                    </ul>
+                </div>
+
+                <div class="role-card">
+                    <div class="role-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                    <h3>Issue Resolution & Contingency</h3>
+                    <p>Shipments delayed at customs, missing items, or venue access disputes — our supervisors are trained to manage crises calmly and have the local contacts to find fast solutions when the unexpected happens.</p>
+                    <ul class="role-features">
+                        <li><i class="fas fa-check-circle"></i> Rapid problem escalation</li>
+                        <li><i class="fas fa-check-circle"></i> Local emergency sourcing</li>
+                        <li><i class="fas fa-check-circle"></i> Stakeholder communication</li>
+                    </ul>
+                </div>
+
+                <div class="role-card">
+                    <div class="role-icon"><i class="fas fa-clipboard-list"></i></div>
+                    <h3>Reporting & Documentation</h3>
+                    <p>You receive real-time updates throughout the event cycle. At the close of the show, a full supervision report covers cargo condition, any incidents, and the status of all items dispatched for return.</p>
+                    <ul class="role-features">
+                        <li><i class="fas fa-check-circle"></i> Real-time status updates</li>
+                        <li><i class="fas fa-check-circle"></i> Photo documentation</li>
+                        <li><i class="fas fa-check-circle"></i> Post-show completion report</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Day-in-the-Life Timeline -->
+    <section class="timeline-section" id="process">
+        <div class="container">
+            <div class="section-header">
+                <h2>A Supervisor's Show Timeline</h2>
+                <p>See exactly what our team does across the three critical phases of every exhibition.</p>
+            </div>
+
+            <div class="timeline-tabs">
+                <button class="tab-btn active" data-tab="movein">Move-In</button>
+                <button class="tab-btn" data-tab="show">During the Show</button>
+                <button class="tab-btn" data-tab="moveout">Move-Out</button>
+            </div>
+
+            <!-- MOVE-IN -->
+            <div class="tab-content active" id="tab-movein">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="tl-dot"><i class="fas fa-sun"></i></div>
+                        <div class="tl-body">
+                            <div class="tl-time">Day Before Move-In</div>
+                            <h5>Venue Briefing & Access Setup</h5>
+                            <p>Supervisor visits the venue, collects exhibitor passes, confirms stand location, and reviews move-in schedule and organiser regulations with the venue logistics team.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="tl-dot"><i class="fas fa-truck"></i></div>
+                        <div class="tl-body">
+                            <div class="tl-time">Move-In Day — Early Morning</div>
+                            <h5>Cargo Receipt at Loading Dock</h5>
+                            <p>Supervisor stationed at the loading dock to receive shipments, verify package counts against packing lists, inspect for transit damage, and sign off with the carrier.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="tl-dot"><i class="fas fa-dolly"></i></div>
+                        <div class="tl-body">
+                            <div class="tl-time">Move-In Day — Morning</div>
+                            <h5>Stand Delivery & Placement</h5>
+                            <p>Coordinates official venue handlers and forklifts to deliver crates to the correct stand position. Supervises careful unloading and placement of all exhibit materials.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="tl-dot"><i class="fas fa-box-open"></i></div>
+                        <div class="tl-body">
+                            <div class="tl-time">Move-In Day — Afternoon</div>
+                            <h5>Unpacking & Empty Case Management</h5>
+                            <p>Assists with supervised unpacking, labels all empty cases systematically, and arranges their removal to the venue's empty case storage area before hall traffic restrictions begin.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="tl-dot"><i class="fas fa-check-double"></i></div>
+                        <div class="tl-body">
+                            <div class="tl-time">Pre-Show Sign-Off</div>
+                            <h5>Final Readiness Check</h5>
+                            <p>Conducts a walkthrough of the stand, confirms all items are accounted for, and submits a move-in completion report with photographs to the client team.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DURING SHOW -->
+            <div class="tab-content" id="tab-show">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="tl-dot"><i class="fas fa-door-open"></i></div>
+                        <div class="tl-body">
+                            <div class="tl-time">Show Open — Daily</div>
+                            <h5>On-Call Venue Presence</h5>
+                            <p>Supervisor remains reachable throughout show hours, ready to handle any logistics queries, organiser interactions, or unexpected cargo needs during the event.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="tl-dot"><i class="fas fa-warehouse"></i></div>
+                        <div class="tl-body">
+                            <div class="tl-time">Throughout the Show</div>
+                            <h5>Empty Case Storage Monitoring</h5>
+                            <p>Monitors the storage area to ensure all labelled empty cases remain accounted for and secure. Coordinates access if any items need to be retrieved during the show.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="tl-dot"><i class="fas fa-exclamation-circle"></i></div>
+                        <div class="tl-body">
+                            <div class="tl-time">As Required</div>
+                            <h5>Incident Management</h5>
+                            <p>If any on-site issue arises — a damaged display, a delayed supplementary shipment, or a stand access dispute — the supervisor responds immediately with a resolution plan.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="tl-dot"><i class="fas fa-clipboard-check"></i></div>
+                        <div class="tl-body">
+                            <div class="tl-time">Last Day of Show</div>
+                            <h5>Move-Out Pre-Planning</h5>
+                            <p>Reviews move-out schedule with the client, confirms return cargo arrangements, and briefs the repacking team in preparation for the post-show close.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MOVE-OUT -->
+            <div class="tab-content" id="tab-moveout">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="tl-dot"><i class="fas fa-flag-checkered"></i></div>
+                        <div class="tl-body">
+                            <div class="tl-time">Show Close</div>
+                            <h5>Empty Cases Returned to Stand</h5>
+                            <p>As soon as the show closes, supervisor coordinates the return of all empty cases from storage to the stand in sequence, ready for immediate repacking by the team.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="tl-dot"><i class="fas fa-boxes"></i></div>
+                        <div class="tl-body">
+                            <div class="tl-time">Move-Out — Repacking Phase</div>
+                            <h5>Supervised Repacking & Inventory</h5>
+                            <p>Oversees professional repacking of all exhibit materials. Conducts a physical inventory count and reconciliation before any crate is sealed and labelled for return.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="tl-dot"><i class="fas fa-truck-loading"></i></div>
+                        <div class="tl-body">
+                            <div class="tl-time">Move-Out — Loading Phase</div>
+                            <h5>Cargo Collection & Dispatch</h5>
+                            <p>Coordinates with venue handlers for cargo collection from the stand, supervised loading onto return transport vehicles, and handover to the outbound carrier with documentation.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="tl-dot"><i class="fas fa-file-alt"></i></div>
+                        <div class="tl-body">
+                            <div class="tl-time">Post Move-Out</div>
+                            <h5>Final Report Submission</h5>
+                            <p>Submits a comprehensive end-of-show report including cargo status, photos, any damage records, and confirmation of all return shipments dispatched — closing the supervision file.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detail Sections -->
+    <section class="detail-section" id="detail">
+        <div class="container">
+            <div class="detail-grid">
+                <div class="detail-content">
+                    <h3>Why Empty Case Management Is More Critical Than It Looks</h3>
+                    <p>At major trade fairs, thousands of exhibitors are moving in simultaneously. Venue storage space is tightly controlled, access times are strictly enforced, and uncollected empty cases can result in fines or, worse, cases being disposed of by venue staff.</p>
+                    <p>Our supervisors know exactly how each venue's empty case system works — from Messe Frankfurt to the Dubai World Trade Centre — and manage the labelling, tagging, and placement process with precision so nothing goes missing.</p>
+                    <div class="detail-points">
+                        <h5>Our Empty Case Process:</h5>
+                        <ul>
+                            <li><i class="fas fa-check-square"></i> Unique label per case with exhibitor name, stand number & case number</li>
+                            <li><i class="fas fa-check-square"></i> Photo record of all cases before storage removal</li>
+                            <li><i class="fas fa-check-square"></i> Coordination with official venue empty case contractor</li>
+                            <li><i class="fas fa-check-square"></i> Timed return matching your move-out access slot</li>
+                            <li><i class="fas fa-check-square"></i> Full inventory cross-check on return from storage</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="detail-image">
+                    <img src="https://images.unsplash.com/photo-1586528116493-da5807982f05?q=80&w=1770&auto=format&fit=crop" alt="Empty case storage at exhibition venue">
+                </div>
+            </div>
+
+            <div class="detail-grid reverse">
+                <div class="detail-content">
+                    <h3>Local Knowledge, Global Reach</h3>
+                    <p>Every major exhibition destination has its own rules, contractors, unions, and unofficial protocols. A supervisor who knows the venue team by name, understands the local language, and has navigated the hall's quirks dozens of times is worth more than any logistics software.</p>
+                    <p>Through our network of official partners and trusted associates, STOP India provides on-site supervision at exhibitions across Europe, the Middle East, Asia, and the Americas — with the same standard of service regardless of location.</p>
+                    <div class="detail-points">
+                        <h5>Our Global Supervision Capabilities:</h5>
+                        <ul>
+                            <li><i class="fas fa-check-square"></i> Native-language communication with venue staff</li>
+                            <li><i class="fas fa-check-square"></i> Knowledge of local union rules & contractor systems</li>
+                            <li><i class="fas fa-check-square"></i> Established relationships with official venue handlers</li>
+                            <li><i class="fas fa-check-square"></i> Coverage at 100+ major exhibition venues worldwide</li>
+                            <li><i class="fas fa-check-square"></i> Consistent service standards across all locations</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="detail-image">
+                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1770&auto=format&fit=crop" alt="Global exhibition venues worldwide">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Band -->
+    <div class="stats-band">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-num">1,000+</span>
+                    <span class="stat-desc">Exhibitions Supervised Globally</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">100+</span>
+                    <span class="stat-desc">Venues Covered Worldwide</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">50+</span>
+                    <span class="stat-desc">Countries in Our Network</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">25+</span>
+                    <span class="stat-desc">Years of On-Site Expertise</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Why Choose -->
+    <section class="why-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose STOP India Supervisors?</h2>
+                <p>What sets our on-ground team apart from a general logistics assistant.</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h4>Exhibition-Trained Professionals</h4>
+                    <p>Our supervisors are trained specifically in exhibition logistics — not general freight. They understand stand setup sequences, organiser timelines, and how to work within tight move-in constraints.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i class="fas fa-language"></i></div>
+                    <h4>Multilingual Capability</h4>
+                    <p>Our global supervisor network communicates fluently in the local language of the host country, preventing miscommunication with venue contractors and organiser staff.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i class="fas fa-bolt"></i></div>
+                    <h4>Fast Crisis Response</h4>
+                    <p>Problems at exhibitions don't wait. Our supervisors are empowered to make on-the-spot decisions and have access to a network of local resources to resolve issues without delay.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i class="fas fa-eye"></i></div>
+                    <h4>Transparent Reporting</h4>
+                    <p>From photo-documented cargo receipt to final handover reports, you have full visibility of what's happening on the ground, even when you're in a different time zone.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i class="fas fa-handshake"></i></div>
+                    <h4>One Point of Contact</h4>
+                    <p>Your supervisor is your single point of contact on the ground. No chasing multiple vendors — one trusted person manages everything and reports directly to your team.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h4>Cargo Protection</h4>
+                    <p>An on-site supervisor acts as a physical deterrent to mishandling. Their presence ensures your cargo is treated with the care it deserves at every stage of the venue operation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="comparison-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Supervised vs. Unsupervised Logistics</h2>
+                <p>The difference an on-site supervisor makes at your next exhibition.</p>
+            </div>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Situation</th>
+                        <th>With STOP India Supervisor</th>
+                        <th>Without On-Site Supervision</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="feature-name"><i class="fas fa-check-circle"></i> Cargo Arrives at Dock</td>
+                        <td>Received, verified & delivered to stand promptly</td>
+                        <td>May sit unattended, wrong stand, or be delayed</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name"><i class="fas fa-check-circle"></i> Empty Cases</td>
+                        <td>Labelled, stored & returned on schedule</td>
+                        <td>Risk of loss, fines, or unavailability at move-out</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name"><i class="fas fa-check-circle"></i> Organiser Issue Arises</td>
+                        <td>Resolved immediately by supervisor on the ground</td>
+                        <td>Escalation delays; no one with authority present</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name"><i class="fas fa-check-circle"></i> Damage Discovered</td>
+                        <td>Documented immediately; claim process initiated</td>
+                        <td>Often undiscovered until back at the warehouse</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name"><i class="fas fa-check-circle"></i> Move-Out Repacking</td>
+                        <td>Supervised, inventoried & dispatched correctly</td>
+                        <td>Items missed, mislabelled, or left behind</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name"><i class="fas fa-check-circle"></i> Client Visibility</td>
+                        <td>Real-time updates & photo documentation</td>
+                        <td>No updates until cargo returns — or doesn't</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name"><i class="fas fa-check-circle"></i> Vendor Coordination</td>
+                        <td>Handled directly by supervisor in local language</td>
+                        <td>Client must manage remotely across time zones</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Common queries about our on-site supervision service — answered.</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How early does the supervisor arrive at the venue?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our supervisor typically arrives at the venue the day before move-in begins, or at the very latest, early on the first move-in morning. This allows time to collect exhibitor credentials, confirm stand location, meet with organiser logistics staff, and be fully briefed before your cargo arrives at the loading dock.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can the supervisor assist with stand construction or electrical work?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our supervisors specialise in logistics management — cargo receipt, delivery, empty case storage, and coordination. Physical construction work is typically the domain of your stand builder. However, our supervisor can coordinate directly with your stand builder and the official venue handlers to ensure they have timely access to your materials and tools.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What happens if cargo is delayed and arrives after the move-in window?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>This is exactly where having a supervisor pays off. Our team will immediately liaise with the venue to request an access extension or alternative delivery slot, escalate with the carrier for priority delivery, and communicate all updates to your team. We have managed late shipments at some of the world's busiest venues and always find a workable solution.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Do you provide supervision for multi-hall or multi-pavilion participations?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes. For large or complex participations across multiple halls or pavilions, we scale our team accordingly. We can deploy multiple supervisors or a lead supervisor with supporting assistants, ensuring every stand location has dedicated coverage throughout move-in, the show, and move-out.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Will I receive updates while the show is running?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely. Our supervisor provides regular updates by email or messaging platform throughout move-in and move-out. During the show itself, they remain available and contactable at all times. At the conclusion of the event, you receive a full written supervision report with photographs covering all key activities and cargo status.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Put a Professional on the Ground at Your Next Show</h2>
+            <p>Don't leave your exhibition investment to chance. Let STOP India's expert supervisors handle every on-site logistics detail — so you can focus entirely on your visitors and your business.</p>
+            <div class="cta-buttons">
+                <a href="tel:+919212133251" class="btn-light">Call Us Now</a>
+                <a href="mailto:info@stopindia.com" class="btn-light">Email Inquiry</a>
+                <a href="services.html" class="btn-light">All Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <h4><img src="https://stopindia.com/wp-content/uploads/2020/09/new.png" alt="STOP India" style="max-width:150px; filter:brightness(0) invert(1);"></h4>
+                    <p>Your trusted partner for exhibition logistics. Moving people and cargo with zero delays and complete reliability since 2012.</p>
+                </div>
+                <div class="footer-col footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="sectors.html">Sectors</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-links">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="services.html#services">Air Freight</a></li>
+                        <li><a href="services.html#services">Sea Freight</a></li>
+                        <li><a href="services.html#services">Exhibition Handling</a></li>
+                        <li><a href="services.html#services">Customs Clearance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i><span>Corporate Office, Gurgaon, India</span></li>
+                        <li><i class="fas fa-phone"></i><span>+91 9212133251 / 252</span></li>
+                        <li><i class="fas fa-envelope"></i><span>info@stopindia.com</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bottom-footer">
+                <p>&copy; 2012 STOP India. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.main-nav');
+        hamburger.addEventListener('click', () => navMenu.classList.toggle('active'));
+        document.querySelectorAll('.main-nav a').forEach(link => {
+            link.addEventListener('click', () => navMenu.classList.remove('active'));
+        });
+
+        // Tab Switching
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                btn.classList.add('active');
+                document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+            });
+        });
+
+        // FAQ Toggle
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.querySelector('.faq-question').addEventListener('click', () => {
+                const isOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                if (!isOpen) item.classList.add('open');
+            });
+        });
+
+        // Scroll Animation
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -80px 0px' });
+
+        document.querySelectorAll('.role-card, .why-card, .timeline-item, .faq-item, .stat-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
