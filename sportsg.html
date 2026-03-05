@@ -1,0 +1,1626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports & Fitness Logistics | STOP India – Exhibition Freight</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ══════════════════════════════════════════════
+           TOKENS
+        ══════════════════════════════════════════════ */
+        :root {
+            --ash          : #F4F6F8;
+            --light-steel  : #E8ECF0;
+            --steel        : #C8D0D8;
+            --steel-dark   : #8A96A4;
+            --electric     : #0057FF;
+            --electric-dark: #003BB5;
+            --electric-deep: #001E70;
+            --flame        : #E8400A;
+            --flame-dark   : #B52E05;
+            --flame-pale   : #FEF0EA;
+            --gold         : #F0A500;
+            --gold-light   : #FFCC44;
+            --gold-pale    : #FFF8E6;
+            --onyx         : #0F1215;
+            --slate        : #3A4652;
+            --mid-grey     : #6A7884;
+            --white        : #FFFFFF;
+            --tr           : all 0.35s ease;
+        }
+
+        /* ══════════════════════════════════════════════
+           RESET & BASE
+        ══════════════════════════════════════════════ */
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+        html { scroll-behavior:smooth; }
+        body {
+            font-family:'Outfit', sans-serif;
+            font-weight:300;
+            color:var(--onyx);
+            background:var(--ash);
+            overflow-x:hidden;
+            font-size:15px;
+        }
+        a { text-decoration:none; color:inherit; transition:var(--tr); }
+        ul { list-style:none; }
+        img { max-width:100%; height:auto; display:block; }
+        .container { max-width:1200px; margin:0 auto; padding:0 28px; }
+
+        /* ══════════════════════════════════════════════
+           DIAGONAL GRID UTILITY
+        ══════════════════════════════════════════════ */
+        .grid-texture {
+            background-image:
+                repeating-linear-gradient(
+                    60deg,
+                    transparent, transparent 18px,
+                    rgba(0,87,255,0.035) 18px, rgba(0,87,255,0.035) 19px
+                ),
+                repeating-linear-gradient(
+                    -60deg,
+                    transparent, transparent 18px,
+                    rgba(232,64,10,0.02) 18px, rgba(232,64,10,0.02) 19px
+                );
+        }
+
+        /* ══════════════════════════════════════════════
+           HEADER
+        ══════════════════════════════════════════════ */
+        header {
+            background:var(--white);
+            box-shadow:0 1px 0 rgba(0,87,255,0.1), 0 4px 24px rgba(15,18,21,0.07);
+            position:sticky; top:0; z-index:1000;
+        }
+        .nav-container {
+            display:flex; justify-content:space-between; align-items:center;
+            height:90px; max-width:1200px; margin:0 auto; padding:0 28px;
+            flex-direction:row-reverse;
+        }
+        .logo-area img { height:90px; width:auto; object-fit:contain; margin-right:-28px; }
+        .main-nav ul { display:flex; gap:28px; }
+        .main-nav a {
+            font-family:'Outfit',sans-serif;
+            font-weight:600; font-size:0.75rem;
+            text-transform:uppercase; letter-spacing:2px;
+            color:var(--onyx); position:relative;
+        }
+        .main-nav a::after {
+            content:''; position:absolute; width:0; height:2px;
+            background:var(--electric); bottom:-4px; left:0; transition:var(--tr);
+        }
+        .main-nav a:hover { color:var(--electric); }
+        .main-nav a:hover::after, .main-nav a.active::after { width:100%; }
+        .hamburger { display:none; cursor:pointer; font-size:1.4rem; color:var(--electric-dark); }
+
+        /* ══════════════════════════════════════════════
+           BREADCRUMB
+        ══════════════════════════════════════════════ */
+        .breadcrumb-bar {
+            background:var(--light-steel);
+            border-bottom:1px solid var(--steel);
+            padding:13px 0;
+        }
+        .breadcrumb-bar .container {
+            display:flex; align-items:center; gap:10px;
+            font-size:0.78rem; color:var(--mid-grey);
+        }
+        .breadcrumb-bar a { color:var(--onyx); font-weight:500; }
+        .breadcrumb-bar a:hover { color:var(--electric); }
+        .breadcrumb-bar .sep { color:var(--steel-dark); }
+        .breadcrumb-bar .current { color:var(--flame); font-weight:600; }
+
+        /* ══════════════════════════════════════════════
+           HERO — editorial split
+        ══════════════════════════════════════════════ */
+        .hero {
+            min-height:100vh;
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            position:relative; overflow:hidden;
+        }
+
+        .hero-left {
+            background:var(--electric-deep);
+            display:flex; flex-direction:column;
+            justify-content:center;
+            padding:80px 60px;
+            position:relative; overflow:hidden;
+            z-index:2;
+        }
+
+        /* speed-line texture */
+        .hero-left::before {
+            content:'';
+            position:absolute; inset:0;
+            background:
+                repeating-linear-gradient(
+                    -68deg,
+                    transparent 0px, transparent 48px,
+                    rgba(0,87,255,0.12) 48px, rgba(0,87,255,0.12) 49px
+                ),
+                repeating-linear-gradient(
+                    22deg,
+                    transparent 0px, transparent 70px,
+                    rgba(240,165,0,0.05) 70px, rgba(240,165,0,0.05) 71px
+                );
+        }
+
+        /* angled slash accent */
+        .hero-left::after {
+            content:'';
+            position:absolute; top:0; right:-1px; width:120px; height:100%;
+            background:var(--ash);
+            clip-path:polygon(100% 0, 100% 100%, 0 100%);
+            z-index:3;
+        }
+
+        .hero-eyebrow {
+            display:inline-flex; align-items:center; gap:12px;
+            margin-bottom:28px; position:relative; z-index:2;
+        }
+        .hero-eyebrow .line { width:36px; height:2px; background:var(--gold); }
+        .hero-eyebrow span {
+            font-family:'Outfit',sans-serif;
+            font-weight:600; font-size:0.72rem;
+            letter-spacing:4px; text-transform:uppercase;
+            color:var(--gold-light);
+        }
+
+        .hero h1 {
+            font-family:'Cormorant Garamond', serif;
+            font-weight:300; font-size:6rem; line-height:0.95;
+            color:var(--ash); position:relative; z-index:2;
+            margin-bottom:6px;
+        }
+        .hero h1 em { font-weight:700; font-style:italic; color:var(--gold-light); display:block; }
+        .hero h1 strong { font-weight:700; display:block; color:var(--white); }
+
+        .hero-rule {
+            width:90px; height:3px;
+            background:linear-gradient(90deg, var(--flame), transparent);
+            margin:26px 0; position:relative; z-index:2;
+        }
+
+        .hero p {
+            font-family:'Outfit',sans-serif;
+            font-weight:300; font-size:0.97rem;
+            color:rgba(244,246,248,0.72);
+            line-height:1.9; max-width:390px;
+            position:relative; z-index:2; margin-bottom:40px;
+        }
+
+        .hero-actions {
+            display:flex; gap:14px; flex-wrap:wrap;
+            position:relative; z-index:2;
+        }
+        .btn-flame {
+            background:var(--flame);
+            color:var(--white);
+            padding:14px 36px; border-radius:2px;
+            font-family:'Outfit',sans-serif;
+            font-weight:700; font-size:0.78rem;
+            letter-spacing:2px; text-transform:uppercase;
+            transition:var(--tr); border:1px solid var(--flame);
+        }
+        .btn-flame:hover { background:transparent; color:var(--flame); box-shadow:0 0 30px rgba(232,64,10,0.2); }
+        .btn-ghost-light {
+            background:transparent; color:var(--ash);
+            padding:14px 36px; border-radius:2px;
+            border:1px solid rgba(244,246,248,0.25);
+            font-family:'Outfit',sans-serif;
+            font-weight:500; font-size:0.78rem;
+            letter-spacing:2px; text-transform:uppercase;
+            transition:var(--tr);
+        }
+        .btn-ghost-light:hover { border-color:var(--gold-light); color:var(--gold-light); }
+
+        .hero-stats-left {
+            display:grid; grid-template-columns:1fr 1fr;
+            gap:1px; background:rgba(0,87,255,0.3);
+            border:1px solid rgba(0,87,255,0.3);
+            border-radius:2px; overflow:hidden;
+            margin-top:44px; position:relative; z-index:2;
+        }
+        .hs-item {
+            background:rgba(0,30,112,0.5);
+            padding:18px 20px;
+        }
+        .hs-item .n {
+            font-family:'Cormorant Garamond', serif;
+            font-size:2.4rem; font-weight:600;
+            color:var(--gold-light); display:block; line-height:1;
+        }
+        .hs-item .l {
+            font-size:0.68rem; color:rgba(244,246,248,0.5);
+            text-transform:uppercase; letter-spacing:1.5px; margin-top:4px;
+        }
+
+        /* right image panel */
+        .hero-right { position:relative; overflow:hidden; }
+        .hero-right img {
+            width:100%; height:100%; object-fit:cover;
+            filter:saturate(0.9) brightness(0.88);
+            transition:transform 8s ease;
+        }
+        .hero-right:hover img { transform:scale(1.04); }
+
+        .hero-right::before {
+            content:'';
+            position:absolute; inset:0; z-index:1;
+            background:linear-gradient(
+                110deg,
+                var(--electric-deep) 0%,
+                rgba(0,30,112,0.2) 28%,
+                transparent 50%
+            );
+        }
+
+        /* floating badge */
+        .hero-img-badge {
+            position:absolute; bottom:50px; right:40px; z-index:3;
+            background:rgba(244,246,248,0.97);
+            border-radius:2px; padding:22px 28px;
+            box-shadow:0 20px 60px rgba(15,18,21,0.3);
+            border-left:4px solid var(--electric);
+        }
+        .hib-num {
+            font-family:'Cormorant Garamond', serif;
+            font-size:2.8rem; font-weight:700;
+            color:var(--electric-dark); line-height:1;
+        }
+        .hib-lbl { font-size:0.72rem; color:var(--mid-grey); letter-spacing:1.5px; text-transform:uppercase; margin-top:4px; }
+
+        .hero-watermark {
+            position:absolute; bottom:-30px; left:-10px; z-index:2;
+            font-family:'Cormorant Garamond', serif;
+            font-size:12rem; font-weight:700;
+            color:rgba(244,246,248,0.04);
+            line-height:1; pointer-events:none;
+            letter-spacing:-4px; white-space:nowrap;
+        }
+
+        /* ══════════════════════════════════════════════
+           TICKER
+        ══════════════════════════════════════════════ */
+        .ticker-wrap {
+            background:var(--electric);
+            padding:12px 0; overflow:hidden; white-space:nowrap;
+        }
+        .ticker-track {
+            display:inline-block;
+            animation:tickerRoll 32s linear infinite;
+        }
+        .ticker-track span {
+            font-family:'Outfit',sans-serif;
+            font-weight:600; font-size:0.73rem;
+            letter-spacing:3px; text-transform:uppercase;
+            color:var(--white); padding:0 30px;
+        }
+        .ticker-track span::before { content:'▶'; margin-right:28px; opacity:0.5; }
+        @keyframes tickerRoll {
+            0%   { transform:translateX(0); }
+            100% { transform:translateX(-50%); }
+        }
+
+        /* ══════════════════════════════════════════════
+           SECTION HELPERS
+        ══════════════════════════════════════════════ */
+        .section-pad { padding:100px 0; }
+        .section-pad-sm { padding:70px 0; }
+
+        .sh { margin-bottom:60px; }
+        .sh .eyebrow {
+            display:inline-flex; align-items:center; gap:14px; margin-bottom:16px;
+        }
+        .sh .eyebrow .eline { width:32px; height:2px; background:var(--electric); }
+        .sh .eyebrow span {
+            font-family:'Outfit',sans-serif;
+            font-weight:600; font-size:0.72rem;
+            letter-spacing:3.5px; text-transform:uppercase;
+            color:var(--flame);
+        }
+        .sh h2 {
+            font-family:'Cormorant Garamond', serif;
+            font-size:3rem; font-weight:300;
+            color:var(--onyx); line-height:1.2;
+        }
+        .sh h2 em { font-style:italic; color:var(--electric-dark); }
+        .sh p { color:var(--mid-grey); font-size:0.95rem; line-height:1.85; max-width:680px; margin-top:16px; }
+        .sh.center { text-align:center; }
+        .sh.center p { margin:16px auto 0; }
+        .sh.center .eyebrow { justify-content:center; }
+
+        /* ══════════════════════════════════════════════
+           OVERVIEW
+        ══════════════════════════════════════════════ */
+        .overview { background:var(--ash); }
+        .ov-layout {
+            display:grid; grid-template-columns:1.15fr 0.85fr;
+            gap:90px; align-items:start;
+        }
+
+        .ov-pull {
+            font-family:'Cormorant Garamond', serif;
+            font-size:2rem; font-weight:300; font-style:italic;
+            color:var(--electric-dark); line-height:1.4;
+            border-left:4px solid var(--electric);
+            padding:4px 0 4px 28px; margin-bottom:32px;
+        }
+
+        .ov-body p {
+            color:var(--onyx); font-size:0.96rem;
+            line-height:1.95; margin-bottom:18px; font-weight:300;
+        }
+
+        .ov-pills { display:flex; flex-wrap:wrap; gap:10px; margin-top:28px; }
+        .ov-pill {
+            display:inline-flex; align-items:center; gap:8px;
+            background:var(--light-steel); border:1px solid var(--steel);
+            padding:8px 18px; border-radius:2px;
+            font-size:0.8rem; font-weight:600; color:var(--onyx);
+            transition:var(--tr);
+        }
+        .ov-pill:hover { background:rgba(0,87,255,0.08); border-color:var(--electric); color:var(--electric-dark); }
+        .ov-pill i { color:var(--electric); font-size:0.78rem; }
+
+        .ov-right { position:relative; }
+        .ov-img-stack { position:relative; }
+        .ov-img-stack .img-main {
+            width:100%; border-radius:2px;
+            box-shadow:0 30px 80px rgba(15,18,21,0.2);
+        }
+        .ov-img-stack .img-accent {
+            position:absolute; bottom:-30px; left:-30px;
+            width:55%; border-radius:2px;
+            box-shadow:0 20px 50px rgba(15,18,21,0.25);
+            border:6px solid var(--ash);
+        }
+        .ov-stat-card {
+            position:absolute; top:-24px; right:-20px;
+            background:var(--electric);
+            padding:22px 26px; border-radius:2px;
+            box-shadow:0 15px 40px rgba(0,87,255,0.3); z-index:3;
+        }
+        .ov-stat-card .n {
+            font-family:'Cormorant Garamond', serif;
+            font-size:2.6rem; font-weight:700; color:var(--white); line-height:1;
+        }
+        .ov-stat-card .l { font-size:0.7rem; color:rgba(244,246,248,0.7); letter-spacing:1.5px; text-transform:uppercase; margin-top:4px; }
+
+        /* ══════════════════════════════════════════════
+           CATEGORIES — EQUIPMENT CARDS
+        ══════════════════════════════════════════════ */
+        .categories { background:var(--light-steel); position:relative; }
+
+        .categories::before {
+            content:''; display:block; height:70px; width:100%;
+            background:var(--ash);
+            clip-path:polygon(0 0, 100% 0, 100% 100%, 0 0);
+            margin-bottom:-1px;
+        }
+        .categories::after {
+            content:''; display:block; height:70px; width:100%;
+            background:var(--ash);
+            clip-path:polygon(0 100%, 100% 0, 100% 100%);
+            margin-top:-1px;
+        }
+        .cat-inner { padding:40px 0; }
+
+        .swatch-grid {
+            display:grid; grid-template-columns:repeat(3,1fr);
+            gap:0; border:1px solid var(--steel);
+            border-radius:4px; overflow:hidden;
+            box-shadow:0 20px 60px rgba(15,18,21,0.1);
+        }
+
+        .swatch-card {
+            background:var(--white);
+            border-right:1px solid var(--steel);
+            border-bottom:1px solid var(--steel);
+            transition:var(--tr); position:relative; overflow:hidden; cursor:default;
+        }
+        .swatch-card:nth-child(3n) { border-right:none; }
+        .swatch-card:nth-child(n+4) { border-bottom:none; }
+        .swatch-card:hover { z-index:2; box-shadow:0 20px 50px rgba(0,87,255,0.12); transform:translateY(-5px); }
+
+        .swatch-band { height:150px; position:relative; overflow:hidden; }
+        .swatch-band img {
+            width:100%; height:100%; object-fit:cover;
+            transition:transform 0.6s ease; filter:saturate(0.85);
+        }
+        .swatch-card:hover .swatch-band img { transform:scale(1.08); filter:saturate(1); }
+
+        .swatch-band-overlay {
+            position:absolute; inset:0;
+            background:linear-gradient(to top, rgba(15,18,21,0.55) 0%, transparent 60%);
+        }
+
+        .swatch-tag {
+            position:absolute; top:12px; left:12px;
+            background:var(--electric); color:var(--white);
+            padding:3px 12px; border-radius:1px;
+            font-family:'Outfit',sans-serif;
+            font-size:0.64rem; font-weight:700; letter-spacing:2px; text-transform:uppercase;
+        }
+        .swatch-tag.flame { background:var(--flame); color:var(--white); }
+        .swatch-tag.gold  { background:var(--gold); color:var(--onyx); }
+        .swatch-tag.onyx  { background:var(--onyx); color:var(--white); }
+
+        .swatch-body { padding:26px 26px 28px; }
+        .swatch-body .cat-num {
+            font-family:'Outfit',sans-serif;
+            font-size:0.7rem; font-weight:700; letter-spacing:3px;
+            color:var(--electric); text-transform:uppercase; margin-bottom:8px;
+        }
+        .swatch-body h3 {
+            font-family:'Cormorant Garamond', serif;
+            font-size:1.5rem; font-weight:600;
+            color:var(--onyx); margin-bottom:10px; line-height:1.2;
+        }
+        .swatch-body p { color:var(--mid-grey); font-size:0.86rem; line-height:1.75; margin-bottom:16px; }
+        .swatch-list { border-top:1px solid var(--light-steel); padding-top:14px; }
+        .swatch-list li {
+            display:flex; align-items:center; gap:9px;
+            font-size:0.82rem; color:var(--onyx); margin-bottom:7px;
+        }
+        .swatch-list li::before {
+            content:''; width:6px; height:6px; border-radius:50%;
+            background:var(--electric); flex-shrink:0;
+        }
+
+        /* ══════════════════════════════════════════════
+           SHOWS — editorial grid
+        ══════════════════════════════════════════════ */
+        .shows-section { background:var(--ash); }
+
+        .shows-editorial {
+            display:grid;
+            grid-template-columns:1.4fr 1fr 1fr;
+            grid-template-rows:auto auto;
+            gap:20px; margin-top:60px;
+        }
+
+        .show-ed {
+            position:relative; overflow:hidden;
+            border-radius:3px; transition:var(--tr);
+            box-shadow:0 8px 30px rgba(15,18,21,0.1);
+        }
+        .show-ed:hover { transform:translateY(-6px); box-shadow:0 24px 60px rgba(0,87,255,0.18); }
+        .show-ed.featured { grid-row:span 2; }
+
+        .show-ed-img {
+            width:100%; height:100%; min-height:200px; position:relative;
+        }
+        .show-ed.featured .show-ed-img { min-height:520px; }
+        .show-ed-img img {
+            width:100%; height:100%; object-fit:cover;
+            position:absolute; inset:0;
+            transition:transform 0.6s ease;
+            filter:saturate(0.75) brightness(0.75);
+        }
+        .show-ed:hover .show-ed-img img { transform:scale(1.06); filter:saturate(0.9) brightness(0.85); }
+
+        .show-ed-overlay {
+            position:absolute; inset:0;
+            background:linear-gradient(
+                to top,
+                rgba(0,10,40,0.9) 0%,
+                rgba(0,10,40,0.35) 50%,
+                transparent 100%
+            );
+            display:flex; flex-direction:column;
+            justify-content:flex-end;
+            padding:28px 28px 30px;
+        }
+
+        .show-flag-row { display:flex; align-items:center; gap:10px; margin-bottom:10px; }
+        .show-flag { font-size:1.3rem; }
+        .show-country { font-size:0.72rem; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.55); }
+
+        .show-ed-overlay h3 {
+            font-family:'Cormorant Garamond', serif;
+            font-size:1.6rem; font-weight:600;
+            color:var(--white); line-height:1.2; margin-bottom:6px;
+        }
+        .show-ed.featured .show-ed-overlay h3 { font-size:2.4rem; }
+        .show-ed-overlay .venue { font-size:0.78rem; color:rgba(255,255,255,0.5); margin-bottom:14px; }
+
+        .show-tags { display:flex; gap:7px; flex-wrap:wrap; margin-bottom:14px; }
+        .show-etag {
+            background:rgba(0,87,255,0.22); color:#99BBFF;
+            border:1px solid rgba(0,87,255,0.35);
+            padding:3px 10px; border-radius:1px;
+            font-size:0.68rem; letter-spacing:1.5px; text-transform:uppercase; font-weight:600;
+        }
+        .show-etag.flame { background:rgba(232,64,10,0.2); color:#FFAA88; border-color:rgba(232,64,10,0.3); }
+
+        .show-meta-row {
+            display:flex; gap:20px; padding-top:12px;
+            border-top:1px solid rgba(255,255,255,0.1);
+        }
+        .show-meta-row .sm .sv {
+            font-family:'Cormorant Garamond', serif;
+            font-weight:600; font-size:1.1rem; color:var(--white);
+        }
+        .show-meta-row .sm .sl { font-size:0.67rem; text-transform:uppercase; letter-spacing:1px; color:rgba(255,255,255,0.4); }
+
+        .more-shows-ribbon {
+            background:var(--gold-pale);
+            border:1px solid var(--steel);
+            border-radius:3px; padding:28px 32px; margin-top:24px;
+        }
+        .more-shows-ribbon p {
+            font-family:'Cormorant Garamond', serif;
+            font-size:1rem; font-weight:600; font-style:italic;
+            color:var(--onyx); margin-bottom:16px;
+        }
+        .more-shows-ribbon p i { color:var(--electric); font-style:normal; }
+        .m-pills { display:flex; flex-wrap:wrap; gap:10px; }
+        .m-pill {
+            display:inline-flex; align-items:center; gap:7px;
+            border:1px solid var(--steel); background:var(--white);
+            padding:6px 16px; border-radius:2px;
+            font-size:0.8rem; color:var(--onyx); font-weight:500;
+            transition:var(--tr);
+        }
+        .m-pill:hover { border-color:var(--electric); background:rgba(0,87,255,0.06); color:var(--electric-dark); }
+        .m-pill i { font-size:0.68rem; color:var(--flame); }
+
+        /* ══════════════════════════════════════════════
+           STATISTICS BAND
+        ══════════════════════════════════════════════ */
+        .stats-band {
+            background:var(--onyx);
+            position:relative; overflow:hidden; padding:80px 0;
+        }
+        .stats-band::before {
+            content:'';
+            position:absolute; inset:0;
+            background:
+                repeating-linear-gradient(
+                    -68deg,
+                    transparent 0, transparent 55px,
+                    rgba(0,87,255,0.08) 55px, rgba(0,87,255,0.08) 56px
+                );
+        }
+        .stats-band::after {
+            content:'SPORT';
+            position:absolute; right:-30px; top:50%; transform:translateY(-50%);
+            font-family:'Cormorant Garamond', serif;
+            font-size:14rem; font-weight:700; letter-spacing:-6px;
+            color:rgba(244,246,248,0.03); line-height:1; pointer-events:none;
+        }
+        .stats-grid {
+            display:grid; grid-template-columns:repeat(4,1fr);
+            gap:0; position:relative; z-index:1;
+        }
+        .stat-item {
+            text-align:center; padding:0 30px;
+            border-right:1px solid rgba(0,87,255,0.2);
+        }
+        .stat-item:last-child { border-right:none; }
+        .stat-item .sn {
+            font-family:'Cormorant Garamond', serif;
+            font-size:4rem; font-weight:700; color:var(--gold-light);
+            display:block; line-height:1;
+        }
+        .stat-item .sl {
+            font-size:0.78rem; color:rgba(244,246,248,0.45);
+            text-transform:uppercase; letter-spacing:2px; margin-top:8px;
+        }
+
+        /* ══════════════════════════════════════════════
+           WHY SECTION
+        ══════════════════════════════════════════════ */
+        .why-section { background:var(--ash); }
+        .why-layout {
+            display:grid; grid-template-columns:0.9fr 1.1fr;
+            gap:80px; align-items:center;
+        }
+
+        .why-img-side { position:relative; }
+        .why-img-side img {
+            width:100%; border-radius:2px;
+            box-shadow:0 30px 80px rgba(15,18,21,0.16);
+            filter:saturate(0.88);
+        }
+        .why-img-side::before {
+            content:'';
+            position:absolute; top:-16px; left:-16px; right:16px; bottom:16px;
+            border:2px solid var(--electric);
+            border-radius:2px; z-index:-1; opacity:0.4;
+        }
+
+        .why-grid {
+            display:grid; grid-template-columns:1fr 1fr; gap:22px;
+        }
+        .why-card {
+            background:var(--white);
+            border:1px solid var(--steel);
+            border-radius:2px; padding:26px 22px;
+            transition:var(--tr);
+            position:relative; overflow:hidden;
+        }
+        .why-card::before {
+            content:''; position:absolute;
+            top:0; left:0; width:0; height:3px;
+            background:var(--electric);
+            transition:width 0.35s ease;
+        }
+        .why-card:hover::before { width:100%; }
+        .why-card:hover { border-color:var(--electric); box-shadow:0 12px 35px rgba(0,87,255,0.1); transform:translateY(-4px); }
+
+        .why-ico {
+            width:48px; height:48px; border-radius:2px;
+            display:flex; align-items:center; justify-content:center;
+            font-size:1.3rem; margin-bottom:14px;
+        }
+        .why-ico.elec  { background:rgba(0,87,255,0.08); color:var(--electric); border:1px solid rgba(0,87,255,0.15); }
+        .why-ico.fl    { background:var(--flame-pale); color:var(--flame); border:1px solid rgba(232,64,10,0.2); }
+        .why-ico.gd    { background:var(--gold-pale); color:var(--gold); border:1px solid rgba(240,165,0,0.2); }
+
+        .why-card h4 {
+            font-family:'Cormorant Garamond', serif;
+            font-size:1.2rem; font-weight:600;
+            color:var(--onyx); margin-bottom:8px;
+        }
+        .why-card p { color:var(--mid-grey); font-size:0.84rem; line-height:1.75; }
+
+        /* ══════════════════════════════════════════════
+           PROCESS — speed-track steps
+        ══════════════════════════════════════════════ */
+        .process-section { background:var(--light-steel); position:relative; }
+        .process-steps {
+            display:grid; grid-template-columns:repeat(6,1fr);
+            gap:0; margin-top:60px; position:relative;
+        }
+        .process-steps::before {
+            content:'';
+            position:absolute; top:34px; left:8%; right:8%; height:2px;
+            background:repeating-linear-gradient(
+                90deg,
+                var(--electric) 0px, var(--electric) 14px,
+                transparent 14px, transparent 24px
+            );
+            z-index:0;
+        }
+
+        .ps { text-align:center; padding:0 14px; position:relative; z-index:1; transition:var(--tr); }
+        .ps:hover { transform:translateY(-6px); }
+
+        .ps-node {
+            width:68px; height:68px; border-radius:50%;
+            background:var(--white); border:2px solid var(--electric);
+            display:flex; align-items:center; justify-content:center;
+            font-size:1.4rem; color:var(--electric);
+            margin:0 auto 18px; transition:var(--tr);
+            box-shadow:0 6px 20px rgba(0,87,255,0.15);
+        }
+        .ps:hover .ps-node {
+            background:var(--electric); color:var(--white);
+            box-shadow:0 10px 30px rgba(0,87,255,0.35);
+        }
+
+        .ps h4 {
+            font-family:'Cormorant Garamond', serif;
+            font-size:1.05rem; font-weight:600;
+            color:var(--onyx); margin-bottom:8px;
+        }
+        .ps p { font-size:0.78rem; color:var(--mid-grey); line-height:1.7; }
+
+        /* ══════════════════════════════════════════════
+           COMPLIANCE CALLOUT
+        ══════════════════════════════════════════════ */
+        .compliance-callout {
+            background:var(--slate);
+            padding:80px 0; position:relative; overflow:hidden;
+        }
+        .compliance-callout::before {
+            content:'';
+            position:absolute; inset:0;
+            background:
+                repeating-linear-gradient(
+                    135deg, transparent 0, transparent 40px,
+                    rgba(0,87,255,0.06) 40px, rgba(0,87,255,0.06) 41px
+                );
+        }
+        .cc-inner {
+            display:grid; grid-template-columns:1fr 1fr 1fr 1fr;
+            gap:0; position:relative; z-index:1;
+        }
+        .cc-item {
+            padding:30px 36px;
+            border-right:1px solid rgba(255,255,255,0.07);
+            transition:var(--tr);
+        }
+        .cc-item:last-child { border-right:none; }
+        .cc-item:hover { background:rgba(0,87,255,0.08); }
+        .cc-icon { color:var(--gold-light); font-size:1.6rem; margin-bottom:16px; }
+        .cc-item h4 {
+            font-family:'Cormorant Garamond', serif;
+            font-size:1.15rem; font-weight:600; color:var(--white); margin-bottom:8px;
+        }
+        .cc-item p { color:rgba(244,246,248,0.5); font-size:0.83rem; line-height:1.75; }
+
+        /* ══════════════════════════════════════════════
+           FAQ
+        ══════════════════════════════════════════════ */
+        .faq-section { background:var(--ash); }
+        .faq-layout {
+            display:grid; grid-template-columns:0.9fr 1.1fr;
+            gap:80px; align-items:start;
+        }
+        .faq-left h2 {
+            font-family:'Cormorant Garamond', serif;
+            font-size:3rem; font-weight:300; color:var(--onyx); line-height:1.2; margin-bottom:20px;
+        }
+        .faq-left h2 em { font-style:italic; color:var(--electric-dark); }
+        .faq-left p { color:var(--mid-grey); font-size:0.93rem; line-height:1.85; margin-bottom:32px; }
+        .faq-left img { width:100%; border-radius:2px; box-shadow:0 20px 50px rgba(15,18,21,0.15); filter:saturate(0.88); }
+
+        .faq-item { border-bottom:1px solid var(--steel); overflow:hidden; }
+        .faq-item:first-child { border-top:1px solid var(--steel); }
+        .faq-q {
+            padding:20px 0;
+            display:flex; justify-content:space-between; align-items:center;
+            cursor:pointer;
+            font-family:'Cormorant Garamond', serif;
+            font-weight:600; color:var(--onyx); font-size:1.05rem;
+            transition:var(--tr); letter-spacing:0.2px;
+        }
+        .faq-q:hover { color:var(--electric-dark); }
+        .faq-q .faq-icon {
+            width:32px; height:32px; border-radius:50%;
+            background:var(--light-steel); border:1px solid var(--steel);
+            display:flex; align-items:center; justify-content:center;
+            font-size:0.75rem; color:var(--electric); flex-shrink:0;
+            margin-left:20px; transition:var(--tr);
+        }
+        .faq-item.open .faq-q .faq-icon {
+            background:var(--electric); border-color:var(--electric); color:var(--white); transform:rotate(180deg);
+        }
+        .faq-a { max-height:0; overflow:hidden; transition:max-height 0.45s ease; }
+        .faq-item.open .faq-a { max-height:320px; }
+        .faq-a p { padding:0 0 22px; color:var(--mid-grey); font-size:0.9rem; line-height:1.85; }
+
+        /* ══════════════════════════════════════════════
+           CTA
+        ══════════════════════════════════════════════ */
+        .cta-section {
+            position:relative; overflow:hidden; padding:0;
+            min-height:520px; display:flex; align-items:stretch;
+        }
+        .cta-img { position:absolute; inset:0; }
+        .cta-img img {
+            width:100%; height:100%; object-fit:cover;
+            filter:saturate(0.4) brightness(0.35);
+        }
+        .cta-overlay {
+            position:absolute; inset:0;
+            background:linear-gradient(
+                105deg,
+                rgba(0,30,112,0.95) 0%,
+                rgba(0,30,112,0.72) 50%,
+                rgba(15,18,21,0.55) 100%
+            );
+        }
+        .cta-content {
+            position:relative; z-index:2; width:100%;
+            display:flex; flex-direction:column;
+            align-items:flex-start; justify-content:center;
+            padding:100px 0;
+        }
+        .cta-content .cta-eyebrow {
+            display:inline-flex; align-items:center; gap:12px; margin-bottom:24px;
+        }
+        .cta-content .cta-eyebrow .cline { width:32px; height:2px; background:var(--gold); }
+        .cta-content .cta-eyebrow span {
+            font-size:0.72rem; letter-spacing:4px; text-transform:uppercase;
+            color:var(--gold-light); font-weight:600;
+        }
+        .cta-content h2 {
+            font-family:'Cormorant Garamond', serif;
+            font-size:3.6rem; font-weight:300;
+            color:var(--white); line-height:1.15; margin-bottom:22px; max-width:700px;
+        }
+        .cta-content h2 em { font-style:italic; color:var(--gold-light); font-weight:600; }
+        .cta-content p {
+            font-size:1rem; color:rgba(244,246,248,0.72); font-weight:300;
+            max-width:560px; line-height:1.85; margin-bottom:40px;
+        }
+        .cta-btns { display:flex; gap:14px; flex-wrap:wrap; }
+
+        .btn-flame-cta {
+            background:var(--flame); color:var(--white);
+            padding:15px 40px; border-radius:2px;
+            font-family:'Outfit',sans-serif;
+            font-weight:700; font-size:0.78rem; letter-spacing:2px; text-transform:uppercase;
+            transition:var(--tr); border:1px solid var(--flame);
+        }
+        .btn-flame-cta:hover { background:transparent; color:var(--flame); }
+        .btn-wire {
+            background:transparent; color:var(--ash);
+            padding:15px 40px; border-radius:2px;
+            border:1px solid rgba(244,246,248,0.25);
+            font-family:'Outfit',sans-serif;
+            font-weight:500; font-size:0.78rem; letter-spacing:2px; text-transform:uppercase;
+            transition:var(--tr);
+        }
+        .btn-wire:hover { border-color:var(--gold-light); color:var(--gold-light); }
+
+        /* ══════════════════════════════════════════════
+           FOOTER
+        ══════════════════════════════════════════════ */
+        footer {
+            background:var(--onyx);
+            padding-top:60px; color:rgba(244,246,248,0.7);
+        }
+        .footer-grid {
+            display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+            gap:40px; margin-bottom:50px;
+        }
+        .footer-col h4 {
+            font-family:'Cormorant Garamond', serif;
+            color:var(--white); font-size:1.1rem; font-weight:600;
+            margin-bottom:20px; padding-bottom:10px;
+            border-bottom:1px solid rgba(0,87,255,0.3);
+        }
+        .footer-col p { font-size:0.87rem; line-height:1.8; }
+        .footer-col ul li { margin-bottom:9px; }
+        .footer-col ul li a { font-size:0.87rem; transition:0.3s; }
+        .footer-col ul li a:hover { color:var(--gold-light); padding-left:6px; }
+        .footer-col .cli { display:flex; gap:12px; margin-bottom:12px; font-size:0.87rem; }
+        .footer-col .cli i { color:var(--electric); margin-top:4px; flex-shrink:0; }
+        .bottom-footer {
+            border-top:1px solid rgba(0,87,255,0.12);
+            padding:22px 0; text-align:center;
+            font-size:0.8rem; color:rgba(244,246,248,0.3);
+        }
+
+        /* ══════════════════════════════════════════════
+           SCROLL REVEAL
+        ══════════════════════════════════════════════ */
+        .reveal { opacity:0; transform:translateY(26px); transition:opacity 0.7s ease, transform 0.7s ease; }
+        .reveal.up { transform:translateY(26px); }
+        .reveal.left { transform:translateX(-26px); }
+        .reveal.right { transform:translateX(26px); }
+        .reveal.visible { opacity:1; transform:translate(0,0); }
+
+        /* ══════════════════════════════════════════════
+           RESPONSIVE
+        ══════════════════════════════════════════════ */
+        @media (max-width:1100px) {
+            .hero { grid-template-columns:1fr; min-height:auto; }
+            .hero-right { height:480px; }
+            .hero-left { padding:70px 40px; }
+            .hero-left::after { display:none; }
+            .hero h1 { font-size:4.5rem; }
+            .ov-layout { grid-template-columns:1fr; gap:50px; }
+            .ov-img-stack .img-accent { display:none; }
+            .ov-stat-card { top:12px; right:12px; }
+            .shows-editorial { grid-template-columns:1fr 1fr; }
+            .show-ed.featured { grid-row:span 1; }
+            .show-ed.featured .show-ed-img { min-height:300px; }
+            .why-layout { grid-template-columns:1fr; gap:50px; }
+            .why-img-side::before { display:none; }
+            .faq-layout { grid-template-columns:1fr; }
+            .cc-inner { grid-template-columns:1fr 1fr; }
+            .cc-item:nth-child(2) { border-right:none; }
+            .stats-grid { grid-template-columns:repeat(2,1fr); gap:30px; }
+            .stat-item { border-right:none; }
+        }
+        @media (max-width:768px) {
+            .hamburger { display:block; }
+            .nav-container { flex-direction:row; }
+            .main-nav {
+                position:absolute; top:90px; left:-100%; width:100%;
+                background:var(--white); padding:20px;
+                border-bottom:1px solid var(--steel); transition:0.4s; z-index:999;
+            }
+            .main-nav.active { left:0; }
+            .main-nav ul { flex-direction:column; text-align:center; gap:14px; }
+            .hero h1 { font-size:3.2rem; }
+            .hero-left { padding:60px 28px; }
+            .swatch-grid { grid-template-columns:1fr; }
+            .swatch-card { border-right:none; border-bottom:1px solid var(--steel); }
+            .swatch-card:last-child { border-bottom:none; }
+            .shows-editorial { grid-template-columns:1fr; }
+            .why-grid { grid-template-columns:1fr; }
+            .process-steps { grid-template-columns:repeat(2,1fr); }
+            .process-steps::before { display:none; }
+            .cc-inner { grid-template-columns:1fr; }
+            .cc-item { border-right:none; border-bottom:1px solid rgba(255,255,255,0.06); }
+            .cta-content h2 { font-size:2.4rem; }
+            .stats-grid { grid-template-columns:1fr 1fr; }
+            .stats-band::after { display:none; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ════════════════ HEADER ════════════════ -->
+<header>
+    <div class="nav-container">
+        <div class="logo-area">
+            <a href="index.html">
+                <img src="https://stopindia.com/wp-content/uploads/2020/09/new.png" alt="STOP India Logo">
+            </a>
+        </div>
+        <nav class="main-nav" id="mainNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="sectors.html" class="active">Sectors</a></li>
+                <li><a href="Gallery.html">Gallery</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="carrer.html">Career</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+    </div>
+</header>
+
+<!-- ════════════════ BREADCRUMB ════════════════ -->
+<div class="breadcrumb-bar">
+    <div class="container">
+        <a href="index.html">Home</a>
+        <span class="sep">›</span>
+        <a href="sectors.html">Sectors</a>
+        <span class="sep">›</span>
+        <span class="current">Sports &amp; Fitness</span>
+    </div>
+</div>
+
+<!-- ════════════════ HERO ════════════════ -->
+<section class="hero" id="top">
+    <div class="hero-left">
+        <div class="hero-eyebrow">
+            <div class="line"></div>
+            <span>Exhibition Freight Specialists</span>
+        </div>
+        <h1>
+            Sports
+            <em>&amp; Fitness</em>
+            <strong>Logistics</strong>
+        </h1>
+        <div class="hero-rule"></div>
+        <p>From precision-engineered cricket bats destined for ISPO Munich to stadium-scale display structures bound for Sporting Goods China — we move India's sports equipment, fitness gear, sportswear, and large-format displays to the world's most competitive sporting trade fairs.</p>
+        <div class="hero-actions">
+            <a href="tel:+919212133251" class="btn-flame"><i class="fas fa-phone" style="margin-right:8px;"></i>Request a Quote</a>
+            <a href="#shows" class="btn-ghost-light"><i class="fas fa-globe" style="margin-right:8px;"></i>Key Sports Shows</a>
+        </div>
+        <div class="hero-stats-left">
+            <div class="hs-item"><span class="n">400+</span><span class="l">Sports Shows Handled</span></div>
+            <div class="hs-item"><span class="n">55+</span><span class="l">Countries Covered</span></div>
+            <div class="hs-item"><span class="n">25+</span><span class="l">Years Experience</span></div>
+            <div class="hs-item"><span class="n">0</span><span class="l">Damage Claims</span></div>
+        </div>
+    </div>
+
+    <div class="hero-right">
+        <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=2070&auto=format&fit=crop"
+             onerror="this.src='https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=2070&auto=format&fit=crop'"
+             alt="Sports exhibition logistics">
+        <div class="hero-img-badge">
+            <div class="hib-num">India No.1</div>
+            <div class="hib-lbl">Sports Exhibition<br>Freight Partner</div>
+        </div>
+        <div class="hero-watermark">SPORT</div>
+    </div>
+</section>
+
+<!-- ════════════════ TICKER ════════════════ -->
+<div class="ticker-wrap">
+    <div class="ticker-track" id="ticker">
+        <span>ISPO Munich</span><span>Sporting Goods China</span>
+        <span>FIBO Cologne</span><span>OR Salt Lake City</span>
+        <span>Asia Sport</span><span>India Sports Show</span>
+        <span>SGI Dubai</span><span>All China Sporting Goods Show</span>
+        <span>IHRSA Fitness Expo</span><span>Eurobike Frankfurt</span>
+        <span>ISPO Munich</span><span>Sporting Goods China</span>
+        <span>FIBO Cologne</span><span>OR Salt Lake City</span>
+        <span>Asia Sport</span><span>India Sports Show</span>
+        <span>SGI Dubai</span><span>All China Sporting Goods Show</span>
+        <span>IHRSA Fitness Expo</span><span>Eurobike Frankfurt</span>
+    </div>
+</div>
+
+<!-- ════════════════ OVERVIEW ════════════════ -->
+<section class="overview section-pad" id="overview">
+    <div class="container">
+        <div class="ov-layout">
+            <div class="ov-body reveal left">
+                <div class="sh" style="margin-bottom:30px;">
+                    <div class="eyebrow">
+                        <div class="eline"></div>
+                        <span>Sports &amp; Fitness Sector</span>
+                    </div>
+                    <h2>India's Sporting Goods.<br><em>Delivered to the World.</em></h2>
+                </div>
+                <div class="ov-pull">
+                    "Every piece of equipment carries the ambition of an athlete. We carry it to the world's stage."
+                </div>
+                <p>India is a rapidly growing powerhouse in sporting goods manufacturing — from cricket equipment and badminton rackets to yoga mats, fitness machines, and team sportswear. Indian manufacturers and brands are increasingly competing at the world's most prestigious sporting goods trade fairs.</p>
+                <p>STOP India has built a dedicated freight capability for the sports and fitness industry, understanding the unique challenges it presents: oversized equipment, heavy fitness machinery, delicate precision instruments, inflatable structures, and large-scale display systems — each requiring specialist handling, custom crating, and precise logistics coordination.</p>
+                <p>Whether it's a full fitness equipment range for FIBO Cologne or a complete cricket equipment collection for SGI Dubai, our sports logistics team manages every dimension of your exhibition freight — from factory floor to exhibition stand — with the precision of a professional athlete.</p>
+                <div class="ov-pills">
+                    <span class="ov-pill"><i class="fas fa-dumbbell"></i> Heavy Equipment Handling</span>
+                    <span class="ov-pill"><i class="fas fa-expand-arrows-alt"></i> Oversized &amp; Bulky Cargo</span>
+                    <span class="ov-pill"><i class="fas fa-wind"></i> Inflatable Structure Logistics</span>
+                    <span class="ov-pill"><i class="fas fa-shield-alt"></i> Fragile Precision Gear</span>
+                    <span class="ov-pill"><i class="fas fa-file-alt"></i> Sports Export Documentation</span>
+                </div>
+            </div>
+
+            <div class="ov-right reveal right">
+                <div class="ov-img-stack">
+                    <img class="img-main"
+                         src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1974&auto=format&fit=crop"
+                         alt="Sports exhibition freight">
+                    <img class="img-accent"
+                         src="https://images.unsplash.com/photo-1594737625785-a6cbdabd333c?q=80&w=1974&auto=format&fit=crop"
+                         alt="Fitness equipment">
+                    <div class="ov-stat-card">
+                        <div class="n">400+</div>
+                        <div class="l">Shows Served</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ════════════════ PRODUCT CATEGORIES ════════════════ -->
+<section class="categories">
+    <div class="cat-inner">
+        <div class="container">
+            <div class="sh center reveal">
+                <div class="eyebrow"><div class="eline"></div><span>Product Categories</span><div class="eline"></div></div>
+                <h2>Every Category of Sports Cargo,<br><em>Handled with Precision</em></h2>
+                <p>Six distinct product categories — each with its own handling philosophy, crating method, and logistical requirements.</p>
+            </div>
+
+            <div class="swatch-grid">
+
+                <!-- 1 -->
+                <div class="swatch-card reveal">
+                    <div class="swatch-band">
+                        <img src="https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?q=80&w=1971&auto=format&fit=crop" alt="Sports Equipment">
+                        <div class="swatch-band-overlay"></div>
+                        <span class="swatch-tag">Equipment</span>
+                    </div>
+                    <div class="swatch-body">
+                        <div class="cat-num">01 · Category</div>
+                        <h3>Sports Equipment &amp; Gear</h3>
+                        <p>Cricket, badminton, hockey, tennis, archery, boxing — precision sports equipment requiring custom wooden crates, foam inserts, and vibration-dampened packaging to protect high-performance pieces.</p>
+                        <ul class="swatch-list">
+                            <li>Custom timber crating for high-value gear</li>
+                            <li>Foam-lined instrument-grade packaging</li>
+                            <li>Impact-resistant outer cartons</li>
+                            <li>Pre-show quality inspection &amp; sign-off</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 2 -->
+                <div class="swatch-card reveal" style="transition-delay:0.1s;">
+                    <div class="swatch-band">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1970&auto=format&fit=crop" alt="Fitness Equipment">
+                        <div class="swatch-band-overlay"></div>
+                        <span class="swatch-tag flame">Fitness</span>
+                    </div>
+                    <div class="swatch-body">
+                        <div class="cat-num">02 · Category</div>
+                        <h3>Fitness Machines &amp; Gym Equipment</h3>
+                        <p>Treadmills, rowing machines, weight stacks, cable systems, and commercial gym equipment — heavy, bulky, and mechanically complex pieces requiring specialist dismantling, crating, and reassembly on site.</p>
+                        <ul class="swatch-list">
+                            <li>Factory-trained disassembly &amp; reassembly</li>
+                            <li>Heavy-lift forklift operations at venue</li>
+                            <li>Overweight &amp; oversized cargo permits</li>
+                            <li>On-site technical installation supervision</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 3 -->
+                <div class="swatch-card reveal" style="transition-delay:0.2s;">
+                    <div class="swatch-band">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1987&auto=format&fit=crop" alt="Sportswear">
+                        <div class="swatch-band-overlay"></div>
+                        <span class="swatch-tag gold">Sportswear</span>
+                    </div>
+                    <div class="swatch-body">
+                        <div class="cat-num">03 · Category</div>
+                        <h3>Sportswear &amp; Performance Apparel</h3>
+                        <p>Team kits, compression garments, performance outerwear, footwear, and branded merchandise — handled with garment-freight precision to arrive wrinkle-free and display-ready for buyers.</p>
+                        <ul class="swatch-list">
+                            <li>Hanging rail cartons for jersey &amp; apparel</li>
+                            <li>Anti-crease folding with tissue interleaving</li>
+                            <li>Footwear box stacking &amp; display packing</li>
+                            <li>Rapid sample return logistics</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 4 -->
+                <div class="swatch-card reveal" style="transition-delay:0.1s;">
+                    <div class="swatch-band">
+                        <img src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?q=80&w=2049&auto=format&fit=crop" alt="Team Accessories">
+                        <div class="swatch-band-overlay"></div>
+                        <span class="swatch-tag">Team Accessories</span>
+                    </div>
+                    <div class="swatch-body">
+                        <div class="cat-num">04 · Category</div>
+                        <h3>Team Accessories &amp; Branded Merchandise</h3>
+                        <p>Bags, helmets, protective gear, gloves, shin pads, team branding accessories, and promotional merchandise — mixed-category consignments managed under a single, coordinated logistics plan.</p>
+                        <ul class="swatch-list">
+                            <li>SKU-level packing list &amp; inventory control</li>
+                            <li>Mixed-category single-consignment logistics</li>
+                            <li>Branded carton design &amp; presentation packing</li>
+                            <li>Post-show unsold goods return management</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 5 -->
+                <div class="swatch-card reveal" style="transition-delay:0.2s;">
+                    <div class="swatch-band">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2076&auto=format&fit=crop" alt="Large Displays">
+                        <div class="swatch-band-overlay"></div>
+                        <span class="swatch-tag onyx">Displays</span>
+                    </div>
+                    <div class="swatch-body">
+                        <div class="cat-num">05 · Category</div>
+                        <h3>Large-Scale Sporting Displays</h3>
+                        <p>Stadium-scale structures, LED display walls, inflatable sports arenas, synthetic turf sections, climbing walls, and giant branded installations — the most complex cargo category we manage with specialist riggers.</p>
+                        <ul class="swatch-list">
+                            <li>Custom steel-frame crating for structures</li>
+                            <li>On-site rigging &amp; assembly coordination</li>
+                            <li>Inflatable structure packing &amp; blower systems</li>
+                            <li>Venue liaison for crane &amp; heavy-lift access</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 6 -->
+                <div class="swatch-card reveal" style="transition-delay:0.3s;">
+                    <div class="swatch-band">
+                        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=2070&auto=format&fit=crop" alt="Wellness & Yoga">
+                        <div class="swatch-band-overlay"></div>
+                        <span class="swatch-tag flame">Wellness</span>
+                    </div>
+                    <div class="swatch-body">
+                        <div class="cat-num">06 · Category</div>
+                        <h3>Wellness, Yoga &amp; Outdoor Recreation</h3>
+                        <p>Yoga mats, wellness accessories, outdoor camping gear, cycling equipment, water sports, and adventure activity products — India's booming wellness export segment handled with specialist care.</p>
+                        <ul class="swatch-list">
+                            <li>Soft goods compression &amp; vacuum packing</li>
+                            <li>Lithium battery compliance for e-bikes &amp; GPS</li>
+                            <li>Dangerous goods assessment for compressed-gas items</li>
+                            <li>Outdoor &amp; camping mixed-cargo expertise</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div><!-- /swatch-grid -->
+        </div>
+    </div>
+</section>
+
+<!-- ════════════════ SHOWS ════════════════ -->
+<section class="shows-section section-pad" id="shows">
+    <div class="container">
+        <div class="sh reveal">
+            <div class="eyebrow"><div class="eline"></div><span>World-Leading Exhibitions</span></div>
+            <h2>The Sports Shows That<br><em>Define the Global Game</em></h2>
+            <p>STOP India operates at every major sporting goods, fitness, and outdoor recreation trade fair — with venue knowledge, official handler relationships, and on-the-ground presence at each event.</p>
+        </div>
+
+        <div class="shows-editorial">
+
+            <!-- FEATURED: ISPO Munich -->
+            <div class="show-ed featured reveal left">
+                <div class="show-ed-img">
+                    <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=2070&auto=format&fit=crop" alt="ISPO Munich">
+                    <div class="show-ed-overlay">
+                        <div class="show-flag-row">
+                            <span class="show-flag">🇩🇪</span>
+                            <span class="show-country">Munich, Germany</span>
+                        </div>
+                        <h3>ISPO Munich</h3>
+                        <div class="venue">Messe München</div>
+                        <div class="show-tags">
+                            <span class="show-etag">Sporting Goods</span>
+                            <span class="show-etag">Outdoor</span>
+                            <span class="show-etag flame">World #1</span>
+                        </div>
+                        <p style="color:rgba(255,255,255,0.65); font-size:0.85rem; line-height:1.7; margin-bottom:16px;">The world's leading sporting goods trade fair. ISPO Munich brings together over 2,000 exhibitors across sports equipment, fitness gear, outdoor, and performance apparel. STOP India is the preferred freight partner for Indian exhibitors — navigating Messe München's complex logistics system with institutional precision.</p>
+                        <div class="show-meta-row">
+                            <div class="sm"><div class="sv">2,000+</div><div class="sl">Exhibitors</div></div>
+                            <div class="sm"><div class="sv">Jan</div><div class="sl">Annual</div></div>
+                            <div class="sm"><div class="sv">100+</div><div class="sl">Countries</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FIBO -->
+            <div class="show-ed reveal" style="transition-delay:0.1s;">
+                <div class="show-ed-img" style="min-height:230px;">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2070&auto=format&fit=crop" alt="FIBO Cologne">
+                    <div class="show-ed-overlay">
+                        <div class="show-flag-row"><span class="show-flag">🇩🇪</span><span class="show-country">Cologne, Germany</span></div>
+                        <h3>FIBO</h3>
+                        <div class="venue">Koelnmesse</div>
+                        <div class="show-tags"><span class="show-etag">Fitness</span><span class="show-etag">Gym Equipment</span></div>
+                        <div class="show-meta-row">
+                            <div class="sm"><div class="sv">1,000+</div><div class="sl">Exhibitors</div></div>
+                            <div class="sm"><div class="sv">Apr</div><div class="sl">Annual</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sporting Goods China -->
+            <div class="show-ed reveal" style="transition-delay:0.2s;">
+                <div class="show-ed-img" style="min-height:230px;">
+                    <img src="https://images.unsplash.com/photo-1515238152791-8216bfdf89a7?q=80&w=2070&auto=format&fit=crop" alt="Sporting Goods China">
+                    <div class="show-ed-overlay">
+                        <div class="show-flag-row"><span class="show-flag">🇨🇳</span><span class="show-country">Beijing, China</span></div>
+                        <h3>Sporting Goods China</h3>
+                        <div class="venue">China National Convention Centre</div>
+                        <div class="show-tags"><span class="show-etag">All Categories</span></div>
+                        <div class="show-meta-row">
+                            <div class="sm"><div class="sv">1,800+</div><div class="sl">Exhibitors</div></div>
+                            <div class="sm"><div class="sv">Jun</div><div class="sl">Annual</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SGI Dubai -->
+            <div class="show-ed reveal" style="transition-delay:0.1s;">
+                <div class="show-ed-img" style="min-height:230px;">
+                    <img src="https://images.unsplash.com/photo-1567607758751-f76d20cce7b4?q=80&w=2070&auto=format&fit=crop" alt="SGI Dubai">
+                    <div class="show-ed-overlay">
+                        <div class="show-flag-row"><span class="show-flag">🇦🇪</span><span class="show-country">Dubai, UAE</span></div>
+                        <h3>SGI Dubai</h3>
+                        <div class="venue">Dubai World Trade Centre</div>
+                        <div class="show-tags"><span class="show-etag">Sports</span><span class="show-etag">Fitness</span><span class="show-etag flame">Key Show</span></div>
+                        <div class="show-meta-row">
+                            <div class="sm"><div class="sv">800+</div><div class="sl">Exhibitors</div></div>
+                            <div class="sm"><div class="sv">Feb</div><div class="sl">Annual</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- India Sports Show -->
+            <div class="show-ed reveal" style="transition-delay:0.2s;">
+                <div class="show-ed-img" style="min-height:230px;">
+                    <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?q=80&w=2070&auto=format&fit=crop" alt="India Sports Show">
+                    <div class="show-ed-overlay">
+                        <div class="show-flag-row"><span class="show-flag">🇮🇳</span><span class="show-country">New Delhi / Mumbai, India</span></div>
+                        <h3>India Sports Show</h3>
+                        <div class="venue">Pragati Maidan / BKC</div>
+                        <div class="show-tags"><span class="show-etag">Domestic</span><span class="show-etag">All Sports</span><span class="show-etag flame">Home Market</span></div>
+                        <div class="show-meta-row">
+                            <div class="sm"><div class="sv">600+</div><div class="sl">Exhibitors</div></div>
+                            <div class="sm"><div class="sv">Nov</div><div class="sl">Annual</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /shows-editorial -->
+
+        <div class="more-shows-ribbon reveal" style="margin-top:28px;">
+            <p><i class="fas fa-trophy"></i>&thinsp; We Also Serve These Leading Sports &amp; Fitness Shows:</p>
+            <div class="m-pills">
+                <span class="m-pill"><i class="fas fa-map-marker-alt"></i> IHRSA Fitness Expo, USA</span>
+                <span class="m-pill"><i class="fas fa-map-marker-alt"></i> Eurobike, Frankfurt</span>
+                <span class="m-pill"><i class="fas fa-map-marker-alt"></i> Asia Outdoor, China</span>
+                <span class="m-pill"><i class="fas fa-map-marker-alt"></i> SRIA Sports Expo, India</span>
+                <span class="m-pill"><i class="fas fa-map-marker-alt"></i> All China Sporting Goods Show</span>
+                <span class="m-pill"><i class="fas fa-map-marker-alt"></i> OR Show, Salt Lake City</span>
+                <span class="m-pill"><i class="fas fa-map-marker-alt"></i> Sport Accord, Geneva</span>
+                <span class="m-pill"><i class="fas fa-map-marker-alt"></i> Sportech Expo, Tokyo</span>
+                <span class="m-pill"><i class="fas fa-map-marker-alt"></i> Aquanale, Cologne</span>
+                <span class="m-pill"><i class="fas fa-map-marker-alt"></i> SIERF, Saudi Arabia</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ════════════════ STATISTICS ════════════════ -->
+<div class="stats-band">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item reveal"><span class="sn">400+</span><div class="sl">Sports Shows Handled Globally</div></div>
+            <div class="stat-item reveal" style="transition-delay:0.1s;"><span class="sn">55+</span><div class="sl">Countries in Our Network</div></div>
+            <div class="stat-item reveal" style="transition-delay:0.2s;"><span class="sn">25+</span><div class="sl">Years of Sports Expertise</div></div>
+            <div class="stat-item reveal" style="transition-delay:0.3s;"><span class="sn">0</span><div class="sl">Damaged Consignments</div></div>
+        </div>
+    </div>
+</div>
+
+<!-- ════════════════ WHY STOP INDIA ════════════════ -->
+<section class="why-section section-pad" id="why">
+    <div class="container">
+        <div class="why-layout">
+            <div class="why-img-side reveal left">
+                <img src="https://images.unsplash.com/photo-1547347298-4074fc3086f0?q=80&w=1974&auto=format&fit=crop" alt="STOP India sports freight expertise">
+            </div>
+            <div class="reveal right">
+                <div class="sh" style="margin-bottom:40px;">
+                    <div class="eyebrow"><div class="eline"></div><span>Why STOP India</span></div>
+                    <h2>A Partner Who Understands<br><em>Sport, Not Just Shipping</em></h2>
+                    <p>What sets our sports logistics team apart from a standard freight forwarder — and why India's leading sports brands trust us with their most competitive shows.</p>
+                </div>
+                <div class="why-grid">
+                    <div class="why-card"><div class="why-ico elec"><i class="fas fa-dumbbell"></i></div><h4>Heavy Equipment Mastery</h4><p>Our team is trained to handle oversized gym machines and structural display systems — with forklift-equipped operations and venue-approved heavy-lift coordination at all major exhibitions.</p></div>
+                    <div class="why-card"><div class="why-ico fl"><i class="fas fa-tools"></i></div><h4>On-Site Assembly</h4><p>We don't just deliver — we assemble. Our trained on-site crew disassembles equipment at origin, transports it in custom crates, and rebuilds it at your exhibition stand before show opening.</p></div>
+                    <div class="why-card"><div class="why-ico gd"><i class="fas fa-file-contract"></i></div><h4>Sports Export Documentation</h4><p>HS code classification for sporting goods, DGFT compliance, BIS certifications, anti-dumping duty awareness — our documentation team navigates every regulation specific to the sports goods sector.</p></div>
+                    <div class="why-card"><div class="why-ico elec"><i class="fas fa-undo-alt"></i></div><h4>Unsold Sample Returns</h4><p>Sport samples, demo equipment, and display units must return to India under duty-free re-import. We handle ATA Carnet documentation and the complete return cycle with zero duty exposure.</p></div>
+                    <div class="why-card"><div class="why-ico fl"><i class="fas fa-layer-group"></i></div><h4>Mixed-Cargo Expertise</h4><p>Sports exhibitors ship equipment, apparel, footwear, accessories, and display structures together. We co-ordinate all categories — heavy and light — in one seamless, supervised consignment.</p></div>
+                    <div class="why-card"><div class="why-ico gd"><i class="fas fa-user-tie"></i></div><h4>On-Site Supervision</h4><p>Our dedicated supervisors at the venue manage receiving, stand delivery, assembly oversight, empty case storage, and dismantling — so your team can focus on winning business on the floor.</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ════════════════ COMPLIANCE CALLOUT ════════════════ -->
+<div class="compliance-callout">
+    <div class="container">
+        <div class="cc-inner">
+            <div class="cc-item reveal">
+                <div class="cc-icon"><i class="fas fa-certificate"></i></div>
+                <h4>BIS &amp; Quality Certifications</h4>
+                <p>We assist in presenting the correct Bureau of Indian Standards certification documentation for sporting goods — essential for many destination markets requiring safety and quality proof-of-compliance.</p>
+            </div>
+            <div class="cc-item reveal" style="transition-delay:0.1s;">
+                <div class="cc-icon"><i class="fas fa-battery-full"></i></div>
+                <h4>Lithium Battery Compliance</h4>
+                <p>E-bikes, GPS devices, smart fitness wearables, and electronic equipment with lithium batteries — handled under full IATA dangerous goods compliance with DGR-certified documentation.</p>
+            </div>
+            <div class="cc-item reveal" style="transition-delay:0.2s;">
+                <div class="cc-icon"><i class="fas fa-passport"></i></div>
+                <h4>ATA Carnet for Demo Equipment</h4>
+                <p>Demo fitness machines, sports equipment, and display structures exported temporarily under ATA Carnet — full preparation, border management, and tracked re-import to India within validity.</p>
+            </div>
+            <div class="cc-item reveal" style="transition-delay:0.3s;">
+                <div class="cc-icon"><i class="fas fa-balance-scale"></i></div>
+                <h4>Anti-Dumping &amp; Tariff Advisory</h4>
+                <p>Sports goods face complex anti-dumping duties and tariff classification in key markets. We advise on correct HS codes, applicable duty rates, and preferential tariff opportunities for Indian exporters.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ════════════════ PROCESS ════════════════ -->
+<section class="process-section section-pad" id="process">
+    <div class="container">
+        <div class="sh center reveal">
+            <div class="eyebrow"><div class="eline"></div><span>Our Process</span><div class="eline"></div></div>
+            <h2>From Your Factory Floor to the<br><em>Exhibition Arena</em></h2>
+            <p>Six precision-coordinated steps — ensuring your sports equipment and fitness gear arrives at the world's biggest shows competition-ready.</p>
+        </div>
+        <div class="process-track">
+            <div class="process-steps">
+                <div class="ps reveal">
+                    <div class="ps-node"><i class="fas fa-ruler-combined"></i></div>
+                    <h4>Cargo Survey</h4>
+                    <p>We assess dimensions, weights, fragility, and special handling requirements for every item — from gym machines to precision sports gear.</p>
+                </div>
+                <div class="ps reveal" style="transition-delay:0.08s;">
+                    <div class="ps-node"><i class="fas fa-box-open"></i></div>
+                    <h4>Custom Crating</h4>
+                    <p>Timber crates, foam inserts, steel-frame cases, garment boxes — every piece packed using the method that guarantees arrival in showroom condition.</p>
+                </div>
+                <div class="ps reveal" style="transition-delay:0.16s;">
+                    <div class="ps-node"><i class="fas fa-file-alt"></i></div>
+                    <h4>Documentation</h4>
+                    <p>ATA Carnet, BIS certificates, dangerous goods declaration, export invoice — all prepared and verified before your shipment leaves India.</p>
+                </div>
+                <div class="ps reveal" style="transition-delay:0.24s;">
+                    <div class="ps-node"><i class="fas fa-plane-departure"></i></div>
+                    <h4>Priority Routing</h4>
+                    <p>Air or sea freight selected for each cargo type — oversized machinery by sea, time-critical samples by air — always arriving before the show deadline.</p>
+                </div>
+                <div class="ps reveal" style="transition-delay:0.32s;">
+                    <div class="ps-node"><i class="fas fa-stamp"></i></div>
+                    <h4>Customs Clearance</h4>
+                    <p>Priority customs clearance at destination — sports goods HS codes, preferential tariff claims, and any duty-exemption documentation managed by our team.</p>
+                </div>
+                <div class="ps reveal" style="transition-delay:0.4s;">
+                    <div class="ps-node"><i class="fas fa-medal"></i></div>
+                    <h4>Stand Ready</h4>
+                    <p>Delivered, assembled, and supervised at your stand — your equipment set up and ready for the show opening, with our team on-site throughout.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ════════════════ FAQ ════════════════ -->
+<section class="faq-section section-pad" id="faq">
+    <div class="container">
+        <div class="faq-layout">
+            <div class="faq-left reveal left">
+                <div class="sh" style="margin-bottom:28px;">
+                    <div class="eyebrow"><div class="eline"></div><span>FAQ</span></div>
+                    <h2>Questions<br>We're Often<br><em>Asked</em></h2>
+                </div>
+                <p>Answers to the most common questions from sports equipment and fitness exhibitors — drawn from 25+ years of experience at the world's leading sporting goods shows.</p>
+                <img src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?q=80&w=1974&auto=format&fit=crop"
+                     onerror="this.src='https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1974&auto=format&fit=crop'"
+                     alt="Sports exhibition" style="margin-top:30px;">
+            </div>
+            <div class="faq-list reveal right">
+                <div class="faq-item">
+                    <div class="faq-q">How do you ship large gym machines and fitness equipment to FIBO Cologne?<div class="faq-icon"><i class="fas fa-chevron-down"></i></div></div>
+                    <div class="faq-a"><p>Heavy fitness equipment to FIBO Cologne typically travels by LCL or FCL sea freight from Indian ports to Hamburg or Rotterdam, then onward by road to Koelnmesse. We work with our German handling partners to manage move-in under the FIBO official logistics programme. Each machine is disassembled at origin into its component sections, wrapped in stretch film and moving blankets, placed in custom timber crates with steel corner reinforcements, and secured on pallets for racking in the container. Our on-site assembly team receives the cargo at the stand and rebuilds the machines using the original hardware — with a final operational test before the show opens.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">Can you handle inflatable sports structures and display arenas?<div class="faq-icon"><i class="fas fa-chevron-down"></i></div></div>
+                    <div class="faq-a"><p>Yes — inflatable structures are one of our specialities within the sports sector. The inflatable panels or chambers are carefully deflated and folded according to manufacturer guidelines to prevent crease damage to the PVC material, then packed into custom-sewn duffel bags or purpose-made crates. The blower motors and inflation systems travel separately in padded cases. We pre-arrange venue access for the inflation operation — including power supply, floor space, and ceiling clearance checks at the exhibition hall. Our team remains on site to manage the inflation, anchoring, and safe deflation at the close of the show.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">What is the process for shipping sports demo equipment temporarily — and bringing it back to India?<div class="faq-icon"><i class="fas fa-chevron-down"></i></div></div>
+                    <div class="faq-a"><p>Demo equipment — treadmills, cricket nets, smart fitness devices, and so on — is ideally exported under an ATA Carnet, which is an international customs document that allows temporary export and re-import of commercial samples without payment of import duties. STOP India prepares the carnet through the relevant Indian Chamber of Commerce, lists every item with serial numbers and values, and manages the carnet at each border crossing during the journey out and back. Provided the equipment returns to India within the carnet's validity period (typically 12 months), no import duty is payable in either direction. For items with high customs risk, we also offer insurance-backed carnet guarantee services.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">How are electronic sports products and e-bikes handled for international shipping?<div class="faq-icon"><i class="fas fa-chevron-down"></i></div></div>
+                    <div class="faq-a"><p>Electronic sports products — including e-bikes, smart fitness wearables, GPS devices, and electronic scoring systems — often contain lithium-ion batteries which are classified as dangerous goods under IATA regulations. We have DGR-certified staff who assess the battery specification (watt-hour rating), classify the goods correctly, prepare the Shipper's Declaration for Dangerous Goods, and confirm compliance with the airline's acceptance criteria. Batteries that exceed airline limits are separated from the equipment and shipped by sea or road. We never ship non-compliant lithium battery goods by air — the safety and regulatory risk is too high.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">What documentation is required to export sports equipment to Germany for ISPO Munich?<div class="faq-icon"><i class="fas fa-chevron-down"></i></div></div>
+                    <div class="faq-a"><p>For sports goods to Germany (EU), you require: a commercial invoice with accurate HS codes specific to each sports category, a packing list, a certificate of origin (for potential GSP preferential tariff benefit), an ATA Carnet if demo goods are being returned, and any relevant product certification documents (CE marking documentation for certain fitness equipment sold in the EU, BIS certificates where applicable). For goods containing wood packaging, ISPM-15 phytosanitary treatment of all timber packing is mandatory for EU entry. STOP India prepares a show-specific documentation checklist for each ISPO shipment, ensuring nothing is missing that could delay clearance at Munich Airport or cause issues with German customs.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">Can you manage our entire ISPO participation — from packing in India to stand setup in Munich?<div class="faq-icon"><i class="fas fa-chevron-down"></i></div></div>
+                    <div class="faq-a"><p>Absolutely — and this end-to-end management model is exactly what our most experienced sports exhibitors prefer. Our ISPO service covers: pre-show packing inspection at your Indian facility, custom crating and labelling, export documentation and customs clearance in India, air or sea freight to Munich, German customs clearance, Messe München official logistics programme handling, stand delivery on your assigned move-in day, on-site assembly and equipment testing, empty case storage during the show, stand dismantling, re-packing at close of show, and the complete return to India. One point of contact, one invoice, and a team that has done this at ISPO many times before.</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ════════════════ CTA ════════════════ -->
+<section class="cta-section">
+    <div class="cta-img">
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop" alt="Sports exhibition freight">
+    </div>
+    <div class="cta-overlay"></div>
+    <div class="container">
+        <div class="cta-content">
+            <div class="cta-eyebrow">
+                <div class="cline"></div>
+                <span>Take the Next Step</span>
+            </div>
+            <h2>Bring Your Brand to the<br><em>World Arena</em></h2>
+            <p>India's finest sports equipment and fitness innovations deserve a freight partner who handles them with championship-level care. Let STOP India's sports logistics specialists design a bespoke exhibition solution — from factory floor to gold-medal stand.</p>
+            <div class="cta-btns">
+                <a href="tel:+919212133251" class="btn-flame-cta"><i class="fas fa-phone" style="margin-right:8px;"></i>Speak to a Specialist</a>
+                <a href="mailto:info@stopindia.com" class="btn-wire"><i class="fas fa-envelope" style="margin-right:8px;"></i>Send an Enquiry</a>
+                <a href="services.html" class="btn-wire"><i class="fas fa-th-large" style="margin-right:8px;"></i>All Services</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ════════════════ FOOTER ════════════════ -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4><img src="https://stopindia.com/wp-content/uploads/2020/09/new.png" alt="STOP India" style="max-width:145px; filter:brightness(0) invert(1); margin-bottom:10px;"></h4>
+                <p>Your trusted partner for sports and fitness exhibition logistics. Carrying India's finest sporting goods and fitness innovations to the world's most competitive trade fairs since 2012.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="sectors.html">Sectors</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Sports Services</h4>
+                <ul>
+                    <li><a href="#">Sports Equipment Freight</a></li>
+                    <li><a href="#">Fitness Machine Logistics</a></li>
+                    <li><a href="#">ATA Carnet for Demo Gear</a></li>
+                    <li><a href="#">On-Site Assembly</a></li>
+                    <li><a href="#">Customs Clearance</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li class="cli"><i class="fas fa-map-marker-alt"></i><span>Corporate Office, Gurgaon, India</span></li>
+                    <li class="cli"><i class="fas fa-phone"></i><span>+91 9212133251 / 252</span></li>
+                    <li class="cli"><i class="fas fa-envelope"></i><span>info@stopindia.com</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="bottom-footer">
+            <p>&copy; 2012 STOP India. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- ════════════════ SCRIPTS ════════════════ -->
+<script>
+    /* ── Mobile Menu ── */
+    document.getElementById('hamburger').addEventListener('click', () => {
+        document.getElementById('mainNav').classList.toggle('active');
+    });
+    document.querySelectorAll('.main-nav a').forEach(l =>
+        l.addEventListener('click', () => document.getElementById('mainNav').classList.remove('active'))
+    );
+
+    /* ── Scroll Reveal ── */
+    const revealObs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.classList.add('visible');
+                revealObs.unobserve(e.target);
+            }
+        });
+    }, { threshold:0.08, rootMargin:'0px 0px -50px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+    /* ── FAQ Accordion ── */
+    document.querySelectorAll('.faq-item').forEach(item => {
+        item.querySelector('.faq-q').addEventListener('click', () => {
+            const open = item.classList.contains('open');
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+            if (!open) item.classList.add('open');
+        });
+    });
+
+    /* ── Smooth Scroll ── */
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', function(e) {
+            const t = document.querySelector(this.getAttribute('href'));
+            if (t) { e.preventDefault(); t.scrollIntoView({ behavior:'smooth' }); }
+        });
+    });
+
+    /* ── Parallax on hero ── */
+    const heroRight = document.querySelector('.hero-right img');
+    if (heroRight) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY < window.innerHeight) {
+                heroRight.style.transform = `translateY(${window.scrollY * 0.12}px)`;
+            }
+        }, { passive:true });
+    }
+
+    /* ── Staggered card reveal ── */
+    document.querySelectorAll('.swatch-card').forEach((card, i) => {
+        card.style.transitionDelay = `${i * 0.06}s`;
+    });
+
+    /* ── Stats glow on hover ── */
+    document.querySelectorAll('.stat-item').forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            item.querySelector('.sn').style.textShadow = '0 0 30px rgba(255,204,68,0.7), 0 0 60px rgba(255,204,68,0.3)';
+        });
+        item.addEventListener('mouseleave', () => {
+            item.querySelector('.sn').style.textShadow = 'none';
+        });
+    });
+</script>
+</body>
+</html>
