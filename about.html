@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About STOP India | Exhibition logistics Leader</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* =========================================
+           1. ROOT VARIABLES & RESET
+           ========================================= */
+        :root {
+            --primary-navy: #183650;
+            --primary-red: #DC2626;
+            --dark-red: #991B1B;
+            --light-red: #FEE2E2;
+            --accent-red: #EF4444;
+            --primary-cyan: #06B6D4;
+            --light-cyan: #CFFAFE;
+            --dark-cyan: #0E7490;
+            --accent-color: #F59E0B;
+            --light-grey: #f8f9fa;
+            --text-grey: #000000;
+            --white: #ffffff;
+            --transition: all 0.3s ease-in-out;
+            --section-padding: 70px 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            color: var(--primary-navy);
+            line-height: 1.7;
+            overflow-x: hidden;
+            background-color: var(--white);
+            font-size: 15px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: rgb(250, 7, 7);
+            margin-bottom: 15px;
+            position: relative;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.427);
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-red), var(--dark-red));
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-header p {
+            color: var(--text-grey);
+            font-size: 0.95rem;
+            max-width: 700px;
+            margin: 20px auto 0;
+            font-weight: 300;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+            color: var(--white);
+            font-weight: 500;
+            text-transform: uppercase;
+            border-radius: 50px;
+            border: 2px solid var(--primary-red);
+            cursor: pointer;
+            letter-spacing: 0.5px;
+            font-size: 0.85rem;
+            transition: all 0.4s ease;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: var(--primary-red);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(240, 27, 27, 0.3);
+        }
+
+        /* =========================================
+           2. TOP BAR & NAVIGATION
+           ========================================= */
+        .top-bar {
+            background: linear-gradient(90deg, var(--dark-red), var(--primary-red));
+            color: var(--white);
+            padding: 10px 0;
+            font-size: 0.8rem;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-info-top span {
+            margin-right: 20px;
+            font-weight: 300;
+        }
+
+        .contact-info-top i {
+            color: var(--light-red);
+            margin-right: 5px;
+        }
+
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 20px rgba(24, 54, 80, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 90px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            flex-direction: row-reverse;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-area img {
+            height: 91px;
+            width: auto;
+            object-fit: contain;
+            margin-right: -20px;
+        }
+
+        .main-nav ul {
+            display: flex;
+            gap: 25px;
+        }
+
+        .main-nav a {
+            font-weight: 500;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: var(--primary-navy);
+            position: relative;
+            letter-spacing: 0.5px;
+        }
+
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-cyan), var(--dark-cyan));
+            bottom: -5px;
+            left: 0;
+            transition: var(--transition);
+        }
+
+        .main-nav a:hover::after,
+        .main-nav a.active::after {
+            width: 100%;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--white);
+            box-shadow: 0 10px 30px rgba(24, 54, 80, 0.15);
+            border-radius: 8px;
+            min-width: 200px;
+            padding: 8px 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            margin-top: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main-nav li:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu li {
+            padding: 0;
+            display: block;
+            width: 100%;
+        }
+
+        .dropdown-menu a {
+            display: flex;
+            align-items: center;
+            padding: 8px 15px;
+            color: var(--primary-navy);
+            text-transform: none;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .dropdown-menu a::after {
+            display: none;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: var(--light-cyan);
+            color: var(--primary-cyan);
+            padding-left: 20px;
+        }
+
+        .dropdown-menu i {
+            margin-right: 8px;
+            color: var(--primary-red);
+            font-size: 0.85rem;
+            width: 16px;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.4rem;
+            color: var(--primary-navy);
+        }
+
+        /* =========================================
+           3. HERO SECTION
+           ========================================= */
+        .about-hero {
+            background-image: url('ChatGPT Image Feb 9, 2026, 06_04_30 PM.png');
+            background-size: cover;
+            background-position: center;
+            color: rgb(255, 255, 255);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+             text-shadow: 0 2px 4px rgb(255, 16, 16);
+        }
+
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.1), transparent);
+            border-radius: 50%;
+            top: -100px;
+            right: -100px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .about-hero::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(220, 38, 38, 0.1), transparent);
+            border-radius: 50%;
+            bottom: -80px;
+            left: -80px;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(20px); }
+        }
+
+        .about-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            animation: slideUp 1s ease-out;
+             text-shadow: 0 2px 4px rgb(0, 0, 0);
+        }
+
+        .about-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .about-hero p {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.85);
+            text-shadow: 0 2px 4px rgb(0, 0, 0);
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* =========================================
+           4. "WE ARE AB STOP" INTRO SECTION (NEW)
+           ========================================= */
+        .about-intro {
+            padding: var(--section-padding);
+            background: var(--white);
+            
+        }
+        .img00 { width: 100%; height: auto; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 10px 25px rgba(24, 54, 80, 0.1); box-shadow: 0 10px 25px rgba(24, 54, 80, 0.596); }
+
+        .about-intro .intro-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            text-shadow: 0 2px 4px rgba(141, 0, 0, 0.482);
+        }
+
+        .about-intro .intro-text {
+            color: var(--text-grey);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            font-weight: 300;
+            margin-top: 15px;
+             text-shadow: 0 2px 4px rgba(255, 0, 0, 0.374);
+        }
+
+        /* =========================================
+           5. MISSION & VISION SECTION
+           ========================================= */
+        .mission-vision {
+            padding: var(--section-padding);
+            background: linear-gradient(135deg, var(--light-cyan) 0%, var(--white) 100%);
+        }
+
+        .mv-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .mv-card {
+            background: var(--white);
+            padding: 45px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(24, 54, 80, 0.1);
+            border-left: 5px solid var(--primary-cyan);
+            transition: var(--transition);
+        }
+
+        .mv-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(6, 182, 212, 0.2);
+        }
+
+        .mv-card h3 {
+            font-size: 1.8rem;
+            color: var(--primary-navy);
+            margin-bottom: 20px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+
+        .mv-card p {
+            color: var(--text-grey);
+            line-height: 1.8;
+            font-size: 0.95rem;
+            font-weight: 300;
+        }
+
+        /* =========================================
+           6. JOURNEY TIMELINE
+           ========================================= */
+        .journey-section {
+            padding: var(--section-padding);
+            background: var(--white);
+        }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary-red), transparent);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: 0;
+            margin-right: 51%;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 51%;
+            margin-right: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            background: var(--primary-red);
+            border: 4px solid var(--white);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 0 4px var(--light-red);
+            z-index: 1;
+        }
+
+        .timeline-content {
+            padding: 20px 25px;
+            background: var(--light-grey);
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .timeline-item:hover .timeline-content {
+            background: var(--light-cyan);
+            box-shadow: 0 10px 25px rgba(6, 182, 212, 0.2);
+        }
+
+        .timeline-year {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-red);
+            margin-bottom: 8px;
+        }
+
+        .timeline-text {
+            color: var(--text-grey);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* =========================================
+           7. CORE VALUES SECTION
+           ========================================= */
+        .values-section {
+            padding: var(--section-padding);
+            background: linear-gradient(135deg, var(--light-red) 0%, var(--white) 100%);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .value-card {
+            background: var(--white);
+            padding: 35px 28px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(24, 54, 80, 0.08);
+            border-top: 4px solid var(--primary-red);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .value-card::before {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, var(--light-red), transparent);
+            border-radius: 50%;
+            top: -75px;
+            right: -75px;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(220, 38, 38, 0.15);
+        }
+
+        .value-card:hover::before {
+            opacity: 1;
+        }
+
+        .value-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--light-red), #FECACA);
+            color: var(--primary-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.8rem;
+            transition: var(--transition);
+            position: relative;
+            z-index: 1;
+        }
+
+        .value-card:hover .value-icon {
+            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+            color: var(--white);
+            transform: scale(1.1);
+        }
+
+        .value-card h4 {
+            font-size: 1.2rem;
+            color: var(--primary-navy);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .value-card p {
+            color: var(--text-grey);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* =========================================
+           8. TEAM SECTION
+           ========================================= */
+        .team-section {
+            padding: var(--section-padding);
+            background: var(--white);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .team-member {
+            background: var(--light-grey);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(24, 54, 80, 0.08);
+            transition: var(--transition);
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(6, 182, 212, 0.2);
+        }
+
+        .team-image {
+            width: 100%;
+            height: 280px;
+            background: linear-gradient(135deg, var(--light-cyan), var(--primary-cyan));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--white);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .team-image::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><pattern id=\"grid\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\"><path d=\"M 10 0 L 0 0 0 10\" fill=\"none\" stroke=\"rgba(255,255,255,0.1)\" stroke-width=\"0.5\"/></pattern></defs><rect width=\"100\" height=\"100\" fill=\"url(%23grid)\" /></svg>');
+        }
+
+        .team-info {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .team-name {
+            font-size: 1.2rem;
+            color: var(--primary-navy);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .team-role {
+            color: var(--primary-red);
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .team-bio {
+            color: var(--text-grey);
+            font-size: 0.85rem;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        /* =========================================
+           9. ACHIEVEMENTS SECTION
+           ========================================= */
+        .achievements-section {
+            padding: 90px 0;
+            background: linear-gradient(rgba(24, 43, 59, 0.9), rgba(120, 15, 15, 0.85)), url('https://images.unsplash.com/photo-1524592714635-d77511a4834d?q=80&w=2070&auto=format&fit=crop');
+            background-attachment: fixed;
+            background-size: cover;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 35px;
+        }
+
+        .stat-item {
+            animation: statPulse 0.6s ease-out;
+        }
+
+        @keyframes statPulse {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .stat-item i {
+            font-size: 2.5rem;
+            color: var(--primary-cyan);
+            margin-bottom: 18px;
+        }
+
+        .counter {
+            font-size: 3rem;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            display: block;
+        }
+
+        .stat-text {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+
+        /* =========================================
+           10. FOOTER
+           ========================================= */
+        footer {
+            background: linear-gradient(135deg, var(--primary-navy), #0f2941);
+            color: #E3F2FD;
+            padding-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 35px;
+            margin-bottom: 45px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.15rem;
+            margin-bottom: 22px;
+            border-left: 3px solid var(--primary-cyan);
+            padding-left: 15px;
+            font-weight: 600;
+        }
+
+        .footer-about p {
+            font-size: 0.9rem;
+            margin-bottom: 18px;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 11px;
+        }
+
+        .footer-links ul li a {
+            transition: 0.3s;
+            color: #E3F2FD;
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--primary-cyan);
+            padding-left: 8px;
+        }
+
+        .footer-contact li {
+            display: flex;
+            margin-bottom: 14px;
+            align-items: flex-start;
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+
+        .footer-contact i {
+            color: var(--primary-cyan);
+            margin-right: 12px;
+            margin-top: 5px;
+        }
+
+        .bottom-footer {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding: 22px 0;
+            text-align: center;
+            font-size: 0.85rem;
+            font-weight: 300;
+        }
+
+        /* =========================================
+           11. RESPONSIVE MEDIA QUERIES
+           ========================================= */
+        @media (max-width: 992px) {
+            .about-hero h1 { font-size: 2.5rem; }
+            .mv-grid { grid-template-columns: 1fr; }
+
+            .timeline::before { left: 20px; }
+
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                margin-left: 70px;
+                margin-right: 0;
+                text-align: left;
+            }
+
+            .timeline-dot { left: 20px; }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+
+            .nav-container {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .main-nav {
+                position: absolute;
+                top: 90px;
+                left: -100%;
+                width: 100%;
+                background: var(--white);
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(24, 54, 80, 0.1);
+                transition: 0.4s;
+            }
+
+            .main-nav.active { left: 0; }
+
+            .main-nav ul {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            .about-hero h1 { font-size: 2rem; }
+            .about-hero p { font-size: 1rem; }
+            .counter { font-size: 2.2rem; }
+        }
+         .special-section {
+            padding: var(--section-padding);
+            background: var(--white);
+        }
+
+        .special-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .special-image {
+            position: relative;
+        }
+
+        .special-image img {
+            border-radius: 12px;
+            box-shadow: 0 20px 50px rgba(220, 38, 38, 0.2);
+        }
+
+        .special-content h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: var(--primary-navy);
+            font-weight: 700;
+        }
+
+        .special-features {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .special-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .special-feature i {
+            color: var(--primary-cyan);
+            font-size: 1.3rem;
+            margin-top: 5px;
+            min-width: 28px;
+        }
+
+        .special-feature-content h5 {
+            font-size: 1rem;
+            color: var(--primary-navy);
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        .special-feature-content p {
+            color: var(--text-grey);
+            line-height: 1.7;
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP BAR -->
+   
+    <header>
+        <div class="nav-container">
+            <div class="logo-area">
+                <a href="index.html">
+                    <img src="https://stopindia.com/wp-content/uploads/2020/09/new.png" alt="STOP India Logo">
+                </a>
+            </div>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+               <li><a href="sectors.html" class="dropdown-toggle">Sectors</a></li>    
+                    <li><a href="Gallery.html">Gallery</a></li>
+                    <li><a href="support.html">Support</a></li>
+                     <li><a href="carrer.html">Career</a></li>
+                </ul>
+            </nav>
+
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="about-hero-content">
+                <h1>Our Story</h1>
+                <p>Over 25 years of pioneering exhibition exhibition logistics, connecting businesses with global opportunities</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WE ARE AB STOP INTRO SECTION (NEW CONTENT ADDED) -->
+    <section class="about-intro">
+        <div class="container">
+            <div class="section-header">
+                <h2>We Are AB STOP</h2>
+            </div>
+            <div class="intro-content">
+                <p class="intro-text">
+                    STOP India has been aiming high since it was founded in 2012 and today it stands as a worldwide and domestic exhibition logistics company that has grown to be one of the leading event exhibition logistics companies. The idea of S.T.O.P. (Sustainable Transport Organization of Professionals) originated back in 2001 and the journey started with providing services to travelers under STOP an alternative tourism. The services further diversified in 2012 to move both people and cargo. STOP India is now seen as one of the few India forwarders specializing in true customer service for its’ clients. With over 25 years of industry experience and expertise, our customers are at the heart of everything we do.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MISSION & VISION -->
+    <section class="mission-vision">
+        <div class="container">
+            <div class="section-header">
+                <h2>Mission &amp; Vision</h2>
+                <p>Defining our commitment to excellence in exhibition exhibition logistics</p>
+            </div>
+
+            <div class="mv-grid">
+                <div class="mv-card"><img class="img00" src="depositphotos_696400216-stock-photo-our-mission-written-white-piece.jpg" alt="">
+                    <p>To be the most trusted Exhibition logistics partner for businesses moving products across borders. We deliver time-critical cargo with zero delays, complete reliability, and hassle-free service—enabling companies to focus on their exhibitions while we handle the complexity of global exhibition logistics.</p>
+                </div>
+
+                <div class="mv-card"><img class="img00" src="images.jpg" alt="">
+                    <h3 >Our Vision</h3>
+                    <p>To create a seamless, globally-connected Exhibition logistics ecosystem where every business—regardless of size—can confidently participate in international trade shows with complete peace of mind. We envision zero delays, zero stress, and maximum impact for every exhibition.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+<section class="special-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Makes Us Special?</h2>
+                <p>Our unique blend of experience, dedication, and comprehensive service sets us apart in the Exhibition logistics industry.</p>
+            </div>
+
+            <div class="special-grid">
+                <div class="special-image">
+                    <img src="Gemini_Generated_Image_24l68e24l68e24l6.png" alt="What Makes Us Special">
+                </div>
+                <div class="special-content">
+                    <h3>Excellence in Every Detail</h3>
+                    <div class="special-features">
+                        <div class="special-feature">
+                            <i class="fas fa-award"></i>
+                            <div class="special-feature-content">
+                                <h5>25+ Years of Expertise</h5>
+                                <p>Over two decades of experience in managing complex Exhibition logistics across diverse industries and global venues.</p>
+                            </div>
+                        </div>
+                        <div class="special-feature">
+                            <i class="fas fa-globe"></i>
+                            <div class="special-feature-content">
+                                <h5>Global Network</h5>
+                                <p>Strategic partnerships with official on-site handlers in 50+ countries, ensuring seamless worldwide service delivery.</p>
+                            </div>
+                        </div>
+                        <div class="special-feature">
+                            <i class="fas fa-clock"></i>
+                            <div class="special-feature-content">
+                                <h5>Time-Critical Precision</h5>
+                                <p>100% on-time delivery record through meticulous planning, real-time tracking, and proactive problem-solving.</p>
+                            </div>
+                        </div>
+                        <div class="special-feature">
+                            <i class="fas fa-headset"></i>
+                            <div class="special-feature-content">
+                                <h5>24/7 Support</h5>
+                                <p>Round-the-clock dedicated support team available throughout your exhibition journey, from planning to post-event.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- JOURNEY TIMELINE -->
+    <section class="journey-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Journey</h2>
+                <p>A timeline of milestones that shaped STOP India into an industry leader</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">1998</div>
+                        <div class="timeline-text">The journey began with a vision to simplify Exhibition logistics across India and South Asia.</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2012</div>
+                        <div class="timeline-text">STOP India officially registered as a dedicated Exhibition logistics provider with operations across major Indian cities.</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2015</div>
+                        <div class="timeline-text">Expanded international presence with partnerships in 30+ countries, establishing ourselves as a global player.</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2018</div>
+                        <div class="timeline-text">Achieved major milestone of handling 500+ exhibitions annually with zero-delay record, earning industry recognition.</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2021</div>
+                        <div class="timeline-text">Implemented advanced tracking systems and 24/7 support operations to enhance client experience globally.</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2023</div>
+                        <div class="timeline-text">Reached 50+ countries with dedicated on-site handling partners, cementing our position as the preferred Exhibition logistics leader.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+    <!-- CORE VALUES -->
+    <section class="values-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Core Values</h2>
+                <p>The principles that guide every decision and action we take</p>
+            </div>
+
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-check-circle"></i></div>
+                    <h4>Reliability</h4>
+                    <p>Zero delays is not a promise—it's our guarantee. We deliver on time, every time, with complete transparency and accountability.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-heart"></i></div>
+                    <h4>Excellence</h4>
+                    <p>We pursue perfection in every detail. From documentation to on-site handling, quality is non-negotiable.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-handshake"></i></div>
+                    <h4>Partnership</h4>
+                    <p>We're not just a service provider—we're your trusted partner. Your success is our success, and we invest in long-term relationships.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-globe"></i></div>
+                    <h4>Global Mindset</h4>
+                    <p>Operating across 50+ countries with deep understanding of diverse regulations, cultures, and market dynamics.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h4>Innovation</h4>
+                    <p>Continuously improving our processes through technology, real-time tracking, and data-driven solutions.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h4>Integrity</h4>
+                    <p>Transparent communication, honest practices, and ethical operations in every interaction.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEAM SECTION -->
+    <section class="team-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Leadership Team</h2>
+                <p>Meet the visionaries and experts driving STOP India towards global excellence</p>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-image"><i class="fas fa-user-tie"></i></div>
+                    <div class="team-info">
+                        <div class="team-name">Rajeev Chadha</div>
+                        <div class="team-role">Chairman &amp; CEO</div>
+                        <div class="team-bio">25+ years of expertise in global exhibition exhibition logistics. Visionary leader who transformed AB STOP into an industry powerhouse.</div>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="team-image"><i class="fas fa-user-check"></i></div>
+                    <div class="team-info">
+                        <div class="team-name">Priya Sharma</div>
+                        <div class="team-role">COO &amp; Operations Head</div>
+                        <div class="team-bio">Expert in supply chain optimization and on-site exhibition logistics. Drives operational excellence across all exhibitions.</div>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="team-image"><i class="fas fa-user-cog"></i></div>
+                    <div class="team-info">
+                        <div class="team-name">Vikram Singh</div>
+                        <div class="team-role">Director, International Operations</div>
+                        <div class="team-bio">Manages global partnerships and on-site coordination in 50+ countries. Pioneer of our international expansion.</div>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="team-image"><i class="fas fa-user-graduate"></i></div>
+                    <div class="team-info">
+                        <div class="team-name">Neha Gupta</div>
+                        <div class="team-role">Head of Client Relations</div>
+                        <div class="team-bio">Dedicated to understanding client needs and delivering personalized solutions. Drives customer satisfaction and retention.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACHIEVEMENTS SECTION -->
+    <section class="achievements-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span class="counter" data-target="25">0</span>
+                    <span class="stat-text">Years Experience</span>
+                </div>
+
+                <div class="stat-item">
+                    <i class="fas fa-shipping-fast"></i>
+                    <span class="counter" data-target="1500">0</span>
+                    <span class="stat-text">Exhibitions Handled</span>
+                </div>
+
+                <div class="stat-item">
+                    <i class="fas fa-globe"></i>
+                    <span class="counter" data-target="130">0</span>
+                    <span class="stat-text">Countries Covered</span>
+                </div>
+
+                <div class="stat-item">
+                    <i class="fas fa-smile"></i>
+                    <span class="counter" data-target="100">0</span>
+                    <span class="stat-text">Client Satisfaction</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <h4>STOP India</h4>
+                    <p>Your trusted partner for exhibition exhibition logistics. Moving people and cargo with zero delays and complete reliability since 2012.</p>
+                </div>
+
+                <div class="footer-col footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#sectors">Sectors</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col footer-links">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="#">Air Freight</a></li>
+                        <li><a href="#">Sea Freight</a></li>
+                        <li><a href="#">Exhibition Handling</a></li>
+                        <li><a href="#">Customs Clearance</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Corporate Office, Gurgaon, India</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+91 9212133251 / 252</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@stopindia.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bottom-footer">
+                <p>&copy; 2011 STOP India. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.main-nav');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.main-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Animated Counter
+        document.addEventListener('DOMContentLoaded', () => {
+            const counters = document.querySelectorAll('.counter');
+            let started = false;
+
+            const runCounter = () => {
+                counters.forEach(counter => {
+                    const target = +counter.dataset.target;
+                    const duration = 1000;
+                    const startTime = performance.now();
+
+                    const update = (currentTime) => {
+                        const elapsed = currentTime - startTime;
+                        const progress = Math.min(elapsed / duration, 1);
+                        counter.innerText = Math.floor(progress * target);
+
+                        if (progress < 1) {
+                            requestAnimationFrame(update);
+                        } else {
+                            counter.innerText = target;
+                        }
+                    };
+
+                    requestAnimationFrame(update);
+                });
+            };
+
+            const observer = new IntersectionObserver(entries => {
+                if (entries[0].isIntersecting && !started) {
+                    started = true;
+                    runCounter();
+                }
+            }, { threshold: 0.4 });
+
+            const achievementsSection = document.querySelector('.achievements-section');
+            if (achievementsSection) {
+                observer.observe(achievementsSection);
+            }
+        });
+
+        // Timeline animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.animation = 'slideUp 0.6s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            item.style.opacity = '0';
+            timelineObserver.observe(item);
+        });
+    </script>
+
+</body>
+</html>
