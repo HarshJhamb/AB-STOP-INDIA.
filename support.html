@@ -1,0 +1,2089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support & Contact | STOP India - Exhibition exhibition logistics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* =========================================
+           ROOT VARIABLES & RESET
+           ========================================= */
+        :root {
+            --primary-navy: #183650;
+            --primary-red: #DC2626;
+            --dark-red: #991B1B;
+            --light-red: #FEE2E2;
+            --primary-cyan: #06B6D4;
+            --light-cyan: #CFFAFE;
+            --dark-cyan: #0E7490;
+            --light-grey: #f8f9fa;
+            --text-grey: #000000;
+            --white: #ffffff;
+            --transition: all 0.3s ease-in-out;
+            --shadow-sm: 0 5px 15px rgba(24, 54, 80, 0.08);
+            --shadow-md: 0 10px 30px rgba(24, 54, 80, 0.12);
+            --shadow-lg: 0 20px 50px rgba(24, 54, 80, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            color: var(--primary-navy);
+            line-height: 1.7;
+            overflow-x: hidden;
+            background-color: var(--white);
+            font-size: 15px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--primary-navy);
+            margin-bottom: 18px;
+            position: relative;
+            display: inline-block;
+            letter-spacing: -0.5px;
+        }
+
+        .section-header h2::after {
+            content: '';
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-red), var(--dark-red));
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 50px;
+        }
+
+        .section-header p {
+            color: var(--text-grey);
+            font-size: 1.05rem;
+            max-width: 750px;
+            margin: 35px auto 0;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .subsection-header {
+            text-align: center;
+            margin: 60px 0 40px;
+            padding: 20px 0;
+            border-bottom: 3px solid var(--primary-red);
+        }
+
+        .subsection-header h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+            margin-bottom: 10px;
+        }
+
+        .subsection-header i {
+            margin-right: 10px;
+            color: var(--primary-red);
+        }
+
+        .subsection-header .office-count {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+            color: var(--white);
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-left: 15px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 32px;
+            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+            color: var(--white);
+            font-weight: 600;
+            text-transform: uppercase;
+            border-radius: 50px;
+            border: 2px solid var(--primary-red);
+            cursor: pointer;
+            letter-spacing: 0.7px;
+            font-size: 0.85rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 15px rgba(220, 38, 38, 0.2);
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: var(--primary-red);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.3);
+        }
+
+        /* =========================================
+           HEADER & NAVIGATION
+           ========================================= */
+        .top-bar {
+            background: linear-gradient(90deg, var(--dark-red), var(--primary-red));
+            color: var(--white);
+            padding: 12px 0;
+            font-size: 0.8rem;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-info-top span {
+            margin-right: 25px;
+            font-weight: 400;
+        }
+
+        .contact-info-top i {
+            color: var(--light-cyan);
+            margin-right: 6px;
+        }
+
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 90px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            flex-direction: row-reverse;
+        }
+
+        .logo-area img {
+            height: 91px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .main-nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        .main-nav a {
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: var(--primary-navy);
+            position: relative;
+            letter-spacing: 0.6px;
+        }
+
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-cyan), var(--dark-cyan));
+            bottom: -8px;
+            left: 0;
+            transition: var(--transition);
+        }
+
+        .main-nav a:hover::after,
+        .main-nav a.active::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.4rem;
+            color: var(--primary-navy);
+        }
+
+        /* =========================================
+           HERO SECTION
+           ========================================= */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(24, 54, 80, 0.88), rgba(220, 38, 38, 0.75)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 120px 0;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            animation: slideDown 0.8s ease-out;
+            text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+            letter-spacing: -1px;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            margin-bottom: 35px;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: slideUp 1s ease-out;
+            font-weight: 300;
+            text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-40px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(40px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* =========================================
+           SUPPORT CHANNELS SECTION
+           ========================================= */
+        .support-section {
+            padding: 90px 0;
+            background: var(--white);
+        }
+
+        .support-channels {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .support-channel {
+            background: linear-gradient(135deg, var(--light-cyan), #A5F3FC);
+            padding: 40px 30px;
+            border-radius: 14px;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: var(--shadow-md);
+        }
+
+        .support-channel:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .channel-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+        }
+
+        .support-channel h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: var(--primary-navy);
+            font-weight: 700;
+        }
+
+        .support-channel p {
+            color: var(--text-grey);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 18px;
+        }
+
+        .channel-details {
+            background: var(--white);
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 600;
+            color: var(--primary-red);
+        }
+
+        /* =========================================
+           OFFICES SECTION
+           ========================================= */
+        .offices-section {
+            padding: 90px 0;
+            background: linear-gradient(135deg, var(--light-red) 0%, var(--white) 100%);
+        }
+
+        .offices-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .office-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            border-top: 4px solid var(--primary-red);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .office-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -30px;
+            width: 100px;
+            height: 100px;
+            background: rgba(220, 38, 38, 0.05);
+            border-radius: 50%;
+        }
+
+        .office-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-top-color: var(--primary-cyan);
+        }
+
+        .office-header {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .office-header i {
+            color: var(--primary-red);
+            font-size: 1.8rem;
+            transition: var(--transition);
+        }
+
+        .office-card:hover .office-header i {
+            color: var(--primary-cyan);
+            transform: scale(1.1);
+        }
+
+        .office-info {
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .office-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--primary-red);
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            margin-bottom: 6px;
+        }
+
+        .office-value {
+            font-size: 0.95rem;
+            color: var(--text-grey);
+            font-weight: 400;
+            word-break: break-word;
+            line-height: 1.6;
+        }
+
+        .office-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #e5e7eb, transparent);
+            margin: 15px 0;
+        }
+
+        /* =========================================
+           DEPARTMENTS SECTION
+           ========================================= */
+        .departments-section {
+            padding: 90px 0;
+            background: var(--white);
+        }
+
+        .dept-tabs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .dept-tab {
+            background: linear-gradient(135deg, var(--light-cyan), #A5F3FC);
+            padding: 15px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+            font-weight: 600;
+            color: var(--primary-navy);
+            border: 2px solid transparent;
+        }
+
+        .dept-tab:hover,
+        .dept-tab.active {
+            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .dept-content {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .dept-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .dept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .dept-item {
+            background: linear-gradient(135deg, var(--light-cyan), #A5F3FC);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+
+        .dept-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .dept-item h4 {
+            color: var(--primary-navy);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .dept-item p {
+            color: var(--text-grey);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .contact-link {
+            color: var(--primary-red);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            word-break: break-all;
+            transition: var(--transition);
+        }
+
+        .contact-link:hover {
+            color: var(--dark-red);
+            padding-left: 5px;
+        }
+
+        /* =========================================
+           CONTACT FORM SECTION
+           ========================================= */
+        .contact-section {
+            padding: 90px 0;
+            background: linear-gradient(135deg, var(--light-cyan) 0%, var(--white) 100%);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+            margin-top: 60px;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 14px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary-navy);
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid var(--light-cyan);
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            background: var(--white);
+            color: var(--text-grey);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-red);
+            box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-submit {
+            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+            color: var(--white);
+            border: none;
+            padding: 14px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 100%;
+            font-size: 0.9rem;
+            letter-spacing: 0.6px;
+        }
+
+        .form-submit:hover {
+            background: linear-gradient(135deg, var(--dark-red), var(--primary-red));
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.3);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .contact-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            border-left: 5px solid var(--primary-red);
+            transition: var(--transition);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-card-icon {
+            font-size: 2rem;
+            color: var(--primary-red);
+            margin-bottom: 12px;
+        }
+
+        .contact-card h4 {
+            font-size: 1.1rem;
+            color: var(--primary-navy);
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .contact-card p {
+            color: var(--text-grey);
+            font-size: 0.95rem;
+            margin-bottom: 6px;
+        }
+
+        /* =========================================
+           SLA SECTION
+           ========================================= */
+        .sla-section {
+            padding: 90px 0;
+            background: linear-gradient(135deg, var(--light-red) 0%, var(--white) 100%);
+        }
+
+        .sla-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 60px;
+        }
+
+        .sla-card {
+            background: var(--white);
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .sla-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .sla-icon {
+            font-size: 2.5rem;
+            color: var(--primary-red);
+            margin-bottom: 15px;
+        }
+
+        .sla-card h4 {
+            font-size: 1.2rem;
+            color: var(--primary-navy);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .sla-card p {
+            color: var(--text-grey);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .sla-detail {
+            background: linear-gradient(135deg, var(--light-red), #FECACA);
+            padding: 12px 15px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: var(--primary-red);
+            font-weight: 600;
+        }
+
+        /* =========================================
+           FAQ SECTION
+           ========================================= */
+        .faq-section {
+            padding: 90px 0;
+            background: var(--white);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .faq-column h3 {
+            font-size: 1.5rem;
+            color: var(--primary-navy);
+            margin-bottom: 30px;
+            font-weight: 700;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--primary-cyan);
+        }
+
+        .faq-item {
+            background: linear-gradient(135deg, var(--light-grey) 0%, #f5f7fa 100%);
+            padding: 20px;
+            margin-bottom: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-left: 4px solid var(--primary-cyan);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .faq-item:hover {
+            background: linear-gradient(135deg, var(--light-cyan) 0%, #e0f7ff 100%);
+            transform: translateX(8px);
+            box-shadow: var(--shadow-md);
+            border-left-color: var(--primary-red);
+        }
+
+        .faq-question {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: 600;
+            color: var(--primary-navy);
+            user-select: none;
+            gap: 15px;
+            cursor: pointer;
+        }
+
+        .faq-question span {
+            flex: 1;
+            font-size: 1rem;
+        }
+
+        .faq-question i {
+            color: var(--primary-red);
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 1.1rem;
+            min-width: 20px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+            color: var(--primary-cyan);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease, margin-top 0.5s ease;
+            color: var(--text-grey);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-top: 0;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            opacity: 1;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 2px solid rgba(220, 38, 38, 0.2);
+        }
+
+        /* =========================================
+           FOOTER
+           ========================================= */
+        footer {
+            background: linear-gradient(135deg, var(--primary-navy), #0f2941);
+            color: #E3F2FD;
+            padding-top: 70px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 45px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            border-left: 4px solid var(--primary-cyan);
+            padding-left: 18px;
+            font-weight: 700;
+        }
+
+        .footer-about p {
+            font-size: 0.9rem;
+            margin-bottom: 18px;
+            line-height: 1.8;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links ul li a {
+            color: #E3F2FD;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--primary-cyan);
+            padding-left: 8px;
+        }
+
+        .footer-contact li {
+            display: flex;
+            margin-bottom: 16px;
+            align-items: flex-start;
+            font-size: 0.9rem;
+        }
+
+        .footer-contact i {
+            color: var(--primary-cyan);
+            margin-right: 14px;
+            margin-top: 5px;
+            flex-shrink: 0;
+        }
+
+        .bottom-footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 25px 0;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        /* =========================================
+           RESPONSIVE
+           ========================================= */
+        @media (max-width: 992px) {
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+
+            .contact-grid,
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-container {
+                flex-direction: row;
+            }
+
+            .main-nav {
+                position: absolute;
+                top: 90px;
+                left: -100%;
+                width: 100%;
+                background: var(--white);
+                padding: 20px;
+                box-shadow: var(--shadow-md);
+                transition: 0.4s;
+            }
+
+            .main-nav.active {
+                left: 0;
+            }
+
+            .main-nav ul {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            .hero-section {
+                padding: 80px 0;
+            }
+
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+
+            .support-channels,
+            .sla-grid,
+            .offices-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form {
+                padding: 30px 20px;
+            }
+
+            .dept-tabs {
+                grid-template-columns: 1fr;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-section h1 {
+                font-size: 1.6rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.5rem;
+            }
+
+            .subsection-header h3 {
+                font-size: 1.5rem;
+            }
+
+            .subsection-header .office-count {
+                display: block;
+                margin-top: 10px;
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+  
+    <header>
+        <div class="nav-container">
+            <div class="logo-area">
+                <a href="index.html">
+                    <img src="https://stopindia.com/wp-content/uploads/2020/09/new.png" alt="STOP India Logo">
+                </a>
+            </div>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" >Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li>
+                        <a href="sectors.html" class="dropdown-toggle">Sectors</a>
+                        
+                    </li>
+                    <li><a href="Gallery.html">Gallery</a></li>
+                    <li><a href="support.html" class="active">Support</a></li>
+                     <li><a href="carrer.html">Career</a></li>
+                </ul>
+            </nav>
+
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1>We're Here to Help</h1>
+            <p>24/7 dedicated support for all your Exhibition logistics needs. Get answers, ask questions, and receive expert guidance every step of the way.</p>
+        </div>
+    </section>
+
+    <!-- Support Channels Section -->
+    <section class="support-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Multiple Ways to Reach Us</h2>
+                <p>Choose the communication channel that works best for you. We're responsive and ready to assist.</p>
+            </div>
+
+            <div class="support-channels">
+                <div class="support-channel">
+                    <div class="channel-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Phone Support</h3>
+                    <p>Direct phone support from our expert team. Available during business hours and for emergencies 24/7.</p>
+                    <div class="channel-details">
+                        +91 9212133251 / 252
+                    </div>
+                </div>
+
+                <div class="support-channel">
+                    <div class="channel-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email Support</h3>
+                    <p>Detailed written support with full documentation. Typically responded within 2 hours during business hours.</p>
+                    <div class="channel-details">
+                        info@stopindia.com
+                    </div>
+                </div>
+
+                <div class="support-channel">
+                    <div class="channel-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Video Conference</h3>
+                    <p>Face-to-face consultation for complex exhibition logistics planning. Schedule a call with our senior team.</p>
+                    <div class="channel-details">
+                        Schedule a Meeting
+                    </div>
+                </div>
+
+                <div class="support-channel">
+                    <div class="channel-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Live Chat</h3>
+                    <p>Instant messaging support for quick questions. Real-time assistance from our support team.</p>
+                    <div class="channel-details">
+                        Available 9 AM - 6 PM IST
+                    </div>
+                </div>
+
+                <div class="support-channel">
+                    <div class="channel-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Visit Our Office</h3>
+                    <p>Walk-in support at our Gurgaon headquarters. Meet our team in person for detailed consultation.</p>
+                    <div class="channel-details">
+                        Gurgaon, India
+                    </div>
+                </div>
+
+                <div class="support-channel">
+                    <div class="channel-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Global Network</h3>
+                    <p>On-site support partners in 130+ countries. Local assistance at your exhibition destination.</p>
+                    <div class="channel-details">
+                        130+ Countries Covered
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offices Section -->
+    <section class="offices-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Global Network</h2>
+                <p>Strategic Offices Across India & Internationally</p>
+            </div>
+
+            <!-- Domestic Offices -->
+            <div class="subsection-header">
+                <h3>
+                    <i class="fas fa-india"></i> India Offices
+                    <span class="office-count">6 Locations</span>
+                </h3>
+            </div>
+
+            <div class="offices-grid">
+                <div class="office-card">
+                    <div class="office-header">
+                        <i class="fas fa-building"></i>
+                        Gurgaon - Corporate HQ
+                    </div>
+                    <div class="office-info">
+                        <div class="office-label">Address</div>
+                        <div class="office-value">STOP India, Gurgaon, Haryana, India</div>
+                    </div>
+                    <div class="office-divider"></div>
+                    <div class="office-info">
+                        <div class="office-label">Phone</div>
+                        <div class="office-value">+91 9212133251<br>+91 9212133252</div>
+                    </div>
+                    <div class="office-divider"></div>
+                    <div class="office-info">
+                        <div class="office-label">Email</div>
+                        <div class="office-value">info@stopindia.com</div>
+                    </div>
+                    <div class="office-divider"></div>
+                    <div class="office-info">
+                        <div class="office-label">Hours</div>
+                        <div class="office-value">Mon-Fri: 9 AM - 6 PM IST<br>Sat: 10 AM - 2 PM IST<br>Emergency: 24/7</div>
+                    </div>
+                </div>
+
+                <div class="office-card">
+                    <div class="office-header">
+                        <i class="fas fa-building"></i>
+                        New Delhi
+                    </div>
+                    <div class="office-info">
+                        <div class="office-label">Address</div>
+                        <div class="office-value">New Delhi, Delhi, India</div>
+                    </div>
+                    <div class="office-divider"></div>
+                    <div class="office-info">
+                        <div class="office-label">Phone</div>
+                        <div class="office-value">+91 98XX-XXX-XXX</div>
+                    </div>
+                    <div class="office-divider"></div>
+                    <div class="office-info">
+                        <div class="office-label">Email</div>
+                        <div class="office-value">delhi@stopindia.com</div>
+                    </div>
+                </div>
+
+                <div class="office-card">
+                    <div class="office-header">
+                        <i class="fas fa-building"></i>
+                        Mumbai
+                    </div>
+                    <div class="office-info">
+                        <div class="office-label">Address</div>
+                        <div class="office-value">Mumbai, Maharashtra, India</div>
+                    </div>
+                    <div class="office-divider"></div>
+                    <div class="office-info">
+                        <div class="office-label">Phone</div>
+                        <div class="office-value">+91 98XX-XXX-XXX</div>
+                    </div>
+                    <div class="office-divider"></div>
+                    <div class="office-info">
+                        <div class="office-label">Email</div>
+                        <div class="office-value">mumbai@stopindia.com</div>
+                    </div>
+                </div>
+
+                <div class="office-card">
+                    <div class="office-header">
+                        <i class="fas fa-building"></i>
+                        Bangalore
+                    </div>
+                    <div class="office-info">
+                        <div class="office-label">Address</div>
+                        <div class="office-value">Bangalore, Karnataka, India</div>
+                    </div>
+                    <div class="office-divider"></div>
+                    <div class="office-info">
+                        <div class="office-label">Phone</div>
+                        <div class="office-value">+91 98XX-XXX-XXX</div>
+                    </div>
+                    <div class="office-divider"></div>
+                    <div class="office-info">
+                        <div class="office-label">Email</div>
+                        <div class="office-value">bangalore@stopindia.com</div>
+                    </div>
+                </div>
+
+                <div class="office-card">
+                    <div class="office-header">
+                        <i class="fas fa-building"></i>
+                        Chennai
+                    </div>
+                    <div class="office-info">
+                        <div class="office-label">Address</div>
+                        <div class="office-value">Chennai, Tamil Nadu, India</div>
+                    </div>
+                    <div class="office-divider"></div>
+                    <div class="office-info">
+                        <div class="office-label">Phone</div>
+                        <div class="office-value">+91 98XX-XXX-XXX</div>
+                    </div>
+                    <div class="office-divider"></div>
+                    <div class="office-info">
+                        <div class="office-label">Email</div>
+                        <div class="office-value">chennai@stopindia.com</div>
+                    </div>
+                </div>
+
+                <div class="office-card">
+                    <div class="office-header">
+                        <i class="fas fa-building"></i>
+                        Kolkata
+                    </div>
+                    <div class="office-info">
+                        <div class="office-label">Address</div>
+                        <div class="office-value">Kolkata, West Bengal, India</div>
+                    </div>
+                    <div class="office-divider"></div>
+                    <div class="office-info">
+                        <div class="office-label">Phone</div>
+                        <div class="office-value">+91 98XX-XXX-XXX</div>
+                    </div>
+                    <div class="office-divider"></div>
+                    <div class="office-info">
+                        <div class="office-label">Email</div>
+                        <div class="office-value">kolkata@stopindia.com</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- International Offices -->
+            <div class="subsection-header">
+                <h3>
+                    <i class="fas fa-globe"></i> International Offices
+                    <span class="office-count">9 Locations</span>
+                </h3>
+            </div>
+
+            <div class="offices-grid">
+                <div class="office-card">
+                    <div class="office-header">
+                        <i class="fas fa-building"></i>
+                        New York, USA
+                    </div>
+                    <div class="office-info">
+                        <div class="office-label">Address</div>
+                        <div class="office-value">New York, NY, USA</div>
+                    </div>
+                    <div class="office-divider"></div>
+                    <div class="office-info">
+                        <div class="office-label">Phone</div>
+                        <div class="office-value">+1 (212) XX-XXXXX</div>
+                    </div>
+                    <div class="office-divider"></div>
+                    <div class="office-info">
+                        <div class="office-label">Email</div>
+                        <div class="office-value">newyork@stopindia.com</div>
+                    </div>
+                </div>
+
+                <div class="office-card">
+                    <div class="office-header">
+                        <i class="fas fa-building"></i>
+                        London, UK
+                    </div>
+                    <div class="office-info">
+                        <div class="office-label">Address</div>
+                        <div class="office-value">London, UK</div>
+                    </div>
+                    <div class="office-divider"></div>
+                    <div class="office-info">
+                        <div class="office-label">Phone</div>
+                        <div class="office-value">+44 (0) 20 XXXX XXXX</div>
+                    </div>
+                    <div class="office-divider"></div>
+                    <div class="office-info">
+                        <div class="office-label">Email</div>
+                        <div class="office-value">london@stopindia.com</div>
+                    </div>
+                </div>
+
+                <div class="office-card">
+                    <div class="office-header">
+                        <i class="fas fa-building"></i>
+                        Dubai, UAE
+                    </div>
+                    <div class="office-info">
+                        <div class="office-label">Address</div>
+                        <div class="office-value">Dubai, UAE</div>
+                    </div>
+                    <div class="office-divider"></div>
+                    <div class="office-info">
+                        <div class="office-label">Phone</div>
+                        <div class="office-value">+971 (0) 4 XXXX XXXX</div>
+                    </div>
+                    <div class="office-divider"></div>
+                    <div class="office-info">
+                        <div class="office-label">Email</div>
+                        <div class="office-value">dubai@stopindia.com</div>
+                    </div>
+                </div>
+
+                <div class="office-card">
+                    <div class="office-header">
+                        <i class="fas fa-building"></i>
+                        Singapore
+                    </div>
+                    <div class="office-info">
+                        <div class="office-label">Address</div>
+                        <div class="office-value">Singapore</div>
+                    </div>
+                    <div class="office-divider"></div>
+                    <div class="office-info">
+                        <div class="office-label">Phone</div>
+                        <div class="office-value">+65 XXXX XXXX</div>
+                    </div>
+                    <div class="office-divider"></div>
+                    <div class="office-info">
+                        <div class="office-label">Email</div>
+                        <div class="office-value">singapore@stopindia.com</div>
+                    </div>
+                </div>
+
+                <div class="office-card">
+                    <div class="office-header">
+                        <i class="fas fa-building"></i>
+                        Tokyo, Japan
+                    </div>
+                    <div class="office-info">
+                        <div class="office-label">Address</div>
+                        <div class="office-value">Tokyo, Japan</div>
+                    </div>
+                    <div class="office-divider"></div>
+                    <div class="office-info">
+                        <div class="office-label">Phone</div>
+                        <div class="office-value">+81 (0) XX XXXX XXXX</div>
+                    </div>
+                    <div class="office-divider"></div>
+                    <div class="office-info">
+                        <div class="office-label">Email</div>
+                        <div class="office-value">tokyo@stopindia.com</div>
+                    </div>
+                </div>
+
+                <div class="office-card">
+                    <div class="office-header">
+                        <i class="fas fa-building"></i>
+                        Sydney, Australia
+                    </div>
+                    <div class="office-info">
+                        <div class="office-label">Address</div>
+                        <div class="office-value">Sydney, Australia</div>
+                    </div>
+                    <div class="office-divider"></div>
+                    <div class="office-info">
+                        <div class="office-label">Phone</div>
+                        <div class="office-value">+61 (0) 2 XXXX XXXX</div>
+                    </div>
+                    <div class="office-divider"></div>
+                    <div class="office-info">
+                        <div class="office-label">Email</div>
+                        <div class="office-value">sydney@stopindia.com</div>
+                    </div>
+                </div>
+
+                <div class="office-card">
+                    <div class="office-header">
+                        <i class="fas fa-building"></i>
+                        Frankfurt, Germany
+                    </div>
+                    <div class="office-info">
+                        <div class="office-label">Address</div>
+                        <div class="office-value">Frankfurt, Germany</div>
+                    </div>
+                    <div class="office-divider"></div>
+                    <div class="office-info">
+                        <div class="office-label">Phone</div>
+                        <div class="office-value">+49 (0) 69 XXXX XXXX</div>
+                    </div>
+                    <div class="office-divider"></div>
+                    <div class="office-info">
+                        <div class="office-label">Email</div>
+                        <div class="office-value">frankfurt@stopindia.com</div>
+                    </div>
+                </div>
+
+                <div class="office-card">
+                    <div class="office-header">
+                        <i class="fas fa-building"></i>
+                        Toronto, Canada
+                    </div>
+                    <div class="office-info">
+                        <div class="office-label">Address</div>
+                        <div class="office-value">Toronto, Canada</div>
+                    </div>
+                    <div class="office-divider"></div>
+                    <div class="office-info">
+                        <div class="office-label">Phone</div>
+                        <div class="office-value">+1 (416) XXX-XXXX</div>
+                    </div>
+                    <div class="office-divider"></div>
+                    <div class="office-info">
+                        <div class="office-label">Email</div>
+                        <div class="office-value">toronto@stopindia.com</div>
+                    </div>
+                </div>
+
+                <div class="office-card">
+                    <div class="office-header">
+                        <i class="fas fa-building"></i>
+                        Kuala Lumpur, Malaysia
+                    </div>
+                    <div class="office-info">
+                        <div class="office-label">Address</div>
+                        <div class="office-value">Kuala Lumpur, Malaysia</div>
+                    </div>
+                    <div class="office-divider"></div>
+                    <div class="office-info">
+                        <div class="office-label">Phone</div>
+                        <div class="office-value">+60 (0) 3 XXXX XXXX</div>
+                    </div>
+                    <div class="office-divider"></div>
+                    <div class="office-info">
+                        <div class="office-label">Email</div>
+                        <div class="office-value">kualalumpur@stopindia.com</div>
+                    </div>
+                </div>
+
+                <div class="office-card">
+                    <div class="office-header">
+                        <i class="fas fa-building"></i>
+                        Hong Kong
+                    </div>
+                    <div class="office-info">
+                        <div class="office-label">Address</div>
+                        <div class="office-value">Hong Kong</div>
+                    </div>
+                    <div class="office-divider"></div>
+                    <div class="office-info">
+                        <div class="office-label">Phone</div>
+                        <div class="office-value">+852 XXXX XXXX</div>
+                    </div>
+                    <div class="office-divider"></div>
+                    <div class="office-info">
+                        <div class="office-label">Email</div>
+                        <div class="office-value">hongkong@stopindia.com</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Departments Section -->
+    <section class="departments-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Department Contacts</h2>
+                <p>Specialized Support Teams for Your Specific Needs</p>
+            </div>
+
+            <div class="dept-tabs">
+                <div class="dept-tab active" onclick="showDept(event, 'sales')">Sales</div>
+                <div class="dept-tab" onclick="showDept(event, 'operations')">Operations</div>
+                <div class="dept-tab" onclick="showDept(event, 'customs')">Customs</div>
+                <div class="dept-tab" onclick="showDept(event, 'onsite')">On-Site</div>
+                <div class="dept-tab" onclick="showDept(event, 'billing')">Billing</div>
+                <div class="dept-tab" onclick="showDept(event, 'support')">Support</div>
+            </div>
+
+            <!-- Sales Department -->
+            <div id="sales" class="dept-content active">
+                <div class="dept-grid">
+                    <div class="dept-item">
+                        <h4><i class="fas fa-chart-line"></i> Sales & Quotations</h4>
+                        <p>New shipment inquiries, pricing quotes, and service information for all Exhibition logistics needs.</p>
+                        <div class="contact-links">
+                            <a href="mailto:sales@stopindia.com" class="contact-link">sales@stopindia.com</a>
+                            <a href="tel:+919212133251" class="contact-link">+91 9212133251</a>
+                        </div>
+                    </div>
+                    <div class="dept-item">
+                        <h4><i class="fas fa-user-tie"></i> Account Management</h4>
+                        <p>Dedicated account managers for regular clients with special rates and personalized support.</p>
+                        <div class="contact-links">
+                            <a href="mailto:accounts@stopindia.com" class="contact-link">accounts@stopindia.com</a>
+                            <a href="tel:+919212133252" class="contact-link">+91 9212133252</a>
+                        </div>
+                    </div>
+                    <div class="dept-item">
+                        <h4><i class="fas fa-building-circle-check"></i> Corporate Solutions</h4>
+                        <p>Enterprise packages and bulk Exhibition logistics for large corporations and international clients.</p>
+                        <div class="contact-links">
+                            <a href="mailto:corporate@stopindia.com" class="contact-link">corporate@stopindia.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Operations Department -->
+            <div id="operations" class="dept-content">
+                <div class="dept-grid">
+                    <div class="dept-item">
+                        <h4><i class="fas fa-tracking"></i> Shipment Tracking</h4>
+                        <p>Real-time tracking and live shipment status updates for all your exhibition logistics movements.</p>
+                        <div class="contact-links">
+                            <a href="mailto:tracking@stopindia.com" class="contact-link">tracking@stopindia.com</a>
+                            <a href="tel:+919212133251" class="contact-link">+91 9212133251 (24/7)</a>
+                        </div>
+                    </div>
+                    <div class="dept-item">
+                        <h4><i class="fas fa-plane"></i> Air & Sea Freight</h4>
+                        <p>International freight operations including air, sea, and multimodal exhibition logistics solutions.</p>
+                        <div class="contact-links">
+                            <a href="mailto:freight@stopindia.com" class="contact-link">freight@stopindia.com</a>
+                            <a href="tel:+919212133252" class="contact-link">+91 9212133252</a>
+                        </div>
+                    </div>
+                    <div class="dept-item">
+                        <h4><i class="fas fa-truck"></i> Ground Transportation</h4>
+                        <p>Road freight and local delivery services across India and neighboring countries.</p>
+                        <div class="contact-links">
+                            <a href="mailto:transport@stopindia.com" class="contact-link">transport@stopindia.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Customs Department -->
+            <div id="customs" class="dept-content">
+                <div class="dept-grid">
+                    <div class="dept-item">
+                        <h4><i class="fas fa-file-invoice"></i> Customs Clearance</h4>
+                        <p>Expert handling of ATA Carnet, temporary imports, and complex regulatory requirements.</p>
+                        <div class="contact-links">
+                            <a href="mailto:customs@stopindia.com" class="contact-link">customs@stopindia.com</a>
+                            <a href="tel:+919212133251" class="contact-link">+91 9212133251</a>
+                        </div>
+                    </div>
+                    <div class="dept-item">
+                        <h4><i class="fas fa-clipboard-list"></i> Documentation</h4>
+                        <p>Regulatory compliance, permits, certificates, and all documentation requirements.</p>
+                        <div class="contact-links">
+                            <a href="mailto:compliance@stopindia.com" class="contact-link">compliance@stopindia.com</a>
+                        </div>
+                    </div>
+                    <div class="dept-item">
+                        <h4><i class="fas fa-gavel"></i> Legal & Compliance</h4>
+                        <p>International regulations, specialized cargo handling, and compliance certifications.</p>
+                        <div class="contact-links">
+                            <a href="mailto:legal@stopindia.com" class="contact-link">legal@stopindia.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- On-Site Department -->
+            <div id="onsite" class="dept-content">
+                <div class="dept-grid">
+                    <div class="dept-item">
+                        <h4><i class="fas fa-microphone"></i> Exhibition Coordination</h4>
+                        <p>On-site stand setup, dismantling, event coordination, and venue management services.</p>
+                        <div class="contact-links">
+                            <a href="mailto:events@stopindia.com" class="contact-link">events@stopindia.com</a>
+                            <a href="tel:+919212133252" class="contact-link">+91 9212133252</a>
+                        </div>
+                    </div>
+                    <div class="dept-item">
+                        <h4><i class="fas fa-warehouse"></i> Warehouse Services</h4>
+                        <p>Climate-controlled warehousing, empty case storage, and pre-exhibition preparation.</p>
+                        <div class="contact-links">
+                            <a href="mailto:warehouse@stopindia.com" class="contact-link">warehouse@stopindia.com</a>
+                        </div>
+                    </div>
+                    <div class="dept-item">
+                        <h4><i class="fas fa-headset"></i> Field Support</h4>
+                        <p>On-site assistance during exhibitions in 130+ countries with dedicated field teams.</p>
+                        <div class="contact-links">
+                            <a href="mailto:fieldops@stopindia.com" class="contact-link">fieldops@stopindia.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Billing Department -->
+            <div id="billing" class="dept-content">
+                <div class="dept-grid">
+                    <div class="dept-item">
+                        <h4><i class="fas fa-receipt"></i> Invoicing & Billing</h4>
+                        <p>Invoice generation, billing inquiries, payment terms, and financial documentation.</p>
+                        <div class="contact-links">
+                            <a href="mailto:billing@stopindia.com" class="contact-link">billing@stopindia.com</a>
+                        </div>
+                    </div>
+                    <div class="dept-item">
+                        <h4><i class="fas fa-credit-card"></i> Finance & Payments</h4>
+                        <p>Payment processing, insurance claims, refunds, and financial services management.</p>
+                        <div class="contact-links">
+                            <a href="mailto:finance@stopindia.com" class="contact-link">finance@stopindia.com</a>
+                        </div>
+                    </div>
+                    <div class="dept-item">
+                        <h4><i class="fas fa-bar-chart"></i> Reporting & Analytics</h4>
+                        <p>Financial reports, cost analysis, and business intelligence for exhibition logistics operations.</p>
+                        <div class="contact-links">
+                            <a href="mailto:reports@stopindia.com" class="contact-link">reports@stopindia.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- General Support -->
+            <div id="support" class="dept-content">
+                <div class="dept-grid">
+                    <div class="dept-item">
+                        <h4><i class="fas fa-exclamation-circle"></i> Emergency Support</h4>
+                        <p>Urgent issues, crisis management, and immediate assistance for time-critical situations.</p>
+                        <div class="contact-links">
+                            <a href="mailto:emergency@stopindia.com" class="contact-link">emergency@stopindia.com</a>
+                            <a href="tel:+919212133251" class="contact-link">+91 9212133251 (24/7)</a>
+                        </div>
+                    </div>
+                    <div class="dept-item">
+                        <h4><i class="fas fa-question-circle"></i> General Inquiries</h4>
+                        <p>General questions, information requests, and basic support for all services.</p>
+                        <div class="contact-links">
+                            <a href="mailto:info@stopindia.com" class="contact-link">info@stopindia.com</a>
+                            <a href="tel:+919212133252" class="contact-link">+91 9212133252</a>
+                        </div>
+                    </div>
+                    <div class="dept-item">
+                        <h4><i class="fas fa-star"></i> Feedback & Complaints</h4>
+                        <p>Service feedback, complaints, suggestions, and continuous improvement initiatives.</p>
+                        <div class="contact-links">
+                            <a href="mailto:feedback@stopindia.com" class="contact-link">feedback@stopindia.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get in Touch</h2>
+                <p>Fill out the form below and our team will get back to you within 24 hours.</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-form">
+                    <form id="supportForm">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company">Company Name *</label>
+                            <input type="text" id="company" name="company" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="type">Inquiry Type *</label>
+                            <select id="type" name="type" required>
+                                <option value="">-- Select Type --</option>
+                                <option value="new-shipment">New Shipment Inquiry</option>
+                                <option value="existing-booking">Existing Booking Support</option>
+                                <option value="pricing">Pricing Information</option>
+                                <option value="emergency">Emergency Support</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" placeholder="Please describe your inquiry in detail..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="form-submit">Send Message</button>
+                    </form>
+                </div>
+
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h4>Phone</h4>
+                        <p>+91 9212133251</p>
+                        <p>+91 9212133252</p>
+                        <p><small>Monday - Friday, 9 AM - 6 PM IST</small></p>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h4>Email</h4>
+                        <p>info@stopindia.com</p>
+                        <p><small>Response time: 2 hours avg</small></p>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h4>Office Address</h4>
+                        <p>STOP India</p>
+                        <p>Corporate Office</p>
+                        <p>Gurgaon, Haryana</p>
+                        <p>India</p>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h4>Business Hours</h4>
+                        <p>Monday - Friday: 9 AM - 6 PM IST</p>
+                        <p>Saturday: 10 AM - 2 PM IST</p>
+                        <p>Emergency: 24/7 Available</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLA Section -->
+    <section class="sla-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Service Level Agreements</h2>
+                <p>Our commitments to you. Quality standards that ensure your peace of mind.</p>
+            </div>
+
+            <div class="sla-grid">
+                <div class="sla-card">
+                    <div class="sla-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h4>100% On-Time Delivery</h4>
+                    <p>Guaranteed delivery by exhibition opening date or earlier. Zero delays on critical shipments.</p>
+                    <div class="sla-detail">SLA: By Exhibition Date</div>
+                </div>
+
+                <div class="sla-card">
+                    <div class="sla-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>Full Insurance Coverage</h4>
+                    <p>All cargo insured for full declared value. Comprehensive coverage from pickup to final delivery.</p>
+                    <div class="sla-detail">Coverage: 100% Value</div>
+                </div>
+
+                <div class="sla-card">
+                    <div class="sla-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h4>24/7 Support</h4>
+                    <p>Round-the-clock dedicated support. Emergency team available for urgent situations anytime.</p>
+                    <div class="sla-detail">Response: &lt; 30 Minutes</div>
+                </div>
+
+                <div class="sla-card">
+                    <div class="sla-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h4>Dedicated Account Manager</h4>
+                    <p>Personal point of contact for all your exhibition logistics needs. Direct access to decision makers.</p>
+                    <div class="sla-detail">Assigned: At Booking</div>
+                </div>
+
+                <div class="sla-card">
+                    <div class="sla-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h4>Global Presence</h4>
+                    <p>Official on-site handlers at major exhibitions. Local support in 130+ countries worldwide.</p>
+                    <div class="sla-detail">Coverage: 130+ Countries</div>
+                </div>
+
+                <div class="sla-card">
+                    <div class="sla-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h4>Compliance & Certification</h4>
+                    <p>Fully certified exhibition logistics operations. Compliance with all international standards and regulations.</p>
+                    <div class="sla-detail">ISO & Industry Certified</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find quick answers to common questions about our services.</p>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-column">
+                    <h3>Services & Shipping</h3>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>What services do you offer?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            We offer comprehensive Exhibition logistics including air freight, sea freight, road transport, customs clearance, door-to-venue delivery, on-site supervision, and return exhibition logistics. All services are tailored for exhibition industry requirements.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How long does shipping take?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Shipping times vary by route and method: Air freight typically 5-7 days, Sea freight 20-30 days, Road freight 3-5 days depending on destination. We work with strict exhibition deadlines and plan accordingly.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Do you handle customs clearance?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Yes! We specialize in customs clearance with expertise in ATA Carnet, temporary import procedures, and complex regulatory requirements across 130+ countries. Our documentation team ensures smooth border crossing.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Can you handle last-minute shipments?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Absolutely. We have emergency freight options and expedited services available. Contact our emergency support team immediately, and we'll arrange fastest possible transport to meet your exhibition deadline.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>What industries do you specialize in?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            We serve 6 major sectors: Food & Beverage, Electronics & Technology, Textile & Home Furnishing, Medical & Healthcare, Automotive & Machinery, and Printing & Packaging. Each has specialized handling procedures.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-column">
+                    <h3>exhibition logistics & Support</h3>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Do you provide on-site support?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Yes! We have official on-site handling agents at major exhibition venues globally. Our team handles last-mile delivery, stand placement, empty case storage, and provides support throughout the event.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How do I track my shipment?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Real-time tracking is available for all shipments. You'll receive tracking information via email with updates at each stage. You can also call our team for live updates 24/7 for time-critical shipments.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>What if my cargo is damaged?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            All our shipments are fully insured. In case of damage, report immediately with photos. We handle all insurance claims and coordinate replacement or repair within 48 hours to minimize impact on your exhibition.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How far in advance should I book?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            We recommend booking 6-8 weeks before your exhibition for optimal planning. However, we can accommodate shorter timelines with expedited services. For emergency bookings, contact our emergency team immediately.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Do you offer storage facilities?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Yes! We have climate-controlled warehouses in major hubs for pre-exhibition storage, temperature-sensitive cargo, and empty case storage during events. Secure, organized, and professionally managed.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <h4>STOP India</h4>
+                    <p>Your trusted partner for exhibition exhibition logistics. Moving people and cargo with zero delays and complete reliability since 2012.</p>
+                </div>
+
+                <div class="footer-col footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="sectors.html">Sectors</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="support.html">Contact Us</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#sla">Service Levels</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Corporate Office, Gurgaon, India</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+91 9212133251 / 252</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@stopindia.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bottom-footer">
+                <p>&copy; 2012 STOP India. All Rights Reserved. | Professional Exhibition logistics Partner</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.main-nav');
+
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+
+            document.querySelectorAll('.main-nav a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                });
+            });
+        }
+
+        // Department Tabs
+        function showDept(event, dept) {
+            const contents = document.querySelectorAll('.dept-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            const tabs = document.querySelectorAll('.dept-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            document.getElementById(dept).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // FAQ Toggle - WORKING VERSION
+        document.querySelectorAll('.faq-item').forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', function(e) {
+                e.stopPropagation();
+                
+                // Get the column this item belongs to
+                const column = item.closest('.faq-column');
+                
+                // Close all other FAQs in the same column
+                if (column) {
+                    column.querySelectorAll('.faq-item').forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                }
+                
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+
+        // Form Submission
+        const supportForm = document.getElementById('supportForm');
+        if (supportForm) {
+            supportForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for your inquiry! We will get back to you within 24 hours.');
+                supportForm.reset();
+            });
+        }
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
