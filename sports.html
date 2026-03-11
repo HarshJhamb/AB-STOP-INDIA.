@@ -83,36 +83,125 @@
         position:sticky; top:0; z-index:1000;
         box-shadow:0 2px 20px rgba(11,28,46,0.06);
     }
-    .nav-wrap {
-        display:flex; align-items:center; justify-content:space-between;
-        height:80px; max-width:1240px; margin:0 auto; padding:0 32px;
-    }
-    .logo-area img { height:72px; width:auto; object-fit:contain; }
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e8e8e8;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 16px rgba(11,28,46,0.07);
+  }
 
-    .main-nav ul { display:flex; gap:32px; align-items:center; }
-    .main-nav a {
-        font-size:0.78rem; font-weight:500;
-        text-transform:uppercase; letter-spacing:1.8px;
-        color:var(--charcoal); position:relative; padding:4px 0;
-    }
-    .main-nav a::after {
-        content:''; position:absolute;
-        bottom:-2px; left:0; width:0; height:2px;
-        background:var(--gold); transition:width 0.3s ease;
-    }
-    .main-nav a:hover { color:var(--navy); }
-    .main-nav a:hover::after, .main-nav a.active::after { width:100%; }
+  .nav-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 88px;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 32px;
+      /* Logo on RIGHT — nav on LEFT: achieved via flex-direction row-reverse */
+      flex-direction: row-reverse;
+  }
 
-    .nav-cta {
-        background:var(--navy); color:var(--warm-white);
-        padding:10px 24px; border-radius:2px;
-        font-size:0.76rem; font-weight:600;
-        letter-spacing:1.5px; text-transform:uppercase;
-        transition:var(--tr); border:1px solid var(--navy);
-    }
-    .nav-cta:hover { background:var(--gold); color:var(--navy); border-color:var(--gold); }
-    .hamburger { display:none; cursor:pointer; font-size:1.4rem; color:var(--navy); }
+  /* ── Logo (now visually on the right) ── */
+  .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      flex-shrink: 0;
+  }
+  .logo-area img {
+      height: 80px;
+      width: auto;
+      object-fit: contain;
+  }
 
+  /* ── Nav links (visually on the left) ── */
+  .main-nav ul {
+      display: flex;
+      gap: 36px;
+      align-items: center;
+  }
+
+  .main-nav a {
+      font-family: 'DM Sans', 'Montserrat', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      color: #1a2530;
+      position: relative;
+      padding: 4px 0;
+      text-decoration: none;
+      transition: color 0.25s ease;
+  }
+
+  /* cyan underline on hover / active — matches screenshot */
+  .main-nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: #06B6D4;   /* cyan — matches original site */
+      transition: width 0.28s ease;
+      border-radius: 2px;
+  }
+
+  .main-nav a:hover,
+  .main-nav a.active {
+      color: #183650;
+  }
+
+  .main-nav a:hover::after,
+  .main-nav a.active::after {
+      width: 100%;
+  }
+
+  /* ── Remove the gold nav-cta button ── */
+  .nav-cta { display: none !important; }
+
+  /* ── Hamburger (mobile) ── */
+  .hamburger {
+      display: none;
+      cursor: pointer;
+      font-size: 1.4rem;
+      color: #183650;
+  }
+
+  /* ── Mobile styles ── */
+  @media (max-width: 768px) {
+      .nav-wrap {
+          flex-direction: row;        /* restore normal order on mobile */
+          justify-content: space-between;
+          height: 72px;
+          padding: 0 20px;
+      }
+      .logo-area img { height: 60px; }
+      .hamburger { display: block; }
+
+      .main-nav {
+          position: absolute;
+          top: 72px;
+          left: -100%;
+          width: 100%;
+          background: #ffffff;
+          padding: 20px 24px;
+          border-bottom: 1px solid #e8e8e8;
+          box-shadow: 0 6px 20px rgba(11,28,46,0.08);
+          transition: left 0.35s ease;
+          z-index: 999;
+      }
+      .main-nav.active { left: 0; }
+      .main-nav ul {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 18px;
+      }
+      .main-nav a { font-size: 0.85rem; }
+  }
     /* ═══════════════════════════════════════
        HERO — full-bleed editorial
     ═══════════════════════════════════════ */
@@ -1049,6 +1138,7 @@
         .footer-bottom { flex-direction:column; gap:8px; text-align:center; }
         .intro-creds { grid-template-columns:1fr; }
     }
+    
     </style>
 </head>
 <body>
