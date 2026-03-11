@@ -156,7 +156,483 @@
             padding: 10px 0;
             font-size: 0.8rem;
         }
+.heritage-banner {
+    background: linear-gradient(135deg, #0f2941 0%, #183650 60%, #1a1a2e 100%);
+    padding: 90px 0 0;
+    position: relative;
+    overflow: hidden;
+  }
 
+  .heritage-banner::before {
+    content: 'CWG';
+    position: absolute;
+    top: -30px;
+    right: -40px;
+    font-size: 22rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    color: rgba(255,255,255,0.025);
+    letter-spacing: -10px;
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  /* Animated ring decoration */
+  .heritage-rings {
+    position: absolute;
+    top: 40px;
+    right: 60px;
+    display: flex;
+    gap: 6px;
+    opacity: 0.12;
+  }
+  .heritage-ring {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 6px solid white;
+  }
+  .heritage-ring:nth-child(1) { border-color: #06B6D4; }
+  .heritage-ring:nth-child(2) { border-color: #DC2626; }
+  .heritage-ring:nth-child(3) { border-color: #F59E0B; }
+  .heritage-ring:nth-child(4) { border-color: #10B981; }
+  .heritage-ring:nth-child(5) { border-color: #8B5CF6; }
+
+  /* ── Headline Block ── */
+  .heritage-headline {
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .heritage-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, rgba(220,38,38,0.25), rgba(220,38,38,0.1));
+    border: 1px solid rgba(220,38,38,0.4);
+    color: #FCA5A5;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    border-radius: 50px;
+    margin-bottom: 22px;
+  }
+  .heritage-badge i { color: #EF4444; font-size: 0.9rem; }
+
+  .heritage-headline h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.15;
+    margin-bottom: 18px;
+    letter-spacing: -0.5px;
+  }
+
+  .heritage-headline h2 span {
+    background: linear-gradient(90deg, #06B6D4, #38BDF8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .heritage-headline p {
+    color: rgba(255,255,255,0.55);
+    font-size: 1rem;
+    max-width: 640px;
+    margin: 0 auto;
+    font-weight: 300;
+    line-height: 1.8;
+  }
+
+  /* ── CWG Hero Card ── */
+  .cwg-hero-wrap {
+    max-width: 1200px;
+    margin: 60px auto 0;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .cwg-hero-card {
+    background: linear-gradient(135deg, rgba(220,38,38,0.15) 0%, rgba(6,182,212,0.08) 100%);
+    border: 1px solid rgba(220,38,38,0.3);
+    border-radius: 24px;
+    padding: 50px 50px 50px 60px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+  }
+
+  .cwg-hero-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    background: linear-gradient(180deg, #DC2626, #06B6D4);
+    border-radius: 24px 0 0 24px;
+  }
+
+  .cwg-hero-card::after {
+    content: '2010';
+    position: absolute;
+    right: 40px;
+    bottom: -15px;
+    font-size: 8rem;
+    font-weight: 900;
+    font-family: 'Montserrat', sans-serif;
+    color: rgba(255,255,255,0.04);
+    line-height: 1;
+  }
+
+  .cwg-logo-area {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    margin-bottom: 20px;
+  }
+
+  .cwg-emblem {
+    width: 72px;
+    height: 72px;
+    background: linear-gradient(135deg, #DC2626, #991B1B);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: 0 8px 32px rgba(220,38,38,0.4);
+    flex-shrink: 0;
+  }
+
+  .cwg-title-block h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    font-size: 1.6rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+
+  .cwg-title-block span {
+    color: #06B6D4;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .cwg-description {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.95rem;
+    line-height: 1.85;
+    font-weight: 300;
+    margin-bottom: 28px;
+    max-width: 680px;
+  }
+
+  .cwg-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .cwg-tag {
+    background: rgba(6,182,212,0.12);
+    border: 1px solid rgba(6,182,212,0.3);
+    color: #67E8F9;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 50px;
+    letter-spacing: 0.5px;
+  }
+
+  .cwg-stat-column {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    text-align: center;
+    min-width: 180px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cwg-stat-pill {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 18px 20px;
+    transition: all 0.3s ease;
+  }
+
+  .cwg-stat-pill:hover {
+    background: rgba(6,182,212,0.12);
+    border-color: rgba(6,182,212,0.3);
+    transform: scale(1.04);
+  }
+
+  .cwg-stat-pill .num {
+    font-size: 1.9rem;
+    font-weight: 800;
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    line-height: 1;
+    display: block;
+  }
+
+  .cwg-stat-pill .num span {
+    color: #06B6D4;
+  }
+
+  .cwg-stat-pill .lbl {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.45);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-top: 4px;
+    display: block;
+  }
+
+  /* ── Major Sports Events Grid ── */
+  .sports-events-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .sports-events-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+
+  .sports-events-header h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+
+  .sports-events-header .line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(6,182,212,0.4), transparent);
+  }
+
+  .sports-events-header .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #06B6D4;
+    box-shadow: 0 0 12px #06B6D4;
+  }
+
+  .events-masonry {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+
+  .event-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .event-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(6,182,212,0.06), transparent);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    border-radius: 16px;
+  }
+
+  .event-card:hover {
+    border-color: rgba(6,182,212,0.35);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+  }
+
+  .event-card:hover::before { opacity: 1; }
+
+  /* Featured card - spans 2 columns */
+  .event-card.featured {
+    grid-column: span 2;
+    border-color: rgba(220,38,38,0.25);
+    background: rgba(220,38,38,0.05);
+  }
+
+  .event-card.featured:hover {
+    border-color: rgba(220,38,38,0.5);
+    box-shadow: 0 16px 40px rgba(220,38,38,0.2);
+  }
+
+  .event-card.featured::before {
+    background: linear-gradient(135deg, rgba(220,38,38,0.08), transparent);
+  }
+
+  .event-icon {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    background: rgba(6,182,212,0.12);
+    color: #06B6D4;
+    border: 1px solid rgba(6,182,212,0.2);
+    transition: all 0.3s ease;
+  }
+
+  .event-card.featured .event-icon {
+    background: rgba(220,38,38,0.15);
+    color: #FCA5A5;
+    border-color: rgba(220,38,38,0.3);
+    width: 56px;
+    height: 56px;
+    min-width: 56px;
+    font-size: 1.5rem;
+  }
+
+  .event-card:hover .event-icon {
+    transform: scale(1.1);
+    background: rgba(6,182,212,0.25);
+  }
+
+  .event-card.featured:hover .event-icon {
+    background: rgba(220,38,38,0.3);
+  }
+
+  .event-body { flex: 1; }
+
+  .event-body h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+
+  .event-card.featured .event-body h4 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+
+  .event-body p {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.8rem;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  .event-card.featured .event-body p {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .event-meta {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+
+  .event-meta-tag {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 50px;
+    background: rgba(255,255,255,0.07);
+    color: rgba(255,255,255,0.5);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .event-meta-tag.highlight {
+    background: rgba(6,182,212,0.15);
+    color: #67E8F9;
+    border-color: rgba(6,182,212,0.3);
+  }
+
+  .event-meta-tag.red {
+    background: rgba(220,38,38,0.15);
+    color: #FCA5A5;
+    border-color: rgba(220,38,38,0.3);
+  }
+
+  /* ── Bottom Stripe ── */
+  .heritage-stripe {
+    background: linear-gradient(90deg, #DC2626 0%, #991B1B 30%, #183650 70%, #0f2941 100%);
+    padding: 22px 0;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .heritage-stripe p {
+    color: rgba(255,255,255,0.75);
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+  }
+
+  .heritage-stripe strong {
+    color: #ffffff;
+    font-weight: 700;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 992px) {
+    .cwg-hero-card {
+      grid-template-columns: 1fr;
+      padding: 40px 30px;
+    }
+    .cwg-stat-column {
+      flex-direction: row;
+      justify-content: center;
+      min-width: unset;
+    }
+    .cwg-stat-pill { flex: 1; }
+    .events-masonry { grid-template-columns: 1fr 1fr; }
+    .event-card.featured { grid-column: span 2; }
+    .heritage-headline h2 { font-size: 2.2rem; }
+  }
+
+  @media (max-width: 640px) {
+    .events-masonry { grid-template-columns: 1fr; }
+    .event-card.featured { grid-column: span 1; }
+    .heritage-headline h2 { font-size: 1.8rem; }
+    .cwg-hero-card { padding: 30px 20px; }
+    .heritage-rings { display: none; }
+  }
         .top-bar .container {
             display: flex;
             justify-content: space-between;
@@ -245,7 +721,7 @@
         .dropdown-menu {
             position: absolute;
             top: 100%;
-            left: -70px;
+            left: -170px;
             background: var(--white);
           
             border-radius: 8px;
@@ -1081,7 +1557,7 @@
            ========================================= */
         .testimonials-section {
             padding: var(--section-padding);
-            background-color: var(--white);
+            background-color: #e0f4ff;
         }
 
         .testimonial-container {
@@ -1479,7 +1955,274 @@
                 width: 100%;
             }
         }
+.sp-teaser {
+    position: relative;
+    overflow: hidden;
+    background: #0B1C2E;
+    padding: 0;
+  }
 
+  /* diagonal line texture */
+  .sp-teaser::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      -55deg,
+      transparent 0, transparent 58px,
+      rgba(200,150,12,0.04) 58px, rgba(200,150,12,0.04) 59px
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* large ghost text */
+  .sp-teaser-ghost {
+    position: absolute;
+    right: -20px; bottom: -40px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18rem; font-weight: 900;
+    color: rgba(255,255,255,0.022);
+    line-height: 1; pointer-events: none;
+    letter-spacing: -8px;
+    z-index: 0;
+  }
+
+  .sp-teaser-inner {
+    position: relative; z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 560px;
+  }
+
+  /* ── Left: image panel ── */
+  .sp-img-panel {
+    position: relative; overflow: hidden;
+  }
+  .sp-img-panel img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    filter: saturate(0.55) brightness(0.65);
+    transition: transform 8s ease;
+  }
+  .sp-teaser:hover .sp-img-panel img {
+    transform: scale(1.04);
+  }
+  /* fade right edge into dark bg */
+  .sp-img-panel::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(
+      to right,
+      transparent 30%,
+      #0B1C2E 100%
+    );
+  }
+
+  /* gold top border on image side */
+  .sp-img-panel::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #C8960C, #E8B830, transparent);
+    z-index: 2;
+  }
+
+  /* floating credential badge on image */
+  .sp-credential-badge {
+    position: absolute;
+    bottom: 36px; left: 32px;
+    z-index: 3;
+    background: rgba(249,247,242,0.96);
+    border-top: 3px solid #C8960C;
+    border-radius: 2px;
+    padding: 18px 22px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    max-width: 200px;
+  }
+  .sp-credential-badge .cb-year {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.4rem; font-weight: 900;
+    color: #0B1C2E; line-height: 1;
+  }
+  .sp-credential-badge .cb-label {
+    font-size: 0.65rem; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: #C8960C; margin-top: 3px;
+  }
+  .sp-credential-badge .cb-sub {
+    font-size: 0.75rem; color: #4A5C6E;
+    margin-top: 6px; line-height: 1.5;
+  }
+
+  /* ── Right: text panel ── */
+  .sp-text-panel {
+    padding: 72px 60px 72px 40px;
+    display: flex; flex-direction: column;
+    justify-content: center;
+  }
+
+  .sp-eyebrow {
+    display: inline-flex; align-items: center; gap: 12px;
+    margin-bottom: 22px;
+  }
+  .sp-eyebrow .sp-rule {
+    width: 28px; height: 2px;
+    background: #C8960C;
+    flex-shrink: 0;
+  }
+  .sp-eyebrow span {
+    font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 3.5px; text-transform: uppercase;
+    color: #E8B830;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .sp-text-panel h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.7rem, 2.5vw, 2.6rem);
+    font-weight: 800; color: #ffffff;
+    line-height: 1.15; margin-bottom: 6px;
+    letter-spacing: -0.5px;
+  }
+  .sp-text-panel h2 .sp-gold {
+    color: #E8B830;
+  }
+  .sp-text-panel h2 .sp-italic {
+    font-style: italic; font-weight: 400;
+  }
+
+  .sp-divider {
+    width: 80px; height: 2px; margin: 22px 0;
+    background: linear-gradient(90deg, #C8960C, transparent);
+  }
+
+  .sp-text-panel p {
+    font-size: 0.96rem; font-weight: 300;
+    color: rgba(249,247,242,0.65); line-height: 1.9;
+    max-width: 460px; margin-bottom: 32px;
+  }
+
+  /* mini metric row */
+  .sp-metrics {
+    display: flex; gap: 0;
+    border: 1px solid rgba(200,150,12,0.2);
+    border-radius: 2px; overflow: hidden;
+    margin-bottom: 36px; width: fit-content;
+  }
+  .sp-met {
+    padding: 16px 24px; text-align: center;
+    background: rgba(11,28,46,0.5);
+    border-right: 1px solid rgba(200,150,12,0.15);
+  }
+  .sp-met:last-child { border-right: none; }
+  .sp-met .mn {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem; font-weight: 800;
+    color: #E8B830; display: block; line-height: 1;
+  }
+  .sp-met .ml {
+    font-size: 0.63rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 1.2px;
+    color: rgba(249,247,242,0.35); margin-top: 4px;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  /* CTA buttons */
+  .sp-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+
+  .sp-btn-gold {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: #C8960C; color: #0B1C2E;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.78rem; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 14px 34px; border-radius: 2px;
+    border: 1px solid #C8960C;
+    transition: all 0.35s ease;
+    text-decoration: none;
+  }
+  .sp-btn-gold:hover {
+    background: transparent; color: #E8B830;
+    box-shadow: 0 8px 28px rgba(200,150,12,0.25);
+  }
+  .sp-btn-ghost {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: transparent; color: rgba(249,247,242,0.7);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.78rem; font-weight: 500;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 14px 28px; border-radius: 2px;
+    border: 1px solid rgba(249,247,242,0.2);
+    transition: all 0.35s ease;
+    text-decoration: none;
+  }
+  .sp-btn-ghost:hover {
+    border-color: #E8B830; color: #E8B830;
+  }
+
+  /* ── Bottom bar ── */
+  .sp-bottom-bar {
+    position: relative; z-index: 2;
+    background: linear-gradient(90deg, #C8960C 0%, #9a7009 40%, #0B1C2E 100%);
+    padding: 16px 32px;
+    display: flex; align-items: center;
+    justify-content: space-between; gap: 20px;
+    flex-wrap: wrap;
+  }
+  .sp-bottom-bar .sbb-left {
+    display: flex; align-items: center; gap: 14px;
+  }
+  .sp-bottom-bar .sbb-icon {
+    width: 36px; height: 36px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; color: #fff;
+    flex-shrink: 0;
+  }
+  .sp-bottom-bar .sbb-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem; font-weight: 600;
+    color: #fff; letter-spacing: 0.3px;
+  }
+  .sp-bottom-bar .sbb-text small {
+    display: block; font-size: 0.68rem;
+    font-weight: 400; color: rgba(255,255,255,0.65);
+    margin-top: 1px;
+  }
+  .sp-bottom-bar .sbb-cta {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,0.15);
+    color: #fff; font-family: 'Montserrat', sans-serif;
+    font-size: 0.73rem; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 10px 22px; border-radius: 2px;
+    border: 1px solid rgba(255,255,255,0.25);
+    transition: all 0.3s ease; text-decoration: none;
+  }
+  .sp-bottom-bar .sbb-cta:hover {
+    background: rgba(255,255,255,0.25);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 900px) {
+    .sp-teaser-inner { grid-template-columns: 1fr; }
+    .sp-img-panel { height: 300px; }
+    .sp-img-panel::after {
+      background: linear-gradient(to bottom, transparent 30%, #0B1C2E 100%);
+    }
+    .sp-text-panel { padding: 50px 28px; }
+    .sp-credential-badge { bottom: 20px; left: 20px; }
+    .sp-teaser-ghost { font-size: 8rem; }
+  }
+  @media (max-width: 560px) {
+    .sp-metrics { width: 100%; }
+    .sp-met { flex: 1; padding: 14px 12px; }
+    .sp-actions { flex-direction: column; }
+    .sp-btn-gold, .sp-btn-ghost { width: 100%; justify-content: center; }
+    .sp-bottom-bar { flex-direction: column; text-align: center; }
+    .sp-bottom-bar .sbb-cta { width: 100%; justify-content: center; }
+  }
         .img-card {
             border-radius: 12px;
             box-shadow: 0 10px 25px rgba(24, 54, 80, 0.854);
@@ -1544,7 +2287,175 @@
             margin: 0;
             color: var(--text-grey);
         }
+         
+        .contact-section {
+            padding: 100px 0;
+            background: var(--white);
+            position: relative;
+            margin-top: 50px;
+            border-radius: 120px;
+        }
 
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at top right, rgba(196,30,42,0.04) 0%, transparent 60%);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 48px;
+            align-items: start;
+            position: relative;
+        }
+
+        .contact-form-wrapper {
+            background: var(--primary-navy);
+            padding: 48px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-deep);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-form-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -80px; right: -80px;
+            width: 300px; height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(196,30,42,0.18) 0%, transparent 70%);
+        }
+
+        .contact-form-wrapper h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-form-wrapper > p {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.88rem;
+            margin-bottom: 32px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .form-group { margin-bottom: 22px; position: relative; z-index: 1; }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.82rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 14px 18px;
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.92rem;
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder { color: rgba(255,255,255,0.3); }
+
+        .form-group select { color: rgba(255,255,255,0.7); }
+        .form-group select option { background: var(--primary-navy); color: var(--white); }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-red);
+            background: rgba(196,30,42,0.08);
+            box-shadow: 0 0 0 3px rgba(196,30,42,0.15);
+        }
+
+        .form-group textarea { resize: vertical; min-height: 120px; }
+
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+        .form-submit {
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+            color: var(--white);
+            border: none;
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.88rem;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: var(--shadow-red);
+            position: relative;
+            z-index: 1;
+        }
+
+        .form-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 40px rgba(196,30,42,0.5);
+        }
+
+        .contact-info { display: flex; flex-direction: column; gap: 20px; }
+
+        .contact-card {
+            background: var(--off-white);
+            border: 1px solid rgba(13,31,45,0.08);
+            padding: 28px;
+            border-radius: 16px;
+            transition: var(--transition);
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .contact-card:hover {
+            transform: translateX(6px);
+            border-color: rgba(196,30,42,0.2);
+            background: var(--white);
+            box-shadow: 0 8px 24px rgba(13,31,45,0.08);
+        }
+
+        .contact-card-icon-wrap {
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.1rem;
+            box-shadow: var(--shadow-red);
+        }
+
+        .contact-card-body h4 { font-size: 0.9rem; color: var(--primary-navy); font-weight: 700; margin-bottom: 6px; letter-spacing: 0.3px; }
+        .contact-card-body p { color: var(--text-light); font-size: 0.88rem; margin-bottom: 3px; line-height: 1.6; }
+        .contact-card-body small { color: var(--text-light); font-size: 0.78rem; }
         /* Responsive */
         @media (max-width: 992px) {
             .hero-services {
@@ -1662,7 +2573,7 @@
             
             <p>Fast, reliable, and hassle-free exhibition cargo movement from India to the world. Zero delays, Zero stress.</p>
             <a href="#support" class="btn">How We Support</a>
-            <a href="#gallery" class="btn btn-outline-light" style="margin-left:10px;">Our Work</a>
+            <a href="#contact-section" class="btn btn-outline-light" style="margin-left:10px;">Get a quote</a>
         </div>
 
         <!-- Service Icons at Bottom of Hero -->
@@ -1735,6 +2646,93 @@
     </section>
 
 
+<section class="sp-teaser" id="sports-events">
+
+  <div class="sp-teaser-ghost">SPORTS</div>
+
+  <div class="sp-teaser-inner">
+
+    <!-- Image Panel -->
+    <div class="sp-img-panel">
+      <img
+        src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=2070&auto=format&fit=crop"
+        onerror="this.src='https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070'"
+        alt="Sports Event Logistics">
+
+      <!-- CWG floating badge -->
+      <div class="sp-credential-badge">
+        <div class="cb-year">2010</div>
+        <div class="cb-label">Commonwealth Games</div>
+        <div class="cb-sub">Official Logistics Partner · New Delhi</div>
+      </div>
+    </div>
+
+    <!-- Text Panel -->
+    <div class="sp-text-panel">
+
+      <div class="sp-eyebrow">
+        <div class="sp-rule"></div>
+        <span>Sports &amp; Events Logistics</span>
+      </div>
+
+      <h2>
+        Moving India's<br>
+        <span class="sp-gold sp-italic">Greatest Sporting Moments.</span>
+      </h2>
+
+      <div class="sp-divider"></div>
+
+      <p>
+        From the iconic 2010 Delhi Commonwealth Games — where STOP India served as an official logistics partner — to ISPO Munich, National Games, and major live events across India. We are the logistics team behind the scenes that ensures every athlete's kit, every venue display, and every piece of equipment arrives on time. Every time.
+      </p>
+
+      <!-- Metrics -->
+      <div class="sp-metrics">
+        <div class="sp-met">
+          <span class="mn">71</span>
+          <span class="ml">Nations · CWG</span>
+        </div>
+        <div class="sp-met">
+          <span class="mn">17</span>
+          <span class="ml">Venues</span>
+        </div>
+        <div class="sp-met">
+          <span class="mn">0</span>
+          <span class="ml">Delays</span>
+        </div>
+        <div class="sp-met">
+          <span class="mn">25+</span>
+          <span class="ml">Yrs Experience</span>
+        </div>
+      </div>
+
+      <div class="sp-actions">
+        <a href="sports.html" class="sp-btn-gold">
+          <i class="fas fa-trophy"></i> Explore Sports Logistics
+        </a>
+        <a href="tel:+919212133251" class="sp-btn-ghost">
+          <i class="fas fa-phone"></i> Talk to Us
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="sp-bottom-bar">
+    <div class="sbb-left">
+      <div class="sbb-icon"><i class="fas fa-medal"></i></div>
+      <div class="sbb-text">
+        Official Logistics Partner · XIX Commonwealth Games, New Delhi 2010
+        <small>India's most trusted sports &amp; event logistics specialists</small>
+      </div>
+    </div>
+    <a href="sports.html" class="sbb-cta">
+      View Full Sports Page <i class="fas fa-arrow-right"></i>
+    </a>
+  </div>
+
+</section>
 
 
     <section class="services-section" id="services">
@@ -2131,6 +3129,7 @@
         </div>
     </section>
 
+
     <!-- ====================================
          CALL-TO-ACTION SECTION - CONVERSION
          ==================================== -->
@@ -2141,11 +3140,106 @@
                 <p>Planning an exhibition or international shipment? Let STOP India handle the exhibition logistics —
                     stress-free, reliable, and on-time.</p>
                 <div class="cta-buttons">
-                    <a href="contact.html" class="btn btn-cta">Request a Quote</a>
+                    <a href="support.html" class="btn btn-cta">Request a Quote</a>
                     <a href="tel:+919212133251" class="btn btn-cta-secondary">Call Us Now</a>
+                </div>
+            </div><section class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag"><i class="fas fa-paper-plane"></i> Send a Message</div>
+                <h2>Get in <span class="accent">Touch</span></h2>
+                <div class="section-divider"></div>
+                <p>Fill out the form below and our team will get back to you within 24 hours.</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-form-wrapper">
+                    <h3>Send Us a Message</h3>
+                    <p>We'll respond within 2 business hours on weekdays.</p>
+                    <form id="supportForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Full Name *</label>
+                                <input type="text" name="name" placeholder="Your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Company *</label>
+                                <input type="text" name="company" placeholder="Company name" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Email Address *</label>
+                                <input type="email" name="email" placeholder="your@email.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number *</label>
+                                <input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Inquiry Type *</label>
+                            <select name="type" required>
+                                <option value="">— Select Inquiry Type —</option>
+                                <option value="new-shipment">New Shipment Inquiry</option>
+                                <option value="existing-booking">Existing Booking Support</option>
+                                <option value="pricing">Pricing Information</option>
+                                <option value="emergency">Emergency Support</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Message *</label>
+                            <textarea name="message" placeholder="Describe your inquiry in detail…" required></textarea>
+                        </div>
+                        <button type="submit" class="form-submit">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-card-icon-wrap"><i class="fas fa-phone"></i></div>
+                        <div class="contact-card-body">
+                            <h4>Phone</h4>
+                            <p>+91 9212133251</p>
+                            <p>+91 9212133252</p>
+                            <small>Monday–Friday, 9 AM–6 PM IST</small>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-card-icon-wrap"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-card-body">
+                            <h4>Email</h4>
+                            <p>info@stopindia.com</p>
+                            <small>Avg response: 2 hours</small>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-card-icon-wrap"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="contact-card-body">
+                            <h4>Office Address</h4>
+                            <p>STOP India, Corporate Office</p>
+                            <p>Gurgaon, Haryana, India</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-card-icon-wrap"><i class="fas fa-clock"></i></div>
+                        <div class="contact-card-body">
+                            <h4>Business Hours</h4>
+                            <p>Mon–Fri: 9 AM–6 PM IST</p>
+                            <p>Saturday: 10 AM–2 PM IST</p>
+                            <p>Emergency: 24/7 Available</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
+        </div>
+        
     </section>
 
     <footer>
