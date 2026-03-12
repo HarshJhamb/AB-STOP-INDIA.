@@ -3,127 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery | STOP India - Exhibition logistics Portfolio</title>
+    <title>Gallery | STOP India - Exhibition Logistics Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <style>
-        /* =========================================
-           ROOT VARIABLES & RESET
-           ========================================= */
         :root {
-            --primary-navy: #183650;
-            --primary-red: #DC2626;
-            --dark-red: #991B1B;
-            --light-red: #FEE2E2;
-            --primary-cyan: #06B6D4;
-            --light-cyan: #CFFAFE;
-            --dark-cyan: #0E7490;
-            --light-grey: #f8f9fa;
-            --text-grey: #000000;
+            --navy: #0d2137;
+            --navy-mid: #183650;
+            --red: #DC2626;
+            --red-dark: #991B1B;
+            --cyan: #06B6D4;
+            --cyan-dark: #0E7490;
+            --gold: #C9A84C;
+            --gold-light: #F5E6C3;
             --white: #ffffff;
-            --transition: all 0.3s ease-in-out;
-            --shadow-sm: 0 5px 15px rgba(24, 54, 80, 0.08);
-            --shadow-md: 0 10px 30px rgba(24, 54, 80, 0.12);
-            --shadow-lg: 0 20px 50px rgba(24, 54, 80, 0.15);
+            --off-white: #F8F6F2;
+            --grey-light: #f0f4f8;
+            --text-dark: #0d2137;
+            --text-mid: #4a6070;
+            --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Montserrat', sans-serif;
             font-weight: 300;
-            color: var(--primary-navy);
-            line-height: 1.7;
+            color: var(--text-dark);
+            background: var(--white);
             overflow-x: hidden;
-            background-color: var(--white);
-            font-size: 15px;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: var(--transition);
-        }
+        a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; display: block; }
 
-        ul {
-            list-style: none;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 13px 32px;
-            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
-            color: var(--white);
-            font-weight: 600;
-            text-transform: uppercase;
-            border-radius: 50px;
-            border: 2px solid var(--primary-red);
-            cursor: pointer;
-            letter-spacing: 0.7px;
-            font-size: 0.85rem;
-            transition: all 0.4s ease;
-            box-shadow: 0 5px 15px rgba(220, 38, 38, 0.2);
-        }
-
-        .btn:hover {
-            background: transparent;
-            color: var(--primary-red);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.3);
-        }
-
-        /* =========================================
-           HEADER & NAVIGATION
-           ========================================= */
-        .top-bar {
-            background: linear-gradient(90deg, var(--dark-red), var(--primary-red));
-            color: var(--white);
-            padding: 12px 0;
-            font-size: 0.8rem;
-        }
-
-        .top-bar .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .contact-info-top span {
-            margin-right: 25px;
-            font-weight: 400;
-        }
-
-        .contact-info-top i {
-            color: var(--light-cyan);
-            margin-right: 6px;
-        }
-
+        /* ── NAVBAR (unchanged) ── */
         header {
             background-color: var(--white);
-            box-shadow: var(--shadow-sm);
+            box-shadow: 0 5px 15px rgba(24,54,80,.08);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -156,7 +77,7 @@
             font-weight: 600;
             font-size: 0.85rem;
             text-transform: uppercase;
-            color: var(--primary-navy);
+            color: var(--navy-mid);
             position: relative;
             letter-spacing: 0.6px;
         }
@@ -166,1380 +87,1774 @@
             position: absolute;
             width: 0;
             height: 3px;
-            background: linear-gradient(90deg, var(--primary-cyan), var(--dark-cyan));
+            background: linear-gradient(90deg, var(--cyan), var(--cyan-dark));
             bottom: -8px;
             left: 0;
-            transition: var(--transition);
+            transition: all 0.3s ease;
         }
 
         .main-nav a:hover::after,
-        .main-nav a.active::after {
-            width: 100%;
-        }
+        .main-nav a.active::after { width: 100%; }
 
         .hamburger {
             display: none;
             cursor: pointer;
             font-size: 1.4rem;
-            color: var(--primary-navy);
+            color: var(--navy-mid);
         }
 
-        /* =========================================
-           HERO SECTION
-           ========================================= */
-        .hero-section {
-            background: linear-gradient(135deg, rgba(24, 54, 80, 0.88), rgba(220, 38, 38, 0.75)), url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            padding: 120px 0;
-            text-align: center;
-            color: var(--white);
+        /* ── HERO ── */
+        .hero {
             position: relative;
+            height: 88vh;
+            min-height: 580px;
+            display: flex;
+            align-items: flex-end;
             overflow: hidden;
+            background: var(--navy);
         }
 
-        .hero-section h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            animation: slideDown 0.8s ease-out;
-            text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
-            letter-spacing: -1px;
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
+            transform: scale(1.05);
+            animation: heroZoom 12s ease-in-out infinite alternate;
         }
 
-        .hero-section p {
-            font-size: 1.2rem;
-            margin-bottom: 35px;
-            max-width: 750px;
-            margin-left: auto;
-            margin-right: auto;
-            animation: slideUp 1s ease-out;
-            font-weight: 300;
-            text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
+        @keyframes heroZoom {
+            from { transform: scale(1.05); }
+            to   { transform: scale(1.12); }
         }
 
-        @keyframes slideDown {
-            from { transform: translateY(-40px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to top,
+                rgba(13,33,55,0.97) 0%,
+                rgba(13,33,55,0.65) 50%,
+                rgba(153,27,27,0.25) 100%
+            );
         }
 
-        @keyframes slideUp {
-            from { transform: translateY(40px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        /* =========================================
-           SECTION HEADER
-           ========================================= */
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-header h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.8rem;
-            font-weight: 800;
-            color: var(--primary-navy);
-            margin-bottom: 18px;
+        .hero-content {
             position: relative;
-            display: inline-block;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px 80px;
+            width: 100%;
+        }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--gold);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 22px;
+            opacity: 0;
+            animation: fadeUp 0.7s var(--ease) 0.2s forwards;
+        }
+
+        .hero-eyebrow::before {
+            content: '';
+            width: 40px;
+            height: 2px;
+            background: var(--gold);
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 6vw, 5.5rem);
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.08;
+            letter-spacing: -1px;
+            margin-bottom: 28px;
+            max-width: 800px;
+            opacity: 0;
+            animation: fadeUp 0.8s var(--ease) 0.4s forwards;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--gold);
+        }
+
+        .hero-desc {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.72);
+            max-width: 580px;
+            font-weight: 300;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: fadeUp 0.8s var(--ease) 0.6s forwards;
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeUp 0.8s var(--ease) 0.8s forwards;
+        }
+
+        .hero-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            backdrop-filter: blur(8px);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--white);
+            letter-spacing: 0.5px;
+        }
+
+        .hero-badge i { color: var(--cyan); font-size: 0.9rem; }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 35px;
+            right: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255,255,255,0.45);
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            z-index: 2;
+        }
+
+        .hero-scroll::after {
+            content: '';
+            width: 1px;
+            height: 50px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
+            animation: scrollLine 2s ease-in-out infinite;
+        }
+
+        @keyframes scrollLine {
+            0%,100% { transform: scaleY(1); opacity: 0.5; }
+            50% { transform: scaleY(0.5); opacity: 1; }
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(35px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ── GALLERY SECTION ── */
+        .gallery-section {
+            padding: 100px 0 80px;
+            background: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        /* Section Labels */
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 3.5px;
+            text-transform: uppercase;
+            color: var(--red);
+            margin-bottom: 16px;
+        }
+
+        .section-label::before {
+            content: '';
+            width: 28px;
+            height: 2px;
+            background: var(--red);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.2rem, 4vw, 3.4rem);
+            font-weight: 900;
+            color: var(--navy);
+            line-height: 1.12;
             letter-spacing: -0.5px;
         }
 
-        .section-header h2::after {
-            content: '';
-            width: 100px;
-            height: 5px;
-            background: linear-gradient(90deg, var(--primary-red), var(--dark-red));
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 50px;
-        }
-
-        .section-header p {
-            color: var(--text-grey);
-            font-size: 1.05rem;
-            max-width: 750px;
-            margin: 35px auto 0;
+        .section-sub {
+            color: var(--text-mid);
+            font-size: 1rem;
+            max-width: 600px;
+            line-height: 1.85;
+            margin-top: 16px;
             font-weight: 300;
-            line-height: 1.8;
         }
 
-        /* =========================================
-           FILTER BUTTONS
-           ========================================= */
-        .gallery-section {
-            padding: 90px 0;
-            background: var(--white);
-        }
-
-        .filter-buttons {
+        /* ── FILTERS ── */
+        .filter-bar {
             display: flex;
-            justify-content: center;
+            align-items: center;
+            gap: 10px;
             flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 60px;
+            margin: 50px 0 65px;
+            padding: 18px 24px;
+            background: var(--grey-light);
+            border-radius: 16px;
+        }
+
+        .filter-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-mid);
+            margin-right: 6px;
         }
 
         .filter-btn {
-            padding: 10px 25px;
-            background: var(--white);
-            color: var(--primary-navy);
-            border: 2px solid var(--primary-cyan);
+            padding: 9px 22px;
+            background: transparent;
+            color: var(--text-mid);
+            border: 1.5px solid transparent;
             border-radius: 50px;
             cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            transition: var(--transition);
+            transition: all 0.25s ease;
         }
 
-        .filter-btn:hover,
+        .filter-btn:hover {
+            background: white;
+            color: var(--navy);
+            border-color: rgba(0,0,0,0.08);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
         .filter-btn.active {
-            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+            background: var(--navy);
             color: var(--white);
-            border-color: var(--primary-red);
+            border-color: var(--navy);
+            box-shadow: 0 6px 20px rgba(13,33,55,0.3);
         }
 
-        /* =========================================
-           GALLERY GRID
-           ========================================= */
+        /* ── CATEGORY BLOCKS ── */
+        .cat-block {
+            margin-bottom: 110px;
+        }
+
+        .cat-header {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 28px;
+            align-items: start;
+            margin-bottom: 45px;
+        }
+
+        .cat-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            font-weight: 900;
+            color: var(--grey-light);
+            line-height: 1;
+            user-select: none;
+            margin-top: -10px;
+        }
+
+        .cat-info-line {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 10px;
+        }
+
+        .cat-icon-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--red), var(--red-dark));
+            color: white;
+            padding: 7px 16px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .cat-divider {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, var(--navy), transparent);
+            max-width: 300px;
+        }
+
+        .cat-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1.2;
+            margin-bottom: 8px;
+        }
+
+        .cat-desc {
+            font-size: 0.9rem;
+            color: var(--text-mid);
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        /* ── GALLERY GRID STYLES ── */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-bottom: 80px;
+            gap: 18px;
         }
 
+        /* Featured grid: 1 big + 2 small */
+        .grid-featured {
+            grid-template-columns: 1.55fr 1fr;
+            grid-template-rows: 320px 280px;
+        }
+
+        .grid-featured .gallery-item:first-child {
+            grid-row: span 2;
+            height: auto;
+        }
+
+        /* Standard 3-col */
+        .grid-standard {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .grid-standard .gallery-item { height: 290px; }
+
+        /* Duo */
+        .grid-duo {
+            grid-template-columns: 1fr 1.4fr 1fr;
+        }
+
+        .grid-duo .gallery-item { height: 300px; }
+        .grid-duo .gallery-item:nth-child(2) { height: 360px; margin-top: -30px; }
+
+        /* ── GALLERY ITEM ── */
         .gallery-item {
             position: relative;
-            border-radius: 14px;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: var(--shadow-md);
-            transition: var(--transition);
-            height: 320px;
             cursor: pointer;
-          
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-12px);
-            box-shadow: var(--shadow-lg);
+            background: var(--navy);
         }
 
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: var(--transition);
+            transition: transform 0.7s var(--ease), filter 0.5s ease;
+            filter: brightness(0.9);
         }
 
         .gallery-item:hover img {
-            transform: scale(1.12);
+            transform: scale(1.08);
+            filter: brightness(0.65);
         }
 
         .gallery-overlay {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(24, 54, 80, 0.9), rgba(220, 38, 38, 0.8));
-            color: white;
-            padding: 30px;
+            inset: 0;
+            padding: 28px;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            transform: translateY(100%);
-            transition: var(--transition);
-        }
-
-        .gallery-item:hover .gallery-overlay {
-            transform: translateY(0);
-        }
-
-        .gallery-overlay h4 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-            letter-spacing: -0.5px;
-        }
-
-        .gallery-overlay p {
-            font-size: 0.95rem;
-            opacity: 0.95;
-            line-height: 1.6;
+            background: linear-gradient(to top, rgba(13,33,55,0.95) 0%, rgba(13,33,55,0.2) 55%, transparent 100%);
+            transition: opacity 0.4s ease;
         }
 
         .gallery-tag {
             display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
+            background: var(--gold);
+            color: var(--navy);
             padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
+            border-radius: 4px;
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 1px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-top: 10px;
+            margin-bottom: 10px;
             width: fit-content;
+            transform: translateY(8px);
+            opacity: 0;
+            transition: all 0.35s ease 0.05s;
         }
 
-        /* =========================================
-           CATEGORY SECTIONS
-           ========================================= */
-        .category-section {
-            margin-bottom: 100px;
+        .gallery-item:hover .gallery-tag {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        .category-header {
+        .gallery-overlay h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 6px;
+            transform: translateY(12px);
+            opacity: 0.85;
+            transition: all 0.35s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay h4 {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .gallery-overlay p {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.6;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, opacity 0.4s ease;
+            opacity: 0;
+        }
+
+        .gallery-item:hover .gallery-overlay p {
+            max-height: 80px;
+            opacity: 1;
+        }
+
+        .gallery-zoom-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.15);
+            border: 1.5px solid rgba(255,255,255,0.3);
+            backdrop-filter: blur(6px);
+            border-radius: 50%;
             display: flex;
             align-items: center;
-            gap: 20px;
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 3px solid var(--primary-cyan);
+            justify-content: center;
+            color: white;
+            font-size: 0.85rem;
+            opacity: 0;
+            transform: scale(0.7);
+            transition: all 0.3s ease;
         }
 
-        .category-icon {
-            font-size: 2.5rem;
-            color: var(--primary-red);
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, var(--light-red), #FECACA);
+        .gallery-item:hover .gallery-zoom-icon {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* ── STATS ── */
+        .stats-section {
+            position: relative;
+            padding: 0;
+            overflow: hidden;
+            background: var(--navy);
+        }
+
+        .stats-inner {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+        }
+
+        .stats-left {
+            background: linear-gradient(135deg, var(--red-dark), var(--red));
+            padding: 70px 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .stats-left h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.6rem;
+            font-weight: 900;
+            color: white;
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+
+        .stats-left p {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.7;
+        }
+
+        .stats-right {
+            padding: 70px 60px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+        }
+
+        .stat-item {
+            padding: 30px 25px;
+            border-left: 1px solid rgba(255,255,255,0.08);
+            transition: background 0.3s ease;
+        }
+
+        .stat-item:hover { background: rgba(255,255,255,0.04); }
+
+        .stat-icon-wrap {
+            width: 46px;
+            height: 46px;
+            background: rgba(6,182,212,0.15);
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-bottom: 20px;
+            color: var(--cyan);
+            font-size: 1.1rem;
         }
 
-        .category-header h3 {
-            font-size: 2rem;
-            color: var(--primary-navy);
-            font-weight: 700;
-            margin: 0;
-        }
-
-        .category-header p {
-            color: var(--text-grey);
-            font-size: 0.95rem;
-            flex: 1;
-        }
-
-        /* =========================================
-           STATISTICS
-           ========================================= */
-        .stats-section {
-            padding: 80px 0;
-            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--dark-red) 100%);
-            color: var(--white);
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 40px;
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 30px 25px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            transition: var(--transition);
-        }
-
-        .stat-item:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-5px);
-        }
-
-        .stat-icon {
-            font-size: 2.8rem;
-            color: var(--light-cyan);
-            margin-bottom: 15px;
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 800;
-            display: block;
+        .stat-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            font-weight: 900;
+            color: white;
+            line-height: 1;
             margin-bottom: 8px;
         }
 
         .stat-label {
-            font-size: 1rem;
+            font-size: 0.78rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
+            color: rgba(255,255,255,0.5);
             font-weight: 600;
         }
 
-        /* =========================================
-           LIGHTBOX
-           ========================================= */
-        .lightbox {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.95);
-            animation: fadeIn 0.3s ease-out;
-        }
-
-        .lightbox.show {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .lightbox-content {
+        /* ── TESTIMONIALS ── */
+        .testimonials-section {
+            padding: 110px 0;
+            background: var(--off-white);
             position: relative;
-            max-width: 90%;
-            max-height: 90vh;
-            animation: zoomIn 0.3s ease-out;
+            overflow: hidden;
         }
 
-        @keyframes zoomIn {
-            from { transform: scale(0.8); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-
-        .lightbox img {
-            max-width: 100%;
-            max-height: 85vh;
-            object-fit: contain;
-            border-radius: 8px;
-        }
-
-        .lightbox-close {
+        .testimonials-section::before {
+            content: '"';
             position: absolute;
             top: -40px;
-            right: 0;
-            color: var(--white);
-            font-size: 2.5rem;
-            cursor: pointer;
-            transition: var(--transition);
+            left: -20px;
+            font-family: 'Playfair Display', serif;
+            font-size: 30rem;
+            color: rgba(13,33,55,0.04);
+            line-height: 1;
+            pointer-events: none;
         }
 
-        .lightbox-close:hover {
-            color: var(--primary-cyan);
-        }
-
-        .lightbox-title {
-            color: var(--white);
-            margin-top: 15px;
-            text-align: center;
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-
-        /* =========================================
-           TESTIMONIALS
-           ========================================= */
-        .testimonials-section {
-            padding: 90px 0;
-            background: linear-gradient(135deg, var(--light-cyan) 0%, var(--white) 100%);
+        .testimonials-header {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            margin-bottom: 70px;
+            align-items: end;
         }
 
         .testimonials-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
         }
 
         .testimonial-card {
-            background: var(--white);
-            padding: 35px;
-            border-radius: 14px;
-            box-shadow: var(--shadow-md);
-            transition: var(--transition);
-            border-left: 5px solid var(--primary-red);
+            background: white;
+            padding: 36px;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(13,33,55,0.07);
+            transition: all 0.35s var(--ease);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--red), var(--gold));
+            border-radius: 18px 18px 0 0;
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
         }
 
         .testimonial-card:hover {
             transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
+            box-shadow: 0 20px 50px rgba(13,33,55,0.13);
         }
 
-        .testimonial-stars {
-            color: var(--primary-red);
-            font-size: 1.1rem;
-            margin-bottom: 12px;
-        }
+        .testimonial-card:hover::before { transform: scaleX(1); }
 
-        .testimonial-text {
-            color: var(--text-grey);
-            font-size: 0.95rem;
-            line-height: 1.8;
+        .t-stars {
+            display: flex;
+            gap: 3px;
             margin-bottom: 18px;
+        }
+
+        .t-stars i { color: var(--gold); font-size: 0.85rem; }
+
+        .t-text {
+            font-size: 0.9rem;
+            color: var(--text-mid);
+            line-height: 1.85;
             font-style: italic;
+            margin-bottom: 22px;
         }
 
-        .testimonial-author {
-            font-weight: 700;
-            color: var(--primary-navy);
-            margin-bottom: 4px;
+        .t-author {
+            display: flex;
+            align-items: center;
+            gap: 14px;
         }
 
-        .testimonial-role {
-            color: var(--primary-red);
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        /* =========================================
-           CTA SECTION
-           ========================================= */
-        .cta-section {
-            padding: 90px 0;
-            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--dark-red) 100%);
-            color: var(--white);
-            text-align: center;
-        }
-
-        .cta-section h2 {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-            font-weight: 800;
-        }
-
-        .cta-section p {
+        .t-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--navy), var(--red));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
             font-size: 1.1rem;
+            color: white;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .t-name {
+            font-weight: 700;
+            color: var(--navy);
+            font-size: 0.88rem;
+            margin-bottom: 3px;
+        }
+
+        .t-role {
+            font-size: 0.78rem;
+            color: var(--red);
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        /* ── CTA ── */
+        .cta-section {
+            padding: 0;
+            background: var(--navy);
+            overflow: hidden;
+        }
+
+        .cta-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 420px;
+        }
+
+        .cta-left {
+            background: linear-gradient(135deg, var(--red-dark) 0%, var(--red) 100%);
+            padding: 80px 70px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-left::after {
+            content: '';
+            position: absolute;
+            right: -60px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.06);
+        }
+
+        .cta-eyebrow {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 14px;
+        }
+
+        .cta-left h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: white;
+            line-height: 1.12;
+            margin-bottom: 20px;
+        }
+
+        .cta-left p {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.72);
+            line-height: 1.75;
             margin-bottom: 40px;
-            max-width: 750px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         .cta-buttons {
             display: flex;
-            gap: 20px;
-            justify-content: center;
+            gap: 16px;
             flex-wrap: wrap;
         }
 
-        .btn-light {
-            background: var(--white);
-            color: var(--primary-red);
-            padding: 15px 38px;
+        .btn-white {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 30px;
+            background: white;
+            color: var(--red);
+            border: 2px solid white;
             border-radius: 50px;
             font-weight: 700;
+            font-size: 0.82rem;
             text-transform: uppercase;
-            border: 2px solid var(--white);
+            letter-spacing: 0.7px;
             cursor: pointer;
-            font-size: 0.9rem;
-            letter-spacing: 0.6px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            transition: var(--transition);
+            transition: all 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
         }
 
-        .btn-light:hover {
+        .btn-white:hover {
             background: transparent;
-            color: var(--white);
-            transform: translateY(-3px);
+            color: white;
         }
 
-        /* =========================================
-           FOOTER
-           ========================================= */
+        .btn-outline-white {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 30px;
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.4);
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.7px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .btn-outline-white:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: white;
+        }
+
+        .cta-right {
+            padding: 80px 70px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 28px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .contact-icon {
+            width: 52px;
+            height: 52px;
+            background: rgba(6,182,212,0.12);
+            border: 1px solid rgba(6,182,212,0.25);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--cyan);
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .contact-item-label {
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 5px;
+        }
+
+        .contact-item-val {
+            font-size: 1rem;
+            color: white;
+            font-weight: 600;
+        }
+
+        /* ── FOOTER ── */
         footer {
-            background: linear-gradient(135deg, var(--primary-navy), #0f2941);
-            color: #E3F2FD;
+            background: linear-gradient(135deg, #0a1b2e, #0d2137);
+            color: #C8D8E8;
             padding-top: 70px;
         }
 
         .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 45px;
+            grid-template-columns: 2fr 1fr 1fr 1.4fr;
+            gap: 50px;
             margin-bottom: 50px;
         }
 
         .footer-col h4 {
-            color: var(--white);
-            font-size: 1.2rem;
-            margin-bottom: 25px;
-            border-left: 4px solid var(--primary-cyan);
-            padding-left: 18px;
+            color: white;
+            font-size: 0.82rem;
             font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(255,255,255,0.1);
         }
 
         .footer-about p {
-            font-size: 0.9rem;
-            margin-bottom: 18px;
-            line-height: 1.8;
+            font-size: 0.88rem;
+            line-height: 1.85;
+            margin-bottom: 20px;
+            color: rgba(255,255,255,0.5);
         }
 
-        .footer-links ul li {
-            margin-bottom: 12px;
-        }
+        .footer-links ul li { margin-bottom: 12px; }
 
         .footer-links ul li a {
-            color: #E3F2FD;
-            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.88rem;
             transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links ul li a::before {
+            content: '';
+            width: 16px;
+            height: 1px;
+            background: var(--cyan);
+            transition: width 0.3s ease;
         }
 
         .footer-links ul li a:hover {
-            color: var(--primary-cyan);
-            padding-left: 8px;
+            color: var(--cyan);
         }
+
+        .footer-links ul li a:hover::before { width: 24px; }
 
         .footer-contact li {
             display: flex;
+            gap: 14px;
             margin-bottom: 16px;
+            font-size: 0.88rem;
             align-items: flex-start;
-            font-size: 0.9rem;
         }
 
         .footer-contact i {
-            color: var(--primary-cyan);
-            margin-right: 14px;
-            margin-top: 5px;
+            color: var(--cyan);
+            margin-top: 4px;
             flex-shrink: 0;
         }
 
+        .footer-contact span { color: rgba(255,255,255,0.55); }
+
         .bottom-footer {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 25px 0;
-            text-align: center;
-            font-size: 0.85rem;
+            border-top: 1px solid rgba(255,255,255,0.07);
+            padding: 26px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.3);
         }
 
-        /* =========================================
-           RESPONSIVE
-           ========================================= */
-        @media (max-width: 992px) {
-            .hero-section h1 {
-                font-size: 2.5rem;
-            }
+        .footer-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(6,182,212,0.1);
+            border: 1px solid rgba(6,182,212,0.2);
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--cyan);
+            letter-spacing: 0.5px;
+        }
 
-            .gallery-grid {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 20px;
-            }
+        /* ── LIGHTBOX ── */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 3000;
+            background: rgba(0,0,0,0.97);
+            align-items: center;
+            justify-content: center;
+        }
 
-            .gallery-item {
-                height: 280px;
-            }
+        .lightbox.show {
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn { from {opacity:0} to {opacity:1} }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 92%;
+            max-height: 90vh;
+        }
+
+        .lightbox img {
+            max-width: 100%;
+            max-height: 82vh;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -48px;
+            right: 0;
+            color: rgba(255,255,255,0.6);
+            font-size: 2rem;
+            cursor: pointer;
+            transition: color 0.2s;
+            line-height: 1;
+        }
+
+        .lightbox-close:hover { color: var(--cyan); }
+
+        .lightbox-title {
+            text-align: center;
+            margin-top: 18px;
+            color: rgba(255,255,255,0.8);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+        }
+
+        /* ── REVEAL ANIMATIONS ── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 1024px) {
+            .stats-inner { grid-template-columns: 1fr; }
+            .stats-right { grid-template-columns: repeat(2, 1fr); padding: 50px 40px; }
+            .stats-left { padding: 50px 40px; }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+            .testimonials-header { grid-template-columns: 1fr; gap: 20px; }
+            .cta-inner { grid-template-columns: 1fr; }
+            .cta-right { padding: 50px 70px; }
         }
 
         @media (max-width: 768px) {
-            .hamburger {
-                display: block;
-            }
-
-            .nav-container {
-                flex-direction: row;
-            }
-
+            .hamburger { display: block; }
+            .nav-container { flex-direction: row; }
             .main-nav {
                 position: absolute;
                 top: 90px;
                 left: -100%;
                 width: 100%;
-                background: var(--white);
+                background: white;
                 padding: 20px;
-                box-shadow: var(--shadow-md);
+                box-shadow: 0 10px 30px rgba(24,54,80,0.12);
                 transition: 0.4s;
             }
+            .main-nav.active { left: 0; }
+            .main-nav ul { flex-direction: column; text-align: center; gap: 15px; }
 
-            .main-nav.active {
-                left: 0;
+            .hero { height: 75vh; }
+            .hero-scroll { display: none; }
+            .hero-content { padding: 0 24px 60px; }
+
+            .grid-featured,
+            .grid-duo {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
             }
 
-            .main-nav ul {
-                flex-direction: column;
-                text-align: center;
-                gap: 15px;
-            }
+            .grid-featured .gallery-item:first-child { grid-row: span 1; }
+            .grid-standard { grid-template-columns: 1fr; }
+            .grid-duo .gallery-item:nth-child(2) { height: 290px; margin-top: 0; }
+            .grid-standard .gallery-item,
+            .grid-duo .gallery-item { height: 260px; }
 
-            .hero-section {
-                padding: 80px 0;
-            }
-
-            .hero-section h1 {
-                font-size: 2rem;
-            }
-
-            .section-header h2 {
-                font-size: 2rem;
-            }
-
-            .gallery-grid {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            }
-
-            .gallery-item {
-                height: 240px;
-            }
-
-            .category-header {
-                flex-direction: column;
-                text-align: center;
-                gap: 15px;
-            }
-
-            .filter-buttons {
-                flex-direction: column;
-                width: 100%;
-            }
-
-            .filter-btn {
-                width: 100%;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-            }
-
-            .cta-buttons .btn-light {
-                width: 100%;
-            }
+            .cat-header { grid-template-columns: 1fr; }
+            .cat-num { display: none; }
+            .stats-right { grid-template-columns: 1fr 1fr; }
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .cta-left { padding: 60px 30px; }
+            .cta-right { padding: 40px 30px; }
+            .cta-left h2 { font-size: 2.1rem; }
+            .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+            .bottom-footer { flex-direction: column; gap: 14px; text-align: center; }
+            .filter-bar { flex-direction: column; align-items: flex-start; }
+            .filter-btn { width: 100%; text-align: center; }
         }
 
         @media (max-width: 480px) {
-            .hero-section h1 {
-                font-size: 1.6rem;
-            }
-
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .gallery-item {
-                height: 280px;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
+            .stats-right { grid-template-columns: 1fr; }
+            .hero-badges { flex-direction: column; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Top Bar -->
-    
-
-    <!-- Header -->
-   
-    <header>
-        <div class="nav-container">
-            <div class="logo-area">
-                <a href="index.html">
-                    <img src="https://stopindia.com/wp-content/uploads/2020/09/new.png" alt="STOP India Logo">
-                </a>
-            </div>
-
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html" >Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li>
-                        <a href="sectors.html" class="dropdown-toggle">Sectors</a>
-                        
-                    </li>
-                    <li><a href="Gallery.html"class="active">Gallery</a></li>
-                    <li><a href="support.html">Support</a></li>
-                     <li><a href="carrer.html">Career</a></li>
-                </ul>
-            </nav>
-
-            <div class="hamburger">
-                <i class="fas fa-bars"></i>
-            </div>
+<!-- ── NAVBAR (unchanged) ── -->
+<header>
+    <div class="nav-container">
+        <div class="logo-area">
+            <a href="index.html">
+                <img src="https://stopindia.com/wp-content/uploads/2020/09/new.png" alt="STOP India Logo">
+            </a>
         </div>
-    </header>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="sectors.html">Sectors</a></li>
+                <li><a href="Gallery.html" class="active">Gallery</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="carrer.html">Career</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger"><i class="fas fa-bars"></i></div>
+    </div>
+</header>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container">
-            <h1>Our Work in Action</h1>
-            <p>Visual journey through 25+ years of professional exhibition exhibition logistics. From warehouse operations to international exhibitions, see how we deliver excellence.</p>
-        </div>
-    </section>
-
-    <!-- Main Gallery Section -->
-    <section class="gallery-section" id="gallery">
-        <div class="container">
-            <div class="section-header">
-                <h2>Exhibition logistics Portfolio</h2>
-                <p>A comprehensive showcase of our operations across all sectors and exhibition logistics operations worldwide.</p>
-            </div>
-
-            <!-- Filter Buttons -->
-            <div class="filter-buttons">
-                <button class="filter-btn active" onclick="filterGallery('all')">All Photos</button>
-                <button class="filter-btn" onclick="filterGallery('exhibitions')">Exhibitions</button>
-                <button class="filter-btn" onclick="filterGallery('warehouse')">Warehouse & Storage</button>
-                <button class="filter-btn" onclick="filterGallery('transport')">Transport & Freight</button>
-                <button class="filter-btn" onclick="filterGallery('operations')">On-Site Operations</button>
-                <button class="filter-btn" onclick="filterGallery('sectors')">By Sectors</button>
-            </div>
-
-            <!-- EXHIBITION SECTION -->
-            <div class="category-section">
-                <div class="category-header">
-                    <div class="category-icon">
-                        <i class="fas fa-university"></i>
-                    </div>
-                    <div>
-                        <h3>Exhibition Setups & Displays</h3>
-                        <p>Professional exhibition stand setup, display arrangements, and on-site delivery coordination.</p>
-                    </div>
-                </div>
-
-                <div class="gallery-grid" data-category="exhibitions">
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=500&auto=format&fit=crop" alt="Exhibition Setup Frankfurt">
-                        <div class="gallery-overlay">
-                            <h4>Heimtextil Frankfurt</h4>
-                            <p>Professional textile exhibition stand setup with climate-controlled display.</p>
-                            <span class="gallery-tag">Textile Exhibition</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1566576912906-600aceebca9b?q=80&w=500&auto=format&fit=crop" alt="Dubai Exhibition">
-                        <div class="gallery-overlay">
-                            <h4>Dubai Trade Exhibition</h4>
-                            <p>Large-scale exhibition stand at Dubai World Trade Centre.</p>
-                            <span class="gallery-tag">Multi-Sector</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=500&auto=format&fit=crop" alt="CES Exhibition">
-                        <div class="gallery-overlay">
-                            <h4>CES Las Vegas Setup</h4>
-                            <p>High-tech electronics exhibition stand with advanced display systems.</p>
-                            <span class="gallery-tag">Electronics</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1552883193-155305277a52?q=80&w=500&auto=format&fit=crop" alt="Industrial Exhibition">
-                        <div class="gallery-overlay">
-                            <h4>Industrial Machinery Expo</h4>
-                            <p>Heavy machinery exhibition with professional rigging and installation.</p>
-                            <span class="gallery-tag">Automotive & Machinery</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=500&auto=format&fit=crop" alt="Medical Exhibition">
-                        <div class="gallery-overlay">
-                            <h4>Medical Device Exhibition</h4>
-                            <p>Compliant medical equipment display with GMP standards.</p>
-                            <span class="gallery-tag">Medical & Healthcare</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=500&auto=format&fit=crop" alt="Food Exhibition">
-                        <div class="gallery-overlay">
-                            <h4>Gulfood Exhibition Setup</h4>
-                            <p>Refrigerated food and beverage display at premium food trade fair.</p>
-                            <span class="gallery-tag">Food & Beverage</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- WAREHOUSE SECTION -->
-            <div class="category-section">
-                <div class="category-header">
-                    <div class="category-icon">
-                        <i class="fas fa-warehouse"></i>
-                    </div>
-                    <div>
-                        <h3>Warehouse & Storage Operations</h3>
-                        <p>State-of-the-art warehousing, professional packing, and climate-controlled storage facilities.</p>
-                    </div>
-                </div>
-
-                <div class="gallery-grid" data-category="warehouse">
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?q=80&w=500&auto=format&fit=crop" alt="Delhi Warehouse">
-                        <div class="gallery-overlay">
-                            <h4>Delhi Warehouse Facility</h4>
-                            <p>Modern warehouse with organized cargo storage and inventory management.</p>
-                            <span class="gallery-tag">Storage</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=500&auto=format&fit=crop" alt="Packing Operations">
-                        <div class="gallery-overlay">
-                            <h4>Professional Packing</h4>
-                            <p>Expert packing and material handling with protective standards.</p>
-                            <span class="gallery-tag">Packing & Preparation</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=500&auto=format&fit=crop" alt="Climate Control">
-                        <div class="gallery-overlay">
-                            <h4>Climate-Controlled Storage</h4>
-                            <p>Temperature and humidity-controlled storage for sensitive cargo.</p>
-                            <span class="gallery-tag">Warehouse Operations</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1552883193-155305277a52?q=80&w=500&auto=format&fit=crop" alt="Textile Storage">
-                        <div class="gallery-overlay">
-                            <h4>Textile Storage Facility</h4>
-                            <p>Specialized fabric storage with wrinkle-prevention handling.</p>
-                            <span class="gallery-tag">Textile Care</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1566576912906-600aceebca9b?q=80&w=500&auto=format&fit=crop" alt="Inventory Management">
-                        <div class="gallery-overlay">
-                            <h4>Inventory Management</h4>
-                            <p>Organized inventory tracking and professional documentation.</p>
-                            <span class="gallery-tag">Operations</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=500&auto=format&fit=crop" alt="Security Storage">
-                        <div class="gallery-overlay">
-                            <h4>Secure Storage</h4>
-                            <p>High-security storage for valuable and sensitive cargo items.</p>
-                            <span class="gallery-tag">Security</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TRANSPORT SECTION -->
-            <div class="category-section">
-                <div class="category-header">
-                    <div class="category-icon">
-                        <i class="fas fa-truck"></i>
-                    </div>
-                    <div>
-                        <h3>Transport & Freight Operations</h3>
-                        <p>Air, sea, rail, and road freight movement with real-time tracking and professional handling.</p>
-                    </div>
-                </div>
-
-                <div class="gallery-grid" data-category="transport">
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=500&auto=format&fit=crop" alt="Air Freight">
-                        <div class="gallery-overlay">
-                            <h4>Air Freight Loading</h4>
-                            <p>Professional air cargo loading at IGI Airport with safety standards.</p>
-                            <span class="gallery-tag">Air Freight</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=500&auto=format&fit=crop" alt="Sea Freight">
-                        <div class="gallery-overlay">
-                            <h4>Sea Freight Operations</h4>
-                            <p>Container loading and shipping at Nhava Sheva Port.</p>
-                            <span class="gallery-tag">Ocean Freight</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1552883193-155305277a52?q=80&w=500&auto=format&fit=crop" alt="Road Transport">
-                        <div class="gallery-overlay">
-                            <h4>Road Transport</h4>
-                            <p>Professional road freight with specialized vehicles and tracking.</p>
-                            <span class="gallery-tag">Road Freight</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1566576912906-600aceebca9b?q=80&w=500&auto=format&fit=crop" alt="Container Loading">
-                        <div class="gallery-overlay">
-                            <h4>Container Loading</h4>
-                            <p>Professional container packing and securing for international transport.</p>
-                            <span class="gallery-tag">Containerization</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=500&auto=format&fit=crop" alt="Vehicle Transport">
-                        <div class="gallery-overlay">
-                            <h4>Vehicle Transport</h4>
-                            <p>RoRo vehicle transport for automotive exhibitions worldwide.</p>
-                            <span class="gallery-tag">Automotive</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1494412651409-ae1e04548b64?q=80&w=500&auto=format&fit=crop" alt="Customs Clearance">
-                        <div class="gallery-overlay">
-                            <h4>Customs & Border Operations</h4>
-                            <p>Professional customs documentation and border crossing procedures.</p>
-                            <span class="gallery-tag">Customs</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ON-SITE OPERATIONS SECTION -->
-            <div class="category-section">
-                <div class="category-header">
-                    <div class="category-icon">
-                        <i class="fas fa-tools"></i>
-                    </div>
-                    <div>
-                        <h3>On-Site Support & Operations</h3>
-                        <p>Professional on-ground support, installation, setup assistance, and post-event services.</p>
-                    </div>
-                </div>
-
-                <div class="gallery-grid" data-category="operations">
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1552883193-155305277a52?q=80&w=500&auto=format&fit=crop" alt="Stand Setup">
-                        <div class="gallery-overlay">
-                            <h4>Stand Installation</h4>
-                            <p>Professional stand setup and installation at exhibition venue.</p>
-                            <span class="gallery-tag">Setup Services</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=500&auto=format&fit=crop" alt="Team Support">
-                        <div class="gallery-overlay">
-                            <h4>On-Site Team Support</h4>
-                            <p>Dedicated team providing 24/7 support during the exhibition.</p>
-                            <span class="gallery-tag">Support Services</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1566576912906-600aceebca9b?q=80&w=500&auto=format&fit=crop" alt="Last-Mile Delivery">
-                        <div class="gallery-overlay">
-                            <h4>Last-Mile Delivery</h4>
-                            <p>Final delivery coordination directly to exhibition stand location.</p>
-                            <span class="gallery-tag">Delivery</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1494412651409-ae1e04548b64?q=80&w=500&auto=format&fit=crop" alt="Unpacking">
-                        <div class="gallery-overlay">
-                            <h4>Professional Unpacking</h4>
-                            <p>Expert unpacking and careful handling of exhibition materials.</p>
-                            <span class="gallery-tag">Handling</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=500&auto=format&fit=crop" alt="Case Storage">
-                        <div class="gallery-overlay">
-                            <h4>Empty Case Storage</h4>
-                            <p>Professional storage of empty exhibition cases during the show.</p>
-                            <span class="gallery-tag">Storage</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1552883193-155305277a52?q=80&w=500&auto=format&fit=crop" alt="Return exhibition logistics">
-                        <div class="gallery-overlay">
-                            <h4>Return exhibition logistics</h4>
-                            <p>Professional repacking and return shipment coordination post-event.</p>
-                            <span class="gallery-tag">Post-Event</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- SECTOR-WISE SECTION -->
-            <div class="category-section">
-                <div class="category-header">
-                    <div class="category-icon">
-                        <i class="fas fa-cubes"></i>
-                    </div>
-                    <div>
-                        <h3>Work by Industry Sectors</h3>
-                        <p>Specialized handling across all industries - from food to automotive, electronics to medical.</p>
-                    </div>
-                </div>
-
-                <div class="gallery-grid" data-category="sectors">
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1585518419759-7a2f6a0dddf0?q=80&w=500&auto=format&fit=crop" alt="Food Exhibition">
-                        <div class="gallery-overlay">
-                            <h4>Food & Beverage exhibition logistics</h4>
-                            <p>Temperature-controlled transport for food and beverage exhibitions.</p>
-                            <span class="gallery-tag">Food Sector</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1550355291-bbee04a92027?q=80&w=500&auto=format&fit=crop" alt="Electronics">
-                        <div class="gallery-overlay">
-                            <h4>Electronics & Technology</h4>
-                            <p>Anti-static packaging for high-value tech and electronics exhibitions.</p>
-                            <span class="gallery-tag">Electronics Sector</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=500&auto=format&fit=crop" alt="Textiles">
-                        <div class="gallery-overlay">
-                            <h4>Textile & Home Furnishing</h4>
-                            <p>Climate-controlled and wrinkle-free handling of fabrics and textiles.</p>
-                            <span class="gallery-tag">Textile Sector</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1576091160550-112173f7f869?q=80&w=500&auto=format&fit=crop" alt="Medical">
-                        <div class="gallery-overlay">
-                            <h4>Medical & Healthcare</h4>
-                            <p>GMP-compliant exhibition logistics for medical devices and pharmaceutical samples.</p>
-                            <span class="gallery-tag">Medical Sector</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1552820728-8ac41f1ce891?q=80&w=500&auto=format&fit=crop" alt="Automotive">
-                        <div class="gallery-overlay">
-                            <h4>Automotive & Machinery</h4>
-                            <p>Heavy-duty RoRo and specialized rigging for automotive exhibitions.</p>
-                            <span class="gallery-tag">Automotive Sector</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1605857221262-e42991ced738?q=80&w=500&auto=format&fit=crop" alt="Printing">
-                        <div class="gallery-overlay">
-                            <h4>Printing & Packaging</h4>
-                            <p>Heavy equipment transport for printing and packaging machinery exhibitions.</p>
-                            <span class="gallery-tag">Printing Sector</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Lightbox -->
-    <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
-        <div class="lightbox-content">
-            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-            <img id="lightbox-image" src="" alt="Full size image">
-            <div class="lightbox-title" id="lightbox-title"></div>
+<!-- ── HERO ── -->
+<section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <div class="hero-eyebrow">Our Portfolio</div>
+        <h1>25+ Years of <em>Work in Action</em></h1>
+        <p class="hero-desc">A visual journey through exhibition logistics done right — from warehouse operations to world-class international trade fairs.</p>
+        <div class="hero-badges">
+            <span class="hero-badge"><i class="fas fa-images"></i> 500+ Exhibition Photos</span>
+            <span class="hero-badge"><i class="fas fa-globe"></i> 130+ Countries</span>
+            <span class="hero-badge"><i class="fas fa-trophy"></i> 1500+ Exhibitions</span>
         </div>
     </div>
+    <div class="hero-scroll">Scroll</div>
+</section>
 
-    <!-- Statistics Section -->
-    <section class="stats-section">
-        <div class="container">
-            <div class="section-header" style="margin-bottom: 40px;">
-                <h2 style="color: var(--white); margin-bottom: 10px;">Our Exhibition logistics Track Record</h2>
+<!-- ── GALLERY SECTION ── -->
+<section class="gallery-section" id="gallery">
+    <div class="container">
+        <div class="reveal">
+            <div class="section-label">Our Portfolio</div>
+            <h2 class="section-title">Exhibition Logistics Portfolio</h2>
+            <p class="section-sub">A comprehensive showcase of our operations across all sectors and exhibition logistics worldwide.</p>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="filter-bar reveal">
+            <span class="filter-label">Filter by:</span>
+            <button class="filter-btn active" onclick="filterGallery('all', this)">All Photos</button>
+            <button class="filter-btn" onclick="filterGallery('exhibitions', this)">Exhibitions</button>
+            <button class="filter-btn" onclick="filterGallery('warehouse', this)">Warehouse</button>
+            <button class="filter-btn" onclick="filterGallery('transport', this)">Transport</button>
+            <button class="filter-btn" onclick="filterGallery('operations', this)">On-Site Ops</button>
+            <button class="filter-btn" onclick="filterGallery('sectors', this)">By Sectors</button>
+        </div>
+
+        <!-- ─ EXHIBITIONS ─ -->
+        <div class="cat-block reveal" data-cat="exhibitions">
+            <div class="cat-header">
+                <div class="cat-num">01</div>
+                <div>
+                    <div class="cat-info-line">
+                        <div class="cat-icon-pill"><i class="fas fa-university"></i>&nbsp; Exhibitions</div>
+                        <div class="cat-divider"></div>
+                    </div>
+                    <h3 class="cat-title">Exhibition Setups & Displays</h3>
+                    <p class="cat-desc">Professional exhibition stand setup, display arrangements, and on-site delivery coordination worldwide.</p>
+                </div>
             </div>
-
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-icon">
-                        <i class="fas fa-images"></i>
+            <div class="gallery-grid grid-featured">
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=800&auto=format&fit=crop" alt="Heimtextil Frankfurt">
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">Textile Exhibition</span>
+                        <h4>Heimtextil Frankfurt</h4>
+                        <p>Professional textile exhibition stand setup with climate-controlled display systems.</p>
                     </div>
-                    <span class="stat-number">500+</span>
-                    <span class="stat-label">Exhibition Photos</span>
+                    <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
                 </div>
-
-                <div class="stat-item">
-                    <div class="stat-icon">
-                        <i class="fas fa-shipping-fast"></i>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1566576912906-600aceebca9b?q=80&w=600&auto=format&fit=crop" alt="Dubai Exhibition">
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">Multi-Sector</span>
+                        <h4>Dubai Trade Exhibition</h4>
+                        <p>Large-scale stand at Dubai World Trade Centre.</p>
                     </div>
-                    <span class="stat-number">1500+</span>
-                    <span class="stat-label">Exhibitions Handled</span>
+                    <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
                 </div>
-
-                <div class="stat-item">
-                    <div class="stat-icon">
-                        <i class="fas fa-globe"></i>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=600&auto=format&fit=crop" alt="CES Las Vegas">
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">Electronics</span>
+                        <h4>CES Las Vegas Setup</h4>
+                        <p>High-tech electronics exhibition with advanced display systems.</p>
                     </div>
-                    <span class="stat-number">130+</span>
-                    <span class="stat-label">Countries Served</span>
+                    <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
                 </div>
-
-                <div class="stat-item">
-                    <div class="stat-icon">
-                        <i class="fas fa-check-circle"></i>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1552883193-155305277a52?q=80&w=600&auto=format&fit=crop" alt="Industrial Machinery Expo">
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">Automotive & Machinery</span>
+                        <h4>Industrial Machinery Expo</h4>
+                        <p>Heavy machinery exhibition with professional rigging and installation.</p>
                     </div>
-                    <span class="stat-number">100%</span>
-                    <span class="stat-label">Client Satisfaction</span>
+                    <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=600&auto=format&fit=crop" alt="Gulfood Exhibition">
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">Food & Beverage</span>
+                        <h4>Gulfood Exhibition Setup</h4>
+                        <p>Refrigerated food and beverage display at premium food trade fair.</p>
+                    </div>
+                    <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>What Our Clients Say</h2>
-                <p>Testimonials from companies across all sectors that trust STOP India for their exhibition exhibition logistics.</p>
+        <!-- ─ WAREHOUSE ─ -->
+        <div class="cat-block reveal" data-cat="warehouse">
+            <div class="cat-header">
+                <div class="cat-num">02</div>
+                <div>
+                    <div class="cat-info-line">
+                        <div class="cat-icon-pill"><i class="fas fa-warehouse"></i>&nbsp; Warehouse</div>
+                        <div class="cat-divider"></div>
+                    </div>
+                    <h3 class="cat-title">Warehouse & Storage Operations</h3>
+                    <p class="cat-desc">State-of-the-art warehousing, professional packing, and climate-controlled storage facilities in Delhi and Mumbai.</p>
+                </div>
             </div>
-
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+            <div class="gallery-grid grid-standard">
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?q=80&w=600&auto=format&fit=crop" alt="Delhi Warehouse">
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">Storage</span>
+                        <h4>Delhi Warehouse Facility</h4>
+                        <p>Modern warehouse with organized cargo storage and inventory management.</p>
                     </div>
-                    <p class="testimonial-text">"STOP India handled our textile shipment to Heimtextil Frankfurt perfectly. The wrinkle-prevention handling was exceptional and everything arrived exhibition-ready."</p>
-                    <div class="testimonial-author">Rajesh Kumar</div>
-                    <div class="testimonial-role">Export Manager, HomeWeave Textiles</div>
+                    <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
                 </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=600&auto=format&fit=crop" alt="Professional Packing">
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">Packing & Preparation</span>
+                        <h4>Professional Packing</h4>
+                        <p>Expert packing and material handling with protective standards.</p>
                     </div>
-                    <p class="testimonial-text">"Their on-site support at CES Las Vegas was incredible. They managed every detail, from unpacking to stand setup to 24/7 support. Professional and reliable!"</p>
-                    <div class="testimonial-author">Priya Sharma</div>
-                    <div class="testimonial-role">Director, TechInnovate Solutions</div>
+                    <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
                 </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=600&auto=format&fit=crop" alt="Climate Control">
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">Warehouse Operations</span>
+                        <h4>Climate-Controlled Storage</h4>
+                        <p>Temperature and humidity-controlled storage for sensitive cargo.</p>
                     </div>
-                    <p class="testimonial-text">"For our medical device shipment to MEDICA, they ensured complete GMP compliance and all regulatory documentation. Zero issues from start to finish!"</p>
-                    <div class="testimonial-author">Dr. Mohammed Ali</div>
-                    <div class="testimonial-role">CEO, MediTech Instruments</div>
+                    <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
                 </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1552883193-155305277a52?q=80&w=600&auto=format&fit=crop" alt="Textile Storage">
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">Textile Care</span>
+                        <h4>Textile Storage Facility</h4>
+                        <p>Specialized fabric storage with wrinkle-prevention handling.</p>
                     </div>
-                    <p class="testimonial-text">"Gulfood delivery was seamless. Their temperature-controlled exhibition logistics kept our food products in perfect condition. Highly recommend for food exhibitions!"</p>
-                    <div class="testimonial-author">Anita Verma</div>
-                    <div class="testimonial-role">Marketing Head, Pure Foods India</div>
+                    <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
                 </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1566576912906-600aceebca9b?q=80&w=600&auto=format&fit=crop" alt="Inventory Management">
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">Operations</span>
+                        <h4>Inventory Management</h4>
+                        <p>Organized inventory tracking and professional documentation systems.</p>
                     </div>
-                    <p class="testimonial-text">"Their warehouse facility in Delhi was perfect for our pre-exhibition storage. Climate control, security, and organization were all top-notch."</p>
-                    <div class="testimonial-author">Sanjay Patel</div>
-                    <div class="testimonial-role">Operations Manager, Nexa Auto</div>
+                    <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
                 </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=600&auto=format&fit=crop" alt="Secure Storage">
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">Security</span>
+                        <h4>Secure Storage</h4>
+                        <p>High-security storage for valuable and sensitive cargo items.</p>
                     </div>
-                    <p class="testimonial-text">"Working with STOP India for international exhibitions has been transformational. Professional, transparent, and always on time. They're our go-to exhibition logistics partner!"</p>
-                    <div class="testimonial-author">Vikram Singh</div>
-                    <div class="testimonial-role">Global Trade Head, BrightPack Solutions</div>
+                    <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <h2>Ready to Exhibit Globally?</h2>
-            <p>Let our portfolio speak for itself. From warehouse operations to on-site support, we handle every aspect of your Exhibition logistics with professionalism and precision.</p>
+        <!-- ─ TRANSPORT ─ -->
+        <div class="cat-block reveal" data-cat="transport">
+            <div class="cat-header">
+                <div class="cat-num">03</div>
+                <div>
+                    <div class="cat-info-line">
+                        <div class="cat-icon-pill"><i class="fas fa-truck"></i>&nbsp; Transport</div>
+                        <div class="cat-divider"></div>
+                    </div>
+                    <h3 class="cat-title">Transport & Freight Operations</h3>
+                    <p class="cat-desc">Air, sea, rail, and road freight movement with real-time tracking and professional handling across 130+ countries.</p>
+                </div>
+            </div>
+            <div class="gallery-grid grid-duo">
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=600&auto=format&fit=crop" alt="Air Freight">
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">Air Freight</span>
+                        <h4>Air Freight Loading</h4>
+                        <p>Professional air cargo loading at IGI Airport with full safety standards.</p>
+                    </div>
+                    <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=700&auto=format&fit=crop" alt="Sea Freight">
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">Ocean Freight</span>
+                        <h4>Sea Freight Operations</h4>
+                        <p>Container loading and shipping at Nhava Sheva Port.</p>
+                    </div>
+                    <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1552883193-155305277a52?q=80&w=600&auto=format&fit=crop" alt="Road Transport">
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">Road Freight</span>
+                        <h4>Road Transport</h4>
+                        <p>Professional road freight with specialized vehicles and tracking.</p>
+                    </div>
+                    <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1566576912906-600aceebca9b?q=80&w=600&auto=format&fit=crop" alt="Container Loading">
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">Containerization</span>
+                        <h4>Container Loading</h4>
+                        <p>Professional container packing and securing for international transport.</p>
+                    </div>
+                    <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=600&auto=format&fit=crop" alt="Vehicle Transport">
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">Automotive</span>
+                        <h4>Vehicle Transport</h4>
+                        <p>RoRo vehicle transport for automotive exhibitions worldwide.</p>
+                    </div>
+                    <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1494412651409-ae1e04548b64?q=80&w=600&auto=format&fit=crop" alt="Customs Clearance">
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">Customs</span>
+                        <h4>Customs & Border Operations</h4>
+                        <p>Professional customs documentation and border crossing procedures.</p>
+                    </div>
+                    <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ─ ON-SITE OPERATIONS ─ -->
+        <div class="cat-block reveal" data-cat="operations">
+            <div class="cat-header">
+                <div class="cat-num">04</div>
+                <div>
+                    <div class="cat-info-line">
+                        <div class="cat-icon-pill"><i class="fas fa-tools"></i>&nbsp; On-Site</div>
+                        <div class="cat-divider"></div>
+                    </div>
+                    <h3 class="cat-title">On-Site Support & Operations</h3>
+                    <p class="cat-desc">Professional on-ground support, installation, setup assistance, and post-event services at venues worldwide.</p>
+                </div>
+            </div>
+            <div class="gallery-grid grid-standard">
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1552883193-155305277a52?q=80&w=600&auto=format&fit=crop" alt="Stand Setup">
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">Setup Services</span>
+                        <h4>Stand Installation</h4>
+                        <p>Professional stand setup and installation at exhibition venues.</p>
+                    </div>
+                    <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=600&auto=format&fit=crop" alt="Team Support">
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">Support Services</span>
+                        <h4>On-Site Team Support</h4>
+                        <p>Dedicated team providing 24/7 support during the exhibition.</p>
+                    </div>
+                    <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1566576912906-600aceebca9b?q=80&w=600&auto=format&fit=crop" alt="Last Mile Delivery">
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">Delivery</span>
+                        <h4>Last-Mile Delivery</h4>
+                        <p>Final delivery coordination directly to exhibition stand location.</p>
+                    </div>
+                    <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1494412651409-ae1e04548b64?q=80&w=600&auto=format&fit=crop" alt="Unpacking">
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">Handling</span>
+                        <h4>Professional Unpacking</h4>
+                        <p>Expert unpacking and careful handling of exhibition materials.</p>
+                    </div>
+                    <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=600&auto=format&fit=crop" alt="Case Storage">
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">Storage</span>
+                        <h4>Empty Case Storage</h4>
+                        <p>Professional storage of empty exhibition cases during the show.</p>
+                    </div>
+                    <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1552883193-155305277a52?q=80&w=600&auto=format&fit=crop" alt="Return Logistics">
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">Post-Event</span>
+                        <h4>Return Logistics</h4>
+                        <p>Professional repacking and return shipment coordination post-event.</p>
+                    </div>
+                    <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ─ SECTORS ─ -->
+        <div class="cat-block reveal" data-cat="sectors">
+            <div class="cat-header">
+                <div class="cat-num">05</div>
+                <div>
+                    <div class="cat-info-line">
+                        <div class="cat-icon-pill"><i class="fas fa-cubes"></i>&nbsp; Sectors</div>
+                        <div class="cat-divider"></div>
+                    </div>
+                    <h3 class="cat-title">Work by Industry Sectors</h3>
+                    <p class="cat-desc">Specialized handling across all industries — from food to automotive, electronics to medical, printing to textiles.</p>
+                </div>
+            </div>
+            <div class="gallery-grid grid-standard">
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1585518419759-7a2f6a0dddf0?q=80&w=600&auto=format&fit=crop" alt="Food Sector">
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">Food Sector</span>
+                        <h4>Food & Beverage Logistics</h4>
+                        <p>Temperature-controlled transport for food and beverage exhibitions.</p>
+                    </div>
+                    <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1550355291-bbee04a92027?q=80&w=600&auto=format&fit=crop" alt="Electronics Sector">
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">Electronics Sector</span>
+                        <h4>Electronics & Technology</h4>
+                        <p>Anti-static packaging for high-value tech and electronics exhibitions.</p>
+                    </div>
+                    <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=600&auto=format&fit=crop" alt="Textile Sector">
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">Textile Sector</span>
+                        <h4>Textile & Home Furnishing</h4>
+                        <p>Climate-controlled and wrinkle-free handling of fabrics and textiles.</p>
+                    </div>
+                    <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1576091160550-112173f7f869?q=80&w=600&auto=format&fit=crop" alt="Medical Sector">
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">Medical Sector</span>
+                        <h4>Medical & Healthcare</h4>
+                        <p>GMP-compliant logistics for medical devices and pharmaceutical samples.</p>
+                    </div>
+                    <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1552820728-8ac41f1ce891?q=80&w=600&auto=format&fit=crop" alt="Automotive Sector">
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">Automotive Sector</span>
+                        <h4>Automotive & Machinery</h4>
+                        <p>Heavy-duty RoRo and specialized rigging for automotive exhibitions.</p>
+                    </div>
+                    <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1605857221262-e42991ced738?q=80&w=600&auto=format&fit=crop" alt="Printing Sector">
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">Printing Sector</span>
+                        <h4>Printing & Packaging</h4>
+                        <p>Heavy equipment transport for printing and packaging machinery exhibitions.</p>
+                    </div>
+                    <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ── STATS ── -->
+<section class="stats-section">
+    <div class="stats-inner">
+        <div class="stats-left">
+            <div class="section-label" style="color: rgba(255,255,255,0.5);">Our Track Record</div>
+            <h2>Numbers That Speak for Themselves</h2>
+            <p>Over 25 years of delivering world-class exhibition logistics — measured not just in numbers, but in trust.</p>
+        </div>
+        <div class="stats-right">
+            <div class="stat-item">
+                <div class="stat-icon-wrap"><i class="fas fa-images"></i></div>
+                <div class="stat-num">500+</div>
+                <div class="stat-label">Exhibition Photos</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon-wrap"><i class="fas fa-shipping-fast"></i></div>
+                <div class="stat-num">1500+</div>
+                <div class="stat-label">Exhibitions Handled</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon-wrap"><i class="fas fa-globe"></i></div>
+                <div class="stat-num">130+</div>
+                <div class="stat-label">Countries Served</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon-wrap"><i class="fas fa-check-circle"></i></div>
+                <div class="stat-num">100%</div>
+                <div class="stat-label">Client Satisfaction</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── TESTIMONIALS ── -->
+<section class="testimonials-section">
+    <div class="container">
+        <div class="testimonials-header">
+            <div>
+                <div class="section-label">Client Voices</div>
+                <h2 class="section-title">What Our Clients Say</h2>
+            </div>
+            <p class="section-sub" style="align-self: flex-end;">Testimonials from companies across all sectors that trust STOP India for their exhibition logistics — from textiles to automotive, medical to food.</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card reveal">
+                <div class="t-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="t-text">"STOP India handled our textile shipment to Heimtextil Frankfurt perfectly. The wrinkle-prevention handling was exceptional and everything arrived exhibition-ready."</p>
+                <div class="t-author">
+                    <div class="t-avatar">R</div>
+                    <div>
+                        <div class="t-name">Rajesh Kumar</div>
+                        <div class="t-role">Export Manager, HomeWeave Textiles</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card reveal">
+                <div class="t-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="t-text">"Their on-site support at CES Las Vegas was incredible. They managed every detail from unpacking to stand setup to 24/7 support. Professional and reliable!"</p>
+                <div class="t-author">
+                    <div class="t-avatar">P</div>
+                    <div>
+                        <div class="t-name">Priya Sharma</div>
+                        <div class="t-role">Director, TechInnovate Solutions</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card reveal">
+                <div class="t-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="t-text">"For our medical device shipment to MEDICA, they ensured complete GMP compliance and all regulatory documentation. Zero issues from start to finish!"</p>
+                <div class="t-author">
+                    <div class="t-avatar">M</div>
+                    <div>
+                        <div class="t-name">Dr. Mohammed Ali</div>
+                        <div class="t-role">CEO, MediTech Instruments</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card reveal">
+                <div class="t-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="t-text">"Gulfood delivery was seamless. Their temperature-controlled logistics kept our food products in perfect condition. Highly recommend for food exhibitions!"</p>
+                <div class="t-author">
+                    <div class="t-avatar">A</div>
+                    <div>
+                        <div class="t-name">Anita Verma</div>
+                        <div class="t-role">Marketing Head, Pure Foods India</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card reveal">
+                <div class="t-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="t-text">"Their warehouse facility in Delhi was perfect for our pre-exhibition storage. Climate control, security, and organization were all top-notch."</p>
+                <div class="t-author">
+                    <div class="t-avatar">S</div>
+                    <div>
+                        <div class="t-name">Sanjay Patel</div>
+                        <div class="t-role">Operations Manager, Nexa Auto</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card reveal">
+                <div class="t-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="t-text">"Working with STOP India for international exhibitions has been transformational. Professional, transparent, and always on time. They're our go-to logistics partner!"</p>
+                <div class="t-author">
+                    <div class="t-avatar">V</div>
+                    <div>
+                        <div class="t-name">Vikram Singh</div>
+                        <div class="t-role">Global Trade Head, BrightPack Solutions</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta-section">
+    <div class="cta-inner">
+        <div class="cta-left">
+            <div class="cta-eyebrow">Ready to Get Started?</div>
+            <h2>Exhibit Globally with Confidence</h2>
+            <p>From warehouse operations to on-site support, we handle every aspect of your exhibition logistics with precision and professionalism.</p>
             <div class="cta-buttons">
-                <a href="tel:+919212133251" class="btn-light">Call Us Now</a>
-                <a href="mailto:info@stopindia.com" class="btn-light">Get a Quote</a>
+                <a href="tel:+919212133251" class="btn-white"><i class="fas fa-phone"></i> Call Us Now</a>
+                <a href="mailto:info@stopindia.com" class="btn-outline-white"><i class="fas fa-envelope"></i> Get a Quote</a>
             </div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col footer-about">
-                    <h4>STOP India</h4>
-                    <p>Your trusted partner for exhibition exhibition logistics. Moving people and cargo with zero delays and complete reliability since 2012.</p>
-                </div>
-
-                <div class="footer-col footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="sectors.html">Sectors</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col footer-links">
-                    <h4>Operations</h4>
-                    <ul>
-                        <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="services.html">Our Services</a></li>
-                        <li><a href="sectors.html">Industries</a></li>
-                        <li><a href="index.html#support">Support</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col footer-contact">
-                    <h4>Contact Us</h4>
-                    <ul>
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Corporate Office, Gurgaon, India</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone"></i>
-                            <span>+91 9212133251 / 252</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <span>info@stopindia.com</span>
-                        </li>
-                    </ul>
+        <div class="cta-right">
+            <div class="contact-item">
+                <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                <div>
+                    <div class="contact-item-label">Phone</div>
+                    <div class="contact-item-val">+91 9212133251 / 252</div>
                 </div>
             </div>
-
-            <div class="bottom-footer">
-                <p>&copy; 2012 STOP India. All Rights Reserved. | Professional Exhibition logistics Partner</p>
+            <div class="contact-item">
+                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                <div>
+                    <div class="contact-item-label">Email</div>
+                    <div class="contact-item-val">info@stopindia.com</div>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div>
+                    <div class="contact-item-label">Office</div>
+                    <div class="contact-item-val">Corporate Office, Gurgaon, India</div>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                <div>
+                    <div class="contact-item-label">Availability</div>
+                    <div class="contact-item-val">24/7 Support — Always On</div>
+                </div>
             </div>
         </div>
-    </footer>
+    </div>
+</section>
 
-    <script>
-        // Mobile Menu
-        const hamburger = document.querySelector('.hamburger');
-        const navMenu = document.querySelector('.main-nav');
+<!-- ── FOOTER ── -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col footer-about">
+                <h4>STOP India</h4>
+                <p>Your trusted partner for exhibition logistics. Moving people and cargo with zero delays and complete reliability since 2012.</p>
+                <div class="footer-badge"><i class="fas fa-shield-alt"></i> ISO Certified Operations</div>
+            </div>
+            <div class="footer-col footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="sectors.html">Sectors</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-links">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="Gallery.html">Gallery</a></li>
+                    <li><a href="services.html">Our Services</a></li>
+                    <li><a href="sectors.html">Industries</a></li>
+                    <li><a href="support.html">Support</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-contact">
+                <h4>Contact</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i><span>Corporate Office, Gurgaon, India</span></li>
+                    <li><i class="fas fa-phone"></i><span>+91 9212133251 / 252</span></li>
+                    <li><i class="fas fa-envelope"></i><span>info@stopindia.com</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="bottom-footer">
+            <span>&copy; 2012–2026 STOP India. All Rights Reserved.</span>
+            <span class="footer-badge"><i class="fas fa-globe"></i> Professional Exhibition Logistics Partner</span>
+        </div>
+    </div>
+</footer>
 
-        if (hamburger) {
-            hamburger.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-            });
+<!-- ── LIGHTBOX ── -->
+<div id="lightbox" class="lightbox" onclick="closeLightboxBg(event)">
+    <div class="lightbox-content">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-image" src="" alt="">
+        <div class="lightbox-title" id="lightbox-title"></div>
+    </div>
+</div>
 
-            document.querySelectorAll('.main-nav a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navMenu.classList.remove('active');
+<script>
+    // Mobile nav
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu   = document.querySelector('.main-nav');
+    if (hamburger) {
+        hamburger.addEventListener('click', () => navMenu.classList.toggle('active'));
+        document.querySelectorAll('.main-nav a').forEach(a => a.addEventListener('click', () => navMenu.classList.remove('active')));
+    }
+
+    // Filter
+    function filterGallery(cat, btn) {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        document.querySelectorAll('.cat-block').forEach(block => {
+            if (cat === 'all' || block.dataset.cat === cat) {
+                block.style.display = '';
+                block.style.opacity = '0';
+                block.style.transform = 'translateY(20px)';
+                requestAnimationFrame(() => {
+                    block.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    block.style.opacity = '1';
+                    block.style.transform = 'translateY(0)';
                 });
-            });
-        }
-
-        // Gallery Filter
-        function filterGallery(category) {
-            // Update active button
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            event.target.classList.add('active');
-
-            // Filter items
-            document.querySelectorAll('.gallery-grid').forEach(grid => {
-                const items = grid.querySelectorAll('.gallery-item');
-                items.forEach(item => {
-                    if (category === 'all') {
-                        item.style.display = 'block';
-                    }
-                });
-            });
-
-            // Scroll to gallery
-            document.querySelector('.gallery-grid').scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-
-        // Lightbox
-        function openLightbox(element) {
-            const lightbox = document.getElementById('lightbox');
-            const img = element.querySelector('img');
-            const title = element.querySelector('h4').textContent;
-
-            document.getElementById('lightbox-image').src = img.src;
-            document.getElementById('lightbox-title').textContent = title;
-            lightbox.classList.add('show');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeLightbox(event) {
-            if (event && event.target.id !== 'lightbox') return;
-            
-            const lightbox = document.getElementById('lightbox');
-            lightbox.classList.remove('show');
-            document.body.style.overflow = 'auto';
-        }
-
-        // Close lightbox on escape
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeLightbox();
+            } else {
+                block.style.display = 'none';
+            }
         });
 
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
+        document.getElementById('gallery').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
+    // Lightbox
+    function openLightbox(el) {
+        const img   = el.querySelector('img');
+        const title = el.querySelector('h4').textContent;
+        document.getElementById('lightbox-image').src = img.src;
+        document.getElementById('lightbox-title').textContent = title;
+        document.getElementById('lightbox').classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
 
-        document.querySelectorAll('.gallery-item, .testimonial-card, .stat-item').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
+    function closeLightbox() {
+        document.getElementById('lightbox').classList.remove('show');
+        document.body.style.overflow = '';
+    }
+
+    function closeLightboxBg(e) {
+        if (e.target.id === 'lightbox') closeLightbox();
+    }
+
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+    // Reveal on scroll
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                revealObserver.unobserve(entry.target);
+            }
         });
-    </script>
+    }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
 
+    document.querySelectorAll('.reveal').forEach((el, i) => {
+        el.style.transitionDelay = (i % 4) * 0.08 + 's';
+        revealObserver.observe(el);
+    });
+
+    // Gallery items stagger
+    const galleryObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const items = entry.target.querySelectorAll('.gallery-item');
+                items.forEach((item, i) => {
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(25px) scale(0.97)';
+                    setTimeout(() => {
+                        item.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0) scale(1)';
+                    }, i * 90);
+                });
+                galleryObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.05 });
+
+    document.querySelectorAll('.gallery-grid').forEach(grid => galleryObserver.observe(grid));
+</script>
 </body>
 </html>
